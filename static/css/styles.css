@@ -1,0 +1,110 @@
+/* Colors */
+body, h1, h2, h3, h4, h5, h6 {
+  color: #00ff00; }
+
+a, a:hover, a:active, a:focus {
+  color: #00ff00;
+  text-decoration: underline; }
+
+[type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=tel], [type=time], [type=url], [type=color], [type=number], [type=search], select, textarea, .button {
+  border-color: #00ff00;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #00ff00; }
+
+[type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus, [type=number]:focus, [type=search]:focus, select:focus, textarea:focus, .button:focus, .button:hover {
+  border-color: #00ff66;
+  background-color: #000000;
+  color: #00ff66; }
+
+label {
+  color: #00ff00; }
+
+label:hover, input:hover, select:hover, textarea:hover, input:focus, select:focus, textarea:focus {
+  color: #00ff66; }
+
+hr {
+  color: #00ff00;
+  border-color: #00ff00; }
+
+header {
+  background-color: #000000; }
+
+section, footer {
+  background-color: rgba(0, 0, 0, 0.9); }
+
+/* General */
+body {
+  background-image: url("../images/background-spyral-continuous.gif");
+  background-position: center top;
+  background-repeat: repeat;
+  background-attachment: fixed; }
+
+header, section, footer {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+ul {
+  margin-left: 2rem; }
+  ul li {
+    list-style-type: square; }
+
+ol li {
+  list-style-type: decimal; }
+
+code {
+  font-family: monospace;
+  font-weight: bold; }
+
+hr {
+  border-style: dashed; }
+
+a:hover {
+  text-decoration: none; }
+
+.bold {
+  font-weight: bold; }
+
+.italics {
+  font-style: italic; }
+
+.nowrap {
+  white-space: nowrap; }
+
+/* Header */
+.menu > li > a {
+  padding: 1rem 1rem;
+  line-height: 4rem; }
+
+@media screen and (max-width: 39.9375em) {
+  .menu > li {
+    display: block;
+    width: 100%;
+    text-align: center; }
+
+  .menu > li > a {
+    padding: 1rem 0;
+    line-height: 100%; } }
+@media screen and (min-width: 39.9375em) {
+  .menu .left {
+    float: left; }
+
+  .menu .right {
+    float: right; } }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0; }
+  footer .trademark {
+    font-size: small; }
+  footer hr {
+    margin-top: 0; }
+
+/* Page Specific */
+.portfolio .columns .columns {
+  text-align: center;
+  min-height: 24rem; }
+
+.experience .columns .columns {
+  min-height: 28rem; }
+
+/*# sourceMappingURL=styles.css.map */
