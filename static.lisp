@@ -8,13 +8,13 @@
 			*dispatch-table*)
 
 (push (create-static-file-dispatcher-and-handler
-			 "/about/"
+			 "/about.html"
 			 (make-pathname :directory "/home/spyrosoft/hunchentoot/static" :name "about" :type "html" :version nil :defaults *this-file*)
 			 "text/html")
 			*dispatch-table*)
 
 (push (create-static-file-dispatcher-and-handler
-			 "/contact/"
+			 "/contact.html"
 			 (make-pathname :directory "/home/spyrosoft/hunchentoot/static" :name "contact" :type "html" :version nil :defaults *this-file*)
 			 "text/html")
 			*dispatch-table*)
