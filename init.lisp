@@ -1,11 +1,7 @@
 (ql:quickload :hunchentoot)
-(ql:quickload :cl-who)
 
 (defpackage :spyrosoft
-	(:use :common-lisp
-		:cl-who
-		:hunchentoot
-		))
+	(:use :common-lisp :hunchentoot))
 
 (in-package :spyrosoft)
 
