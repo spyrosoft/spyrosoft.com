@@ -22,3 +22,5 @@
 (route-file "/generate-clementine-playlists/" "/generate-clementine-playlists" "index" "html" "text/html")
 (route-directory "/generate-clementine-playlists/css/" "/generate-clementine-playlists/css" "text/css")
 (route-directory "/generate-clementine-playlists/js/" "/generate-clementine-playlists/js" "text/javascript")
+
+(load "handlers/contact.lisp")

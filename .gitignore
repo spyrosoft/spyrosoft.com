@@ -1,3 +1,3 @@
-mailgun-init.lisp
+/credentials.lisp
 logs
-static/generate-clementine-playlists
+/static/generate-clementine-playlists

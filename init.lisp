@@ -18,10 +18,8 @@
 								 :message-log-destination (merge-pathnames "logs/message.log" *hunchentoot-directory*)
 								 :port 8080))
 
-(load "routes.lisp")
-
 (load "mailgun-sender.lisp")
-(load "mailgun-init.lisp")
-(load "ajax.lisp")
+(load "credentials.lisp")
+(load "routes.lisp")
 
 (hunchentoot:start spyrosoft-server)

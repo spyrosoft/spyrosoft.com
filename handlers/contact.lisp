@@ -1,7 +1,7 @@
 (define-easy-handler (contact-form
                       :uri "/contact-ajax/"
                       :default-request-type :post)
-  (name email message)
+    (name email message)
   (if message
       (progn
         (mailgun-sender:send-message
@@ -9,5 +9,5 @@
          "spyrosoft.com/contact"
          (format nil "~A~%~%From: ~A <~A>~%~%IP Address: ~A" message name email (real-remote-addr)))
         "{\"success\":true}")
-    "{\"success\":false}")
+      "{\"success\":false}")
   )
