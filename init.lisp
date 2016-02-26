@@ -13,7 +13,7 @@
 (defvar spyrosoft-server
 	(make-instance 'hunchentoot:easy-acceptor
 								 :document-root *hunchentoot-directory*
-								 :error-template-directory (merge-pathnames "static/error-templates/" *hunchentoot-directory*)
+								 :error-template-directory (merge-pathnames "web-root/error-templates/" *hunchentoot-directory*)
 								 :access-log-destination (merge-pathnames "logs/access.log" *hunchentoot-directory*)
 								 :message-log-destination (merge-pathnames "logs/message.log" *hunchentoot-directory*)
 								 :port 8080))
