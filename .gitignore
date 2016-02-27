@@ -1,3 +1,3 @@
-/credentials.lisp
-logs
+/private
+/logs
 /static/generate-clementine-playlists

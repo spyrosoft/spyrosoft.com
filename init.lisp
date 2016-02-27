@@ -18,7 +18,7 @@
 								 :message-log-destination (merge-pathnames "logs/message.log" *hunchentoot-directory*)
 								 :port 8080))
 
-(load "mailgun-sender.lisp")
+(load "packages/mailgun.lisp")
 (load "credentials.lisp")
 (load "routes.lisp")
 

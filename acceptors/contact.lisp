@@ -4,7 +4,7 @@
     (name email message)
   (if message
       (progn
-        (mailgun-sender:send-message
+        (mailgun:send-message
          *contact-form-recipient*
          "spyrosoft.com/contact"
          (format nil "~A~%~%From: ~A <~A>~%~%IP Address: ~A" message name email (real-remote-addr)))
