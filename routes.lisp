@@ -1,4 +1,6 @@
-(load "routing.lisp")
+(defvar *this-file* #.(or *compile-file-pathname* *load-truename*))
+
+(load "utilities/routing.lisp")
 
 (route-file "/about.html" "/" "about" "html" "text/html")
 (route-file "/contact.html" "/" "contact" "html" "text/html")
