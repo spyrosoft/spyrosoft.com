@@ -1,5 +1,15 @@
 (load "routing.lisp")
 
+(route-file "/about.html" "/" "about" "html" "text/html")
+(route-file "/contact.html" "/" "contact" "html" "text/html")
+(route-file "/favicon.ico" "/images" "favicon" "ico" "vnd.microsoft.icon")
+
+(route-file "/generate-clementine-playlists/" "/generate-clementine-playlists" "index" "html" "text/html")
+(route-directory "/generate-clementine-playlists/css/" "/generate-clementine-playlists/css" "text/css")
+(route-directory "/generate-clementine-playlists/js/" "/generate-clementine-playlists/js" "text/javascript")
+
+(load "acceptors/contact.lisp")
+
 ;; Route / to index.html and serve it as text/html
 (route-file "/" "/" "index" "html" "text/html")
 
@@ -14,13 +24,3 @@
 
 ;; Route /robots.txt to the actual file and serve it as text/plain
 (route-file "/robots.txt" "/" "robots" "txt" "text/plain")
-
-(route-file "/about.html" "/" "about" "html" "text/html")
-(route-file "/contact.html" "/" "contact" "html" "text/html")
-(route-file "/favicon.ico" "/images" "favicon" "ico" "vnd.microsoft.icon")
-
-(route-file "/generate-clementine-playlists/" "/generate-clementine-playlists" "index" "html" "text/html")
-(route-directory "/generate-clementine-playlists/css/" "/generate-clementine-playlists/css" "text/css")
-(route-directory "/generate-clementine-playlists/js/" "/generate-clementine-playlists/js" "text/javascript")
-
-(load "handlers/contact.lisp")
