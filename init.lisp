@@ -19,7 +19,7 @@
 								 :port 8080))
 
 (load "packages/mailgun.lisp")
-(load "credentials.lisp")
+(load "private/credentials.lisp")
 (load "routes.lisp")
 
 (hunchentoot:start spyrosoft-server)
