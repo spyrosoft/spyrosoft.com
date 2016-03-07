@@ -1,4 +1,5 @@
 (ql:quickload :hunchentoot)
+(ql:quickload :cl-smtp)
 
 (defpackage :spyrosoft
 	(:use :common-lisp :hunchentoot))
@@ -18,7 +19,6 @@
 								 :message-log-destination (merge-pathnames "logs/message.log" *hunchentoot-directory*)
 								 :port 8080))
 
-(load "packages/mailgun.lisp")
 (load "private/credentials.lisp")
 (load "routes.lisp")
 

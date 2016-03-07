@@ -1,13 +1,37 @@
+(defun send-contact-message (name email message)
+  (when (or name email)
+    (if (and name email)
+        (let ((from))
+          (setq from (format nil "~A <~A>" name email))
+          (progn
+            (when name (setq from (format nil "~A" name)))
+            (when email (setq from (format nil "~A" email)))
+            (setq message
+                  (concatenate 'string message
+                               (format nil "~%~%From: ~A" from))))))
+    (setq message
+          (concatenate 'string message
+                       (format nil "~%~%IP Address: ~A" (real-remote-addr)))))
+  (handler-case
+      (cl-smtp:send-email *outgoing-email-host*
+                      *contact-form-sender*
+                      *contact-form-recipient*
+                      "New message via spyrosoft.com"
+                      message
+                      :ssl :tls
+											:authentication (list
+                                       :login
+                                       *outgoing-email-user*
+                                       *outgoing-email-pass*))
+    (error nil "")))
+
 (define-easy-handler (contact-form
                       :uri "/contact-ajax/"
                       :default-request-type :post)
     (name email message)
   (if message
       (progn
-        (mailgun:send-message
-         *contact-form-recipient*
-         "spyrosoft.com/contact"
-         (format nil "~A~%~%From: ~A <~A>~%~%IP Address: ~A" message name email (real-remote-addr)))
+        (send-contact-message name email message)
         "{\"success\":true}")
-      "{\"success\":false}")
+      "{\"success\":false,\"error\":\"The message field is required.\"}")
   )
