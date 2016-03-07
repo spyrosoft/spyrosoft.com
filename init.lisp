@@ -20,6 +20,7 @@
 								 :port 8080))
 
 (load "private/credentials.lisp")
+(load "packages/cl-smtp.lisp")
 (load "routes.lisp")
 
 (hunchentoot:start spyrosoft-server)
