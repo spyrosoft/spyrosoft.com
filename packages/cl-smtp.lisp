@@ -1,24 +1,6 @@
-(in-package :cl-user)
-
-(defpackage :cl-smtp
-  (:use :cl :asdf :flexi-streams :trivial-gray-streams)
-  (:export "SEND-EMAIL"
-           "WITH-SMTP-MAIL"
-           "SMTP-ERROR"
-           "SMTP-PROTOCOL-ERROR"
-           "NO-SUPPORTED-AUTHENTICATION-METHOD"
-           "RCPT-FAILED"
-           "IGNORE-RECIPIENT"
-           "ATTACHMENT"
-           "MAKE-ATTACHMENT"
-           "ATTACHMENT-NAME"
-           "ATTACHMENT-DATA-PATHNAME"
-           "ATTACHMENT-MIME-TYPE"
-           "RFC2045-Q-ENCODE-STRING"
-           "RFC2231-ENCODE-STRING"
-           "WRITE-RFC8822-MESSAGE"))
-
 (in-package :cl-smtp)
+
+(fmakunbound 'send-mail-headers)
 
 (defun send-mail-headers (stream 
                           &key from to cc reply-to 
