@@ -1,0 +1,70 @@
+<svg version="1.1"
+		 baseProfile="full"
+		 width="400" height="400"
+		 xmlns="http://www.w3.org/2000/svg"
+		 stroke-width="4px"
+		 fill="transparent">
+	
+	<!-- Good -->
+	<circle
+		r="130"
+		cx="145"
+		cy="145"
+		stroke="#00ff00"
+		fill="#00ff00"
+		fill-opacity="0.3"
+		/>
+	
+	<text
+		x="45"
+		y="130"
+		font-size="24"
+		fill="#00ff00">
+			Good
+	</text>
+	
+	<!-- Fast -->
+	<circle
+		r="130"
+		cx="255"
+		cy="145"
+		stroke="#0000ff"
+		fill="#0000ff"
+		fill-opacity="0.3"
+		/>
+	
+	<text
+		x="300"
+		y="130"
+		font-size="24"
+		fill="#0000ff">
+			Fast
+	</text>
+	
+	<!-- Cheap -->
+	<circle
+		r="130"
+		cx="200"
+		cy="255"
+		stroke="#ff0000"
+		fill="#ff0000"
+		fill-opacity="0.3"
+		/>
+	
+	<text
+		x="165"
+		y="310"
+		font-size="24"
+		fill="#ff0000">
+			Cheap
+	</text>
+	
+	<text
+		x="150"
+		y="200"
+		font-size="24"
+		fill="#ffffff">
+			Pick Two
+	</text>
+	
+</svg>
