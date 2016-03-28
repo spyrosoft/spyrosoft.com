@@ -6,12 +6,14 @@
 
 (in-package :spyrosoft)
 
+;; Needed if you set :error-template-directory in the easy-acceptor
 (setf hunchentoot::*show-lisp-errors-p* t)
 
 (defvar *hunchentoot-directory*
   (pathname (directory-namestring #.(or *compile-file-pathname* *load-truename*))))
 
-(defvar *web-root-directory* (merge-pathnames "web-root/" *hunchentoot-directory*))
+(defvar *web-root-directory*
+  (merge-pathnames "awestruct/_site/" *hunchentoot-directory*))
 
 (defvar spyrosoft-server
 	(make-instance 'hunchentoot:easy-acceptor
@@ -22,7 +24,6 @@
 								 :port 8080))
 
 (load "private/credentials.lisp")
-(load "packages/cl-smtp.lisp")
 (load "routes.lisp")
 
 (hunchentoot:start spyrosoft-server)

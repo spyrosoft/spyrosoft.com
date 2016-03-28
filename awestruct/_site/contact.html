@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Home - Baked with Awestruct</title>
+    <link href="/css/foundation.min.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="menu clearfix">
+          <li class="left">
+            <a href="/">
+              <img alt="SpyroSoft" src="/images/spyrosoft-logo.jpg">
+            </a>
+          </li>
+          <li class="right">
+            <a href="/contact.html">Contact</a>
+          </li>
+          <li class="right">
+            <a href="/about.html">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="contact">
+      <form action="/contact-ajax/" method="post">
+        <div class="row">
+          <div class="columns medium-6 large-6">
+            <label>
+              Name
+              <input name="name" type="text">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns medium-6 large-6">
+            <label>
+              Email
+              <input name="email" type="email">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns">
+            <label>
+              Message
+              <sup>(Required)</sup>
+              <textarea cols="40" name="message" rows="10"></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns text-center">
+            <button class="button" type="submit">Submit</button>
+          </div>
+        </div>
+        <script>
+          document.getElementsByName('name')[0].focus();
+        </script>
+      </form>
+    </section>
+    <footer>
+      <hr>
+      <div class="copyright">
+        <p>
+          Copyright © by SpyroSoft
+        </p>
+        <p class="trademark">
+          SpyroSoft™ is a trademark wholly owned by Bennett Roesch
+        </p>
+      </div>
+    </footer>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/vendor/what-input.min.js"></script>
+    <script src="/js/foundation.min.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

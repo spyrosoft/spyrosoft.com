@@ -70,6 +70,9 @@ a:hover {
 .nowrap {
   white-space: nowrap; }
 
+.column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+  float: left; }
+
 /* Header */
 .menu > li > a {
   padding: 1rem 1rem;
@@ -107,4 +110,4 @@ footer {
 .experience .columns .columns {
   min-height: 28rem; }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=app.css.map */
