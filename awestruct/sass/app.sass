@@ -92,23 +92,25 @@ a:hover
 
 /* Header
 
-.menu>li>a
+nav.top
+	padding: $small-spacing 0
+
+nav.top a
 	padding: $small-spacing $small-spacing
 	line-height: $large-spacing
 
 @media screen and (max-width:39.9375em)
-	.menu>li
+	nav.top a
 		display: block
 		width: 100%
 		text-align: center
-	.menu>li>a
 		padding: $small-spacing 0
 		line-height: 100%
 
 @media screen and (min-width:39.9375em)
-	.menu .left
+	nav.top .left
 		float: left
-	.menu .right
+	nav.top .right
 		float: right
 
 
@@ -134,3 +136,8 @@ footer
 
 .experience .columns .columns
 	min-height: 28rem
+
+@media screen and (max-width:39.9375em)
+	.portfolio .columns .columns,
+	.experience .columns .columns
+		min-height: auto

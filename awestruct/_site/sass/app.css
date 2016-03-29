@@ -96,47 +96,53 @@ a:hover {
 
 /* Header */
 /* line 95, sass/app.sass */
-.menu > li > a {
+nav.top {
+  padding: 1rem 0; }
+
+/* line 98, sass/app.sass */
+nav.top a {
   padding: 1rem 1rem;
   line-height: 4rem; }
 
 @media screen and (max-width: 39.9375em) {
-  /* line 100, sass/app.sass */
-  .menu > li {
+  /* line 103, sass/app.sass */
+  nav.top a {
     display: block;
     width: 100%;
-    text-align: center; }
-
-  /* line 104, sass/app.sass */
-  .menu > li > a {
+    text-align: center;
     padding: 1rem 0;
     line-height: 100%; } }
 @media screen and (min-width: 39.9375em) {
-  /* line 109, sass/app.sass */
-  .menu .left {
+  /* line 111, sass/app.sass */
+  nav.top .left {
     float: left; }
 
-  /* line 111, sass/app.sass */
-  .menu .right {
+  /* line 113, sass/app.sass */
+  nav.top .right {
     float: right; } }
 /* Footer */
-/* line 117, sass/app.sass */
+/* line 119, sass/app.sass */
 footer {
   text-align: center;
   padding: 1rem 0; }
-/* line 121, sass/app.sass */
+/* line 123, sass/app.sass */
 footer .trademark {
   font-size: small; }
-/* line 124, sass/app.sass */
+/* line 126, sass/app.sass */
 footer hr {
   margin-top: 0; }
 
 /* Page Specific */
-/* line 131, sass/app.sass */
+/* line 133, sass/app.sass */
 .portfolio .columns .columns {
   text-align: center;
   min-height: 24rem; }
 
-/* line 135, sass/app.sass */
+/* line 137, sass/app.sass */
 .experience .columns .columns {
   min-height: 28rem; }
+
+@media screen and (max-width: 39.9375em) {
+  /* line 141, sass/app.sass */
+  .portfolio .columns .columns, .experience .columns .columns {
+    min-height: auto; } }
