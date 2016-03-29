@@ -41,71 +41,93 @@ header {
 section, footer {
   background-color: rgba(0, 0, 0, 0.9); }
 
-/* General */
+/* Spacing */
 /* line 51, sass/app.sass */
+code {
+  margin-left: 2rem;
+  margin-right: 2rem; }
+
+/* line 55, sass/app.sass */
+.no-padding, .no-spacing {
+  padding: 0; }
+
+/* line 58, sass/app.sass */
+.no-margin, .no-spacing {
+  margin: 0 auto; }
+
+/* line 65, sass/app.sass */
+.small-margin-bottom {
+  margin-bottom: 1rem; }
+
+/* line 68, sass/app.sass */
+header, section, footer {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+/* line 72, sass/app.sass */
+section {
+  padding-top: 1rem; }
+
+/* General */
+/* line 78, sass/app.sass */
 body {
   background-image: url("../images/background-spyral-continuous.gif");
   background-position: center top;
   background-repeat: repeat;
   background-attachment: fixed; }
 
-/* line 57, sass/app.sass */
-header, section, footer {
-  max-width: 1200px;
-  margin: 0 auto; }
-
-/* line 61, sass/app.sass */
+/* line 84, sass/app.sass */
 ul {
   margin-left: 2rem; }
-/* line 63, sass/app.sass */
+/* line 86, sass/app.sass */
 ul li {
   list-style-type: square; }
 
-/* line 66, sass/app.sass */
+/* line 89, sass/app.sass */
 ol li {
   list-style-type: decimal; }
 
-/* line 69, sass/app.sass */
+/* line 92, sass/app.sass */
 code {
   font-family: monospace;
   font-weight: bold; }
 
-/* line 73, sass/app.sass */
+/* line 96, sass/app.sass */
 hr {
   border-style: dashed; }
 
-/* line 76, sass/app.sass */
+/* line 99, sass/app.sass */
 a:hover {
   text-decoration: none; }
 
-/* line 79, sass/app.sass */
+/* line 102, sass/app.sass */
 .bold {
   font-weight: bold; }
 
-/* line 82, sass/app.sass */
+/* line 105, sass/app.sass */
 .italics {
   font-style: italic; }
 
-/* line 85, sass/app.sass */
+/* line 108, sass/app.sass */
 .nowrap {
   white-space: nowrap; }
 
-/* line 88, sass/app.sass */
+/* line 111, sass/app.sass */
 .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
   float: left; }
 
 /* Header */
-/* line 95, sass/app.sass */
+/* line 118, sass/app.sass */
 nav.top {
   padding: 1rem 0; }
 
-/* line 98, sass/app.sass */
+/* line 121, sass/app.sass */
 nav.top a {
   padding: 1rem 1rem;
   line-height: 4rem; }
 
 @media screen and (max-width: 39.9375em) {
-  /* line 103, sass/app.sass */
+  /* line 126, sass/app.sass */
   nav.top a {
     display: block;
     width: 100%;
@@ -113,36 +135,36 @@ nav.top a {
     padding: 1rem 0;
     line-height: 100%; } }
 @media screen and (min-width: 39.9375em) {
-  /* line 111, sass/app.sass */
+  /* line 134, sass/app.sass */
   nav.top .left {
     float: left; }
 
-  /* line 113, sass/app.sass */
+  /* line 136, sass/app.sass */
   nav.top .right {
     float: right; } }
 /* Footer */
-/* line 119, sass/app.sass */
+/* line 142, sass/app.sass */
 footer {
   text-align: center;
   padding: 1rem 0; }
-/* line 123, sass/app.sass */
+/* line 146, sass/app.sass */
 footer .trademark {
   font-size: small; }
-/* line 126, sass/app.sass */
+/* line 149, sass/app.sass */
 footer hr {
   margin-top: 0; }
 
 /* Page Specific */
-/* line 133, sass/app.sass */
+/* line 156, sass/app.sass */
 .portfolio .columns .columns {
   text-align: center;
   min-height: 24rem; }
 
-/* line 137, sass/app.sass */
+/* line 160, sass/app.sass */
 .experience .columns .columns {
   min-height: 28rem; }
 
 @media screen and (max-width: 39.9375em) {
-  /* line 141, sass/app.sass */
+  /* line 164, sass/app.sass */
   .portfolio .columns .columns, .experience .columns .columns {
     min-height: auto; } }
