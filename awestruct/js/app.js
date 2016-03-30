@@ -1,7 +1,9 @@
 $(document).foundation();
 
-var date_today = new Date();
-document.getElementById('this-year').innerHTML = date_today.getFullYear();
+if ( document.getElementById('this-year') ) {
+	var date_today = new Date();
+	document.getElementById('this-year').innerHTML = date_today.getFullYear();
+}
 
 $('.contact form').submit( contact_form_submission );
 
@@ -34,7 +36,7 @@ function contact_form_submission( submission_event )
 		)
 		.success(
 			function( response_data ) {
-				var response_json
+				var response_json;
 				try {
 					response_json = JSON.parse( response_data );
 					if ( response_json[ 'success' ] ) {
@@ -42,7 +44,7 @@ function contact_form_submission( submission_event )
 					} else {
 						alert( 'Something went wrong. Please contact Bennett by some other means and tell him.' );
 					}
-				} catch ( error ) { alert( 'Invalid JSON Response.' ) }
+				} catch ( error ) { alert( 'Invalid JSON Response.' ); }
 			}
 		)
 		.fail(

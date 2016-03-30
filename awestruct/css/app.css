@@ -32,10 +32,15 @@ header {
 section, footer {
   background-color: rgba(0, 0, 0, 0.9); }
 
+code {
+  background-color: transparent;
+  color: #00ff00;
+  border: none; }
+
 /* Spacing */
 code {
-  margin-left: 2rem;
-  margin-right: 2rem; }
+  display: block;
+  margin: 0 2rem 1rem; }
 
 .no-padding, .no-spacing {
   padding: 0; }
