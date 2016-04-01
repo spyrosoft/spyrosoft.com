@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Post Arbitrary Form Data to Any URL Tool - HTML</title>
+		<style type="text/css">
+			* { margin: 0; padding: 0; }
+			body {
+				padding: 40px;
+				font-size: 14px;
+				font-family: sans-serif;
+			}
+			body,
+			input,
+			textarea {
+				background-color: #000000;
+				color: #FFFFFF;
+			}
+			h1 {
+				margin-bottom: 20px;
+			}
+			hr {
+				margin-bottom: 20px;
+			}
+			input,
+			textarea {
+				padding: 2px 4px;
+			}
+			input[type="text"],
+			textarea {
+				width: 100%;
+				border: 1px solid #FFFFFF;
+			}
+			.options div {
+				margin-bottom: 20px;
+			}
+			#variables-display,
+			#variables-display td {
+				border: 1px solid #FFFFFF;
+			}
+			table td {
+				padding: 5px 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Post Arbitrary Form Data to Any URL</h1>
+		<noscript><h2>You're going to need JavaScript on for this.</h2></noscript>
+		<div id="options" class="options">
+			<div>
+				<input type="radio" name="post-or-get" value="post" id="post-for-post-or-get" checked="checked" />
+				<label for="post-for-post-or-get">Post</label>
+				-
+				<input type="radio" name="post-or-get" value="get" id="get-for-post-or-get" />
+				<label for="get-for-post-or-get">Get</label>
+			</div>
+			<div>
+				<div>
+					<label for="where-to-send-the-data">Where to send the data:</label>
+				</div>
+				<input type="text" id="where-to-send-the-data" />
+			</div>
+			<div id="new-field">
+				<div>
+					<label for="new-variable">Variable:</label>
+				</div>
+				<div>
+					<input type="text" id="new-variable" />
+				</div>
+				<div>
+					<label for="new-value">Value:</label>
+				</div>
+				<div>
+					<textarea id="new-value"></textarea>
+				</div>
+			</div>
+			<div>
+				<input type="button" value="Add" id="add-new-variable" />
+			</div>
+			<div>
+				<form id="arbitrary-data-form" method="post" target="_blank"><table id="variables-display"></table></form>
+			</div>
+			<div>
+				<input type="button" value="Submit" id="submit-button" />
+			</div>
+			<hr />
+			<div>
+				<label>
+					Save this somewhere to load it again later:
+					<textarea id="save-or-load-data-textarea"></textarea>
+				</label>
+			</div>
+			<div>
+				<input type="button" value="Load Data" id="load-data-button" />
+			</div>
+		</div>
+		<script type="text/javascript">
+			var variables = [];
+			var variable_values = [];
+			
+			if ( test_browser_compatibility() ) {
+				document.getElementById( 'add-new-variable' ).addEventListener( 'click', add_new_variable );
+				document.getElementById( 'new-variable' ).addEventListener( 'keydown', focus_new_value );
+				document.getElementById( 'new-value' ).addEventListener( 'keydown', add_new_variable_on_enter );
+				document.getElementById( 'submit-button' ).addEventListener( 'click', submit_form );
+				document.getElementById( 'save-or-load-data-textarea' ).addEventListener( 'keydown', load_save_data_on_enter );
+				document.getElementById( 'load-data-button' ).addEventListener( 'click', load_save_data );
+			} else {
+				alert( 'I\'m afraid your browser isn\'t supported, sorry!' );
+			}
+			
+			document.getElementById( 'where-to-send-the-data' ).select();
+			
+			function add_new_variable()
+			{
+				var variable_name = document.getElementById( 'new-variable' ).value;
+				if ( variable_name == '' ) {
+					alert( 'Please enter a variable name' );
+					return;
+				}
+				
+				var variable_value = document.getElementById( 'new-value' ).value;
+				
+				var index_of_existing_variable_name = variables.indexOf( variable_name );
+				if ( index_of_existing_variable_name >= 0 ) {
+					variable_values[ index_of_existing_variable_name ] = variable_value;
+				} else {
+					variables.push( variable_name );
+					variable_values.push( variable_value );
+				}
+				
+				document.getElementById( 'new-variable' ).value = '';
+				document.getElementById( 'new-value' ).value = '';
+				refresh_variables_display();
+				
+				generate_save_data();
+				
+				document.getElementById( 'new-variable' ).select();
+			}
+			
+			function refresh_variables_display()
+			{
+				document.getElementById( 'variables-display' ).innerHTML = '';
+				
+				for ( var variable_index = 0; variable_index < variables.length; variable_index++ ) {
+					var new_row = document.createElement( 'tr' );
+					
+					var new_variable_cell = document.createElement( 'td' );
+					var new_variable_text_node = document.createTextNode( variables[ variable_index ] );
+					new_variable_cell.appendChild( new_variable_text_node );
+					new_row.appendChild( new_variable_cell );
+					
+					var new_variable_value_cell = document.createElement( 'td' );
+					new_variable_value_cell.innerHTML = variable_values[ variable_index ].replace( /\n/g, '<br />' );
+					new_row.appendChild( new_variable_value_cell );
+					
+					var new_delete_row_cell = document.createElement( 'td' );
+					
+					var delete_this_row_node = document.createElement( 'input' );
+					delete_this_row_node.type = 'button';
+					delete_this_row_node.value = 'X';
+					delete_this_row_node.onclick = delete_this_row;
+					new_delete_row_cell.appendChild( delete_this_row_node );
+					
+					var delete_this_variable_node = document.createElement( 'input' );
+					delete_this_variable_node.type = 'hidden';
+					delete_this_variable_node.name = variables[ variable_index ];
+					delete_this_variable_node.value = variable_values[ variable_index ];
+					
+					new_delete_row_cell.appendChild( delete_this_variable_node );
+					new_row.appendChild( new_delete_row_cell );
+					
+					document.getElementById( 'variables-display' ).appendChild( new_row );
+				}
+			}
+			
+			function delete_this_row()
+			{
+				var variable_to_remove = this.parentNode.childNodes[ 1 ].name;
+				var index_of_variable_to_remove = variables.indexOf( variable_to_remove );
+				variables.splice( index_of_variable_to_remove, 1 );
+				variable_values.splice( index_of_variable_to_remove, 1 );
+				
+				var node_to_remove = this.parentNode.parentNode;
+				this.parentNode.parentNode.parentNode.removeChild( node_to_remove );
+			}
+			
+			function submit_form()
+			{
+				var where_to_send_the_data = document.getElementById( 'where-to-send-the-data' ).value;
+				if ( where_to_send_the_data == '' ) {
+					alert( 'Please fill out where to send the data.' );
+					return;
+				} else {
+					document.getElementById( 'arbitrary-data-form' ).action = where_to_send_the_data;
+				}
+				if ( document.getElementById( 'post-for-post-or-get' ).checked ) {
+					document.getElementById( 'arbitrary-data-form' ).method = 'post';
+				} else {
+					document.getElementById( 'arbitrary-data-form' ).method = 'get';
+				}
+				document.getElementById( 'arbitrary-data-form' ).submit();
+			}
+			
+			function generate_save_data()
+			{
+				var where_to_send_the_data = document.getElementById( 'where-to-send-the-data' ).value;
+				var save_data = {
+					'where-to-send-the-data' : where_to_send_the_data,
+					'variables' : variables,
+					'variable_values' : variable_values
+				};
+				document.getElementById( 'save-or-load-data-textarea' ).value = JSON.stringify( save_data );
+			}
+			
+			function load_save_data()
+			{
+				var data_textarea_value = document.getElementById( 'save-or-load-data-textarea' ).value;
+				try {
+					var load_data = JSON.parse( data_textarea_value );
+				} catch ( error ) {
+					alert( 'Please enter valid data to be loaded.' );
+					return;
+				}
+					if ( ! load_data[ 'where-to-send-the-data' ] ) {
+						alert( 'The URL is missing from the load data.' );
+						return;
+					}
+					if ( ! load_data[ 'variables' ] ) {
+						alert( 'The variables are missing from the load data.' );
+						return;
+					}
+					if ( ! load_data[ 'variable_values' ] ) {
+						alert( 'The variable values are missing from the load data.' );
+						return;
+					}
+					
+					document.getElementById( 'where-to-send-the-data' ).value = load_data[ 'where-to-send-the-data' ];
+					variables = load_data[ 'variables' ];
+					variable_values = load_data[ 'variable_values' ];
+					refresh_variables_display();
+			}
+			
+			function load_save_data_on_enter( key_event )
+			{
+				if ( test_for_enter( key_event ) ) {
+				console.log('yes')
+					key_event.preventDefault();
+					load_save_data();
+				}
+			}
+			
+			function focus_new_value( event )
+			{
+				if ( test_for_enter( event ) ) {
+					event.preventDefault();
+					document.getElementById( 'new-value' ).select();
+				}
+			}
+			
+			function add_new_variable_on_enter( event )
+			{
+				if ( test_for_enter( event )
+				&& ! event.shiftKey ) {
+					event.preventDefault();
+					add_new_variable();
+				}
+			}
+			
+			function test_for_enter( event )
+			{
+				if ( get_key_code( event ) == 13 ) {
+					return true;
+				}
+				return false;
+			}
+			
+			function get_key_code( event ) {
+				if ( typeof event == "undefined" ) { event = window.event; }
+				var event_key_code = event.keyCode;
+				return event_key_code;
+			}
+			
+			function test_browser_compatibility()
+			{
+				var test_array = [ 0, 1, 'aoeu' ];
+				if ( test_array.indexOf( 'aoeu' ) != 2 ) {
+					return false;
+				}
+				return true;
+			}
+		</script>
+	</body>
+</html>
