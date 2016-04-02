@@ -1,5 +1,14 @@
 $(document).foundation();
 
+$( 'nav.top a' ).each(
+	function ( index, element ) {
+		var current_element = $( element );
+		if ( current_element.attr( 'href' ) === window.location.pathname ) {
+			current_element.hide();
+		}
+	}
+);
+
 if ( document.getElementById('this-year') ) {
 	var date_today = new Date();
 	document.getElementById('this-year').innerHTML = date_today.getFullYear();
