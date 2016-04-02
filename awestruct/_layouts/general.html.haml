@@ -13,13 +13,14 @@
       %meta{name: 'description', content: page.description}
   %body
     %header
-      %nav.top.clearfix
-        .left
-          %a{href: '/'}
-            %img{alt: 'SpyroSoft', src: '/images/spyrosoft-logo.jpg'}
-        .right
-          %a{href: '/contact.html'} Contact
-          %a{href: '/about.html'} About
+      %nav.top
+        %ul
+          %li
+            %a{href: '/'} Home
+          %li
+            %a{href: '/contact.html'} Contact
+          %li
+            %a{href: '/about.html'} About
       %hr.no-spacing
     ~ content
     %footer

@@ -58,6 +58,9 @@ header, section, footer {
 section {
   padding-top: 1rem; }
 
+.soft-wrap {
+  white-space: normal; }
+
 /* General */
 body {
   background-image: url("../images/background-spyral-continuous.gif");
@@ -78,7 +81,9 @@ code {
   font-weight: bold; }
 
 hr {
-  border-style: dashed; }
+  border-style: solid;
+  border-width: 2px;
+  border-top: none; }
 
 a:hover {
   text-decoration: none; }
@@ -96,12 +101,22 @@ a:hover {
   float: left; }
 
 /* Header */
-nav.top {
-  padding: 1rem 0; }
+nav.top ul {
+  float: right;
+  margin: 0 auto; }
+
+nav.top li {
+  float: left;
+  list-style-type: none; }
 
 nav.top a {
+  font-weight: bold;
+  display: block;
   padding: 1rem 1rem;
-  line-height: 4rem; }
+  text-decoration: none; }
+
+nav.top a:hover {
+  text-decoration: underline; }
 
 @media screen and (max-width: 39.9375em) {
   nav.top a {
@@ -110,6 +125,7 @@ nav.top a {
     text-align: center;
     padding: 1rem 0;
     line-height: 100%; } }
+/* TODO: This is wrong: */
 @media screen and (min-width: 39.9375em) {
   nav.top .left {
     float: left; }

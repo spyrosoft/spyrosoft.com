@@ -1,7 +1,7 @@
-$fg-light: #00ff00
-$fg-light-accented: #00ff66
-$bg-dark: #000000
-$bg-dark-transparent: rgba(0, 0, 0, 0.9)
+$fg-hex: #00ff00
+$fg-hex-accented: #00ff66
+$bg-hex: #000000
+$bg-rgba-transparent: rgba(0, 0, 0, 0.9)
 
 $tiny-spacing: 0.2rem
 $small-spacing: 1rem
@@ -13,41 +13,41 @@ $huge-spacing: 10rem
 /* Colors
 
 body, h1, h2, h3, h4, h5, h6
-	color: $fg-light
+	color: $fg-hex
 
 a, a:hover, a:active, a:focus
-	color: $fg-light
+	color: $fg-hex
 	text-decoration: underline
 
 [type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=tel], [type=time], [type=url], [type=color], [type=number], [type=search], select, textarea, .button
-	border-color: $fg-light
-	background-color: $bg-dark-transparent
-	color: $fg-light
+	border-color: $fg-hex
+	background-color: $bg-rgba-transparent
+	color: $fg-hex
 
 [type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus, [type=number]:focus, [type=search]:focus, select:focus, textarea:focus, .button:focus, .button:hover
-	border-color: $fg-light-accented
-	background-color: $bg-dark
-	color: $fg-light-accented
+	border-color: $fg-hex-accented
+	background-color: $bg-hex
+	color: $fg-hex-accented
 
 label
-	color: $fg-light
+	color: $fg-hex
 
 label:hover, input:hover, select:hover, textarea:hover, input:focus, select:focus, textarea:focus
-	color: $fg-light-accented
+	color: $fg-hex-accented
 
 hr
-	color: $fg-light
-	border-color: $fg-light
+	color: $fg-hex
+	border-color: $fg-hex
 
 header
-	background-color: $bg-dark
+	background-color: $bg-hex
 
 section, footer
-	background-color: $bg-dark-transparent
+	background-color: $bg-rgba-transparent
 
 code
 	background-color: transparent
-	color: $fg-light
+	color: $fg-hex
 	border: none
 
 
@@ -77,6 +77,9 @@ header, section, footer
 section
 	padding-top: $small-spacing
 
+.soft-wrap
+	white-space: normal
+
 
 /* General
 
@@ -99,7 +102,9 @@ code
 	font-weight: bold
 
 hr
-	border-style: dashed
+	border-style: solid
+	border-width: 2px
+	border-top: none
 
 a:hover
 	text-decoration: none
@@ -120,12 +125,22 @@ a:hover
 
 /* Header
 
-nav.top
-	padding: $small-spacing 0
+nav.top ul
+	float: right
+	margin: 0 auto
+
+nav.top li
+	float: left
+	list-style-type: none
 
 nav.top a
+	font-weight: bold
+	display: block
 	padding: $small-spacing $small-spacing
-	line-height: $large-spacing
+	text-decoration: none
+
+nav.top a:hover
+	text-decoration: underline
 
 @media screen and (max-width:39.9375em)
 	nav.top a
@@ -135,6 +150,7 @@ nav.top a
 		padding: $small-spacing 0
 		line-height: 100%
 
+/* TODO: This is wrong:
 @media screen and (min-width:39.9375em)
 	nav.top .left
 		float: left
