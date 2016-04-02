@@ -119,19 +119,13 @@ nav.top a:hover {
   text-decoration: underline; }
 
 @media screen and (max-width: 39.9375em) {
-  nav.top a {
-    display: block;
+  nav.top ul {
+    float: none; }
+
+  nav.top li {
     width: 100%;
     text-align: center;
-    padding: 1rem 0;
-    line-height: 100%; } }
-/* TODO: This is wrong: */
-@media screen and (min-width: 39.9375em) {
-  nav.top .left {
-    float: left; }
-
-  nav.top .right {
-    float: right; } }
+    float: none; } }
 /* Footer */
 footer {
   text-align: center;

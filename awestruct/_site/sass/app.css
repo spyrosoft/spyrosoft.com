@@ -152,44 +152,37 @@ nav.top a:hover {
 
 @media screen and (max-width: 39.9375em) {
   /* line 146, sass/app.sass */
-  nav.top a {
-    display: block;
+  nav.top ul {
+    float: none; }
+
+  /* line 148, sass/app.sass */
+  nav.top li {
     width: 100%;
     text-align: center;
-    padding: 1rem 0;
-    line-height: 100%; } }
-/* TODO: This is wrong: */
-@media screen and (min-width: 39.9375em) {
-  /* line 155, sass/app.sass */
-  nav.top .left {
-    float: left; }
-
-  /* line 157, sass/app.sass */
-  nav.top .right {
-    float: right; } }
+    float: none; } }
 /* Footer */
-/* line 163, sass/app.sass */
+/* line 156, sass/app.sass */
 footer {
   text-align: center;
   padding: 1rem 0; }
-/* line 167, sass/app.sass */
+/* line 160, sass/app.sass */
 footer .trademark {
   font-size: small; }
-/* line 170, sass/app.sass */
+/* line 163, sass/app.sass */
 footer hr {
   margin-top: 0; }
 
 /* Page Specific */
-/* line 177, sass/app.sass */
+/* line 170, sass/app.sass */
 .portfolio .columns .columns {
   text-align: center;
   min-height: 24rem; }
 
-/* line 181, sass/app.sass */
+/* line 174, sass/app.sass */
 .experience .columns .columns {
   min-height: 28rem; }
 
 @media screen and (max-width: 39.9375em) {
-  /* line 185, sass/app.sass */
+  /* line 178, sass/app.sass */
   .portfolio .columns .columns, .experience .columns .columns {
     min-height: auto; } }
