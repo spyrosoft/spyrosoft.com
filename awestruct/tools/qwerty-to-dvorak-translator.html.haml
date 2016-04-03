@@ -1,0 +1,22 @@
+---
+title: Translate Qwerty to Dvorak and Back
+layout: general
+---
+%section.row.columns
+  %h2 #{page.title}
+  %textarea#input{rows: 10}
+  .text-center
+    %p
+      %button.button.no-margin#translate
+        Translate
+    %div
+      %p
+        Translate To:
+      %label
+        %input{type: 'radio', name: 'dvorak-or-qwerty', value: 'dvorak', checked: 'checked'}
+        Dvorak
+      %label
+        %input{type: 'radio', name: 'dvorak-or-qwerty', value: 'qwerty'}
+        Qwerty
+  %script{src: '/js/tools/qwerty-to-dvorak-translator.js'}
+    

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Home - Baked with Awestruct</title>
+    <title>Translate Qwerty to Dvorak and Back - Baked with Awestruct</title>
     <link href="/css/foundation.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
@@ -33,42 +33,30 @@
       </nav>
       <hr class="no-spacing">
     </header>
-    <section class="contact">
-      <form action="/contact-ajax/" method="post">
-        <div class="row">
-          <div class="columns medium-6 large-6">
-            <label>
-              Name
-              <input name="name" type="text">
-            </label>
-          </div>
+    <section class="row columns">
+      <h2>Translate Qwerty to Dvorak and Back</h2>
+      <textarea id="input" rows="10"></textarea>
+      <div class="text-center">
+        <p>
+          <button class="button no-margin" id="translate">
+            Translate
+          </button>
+        </p>
+        <div>
+          <p>
+            Translate To:
+          </p>
+          <label>
+            <input checked="checked" name="dvorak-or-qwerty" type="radio" value="dvorak">
+            Dvorak
+          </label>
+          <label>
+            <input name="dvorak-or-qwerty" type="radio" value="qwerty">
+            Qwerty
+          </label>
         </div>
-        <div class="row">
-          <div class="columns medium-6 large-6">
-            <label>
-              Email
-              <input name="email" type="email">
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="columns">
-            <label>
-              Message
-              <sup>(Required)</sup>
-              <textarea cols="40" name="message" rows="10"></textarea>
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="columns text-center">
-            <button class="button" type="submit">Submit</button>
-          </div>
-        </div>
-        <script>
-          document.getElementsByName('name')[0].focus();
-        </script>
-      </form>
+      </div>
+      <script src="/js/tools/qwerty-to-dvorak-translator.js"></script>
     </section>
     <footer>
       <hr>
