@@ -87,101 +87,102 @@ body {
   background-attachment: fixed; }
 
 /* line 92, sass/app.sass */
-ul {
+ul, ol {
   margin-left: 2rem; }
-/* line 94, sass/app.sass */
+
+/* line 95, sass/app.sass */
 ul li {
   list-style-type: square; }
 
-/* line 97, sass/app.sass */
+/* line 98, sass/app.sass */
 ol li {
   list-style-type: decimal; }
 
-/* line 100, sass/app.sass */
+/* line 101, sass/app.sass */
 code {
   font-family: monospace; }
 
-/* line 103, sass/app.sass */
+/* line 104, sass/app.sass */
 hr {
   border-style: solid;
   border-width: 2px;
   border-top: none; }
 
-/* line 108, sass/app.sass */
+/* line 109, sass/app.sass */
 a:hover {
   text-decoration: none; }
 
-/* line 111, sass/app.sass */
+/* line 112, sass/app.sass */
 .bold {
   font-weight: bold; }
 
-/* line 114, sass/app.sass */
+/* line 115, sass/app.sass */
 .italics {
   font-style: italic; }
 
-/* line 117, sass/app.sass */
+/* line 118, sass/app.sass */
 .nowrap {
   white-space: nowrap; }
 
-/* line 120, sass/app.sass */
+/* line 121, sass/app.sass */
 .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
   float: left; }
 
 /* Header */
-/* line 127, sass/app.sass */
+/* line 128, sass/app.sass */
 nav.top ul {
   float: right;
   margin: 0 auto; }
 
-/* line 131, sass/app.sass */
+/* line 132, sass/app.sass */
 nav.top li {
   float: left;
   list-style-type: none; }
 
-/* line 135, sass/app.sass */
+/* line 136, sass/app.sass */
 nav.top a {
   font-weight: bold;
   display: block;
   padding: 1rem 1rem;
   text-decoration: none; }
 
-/* line 141, sass/app.sass */
+/* line 142, sass/app.sass */
 nav.top a:hover {
   text-decoration: underline; }
 
 @media screen and (max-width: 39.9375em) {
-  /* line 145, sass/app.sass */
+  /* line 146, sass/app.sass */
   nav.top ul {
     float: none; }
 
-  /* line 147, sass/app.sass */
+  /* line 148, sass/app.sass */
   nav.top li {
     width: 100%;
     text-align: center;
     float: none; } }
 /* Footer */
-/* line 155, sass/app.sass */
+/* line 156, sass/app.sass */
 footer {
   text-align: center;
   padding: 1rem 0; }
-/* line 159, sass/app.sass */
+/* line 160, sass/app.sass */
 footer .trademark {
   font-size: small; }
-/* line 162, sass/app.sass */
+/* line 163, sass/app.sass */
 footer hr {
   margin-top: 0; }
 
 /* Page Specific */
-/* line 169, sass/app.sass */
+/* line 170, sass/app.sass */
 .portfolio .columns .columns {
   text-align: center;
   min-height: 24rem; }
 
-/* line 173, sass/app.sass */
+/* line 174, sass/app.sass */
 .experience .columns .columns {
   min-height: 28rem; }
 
 @media screen and (max-width: 39.9375em) {
-  /* line 177, sass/app.sass */
+  /* line 178, sass/app.sass */
   .portfolio .columns .columns, .experience .columns .columns {
     min-height: auto; } }
