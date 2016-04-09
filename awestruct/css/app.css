@@ -40,7 +40,7 @@ code {
 /* Spacing */
 code {
   display: block;
-  margin: 0 2rem 1rem; }
+  margin: 0 1rem 1rem; }
 
 .no-padding, .no-spacing {
   padding: 0; }
@@ -77,8 +77,7 @@ ol li {
   list-style-type: decimal; }
 
 code {
-  font-family: monospace;
-  font-weight: bold; }
+  font-family: monospace; }
 
 hr {
   border-style: solid;

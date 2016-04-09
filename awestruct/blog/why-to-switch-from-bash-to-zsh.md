@@ -7,6 +7,8 @@ date: 4-2-16
 
 _**Note**_: if you're interested in switching away from Bash and don't already know about [Fish](https://fishshell.com/), compare it to Zsh before taking the plunge.
 
+Whether you use Bash or Zsh [check out my config file](https://github.com/spyrosoft/.files/blob/master/.zshrc). There are lots of goodies in there.
+
 ### Built-In Config Setup Utility
 
 When zsh starts it checks for configuration files. If none exist it prompts the following:
@@ -29,9 +31,9 @@ When zsh starts it checks for configuration files. If none exist it prompts the 
     
     --- Type one of the keys in parentheses ---
 
-It is well organized, straight forward, and worth the time to set everything up for your own preferences. This is certainly the first thing a new zsh user should do. Otherwise the default settings are quite bad. I think this is intentional to motivate users to actually use the setup utility.
+The setup utility is well organized, and straight forward. It is worth taking the time to set everything up for your own preferences. It is certainly the first thing a new zsh user should do. Otherwise the default settings are quite bad. I think this is intentional to motivate users to actually use the setup utility.
 
-Each of the features mentioned below are all found here in this utility.
+Each of the features mentioned below can be customized via the utility.
 
 
 ### No More Need For The Cd Command
@@ -47,11 +49,11 @@ Enter Zsh! Zsh is smart enough to know that the user wants to cd there and does 
 
 ### Completion Cycling
 
-As a comparison, Bash completion is accomplished by partially typing something to complete, then pressing \<tab> twice. This displays a list of available completions in the shell. The user then has to continue typing the correct completion until it is unique in the list of completions, at which time the completion is finally performed.
+Bash completion works like so. A user partially types something then presses \<tab> twice. A list of available completions are printed out to the shell. The user then has to continue typing the correct completion until none of the other completion suggestions match at which time the completion is finally performed.
 
-Zsh displays a completion list immediately upon pressing \<tab> the first time. If there is only one possibility it is completed right then and there in the same manner as Bash does. Otherwise and unlike Bash the user has the option to continue to press \<tab> to cycle through the rest of the available completions.
+Zsh displays a completion list immediately upon pressing \<tab> the first time. If there is only one possibility it is completed right then and there in the same manner as Bash. Otherwise unlike Bash the user has the option to continue to press \<tab> to cycle through the rest of the available completions.
 
-Zsh completions are only written out to the shell one time. If the user refines the completion search, the old completions are overwritten. Bash leaves the old completions up consuming quite a bit of vertical lines in the shell.
+Zsh completions are only written out to the shell one time. If the user refines the completion search, the old completions are removed and the new ones take their place. Bash leaves the old completions up consuming quite a bit of vertical lines in the shell.
 
 
 ### Partial Directory Expansion
@@ -64,14 +66,17 @@ Will expand to:
 
     ~/programming/go/src/testing-grounds/
 
-On the condition that more than one directory expansion is possible for the given input, Zsh expands as many directories as it can then displays the the collisions at that directory level as completion options. Once the user has \<tab>ed to the desired completion, the user can choose that completion by typing a character and immediately deleting it again. The directory expansion can then be continued by pressing \<tab> again.
+Sometimes more than one directory expansion is possible. When that happens Zsh expands as many directories as it can and displays the the collisions at that directory level as completion options. Once the user has \<tab> cycled through to the desired completion, the user can choose that completion by typing a character and immediately deleting it again. The rest of the directory expansion is then continued by pressing \<tab> again.
 
 
 ### Intelligent File Completion
 
 The only file completions displayed are completions that would make sense for the given command. As an example using unzip only files with the .zip file extension or directories are shown.
 
-    unzip <TAB>
+    $ ls
+	file.txt executable-file file.zip another-file.zip directory/ another-directory/
+	$ unzip <TAB>
+	file.zip another-file.zip directory/ another-directory/
 
 
 ### Fuzzy File Completion
@@ -82,17 +87,19 @@ Spell a filename wrong at the shell? That's OK. Zsh will do its best to figure o
 ### Fuzzy Directory Completion
 
 Imagine that there is a directory:
-/home/user/example/actual/directory
+
+    /home/user/example/actual/directory
 
 However it has been a while and the directory heirachy isn't very fresh in the user's memory. The user tries following instead:
-/home/user/example/directory
+
+    /home/user/example/directory
 
 Zsh knows that the user may have missed a directory and helps out by searching for the missing directory in each of the subdirectories starting at the missing directory's level. Zsh then suggests any matching directories as a completion.
 
 
 ### Command Syntax Completion
 
-Trying to remember a command's flag? Begin typing the command as you remember it and press \<tab>. Completions for the available flags are shown consicely eliminating most of the need to refer to a reference such as the man page.
+Trying to remember a command's flag? Begin typing the command as you remember it and press \<tab>. Completions for the available flags are printed as completions. This eliminates most of the need to refer to the docs like the man page.
 
 
 ### Partial Command History Reverse Search
@@ -104,7 +111,7 @@ Rather than searhcing for a command through your entire command history by press
 
 In Bash the variable PS1 is not very descriptive. The Zsh equivalent is appropriately named PROMPT.
 
-There are all kinds of fancy things you can do with your prompt including colors. The available colors are as follows:
+There are all kinds of fancy things you can do with your prompt including changing the colors. Available colors are as follows:
 
 * green
 * cyan
