@@ -97,6 +97,9 @@ a:hover {
 .nowrap {
   white-space: nowrap; }
 
+.inline {
+  display: inline; }
+
 .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
   float: left; }
 

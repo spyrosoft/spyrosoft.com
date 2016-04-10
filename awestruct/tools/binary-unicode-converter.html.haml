@@ -1,0 +1,19 @@
+---
+title: Binary ‹-› Unicode Converter
+layout: general
+script: /js/tools/binary-unicode-converter.js
+---
+%section.row.columns
+  %h2 #{page.title}
+  %div.text-center.radios
+    %label.inline
+      Input Binary
+      %input#binary_input{checked: 'checked', name: 'which_input', type: 'radio'}
+    \-
+    %label.inline
+      Input Unicode
+      %input#unicode_input{name: 'which_input', type: 'radio'}
+  %div
+    %input#input{onfocus: 'this.select();', onkeyup: 'convert();', size: '60', type: 'text'}
+  %div
+    %textarea#output{cols: '60', onfocus: 'this.select();', rows: '20'}

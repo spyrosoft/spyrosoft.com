@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Tools - SpyroSoft</title>
+    <title>Binary ‹-› Unicode Converter - SpyroSoft</title>
     <link href="/css/foundation.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
@@ -34,18 +34,24 @@
       <hr class="no-spacing">
     </header>
     <section class="row columns">
-      <h2>Tools</h2>
-      <hr>
-      <h3>
-        <a href="/tools/binary-unicode-converter.html">
-          Binary ‹-› Unicode Converter
-        </a>
-      </h3>
-      <h3>
-        <a href="/tools/qwerty-to-dvorak-translator.html">
-          Translate Qwerty to Dvorak and Back
-        </a>
-      </h3>
+      <h2>Binary ‹-› Unicode Converter</h2>
+      <div class="text-center radios">
+        <label class="inline">
+          Input Binary
+          <input checked="checked" id="binary_input" name="which_input" type="radio">
+        </label>
+        -
+        <label class="inline">
+          Input Unicode
+          <input id="unicode_input" name="which_input" type="radio">
+        </label>
+      </div>
+      <div>
+        <input id="input" onfocus="this.select();" onkeyup="convert();" size="60" type="text">
+      </div>
+      <div>
+        <textarea cols="60" id="output" onfocus="this.select();" rows="20"></textarea>
+      </div>
     </section>
     <footer>
       <hr>
@@ -62,5 +68,6 @@
     <script src="/js/vendor/what-input.min.js"></script>
     <script src="/js/foundation.min.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/tools/binary-unicode-converter.js"></script>
   </body>
 </html>

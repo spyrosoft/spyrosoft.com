@@ -125,64 +125,68 @@ a:hover {
   white-space: nowrap; }
 
 /* line 121, sass/app.sass */
+.inline {
+  display: inline; }
+
+/* line 124, sass/app.sass */
 .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
   float: left; }
 
 /* Header */
-/* line 128, sass/app.sass */
+/* line 131, sass/app.sass */
 nav.top ul {
   float: right;
   margin: 0 auto; }
 
-/* line 132, sass/app.sass */
+/* line 135, sass/app.sass */
 nav.top li {
   float: left;
   list-style-type: none; }
 
-/* line 136, sass/app.sass */
+/* line 139, sass/app.sass */
 nav.top a {
   font-weight: bold;
   display: block;
   padding: 1rem 1rem;
   text-decoration: none; }
 
-/* line 142, sass/app.sass */
+/* line 145, sass/app.sass */
 nav.top a:hover {
   text-decoration: underline; }
 
 @media screen and (max-width: 39.9375em) {
-  /* line 146, sass/app.sass */
+  /* line 149, sass/app.sass */
   nav.top ul {
     float: none; }
 
-  /* line 148, sass/app.sass */
+  /* line 151, sass/app.sass */
   nav.top li {
     width: 100%;
     text-align: center;
     float: none; } }
 /* Footer */
-/* line 156, sass/app.sass */
+/* line 159, sass/app.sass */
 footer {
   text-align: center;
   padding: 1rem 0; }
-/* line 160, sass/app.sass */
+/* line 163, sass/app.sass */
 footer .trademark {
   font-size: small; }
-/* line 163, sass/app.sass */
+/* line 166, sass/app.sass */
 footer hr {
   margin-top: 0; }
 
 /* Page Specific */
-/* line 170, sass/app.sass */
+/* line 173, sass/app.sass */
 .portfolio .columns .columns {
   text-align: center;
   min-height: 24rem; }
 
-/* line 174, sass/app.sass */
+/* line 177, sass/app.sass */
 .experience .columns .columns {
   min-height: 28rem; }
 
 @media screen and (max-width: 39.9375em) {
-  /* line 178, sass/app.sass */
+  /* line 181, sass/app.sass */
   .portfolio .columns .columns, .experience .columns .columns {
     min-height: auto; } }
