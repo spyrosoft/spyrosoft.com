@@ -5,22 +5,22 @@
 		 stroke-width="4px"
 		 fill="transparent">
 	
-	<!-- Good -->
+	<!-- Cheap -->
 	<circle
 		r="130"
-		cx="145"
-		cy="145"
-		stroke="#00ff00"
-		fill="#00ff00"
+		cx="200"
+		cy="255"
+		stroke="#ff0000"
+		fill="#ff0000"
 		fill-opacity="0.3"
 		/>
 	
 	<text
-		x="45"
-		y="130"
+		x="165"
+		y="310"
 		font-size="24"
-		fill="#00ff00">
-			Good
+		fill="#ff0000">
+			Cheap
 	</text>
 	
 	<!-- Fast -->
@@ -41,22 +41,22 @@
 			Fast
 	</text>
 	
-	<!-- Cheap -->
+	<!-- Good -->
 	<circle
 		r="130"
-		cx="200"
-		cy="255"
-		stroke="#ff0000"
-		fill="#ff0000"
+		cx="145"
+		cy="145"
+		stroke="#00ff00"
+		fill="#00ff00"
 		fill-opacity="0.3"
 		/>
 	
 	<text
-		x="165"
-		y="310"
+		x="45"
+		y="130"
 		font-size="24"
-		fill="#ff0000">
-			Cheap
+		fill="#00ff00">
+			Good
 	</text>
 	
 	<text
