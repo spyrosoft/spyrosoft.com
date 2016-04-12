@@ -1,0 +1,195 @@
+---
+title: Qwerty Vs Dvorak Vs Colemak
+layout: general
+script: /js/tools/compare-qwerty-to-dvorak-to-colemak.js
+style: /css/tools/compare-qwerty-to-dvorak-to-colemak.css
+---
+%section.row
+  .columns
+    %h2 #{page.title}
+    %p
+      Type or paste text into the text box.
+    %label
+      What to compare:
+      %select#what-to-compare
+        %option{:selected => "selected", :value => "row"}
+          Use of Each Row
+        %option{:value => "hand"}
+          Frequency of Hand Use
+        %option{:value => "finger"}
+          Frequency of Tripping Fingers
+    %textarea#in
+  .columns.large-4.medium-4
+    .keyboard.show-for-medium
+      .title
+        Qwerty
+      .full_blank_row
+      .new_row
+      .tab
+      #qq.key
+      #qw.key
+      #qe.key
+      #qr.key
+      #qt.key
+      #qy.key
+      #qu.key
+      #qi.key
+      #qo.key
+      #qp.key
+      .key{:id => "q["}
+      .key{:id => "q]"}
+      .key{:id => "q\\"}
+      .new_row
+      .caps_lock
+      #qa.key
+      #qs.key
+      #qd.key
+      #qf.key
+      #qg.key
+      #qh.key
+      #qj.key
+      #qk.key
+      #ql.key
+      .key{:id => "q;"}
+      .key{:id => "q'"}
+      .new_row
+      .shift
+      #qz.key
+      #qx.key
+      #qc.key
+      #qv.key
+      #qb.key
+      #qn.key
+      #qm.key
+      .key{:id => "q,"}
+      .key{:id => "q."}
+      .key{:id => "q/"}
+      .new_row
+      .full_blank_row
+  .columns.large-4.medium-4
+    .keyboard.show-for-medium
+      .title
+        Dvorak
+      .full_blank_row
+      .new_row
+      .tab
+      .key{:id => "d'"}
+      .key{:id => "d,"}
+      .key{:id => "d."}
+      #dp.key
+      #dy.key
+      #df.key
+      #dg.key
+      #dc.key
+      #dr.key
+      #dl.key
+      .key{:id => "d/"}
+      .key{:id => "d="}
+      .key{:id => "d\\"}
+      .new_row
+      .caps_lock
+      #da.key
+      #do.key
+      #de.key
+      #du.key
+      #di.key
+      #dd.key
+      #dh.key
+      #dt.key
+      #dn.key
+      #ds.key
+      #d-.key
+      .new_row
+      .shift
+      .key{:id => "d;"}
+      #dq.key
+      #dj.key
+      #dk.key
+      #dx.key
+      #db.key
+      #dm.key
+      #dw.key
+      #dv.key
+      #dz.key
+      .new_row
+      .full_blank_row
+  .columns.large-4.medium-4
+    .keyboard.show-for-medium
+      .title
+        Colemak
+      .full_blank_row
+      .new_row
+      .tab
+      #cq.key
+      #cw.key
+      #cf.key
+      #cp.key
+      #cg.key
+      #cj.key
+      #cl.key
+      #cu.key
+      #cy.key
+      .key{:id => "c;"}
+      .key{:id => "c["}
+      .key{:id => "c]"}
+      .key{:id => "c\\"}
+      .new_row
+      .caps_lock
+      #ca.key
+      #cr.key
+      #cs.key
+      #ct.key
+      #cd.key
+      #ch.key
+      #cn.key
+      #ce.key
+      #ci.key
+      #co.key
+      .key{:id => "c'"}
+      .new_row
+      .shift
+      #cz.key
+      #cx.key
+      #cc.key
+      #cv.key
+      #cb.key
+      #ck.key
+      #cm.key
+      .key{:id => "c,"}
+      .key{:id => "c."}
+      .key{:id => "c/"}
+      .new_row
+      .full_blank_row
+      .clear
+  .columns
+    #row.comparison_columns.row
+      %h3.columns
+        Letters typed on the:
+      #qrow.columns.large-4.medium-4
+      #drow.columns.large-4.medium-4
+      #crow.columns.large-4.medium-4
+    #hand.comparison_columns.row
+      .columns
+        %h3
+          Times each hand is used:
+      #qsh.columns.large-4.medium-4
+      #dsh.columns.large-4.medium-4
+      #csh.columns.large-4.medium-4
+      .columns
+        %hr
+        %h3
+          Times each hand is used consecutively:
+          %br
+          %small (Not including repeats)
+      #qshc.columns.large-4.medium-4
+      #dshc.columns.large-4.medium-4
+      #cshc.columns.large-4.medium-4
+    #finger.comparison_columns.row
+      .columns
+        %h3
+          Times the same finger is used consecutively:
+          %br
+          %small (Not including repeats)
+      #qsf.columns.large-4.medium-4
+      #dsf.columns.large-4.medium-4
+      #csf.columns.large-4.medium-4

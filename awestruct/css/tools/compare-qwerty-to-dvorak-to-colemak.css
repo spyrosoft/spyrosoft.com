@@ -1,0 +1,49 @@
+textarea {
+	height: 150px;
+}
+
+.keyboard {
+	width: 170px;
+	margin: 0 auto;
+}
+.keyboard .title {
+	text-align: center;
+	font-weight: bold;
+}
+
+.key {
+	background-color: #000066;
+	border: 1px solid #00aa00;
+	margin: 0 1px 1px 0;
+	width: 10px;
+	height: 6px;
+	float: left;
+}
+
+.new_row {
+	clear: both;
+}
+
+.full_blank_row {
+	height: 6px;
+}
+
+.tab {
+	width: 15px;
+	height: 6px;
+	float: left;
+}
+.caps_lock {
+	width: 19px;
+	height: 6px;
+	float: left;
+}
+.shift {
+	width: 25px;
+	height: 6px;
+	float: left;
+}
+
+.comparison_columns {
+	display: none;
+}

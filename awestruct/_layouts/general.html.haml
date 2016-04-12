@@ -8,6 +8,8 @@
     %title #{page.title} - #{site.title}
     %link{href: '/css/foundation.min.css', rel: 'stylesheet'}
     %link{href: '/css/app.css', rel: 'stylesheet'}
+    -if page.style
+      %link{href: page.style, rel: 'stylesheet'}
     %link{href: '/images/spyro-favicon.gif', rel: 'icon', type: 'image/gif'}
     -if page.description
       %meta{name: 'description', content: page.description}
