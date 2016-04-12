@@ -47,146 +47,159 @@ code {
   color: #00ff00;
   border: none; }
 
+/* line 53, sass/app.sass */
+tbody {
+  background-color: transparent; }
+
 /* Spacing */
-/* line 56, sass/app.sass */
+/* line 59, sass/app.sass */
 code {
   display: block;
   margin: 0 1rem 1rem; }
 
-/* line 60, sass/app.sass */
+/* line 63, sass/app.sass */
 .no-padding, .no-spacing {
   padding: 0; }
 
-/* line 63, sass/app.sass */
+/* line 66, sass/app.sass */
 .no-margin, .no-spacing {
   margin: 0 auto; }
 
-/* line 70, sass/app.sass */
+/* line 73, sass/app.sass */
 .small-margin-bottom {
   margin-bottom: 1rem; }
 
-/* line 73, sass/app.sass */
+/* line 76, sass/app.sass */
 header, section, footer {
   max-width: 1200px;
   margin: 0 auto; }
 
-/* line 77, sass/app.sass */
+/* line 80, sass/app.sass */
 section {
   padding-top: 1rem; }
 
-/* line 80, sass/app.sass */
+/* line 83, sass/app.sass */
 .soft-wrap {
   white-space: normal; }
 
 /* General */
-/* line 86, sass/app.sass */
+/* line 89, sass/app.sass */
 body {
   background-image: url("../images/background-spyral-continuous.gif");
   background-position: center top;
   background-repeat: repeat;
   background-attachment: fixed; }
 
-/* line 92, sass/app.sass */
+/* line 95, sass/app.sass */
 ul, ol {
   margin-left: 2rem; }
 
-/* line 95, sass/app.sass */
+/* line 98, sass/app.sass */
 ul li {
   list-style-type: square; }
 
-/* line 98, sass/app.sass */
+/* line 101, sass/app.sass */
 ol li {
   list-style-type: decimal; }
 
-/* line 101, sass/app.sass */
+/* line 104, sass/app.sass */
 code {
   font-family: monospace; }
 
-/* line 104, sass/app.sass */
+/* line 107, sass/app.sass */
 hr {
   border-style: solid;
   border-width: 2px;
   border-top: none; }
 
-/* line 109, sass/app.sass */
+/* line 112, sass/app.sass */
 a:hover {
   text-decoration: none; }
 
-/* line 112, sass/app.sass */
+/* line 115, sass/app.sass */
 .bold {
   font-weight: bold; }
 
-/* line 115, sass/app.sass */
+/* line 118, sass/app.sass */
 .italics {
   font-style: italic; }
 
-/* line 118, sass/app.sass */
+/* line 121, sass/app.sass */
 .nowrap {
   white-space: nowrap; }
 
-/* line 121, sass/app.sass */
+/* line 124, sass/app.sass */
 .inline {
   display: inline; }
 
-/* line 124, sass/app.sass */
+/* line 127, sass/app.sass */
 .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
   float: left; }
 
+/* line 130, sass/app.sass */
+.no-border, .no-border tbody {
+  border: none; }
+
+/* line 133, sass/app.sass */
+.centered {
+  margin-left: auto;
+  margin-right: auto; }
+
 /* Header */
-/* line 131, sass/app.sass */
+/* line 140, sass/app.sass */
 nav.top ul {
   float: right;
   margin: 0 auto; }
 
-/* line 135, sass/app.sass */
+/* line 144, sass/app.sass */
 nav.top li {
   float: left;
   list-style-type: none; }
 
-/* line 139, sass/app.sass */
+/* line 148, sass/app.sass */
 nav.top a {
   font-weight: bold;
   display: block;
   padding: 1rem 1rem;
   text-decoration: none; }
 
-/* line 145, sass/app.sass */
+/* line 154, sass/app.sass */
 nav.top a:hover {
   text-decoration: underline; }
 
 @media screen and (max-width: 39.9375em) {
-  /* line 149, sass/app.sass */
+  /* line 158, sass/app.sass */
   nav.top ul {
     float: none; }
 
-  /* line 151, sass/app.sass */
+  /* line 160, sass/app.sass */
   nav.top li {
     width: 100%;
     text-align: center;
     float: none; } }
 /* Footer */
-/* line 159, sass/app.sass */
+/* line 168, sass/app.sass */
 footer {
   text-align: center;
   padding: 1rem 0; }
-/* line 163, sass/app.sass */
+/* line 172, sass/app.sass */
 footer .trademark {
   font-size: small; }
-/* line 166, sass/app.sass */
+/* line 175, sass/app.sass */
 footer hr {
   margin-top: 0; }
 
 /* Page Specific */
-/* line 173, sass/app.sass */
+/* line 182, sass/app.sass */
 .portfolio .columns .columns {
   text-align: center;
   min-height: 24rem; }
 
-/* line 177, sass/app.sass */
+/* line 186, sass/app.sass */
 .experience .columns .columns {
   min-height: 28rem; }
 
 @media screen and (max-width: 39.9375em) {
-  /* line 181, sass/app.sass */
+  /* line 190, sass/app.sass */
   .portfolio .columns .columns, .experience .columns .columns {
     min-height: auto; } }

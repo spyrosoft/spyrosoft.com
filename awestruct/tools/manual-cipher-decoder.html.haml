@@ -1,0 +1,158 @@
+---
+title: Manual Cipher Decoder
+layout: general
+script: /js/tools/manual-cipher-decoder.js
+---
+%section.row.columns
+  %h2 #{page.title}
+  #manual_cipher_decoder.content
+    %textarea#cipher_input.float-left{:onkeydown => "update_cipher_text();", :onkeyup => "update_cipher_text();"}
+    %textarea#cipher_output.float-right
+    .clear
+    %br/
+    %br/
+    .float-left
+      .item
+        %label{:for => "assign_input_set"} Set:
+        %input#assign_input_set{:maxlength => "1", :onfocus => "this.select();", :onkeyup => "assign_key();select_assignment_input();", :size => "2", :type => "text"}/
+        %label{:for => "assign_input_to"} To:
+        %input#assign_input_to{:maxlength => "1", :onfocus => "this.select();", :onkeyup => "assign_key();select_assignment_input();", :size => "2", :type => "text"}/
+      #set_list_container.item
+        %select#set_list_select{:onchange => "use_set_and_to_list();"}
+          %option{:value => "3"}
+            " -&gt; "
+      #to_list_container.item
+        %select#to_list_select{:onchange => "use_to_and_set_list();"}
+          %option{:value => "3"}
+            " &lt;- "
+      #conflicts_container.item
+        %label{:for => "conflicts_select"} Conflicts:
+        %select#conflicts_select{:onchange => "use_set_and_to_conflicts();"}
+    .float-right
+      .item
+        %input#instructions_button{:onclick => "play_instructions();", :type => "button", :value => "Play Instructions"}/
+    .clear
+    %br/
+    .float-left
+      .item
+        %input#show_save_cipher_button{:onclick => "show_save_cipher();", :type => "button", :value => "Save"}/
+        %input#hide_save_or_load_button{:onclick => "hide_save_or_load_cipher();", :type => "button", :value => "Hide"}/
+        %input#show_load_cipher_button{:onclick => "show_load_cipher();", :type => "button", :value => "Load"}/
+      .item
+        %input#show_current_value_button{:onclick => "toggle_show_current_value();", :type => "button", :value => "Show Current Value"}/
+    .float-right
+      .item{:style => "visibility: hidden;"}
+        %label{:for => "case_sensitive"} Case Sensitive
+        %input#case_sensitive{:onclick => "update_cipher_text();", :type => "checkbox"}/
+      #unknown_container.item
+        %label{:for => "unknown"} Unknowns
+        %input#first_unknown{:onfocus => "this.select();", :onkeyup => "change_unknowns();", :size => "4", :type => "text", :value => "~"}/
+        %input#second_unknown{:onfocus => "this.select();", :onkeyup => "change_unknowns();", :size => "4", :type => "text", :value => "="}/
+    .clear
+    %br/
+    .float-left
+      #save_container.item
+        %label{:for => "save_input"} Save this to load later:
+        %input#save_input{:type => "text"}/
+      #load_container.item
+        %label{:for => "load_input"} Load here:
+        %input#load_input{:onfocus => "this.select();", :onkeyup => "check_load_for_enter(event);", :type => "text"}/
+        %input#load_cipher_value_button{:onclick => "load_cipher_value();", :type => "button", :value => "Load"}/
+        %span#input_comment
+    .float-right
+      #continuous_cycle_container.item
+        %label{:for => "continuous_cycle"} Continuous Cycle
+        %input#continuous_cycle{:onclick => "continuous_cycle();", :type => "checkbox"}/
+        %input#cycle_slower_button{:onclick => "cycle_slower();", :type => "button", :value => "Slower"}/
+        %input#cycle_faster_button{:onclick => "cycle_faster();", :type => "button", :value => "Faster"}/
+    .clear
+  #instructions
+    #instructions_top
+    #instructions_body
+      #instructions_content
+        #instruction_1.instruction
+          %p
+            Welcome!
+          %p
+            This application is designed to make it easy to decode simple one to one ciphers.  For example 'clljbw' actually says 'poodle' when 'c' is 'p', 'l' is 'o', 'j' is 'd', 'b' is 'l', and 'w' is 'e'.
+          %p
+            Allow me to walk you through an example.
+        #instruction_2.instruction
+          %p
+            To begin, I will paste some encoded text into the left text area.
+        #instruction_3.instruction
+          %p
+            Upon inspecting the encrypted text, the only single letter, lower case word is 'a', so we can immediately assume that 'i' represents 'a'.  Type 'i' into 'Set:' and 'a' into 'To:'.
+        #instruction_4.instruction
+          %p
+            Now click on the left drop down menu (below).  The numbers represent the total occurences of each character in the encrypted text.  The letter 'e' is WAY more common than any of the other letters in English.  Look at the very top: 'o' occurs 40 times and the next one down occurs 25.  It's almost certain that 'o' represents 'e'.  Click on it and you will be prompted to change the 'o' value.  Set it to 'e'.  Tada!
+        #instruction_5.instruction
+          %p
+            Now you can start to look for definite ways to complete a word.  Do you see any?  I notice that '~ee' is almost there.  'fee', 'wee', 'bee', 'see'...  'see' is common enough that it will probably end up being correct.  To easily find out which letter we want to set to 's', quickly toggle the 'Show Current Value' button.  The letter 'j' pops up.  'j' -&gt; 's'.  When the instructions are off, the hotkey to toggle 'Show Current Value' is Escape then 's'.
+        #instruction_6.instruction
+          %p
+            What's next?  's~e' is almost definitely 'she'.  'd' -&gt; 'h'.  Now we're getting somewhere!
+        #instruction_7.instruction
+          %p
+            'he=e' has got to be 'here'.  'y' -&gt; 'r'.
+        #instruction_8.instruction
+          %p
+            '~he' could be be one thing since 's' is taken.  'g' -&gt; 's'.
+        #instruction_9.instruction
+          %p
+            How about '~t'?  'a' is already being used, so it must be 'it'.  's' -&gt; 'i'.
+        #instruction_10.instruction
+          %p
+            I'm going to intentionally make a mistake here to explain how identify when you have made an error.
+          %p
+            let's turn '=etter' into 'wetter'.  'x' -&gt; 'w'.
+        #instruction_11.instruction
+          %p
+            '~hat' can only be 'What'.  'b' -&gt; 'w'.
+        #instruction_12.instruction
+          %p
+            Now there's a new drop down menu!  At least one of the two 'Conflicts:' items is incorrect.  In this case 'x' -&gt; 'w' makes less sense.  Click that option and delete the 'w' value.  Notice how 'wetter' becomes '~etter' again.  'x' -&gt; 'b'.
+        #instruction_13.instruction
+          %p
+            'ri~ht' can only be 'right'.  'r' -&gt; 'g'.
+        #instruction_14.instruction
+          %p
+            'What right ha=e =~=' looks like 'What right have =~='.  To me 'What right have you' jumps out, and it's fun to take a leap and guess once in a while.  'n' -&gt; 'v', 'w' -&gt; 'y', 'p' -&gt; 'o', &amp; 'a' -&gt; 'u'.
+        #instruction_15.instruction
+          %p
+            Yep, that all seems to have worked!  This is really starting to look like English.
+          %p
+            'bro=e' seems an awful lot like 'broke'.  'z' -&gt; 'k'.
+        #instruction_16.instruction
+          %p
+            I've been holding off on 'a=ter' in case it might have been 'alter', but it really looks like 'after' now.  'e' -&gt; 'f'.
+        #instruction_17.instruction
+          %p
+            Yep.  Next, looking at 'Show Current Value' we can see that 'frow=' and 'begi=' have the same final letter.  'h' -&gt; 'n'.
+        #instruction_18.instruction
+          %p
+            'an='.  'f' -&gt; 'd'.
+        #instruction_19.instruction
+          %p
+            '=inute'.  'v' -&gt; 'm'.  '=onversation'.  't' -&gt; 'c'.
+        #instruction_20.instruction
+          %p
+            'Ridicu=ous!'.  'u' -&gt; 'l'.
+        #instruction_21.instruction
+          %p
+            '=ueen'.  'k' -&gt; 'q'.  'sub=ect'.  'l' -&gt; 'j'.
+        #instruction_22.instruction
+          %p
+            'e~amination'.  'c' -&gt; 'x'.  And the last three are the same letter.  'q' -&gt; 'p'.
+        #instruction_23.instruction
+          %p
+            That was fun!!  Wasn't that fast?
+          %p
+            If at any point you want to save your progress and come back to it, click the save button, copy that string, and save it somewhere on your hard drive.  Later you can open your browser again and paste it into the load box and you are immediately back to where you were!
+          %p
+            Have fun decoding ciphers!!
+        .center.button_wrapper
+          %input#last_instruction_button{:onclick => "last_instruction();", :type => "button", :value => "Previous"}/
+          %input#next_instruction_button{:onclick => "next_instruction();", :type => "button", :value => "Next"}/
+          %input#close_instructions_button{:onclick => "stop_instructions();", :type => "button", :value => "Close"}/
+    #instructions_bottom

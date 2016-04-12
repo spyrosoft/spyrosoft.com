@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Manual Cipher Decoder - SpyroSoft</title>
+    <link href="/css/foundation.min.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
+  </head>
+  <body>
+    <header>
+      <nav class="top">
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/contact.html">Contact</a>
+          </li>
+          <li>
+            <a href="/about.html">About</a>
+          </li>
+          <li>
+            <a href="/tools.html">Tools</a>
+          </li>
+          <li>
+            <a href="/blog.html">Blog</a>
+          </li>
+        </ul>
+      </nav>
+      <hr class="no-spacing">
+    </header>
+    <section class="row columns">
+      <h2>Manual Cipher Decoder</h2>
+      <div class="content" id="manual_cipher_decoder">
+        <textarea class="float-left" id="cipher_input" onkeydown="update_cipher_text();" onkeyup="update_cipher_text();"></textarea>
+        <textarea class="float-right" id="cipher_output"></textarea>
+        <div class="clear"></div>
+        <br>
+        <br>
+        <div class="float-left">
+          <div class="item">
+            <label for="assign_input_set">Set:</label>
+            <input id="assign_input_set" maxlength="1" onfocus="this.select();" onkeyup="assign_key();select_assignment_input();" size="2" type="text">
+            <label for="assign_input_to">To:</label>
+            <input id="assign_input_to" maxlength="1" onfocus="this.select();" onkeyup="assign_key();select_assignment_input();" size="2" type="text">
+          </div>
+          <div class="item" id="set_list_container">
+            <select id="set_list_select" onchange="use_set_and_to_list();">
+              <option value="3">
+                " -&gt; "
+              </option>
+            </select>
+          </div>
+          <div class="item" id="to_list_container">
+            <select id="to_list_select" onchange="use_to_and_set_list();">
+              <option value="3">
+                " &lt;- "
+              </option>
+            </select>
+          </div>
+          <div class="item" id="conflicts_container">
+            <label for="conflicts_select">Conflicts:</label>
+            <select id="conflicts_select" onchange="use_set_and_to_conflicts();"></select>
+          </div>
+        </div>
+        <div class="float-right">
+          <div class="item">
+            <input id="instructions_button" onclick="play_instructions();" type="button" value="Play Instructions">
+          </div>
+        </div>
+        <div class="clear"></div>
+        <br>
+        <div class="float-left">
+          <div class="item">
+            <input id="show_save_cipher_button" onclick="show_save_cipher();" type="button" value="Save">
+            <input id="hide_save_or_load_button" onclick="hide_save_or_load_cipher();" type="button" value="Hide">
+            <input id="show_load_cipher_button" onclick="show_load_cipher();" type="button" value="Load">
+          </div>
+          <div class="item">
+            <input id="show_current_value_button" onclick="toggle_show_current_value();" type="button" value="Show Current Value">
+          </div>
+        </div>
+        <div class="float-right">
+          <div class="item" style="visibility: hidden;">
+            <label for="case_sensitive">Case Sensitive</label>
+            <input id="case_sensitive" onclick="update_cipher_text();" type="checkbox">
+          </div>
+          <div class="item" id="unknown_container">
+            <label for="unknown">Unknowns</label>
+            <input id="first_unknown" onfocus="this.select();" onkeyup="change_unknowns();" size="4" type="text" value="~">
+            <input id="second_unknown" onfocus="this.select();" onkeyup="change_unknowns();" size="4" type="text" value="=">
+          </div>
+        </div>
+        <div class="clear"></div>
+        <br>
+        <div class="float-left">
+          <div class="item" id="save_container">
+            <label for="save_input">Save this to load later:</label>
+            <input id="save_input" type="text">
+          </div>
+          <div class="item" id="load_container">
+            <label for="load_input">Load here:</label>
+            <input id="load_input" onfocus="this.select();" onkeyup="check_load_for_enter(event);" type="text">
+            <input id="load_cipher_value_button" onclick="load_cipher_value();" type="button" value="Load">
+            <span id="input_comment"></span>
+          </div>
+        </div>
+        <div class="float-right">
+          <div class="item" id="continuous_cycle_container">
+            <label for="continuous_cycle">Continuous Cycle</label>
+            <input id="continuous_cycle" onclick="continuous_cycle();" type="checkbox">
+            <input id="cycle_slower_button" onclick="cycle_slower();" type="button" value="Slower">
+            <input id="cycle_faster_button" onclick="cycle_faster();" type="button" value="Faster">
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div id="instructions">
+        <div id="instructions_top"></div>
+        <div id="instructions_body">
+          <div id="instructions_content">
+            <div class="instruction" id="instruction_1">
+              <p>
+                Welcome!
+              </p>
+              <p>
+                This application is designed to make it easy to decode simple one to one ciphers.  For example 'clljbw' actually says 'poodle' when 'c' is 'p', 'l' is 'o', 'j' is 'd', 'b' is 'l', and 'w' is 'e'.
+              </p>
+              <p>
+                Allow me to walk you through an example.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_2">
+              <p>
+                To begin, I will paste some encoded text into the left text area.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_3">
+              <p>
+                Upon inspecting the encrypted text, the only single letter, lower case word is 'a', so we can immediately assume that 'i' represents 'a'.  Type 'i' into 'Set:' and 'a' into 'To:'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_4">
+              <p>
+                Now click on the left drop down menu (below).  The numbers represent the total occurences of each character in the encrypted text.  The letter 'e' is WAY more common than any of the other letters in English.  Look at the very top: 'o' occurs 40 times and the next one down occurs 25.  It's almost certain that 'o' represents 'e'.  Click on it and you will be prompted to change the 'o' value.  Set it to 'e'.  Tada!
+              </p>
+            </div>
+            <div class="instruction" id="instruction_5">
+              <p>
+                Now you can start to look for definite ways to complete a word.  Do you see any?  I notice that '~ee' is almost there.  'fee', 'wee', 'bee', 'see'...  'see' is common enough that it will probably end up being correct.  To easily find out which letter we want to set to 's', quickly toggle the 'Show Current Value' button.  The letter 'j' pops up.  'j' -&gt; 's'.  When the instructions are off, the hotkey to toggle 'Show Current Value' is Escape then 's'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_6">
+              <p>
+                What's next?  's~e' is almost definitely 'she'.  'd' -&gt; 'h'.  Now we're getting somewhere!
+              </p>
+            </div>
+            <div class="instruction" id="instruction_7">
+              <p>
+                'he=e' has got to be 'here'.  'y' -&gt; 'r'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_8">
+              <p>
+                '~he' could be be one thing since 's' is taken.  'g' -&gt; 's'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_9">
+              <p>
+                How about '~t'?  'a' is already being used, so it must be 'it'.  's' -&gt; 'i'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_10">
+              <p>
+                I'm going to intentionally make a mistake here to explain how identify when you have made an error.
+              </p>
+              <p>
+                let's turn '=etter' into 'wetter'.  'x' -&gt; 'w'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_11">
+              <p>
+                '~hat' can only be 'What'.  'b' -&gt; 'w'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_12">
+              <p>
+                Now there's a new drop down menu!  At least one of the two 'Conflicts:' items is incorrect.  In this case 'x' -&gt; 'w' makes less sense.  Click that option and delete the 'w' value.  Notice how 'wetter' becomes '~etter' again.  'x' -&gt; 'b'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_13">
+              <p>
+                'ri~ht' can only be 'right'.  'r' -&gt; 'g'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_14">
+              <p>
+                'What right ha=e =~=' looks like 'What right have =~='.  To me 'What right have you' jumps out, and it's fun to take a leap and guess once in a while.  'n' -&gt; 'v', 'w' -&gt; 'y', 'p' -&gt; 'o', &amp; 'a' -&gt; 'u'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_15">
+              <p>
+                Yep, that all seems to have worked!  This is really starting to look like English.
+              </p>
+              <p>
+                'bro=e' seems an awful lot like 'broke'.  'z' -&gt; 'k'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_16">
+              <p>
+                I've been holding off on 'a=ter' in case it might have been 'alter', but it really looks like 'after' now.  'e' -&gt; 'f'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_17">
+              <p>
+                Yep.  Next, looking at 'Show Current Value' we can see that 'frow=' and 'begi=' have the same final letter.  'h' -&gt; 'n'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_18">
+              <p>
+                'an='.  'f' -&gt; 'd'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_19">
+              <p>
+                '=inute'.  'v' -&gt; 'm'.  '=onversation'.  't' -&gt; 'c'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_20">
+              <p>
+                'Ridicu=ous!'.  'u' -&gt; 'l'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_21">
+              <p>
+                '=ueen'.  'k' -&gt; 'q'.  'sub=ect'.  'l' -&gt; 'j'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_22">
+              <p>
+                'e~amination'.  'c' -&gt; 'x'.  And the last three are the same letter.  'q' -&gt; 'p'.
+              </p>
+            </div>
+            <div class="instruction" id="instruction_23">
+              <p>
+                That was fun!!  Wasn't that fast?
+              </p>
+              <p>
+                If at any point you want to save your progress and come back to it, click the save button, copy that string, and save it somewhere on your hard drive.  Later you can open your browser again and paste it into the load box and you are immediately back to where you were!
+              </p>
+              <p>
+                Have fun decoding ciphers!!
+              </p>
+            </div>
+            <div class="center button_wrapper">
+              <input id="last_instruction_button" onclick="last_instruction();" type="button" value="Previous">
+              <input id="next_instruction_button" onclick="next_instruction();" type="button" value="Next">
+              <input id="close_instructions_button" onclick="stop_instructions();" type="button" value="Close">
+            </div>
+          </div>
+        </div>
+        <div id="instructions_bottom"></div>
+      </div>
+    </section>
+    <footer>
+      <hr>
+      <div class="copyright">
+        <p>
+          Copyright © by SpyroSoft
+        </p>
+        <p class="trademark">
+          SpyroSoft™ is a trademark wholly owned by Bennett Roesch
+        </p>
+      </div>
+    </footer>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/vendor/what-input.min.js"></script>
+    <script src="/js/foundation.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/tools/manual-cipher-decoder.js"></script>
+  </body>
+</html>
