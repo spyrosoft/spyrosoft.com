@@ -1,0 +1,74 @@
+---
+title: Unicode Decoder
+layout: general
+script: /js/tools/unicode-lookup.js
+---
+%section
+  .row.columns
+    %h2 #{page.title}
+  .row
+    .columns.large-3.medium-6
+      %label
+        Characters:
+        %input#text_input{onkeyup: 'text_input_changed(event)', type: 'text'}
+    .columns.large-3.medium-6
+      %label
+        Decimal Numbers:
+        %input#number_input{onkeyup: 'number_input_changed(event)', type: 'text'}
+    .columns.large-3.medium-6
+      %label
+        Start from:
+        %input#start_range_input{onkeyup: 'start_range_text_changed(event)', type: 'text'}
+    .columns.large-3.medium-6
+      %label
+        Limit:
+        %input#limit_range_input{onkeyup: 'limit_range_text_changed(event)', type: 'text'}
+  .row
+    .columns.large-6.medium-6
+      %label
+        Font Size:
+        %select#font_size{onchange: 'change_font_size(this.value)',}
+          %option{value: '8'}
+            8
+          %option{value: '9'}
+            9
+          %option{value: '10'}
+            10
+          %option{value: '11'}
+            11
+          %option{value: '12'}
+            12
+          %option{value: '14'}
+            14
+          %option{value: '16'}
+            16
+          %option{value: '20'}
+            20
+          %option{value: '26'}
+            26
+          %option{value: '30'}
+            30
+          %option{value: '40'}
+            40
+          %option{value: '60'}
+            60
+          %option{value: '80'}
+            80
+          %option{value: '100'}
+            100
+          %option{value: '120'}
+            120
+          %option{value: '140'}
+            140
+          %option{value: '300'}
+            300
+    .columns.large-6.medium-6
+      %label
+        Font Family
+        %input{onkeyup: 'change_font();', type: 'text', id: 'font-family'}
+    .columns.text-center
+      #message
+      #display_output
+      #next_and_last_buttons.display-none
+        %input.button{onclick: 'display_range_last()', type: 'button', value: '< Last'}
+        %input#next_button.button{onclick: 'display_range_next()', type: 'button', value: 'Next >'}
