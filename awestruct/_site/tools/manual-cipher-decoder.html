@@ -33,237 +33,187 @@
       </nav>
       <hr class="no-spacing">
     </header>
-    <section class="row columns">
-      <h2>Manual Cipher Decoder</h2>
-      <div class="content" id="manual_cipher_decoder">
-        <textarea class="float-left" id="cipher_input" onkeydown="update_cipher_text();" onkeyup="update_cipher_text();"></textarea>
-        <textarea class="float-right" id="cipher_output"></textarea>
-        <div class="clear"></div>
-        <br>
-        <br>
-        <div class="float-left">
-          <div class="item">
-            <label for="assign_input_set">Set:</label>
-            <input id="assign_input_set" maxlength="1" onfocus="this.select();" onkeyup="assign_key();select_assignment_input();" size="2" type="text">
-            <label for="assign_input_to">To:</label>
-            <input id="assign_input_to" maxlength="1" onfocus="this.select();" onkeyup="assign_key();select_assignment_input();" size="2" type="text">
+    <section>
+      <div class="row">
+        <div class="columns">
+          <h2>Manual Cipher Decoder</h2>
+        </div>
+        <div class="columns large-6 medium-6">
+          <textarea id="cipher-input" rows="12"></textarea>
+        </div>
+        <div class="columns large-6 medium-6">
+          <textarea id="cipher-output" rows="12"></textarea>
+        </div>
+        <div class="columns large-3 medium-4 small-6">
+          <div class="row">
+            <div class="columns large-6 medium-6 small-6">
+              <label>
+                Set:
+                <input id="assignment-set" maxlength="1" size="2" type="text">
+              </label>
+            </div>
+            <div class="columns large-6 medium-6 small-6">
+              <label>
+                To:
+                <input id="assignment-to" maxlength="1" size="2" type="text">
+              </label>
+            </div>
           </div>
-          <div class="item" id="set_list_container">
-            <select id="set_list_select" onchange="use_set_and_to_list();">
+        </div>
+        <div class="columns large-3 medium-4 small-6">
+          <label>
+            Assignments:
+            <select id="assignments-select">
               <option value="3">
-                " -&gt; "
+                ' -&gt; '
               </option>
             </select>
-          </div>
-          <div class="item" id="to_list_container">
-            <select id="to_list_select" onchange="use_to_and_set_list();">
+          </label>
+        </div>
+        <div class="columns large-3 medium-4 small-6">
+          <label>
+            Lookup:
+            <select id="to_list_select">
               <option value="3">
-                " &lt;- "
+                ' &lt;- '
               </option>
             </select>
-          </div>
-          <div class="item" id="conflicts_container">
-            <label for="conflicts_select">Conflicts:</label>
-            <select id="conflicts_select" onchange="use_set_and_to_conflicts();"></select>
+          </label>
+        </div>
+        <div class="columns large-3 medium-4 small-6">
+          <label>
+            Conflicts:
+            <select id="conflicts_select"></select>
+          </label>
+        </div>
+        <div class="columns large-3 medium-4 small-6">
+          <label for="unknown">Unknowns:</label>
+          <div class="row">
+            <div class="columns large-6 medium-6 small-6">
+              <input id="first_unknown" size="4" type="text" value="~">
+            </div>
+            <div class="columns large-6 medium-6 small-6">
+              <input id="second_unknown" size="4" type="text" value="=">
+            </div>
           </div>
         </div>
-        <div class="float-right">
-          <div class="item">
-            <input id="instructions_button" onclick="play_instructions();" type="button" value="Play Instructions">
-          </div>
-        </div>
-        <div class="clear"></div>
-        <br>
-        <div class="float-left">
-          <div class="item">
-            <input id="show_save_cipher_button" onclick="show_save_cipher();" type="button" value="Save">
-            <input id="hide_save_or_load_button" onclick="hide_save_or_load_cipher();" type="button" value="Hide">
-            <input id="show_load_cipher_button" onclick="show_load_cipher();" type="button" value="Load">
-          </div>
-          <div class="item">
-            <input id="show_current_value_button" onclick="toggle_show_current_value();" type="button" value="Show Current Value">
-          </div>
-        </div>
-        <div class="float-right">
-          <div class="item" style="visibility: hidden;">
-            <label for="case_sensitive">Case Sensitive</label>
-            <input id="case_sensitive" onclick="update_cipher_text();" type="checkbox">
-          </div>
-          <div class="item" id="unknown_container">
-            <label for="unknown">Unknowns</label>
-            <input id="first_unknown" onfocus="this.select();" onkeyup="change_unknowns();" size="4" type="text" value="~">
-            <input id="second_unknown" onfocus="this.select();" onkeyup="change_unknowns();" size="4" type="text" value="=">
-          </div>
-        </div>
-        <div class="clear"></div>
-        <br>
-        <div class="float-left">
-          <div class="item" id="save_container">
-            <label for="save_input">Save this to load later:</label>
+        <div class="columns large-3 medium-4 small-6">
+          <label>
+            Save/Load Assignments:
             <input id="save_input" type="text">
-          </div>
-          <div class="item" id="load_container">
-            <label for="load_input">Load here:</label>
-            <input id="load_input" onfocus="this.select();" onkeyup="check_load_for_enter(event);" type="text">
-            <input id="load_cipher_value_button" onclick="load_cipher_value();" type="button" value="Load">
-            <span id="input_comment"></span>
-          </div>
+          </label>
+          <span id="input_comment"></span>
         </div>
-        <div class="float-right">
-          <div class="item" id="continuous_cycle_container">
-            <label for="continuous_cycle">Continuous Cycle</label>
-            <input id="continuous_cycle" onclick="continuous_cycle();" type="checkbox">
-            <input id="cycle_slower_button" onclick="cycle_slower();" type="button" value="Slower">
-            <input id="cycle_faster_button" onclick="cycle_faster();" type="button" value="Faster">
-          </div>
-        </div>
-        <div class="clear"></div>
       </div>
-      <div id="instructions">
-        <div id="instructions_top"></div>
-        <div id="instructions_body">
-          <div id="instructions_content">
-            <div class="instruction" id="instruction_1">
-              <p>
-                Welcome!
-              </p>
-              <p>
-                This application is designed to make it easy to decode simple one to one ciphers.  For example 'clljbw' actually says 'poodle' when 'c' is 'p', 'l' is 'o', 'j' is 'd', 'b' is 'l', and 'w' is 'e'.
-              </p>
-              <p>
-                Allow me to walk you through an example.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_2">
-              <p>
-                To begin, I will paste some encoded text into the left text area.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_3">
-              <p>
-                Upon inspecting the encrypted text, the only single letter, lower case word is 'a', so we can immediately assume that 'i' represents 'a'.  Type 'i' into 'Set:' and 'a' into 'To:'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_4">
-              <p>
-                Now click on the left drop down menu (below).  The numbers represent the total occurences of each character in the encrypted text.  The letter 'e' is WAY more common than any of the other letters in English.  Look at the very top: 'o' occurs 40 times and the next one down occurs 25.  It's almost certain that 'o' represents 'e'.  Click on it and you will be prompted to change the 'o' value.  Set it to 'e'.  Tada!
-              </p>
-            </div>
-            <div class="instruction" id="instruction_5">
-              <p>
-                Now you can start to look for definite ways to complete a word.  Do you see any?  I notice that '~ee' is almost there.  'fee', 'wee', 'bee', 'see'...  'see' is common enough that it will probably end up being correct.  To easily find out which letter we want to set to 's', quickly toggle the 'Show Current Value' button.  The letter 'j' pops up.  'j' -&gt; 's'.  When the instructions are off, the hotkey to toggle 'Show Current Value' is Escape then 's'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_6">
-              <p>
-                What's next?  's~e' is almost definitely 'she'.  'd' -&gt; 'h'.  Now we're getting somewhere!
-              </p>
-            </div>
-            <div class="instruction" id="instruction_7">
-              <p>
-                'he=e' has got to be 'here'.  'y' -&gt; 'r'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_8">
-              <p>
-                '~he' could be be one thing since 's' is taken.  'g' -&gt; 's'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_9">
-              <p>
-                How about '~t'?  'a' is already being used, so it must be 'it'.  's' -&gt; 'i'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_10">
-              <p>
-                I'm going to intentionally make a mistake here to explain how identify when you have made an error.
-              </p>
-              <p>
-                let's turn '=etter' into 'wetter'.  'x' -&gt; 'w'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_11">
-              <p>
-                '~hat' can only be 'What'.  'b' -&gt; 'w'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_12">
-              <p>
-                Now there's a new drop down menu!  At least one of the two 'Conflicts:' items is incorrect.  In this case 'x' -&gt; 'w' makes less sense.  Click that option and delete the 'w' value.  Notice how 'wetter' becomes '~etter' again.  'x' -&gt; 'b'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_13">
-              <p>
-                'ri~ht' can only be 'right'.  'r' -&gt; 'g'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_14">
-              <p>
-                'What right ha=e =~=' looks like 'What right have =~='.  To me 'What right have you' jumps out, and it's fun to take a leap and guess once in a while.  'n' -&gt; 'v', 'w' -&gt; 'y', 'p' -&gt; 'o', &amp; 'a' -&gt; 'u'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_15">
-              <p>
-                Yep, that all seems to have worked!  This is really starting to look like English.
-              </p>
-              <p>
-                'bro=e' seems an awful lot like 'broke'.  'z' -&gt; 'k'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_16">
-              <p>
-                I've been holding off on 'a=ter' in case it might have been 'alter', but it really looks like 'after' now.  'e' -&gt; 'f'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_17">
-              <p>
-                Yep.  Next, looking at 'Show Current Value' we can see that 'frow=' and 'begi=' have the same final letter.  'h' -&gt; 'n'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_18">
-              <p>
-                'an='.  'f' -&gt; 'd'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_19">
-              <p>
-                '=inute'.  'v' -&gt; 'm'.  '=onversation'.  't' -&gt; 'c'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_20">
-              <p>
-                'Ridicu=ous!'.  'u' -&gt; 'l'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_21">
-              <p>
-                '=ueen'.  'k' -&gt; 'q'.  'sub=ect'.  'l' -&gt; 'j'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_22">
-              <p>
-                'e~amination'.  'c' -&gt; 'x'.  And the last three are the same letter.  'q' -&gt; 'p'.
-              </p>
-            </div>
-            <div class="instruction" id="instruction_23">
-              <p>
-                That was fun!!  Wasn't that fast?
-              </p>
-              <p>
-                If at any point you want to save your progress and come back to it, click the save button, copy that string, and save it somewhere on your hard drive.  Later you can open your browser again and paste it into the load box and you are immediately back to where you were!
-              </p>
-              <p>
-                Have fun decoding ciphers!!
-              </p>
-            </div>
-            <div class="center button_wrapper">
-              <input id="last_instruction_button" onclick="last_instruction();" type="button" value="Previous">
-              <input id="next_instruction_button" onclick="next_instruction();" type="button" value="Next">
-              <input id="close_instructions_button" onclick="stop_instructions();" type="button" value="Close">
-            </div>
-          </div>
+      <div class="row">
+        <div class="columns">
+          <input class="button" id="show_current_value_button" type="button" value="Show Current Value">
         </div>
-        <div id="instructions_bottom"></div>
+        <div class="columns">
+          <input class="button" id="instructions_button" type="button" value="Instructions">
+          <input class="button" id="cycle_slower_button" type="button" value="Animate Slower">
+          <input class="button" id="cycle_faster_button" type="button" value="Animate Faster">
+        </div>
+        <div class="columns large-4 medium-6">
+          <label for="case_sensitive">
+            Case Sensitive
+            <input id="case_sensitive" type="checkbox">
+          </label>
+          <label>
+            Animate Unknowns:
+            <input id="continuous_cycle" type="checkbox">
+          </label>
+        </div>
+        <div class="columns display-none" id="instructions">
+          <p>
+            Welcome!
+          </p>
+          <p>
+            This application is designed to make it easy to decode simple one to one ciphers. For example 'clljbw' actually says 'poodle' when 'c' is 'p', 'l' is 'o', 'j' is 'd', 'b' is 'l', and 'w' is 'e'.
+          </p>
+          <p>
+            Allow me to walk you through an example.
+          </p>
+          <p>
+            To begin, paste the following encoded text into the left text area:
+          </p>
+          <code>'Ysfstaupaj!' tysof gdo Kaooh. 'Bdw, fph'g wpa joo, tdsuf...' doyo jdo xypzo pee bsgd i eypbh, ihf, iegoy gdshzshr epy i vshago, jaffohuw tdihrof gdo jaxlotg pe gdo tphnoyjigsph. 'Bdig fp wpa voih xw "Se wpa yoiuuw iyo i Kaooh"? Bdig ysrdg dino wpa gp tiuu wpayjoue jp? Wpa tih'g xo i Kaooh, wpa zhpb, gsuu wpa'no qijjof gdo qypqoy ocivshigsph. Ihf gdo jpphoy bo xorsh sg, gdo xoggoy.'</code>
+          <p>
+            Upon inspecting the encrypted text, the only single letter, lower case word is 'a', so we can immediately assume that 'i' represents 'a'. Type 'i' into 'Set:' and 'a' into 'To:'.
+          </p>
+          <p>
+            Now click on the Assignments select menu. The numbers represent the total occurences of each character in the encrypted text. The letter 'e' is WAY more common than any of the other letters in English. Look at the very top: 'o' occurs 40 times and the next one down occurs 25. It's almost certain that 'o' represents 'e'. Click on it and you will be prompted to change the 'o' value. Set it to 'e'. Tada!
+          </p>
+          <p>
+            Now you can start to look for definite ways to complete a word. Do you see any?  I notice that '~ee' is almost there. 'fee', 'wee', 'bee', 'see'... 'see' is common enough that it will probably end up being correct. To easily find out which letter we want to set to 's', toggle the Toggle Unknowns button on. The letter 'j' appears. We're done with the unknowns for now, let 's toggle it back off again. 'j' -&gt; 's'. The hotkey to Toggle Unknowns is Escape then 's'.
+          </p>
+          <p>
+            What's next?  's~e' is almost definitely 'she'. 'd' -&gt; 'h'. Now we're getting somewhere!
+          </p>
+          <p>
+            'he=e' has got to be 'here'. 'y' -&gt; 'r'.
+          </p>
+          <p>
+            '~he' could be be one thing since 's' is taken. 'g' -&gt; 's'.
+          </p>
+          <p>
+            How about '~t'?  'a' is already being used, so it must be 'it'. 's' -&gt; 'i'.
+          </p>
+          <p>
+            I'm going to intentionally make a mistake here to explain how identify when you have made an error.
+          </p>
+          <p>
+            Let's turn '=etter' into 'wetter'. 'x' -&gt; 'w'.
+          </p>
+          <p>
+            '~hat' can only be 'What'. 'b' -&gt; 'w'.
+          </p>
+          <p>
+            Now the 'Conflicts:' select menu has something in it. One of the listed items is incorrect. In this case 'x' -&gt; 'w' makes less sense. Click that option and delete the 'w' value. Notice how 'wetter' becomes '~etter' again. 'x' -&gt; 'b'.
+          </p>
+          <p>
+            'ri~ht' can only be 'right'. 'r' -&gt; 'g'.
+          </p>
+          <p>
+            'What right ha=e =~=' looks like 'What right have =~='. To me 'What right have you' jumps out, and it's fun to take a leap and guess once in a while. 'n' -&gt; 'v', 'w' -&gt; 'y', 'p' -&gt; 'o', &amp; 'a' -&gt; 'u'.
+          </p>
+          <p>
+            Yep, that all seems to have worked!  This is really starting to look like English.
+          </p>
+          <p>
+            'bro=e' seems an awful lot like 'broke'. 'z' -&gt; 'k'.
+          </p>
+          <p>
+            I've been holding off on 'a=ter' in case it might have been 'alter', but it really looks like 'after' now. 'e' -&gt; 'f'.
+          </p>
+          <p>
+            Yep. Next, looking at 'Show Current Value' we can see that 'frow=' and 'begi=' have the same final letter. 'h' -&gt; 'n'.
+          </p>
+          <p>
+            'an='. 'f' -&gt; 'd'.
+          </p>
+          <p>
+            '=inute'. 'v' -&gt; 'm'. '=onversation'. 't' -&gt; 'c'.
+          </p>
+          <p>
+            'Ridicu=ous!'. 'u' -&gt; 'l'.
+          </p>
+          <p>
+            '=ueen'. 'k' -&gt; 'q'. 'sub=ect'. 'l' -&gt; 'j'.
+          </p>
+          <p>
+            'e~amination'. 'c' -&gt; 'x'. And the last three are the same letter. 'q' -&gt; 'p'.
+          </p>
+          <p>
+            And we're done!
+          </p>
+          <p>
+            If at any point you want to save the progress you have made with the assignments and come back to it later copy that text in the Save/Load Assignments text box and save it somewhere locally. Later you can open your browser again, paste it back in, and you are immediately back to where you were!
+          </p>
+          <p>
+            Have fun decoding ciphers.
+          </p>
+        </div>
       </div>
     </section>
     <footer>
