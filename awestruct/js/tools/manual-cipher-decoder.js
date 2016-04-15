@@ -1,39 +1,56 @@
-var assignment_set_values = "\n ,.?!'\"";
-var assignment_to_values = "\n ,.?!'\"";
+var assignment_set_values = '\n ,.?!\'"';
+var assignment_to_values = '\n ,.?!\'"';
 var frequency;
-var cipher_conflicts = "";
-var key_conflicts = "";
-var first_unknown = "~";
-var previous_first_unknown = "~";
-var second_unknown = "=";
-var previous_second_unknown = "=";
+var cipher_conflicts = '';
+var key_conflicts = '';
+var first_unknown = '~';
+var previous_first_unknown = '~';
+var second_unknown = '=';
+var previous_second_unknown = '=';
 var current_unknown = first_unknown;
 var next_unknown = second_unknown;
 var unknown_index = 0;
 
-var previous_input = "";
+var previous_input = '';
 
-var previous_assignment_set = "";
-var previous_assignment_to = "";
+var previous_assignment_set = '';
+var previous_assignment_to = '';
 
 var show_current_value = false;
 
-var continuous_cycle_values = "-\\|/";
+var continuous_cycle_values = '-\\|/';
 var continuous_cycle_index = 0;
 var continuous_cycle_timeout;
 var continuous_cycle_time = 200;
 
 var escape_pressed = false;
 
+function update_cipher_text()
+{
+	var cipher_input = document.getElementById( 'cipher-input' ).value;
+	var cipher_output = '';
+	unknown_index = 0;
+	current_unknown = first_unknown;
+	next_unknown = second_unknown;
+	frequency = new frequency_tracker;
+	for (var counter = 0; counter < cipher_input.length; counter++) {
+		cipher_output += get_cipher_translation(cipher_input.charAt(counter));
+		add_to_frequency(cipher_input.charAt(counter).toLowerCase());
+		unknown_index++;
+	}
+	generate_set_lists();
+	document.getElementById( 'cipher-output' ).value = cipher_output;
+}
+
 function assign_key()
 {
-	var cipher_input = document.getElementById("assignment-set").value;
-	var key_input = document.getElementById("assignment-to").value;
-	if (cipher_input == "" && key_input == "") {
+	var cipher_input = document.getElementById( 'assignment-set' ).value;
+	var key_input = document.getElementById( 'assignment-to' ).value;
+	if (cipher_input == '' && key_input == '' ) {
 		return;
-	} else if (cipher_input == "") {
+	} else if (cipher_input == '' ) {
 		return;
-	} else if (key_input == "") {
+	} else if (key_input == '' ) {
 		remove_cipher_value(cipher_input);
 	} else {
 		remove_cipher_value(cipher_input);
@@ -63,42 +80,25 @@ function remove_cipher_value(value)
 	return false;
 }
 
-function update_cipher_text()
-{
-	var cipher_input = document.getElementById("cipher-input").value;
-	var cipher_output = "";
-	unknown_index = 0;
-	current_unknown = first_unknown;
-	next_unknown = second_unknown;
-	frequency = new frequency_tracker;
-	for (var counter = 0; counter < cipher_input.length; counter++) {
-		cipher_output += get_cipher_translation(cipher_input.charAt(counter));
-		add_to_frequency(cipher_input.charAt(counter).toLowerCase());
-		unknown_index++;
-	}
-	generate_set_lists();
-	document.getElementById("cipher-output").value = cipher_output;
-}
-
 function show_matching_value(key_value)
 {
 	var key_index = assignment_to_values.indexOf(key_value);
 	if (key_index != -1) {
-		document.getElementById("assignment-set").value = assignment_set_values.charAt(key_index);
-		document.getElementById("assignment-to").value = key_value;
+		document.getElementById( 'assignment-set' ).value = assignment_set_values.charAt(key_index);
+		document.getElementById( 'assignment-to' ).value = key_value;
 	} else {
-		document.getElementById("assignment-set").value = "";
-		document.getElementById("assignment-to").value = "";
+		document.getElementById( 'assignment-set' ).value = '';
+		document.getElementById( 'assignment-to' ).value = '';
 	}
-	previous_assignment_set = document.getElementById("assignment-set").value;
-	previous_assignment_to = document.getElementById("assignment-to").value;
-	document.getElementById("assignment-to").select();
+	previous_assignment_set = document.getElementById( 'assignment-set' ).value;
+	previous_assignment_to = document.getElementById( 'assignment-to' ).value;
+	document.getElementById( 'assignment-to' ).select();
 	assign_key();
 }
 
 function add_to_frequency(character)
 {
-	if (character == "\n") {
+	if (character == '\n' ) {
 		return;
 	}
 	var character_frequency_index = frequency.characters.indexOf(character);
@@ -113,7 +113,7 @@ function add_to_frequency(character)
 function get_cipher_translation(character_to_test)
 {
 	for (var counter = 0; counter<assignment_set_values.length; counter++) {
-		if (document.getElementById("case_sensitive").checked) {
+		if (document.getElementById( 'case_sensitive' ).checked) {
 			if (assignment_set_values.charAt(counter) == character_to_test) {
 				return assignment_to_values.charAt(counter);
 			}
@@ -132,7 +132,7 @@ function get_cipher_translation(character_to_test)
 
 function get_next_unknown()
 {
-	var cipher_input = document.getElementById('cipher_input').value;
+	var cipher_input = document.getElementById( 'cipher_input' ).value;
 	if (cipher_input.charAt(unknown_index - 1) != cipher_input.charAt(unknown_index)) {
 		var temporary_unknown = current_unknown;
 		current_unknown = next_unknown;
@@ -175,8 +175,8 @@ function try_to_remove_from_conflicts(cipher_value)
 
 function generate_conflicts_list()
 {
-	if (cipher_conflicts == "") { return; }
-	document.getElementById("conflicts_select").innerHTML = '';
+	if (cipher_conflicts == '' ) { return; }
+	document.getElementById( 'conflicts_select' ).innerHTML = '';
 	for (var counter = cipher_conflicts.length - 1; counter >= 0; counter--) {
 		var set_character = cipher_conflicts.charAt(counter) == ' '
 				? '\' \''
@@ -185,7 +185,7 @@ function generate_conflicts_list()
 				? '\' \''
 				: key_conflicts.charAt(counter);
 		
-		add_select_option("conflicts_select",
+		add_select_option( 'conflicts_select',
 						  set_character
 						  + ' -> '
 						  + to_character,
@@ -204,22 +204,22 @@ function generate_set_lists()
 
 function generate_set_list()
 {
-	var currently_selected = document.getElementById("assignments-select").value;
-	document.getElementById("assignments-select").innerHTML = '';
+	var currently_selected = document.getElementById( 'assignments-select' ).value;
+	document.getElementById( 'assignments-select' ).innerHTML = '';
 	frequency = merge_sort_frequency(frequency);
 	add_frequency_items_to_select();
 	add_non_frequency_items_to_select();
-	attempt_to_select_option("assignments-select", currently_selected);
+	attempt_to_select_option( 'assignments-select', currently_selected);
 }
 
 function generate_to_list()
 {
-	if (assignment_set_values == "\n") { return; }
-	var currently_selected = null;
-	if (document.getElementById("to_list_select").getSelected().length > 0) {
-		currently_selected = document.getElementById("to_list_select").getSelected()[0].value;
+	if (assignment_set_values == '\n' ) { return; }
+	var currently_selected_value = null;
+	if (document.getElementById( 'to_list_select' ).value !== '' ) {
+		currently_selected_value = document.getElementById( 'to_list_select' ).getSelected()[0].value;
 	}
-	document.getElementById("to_list_select").innerHTML = '';
+	document.getElementById( 'to_list_select' ).innerHTML = '';
 	var cipher_array = [];
 	var key_array = [];
 	for (var counter = 0; counter < assignment_set_values.length; counter++) {
@@ -231,7 +231,7 @@ function generate_to_list()
 	to_list.associated_array = cipher_array.slice(1, cipher_array.length);
 	to_list = to_list.merge_sort();
 	add_cipher_items_to_select(to_list);
-	attempt_to_select_option("to_list_select", currently_selected);
+	attempt_to_select_option( 'to_list_select', currently_selected);
 }
 
 function add_frequency_items_to_select()
@@ -246,7 +246,7 @@ function add_frequency_items_to_select()
 								? '\' \''
 								: assignment_to_values.charAt(cipher_index);
 			
-			add_select_option("assignments-select",
+			add_select_option( 'assignments-select',
 							  frequency.values[counter]
 							  + ' : '
 							  + set_character
@@ -256,7 +256,7 @@ function add_frequency_items_to_select()
 							  use_set_and_to_list
 							  );
 		} else {
-			add_select_option("assignments-select",
+			add_select_option( 'assignments-select',
 							  frequency.values[counter]
 							  + ' : '
 							  + frequency.characters.charAt(counter),
@@ -278,7 +278,7 @@ function add_non_frequency_items_to_select()
 									? '\' \''
 									: assignment_to_values.charAt(counter);
 			
-			add_select_option("assignments-select",
+			add_select_option( 'assignments-select',
 							  '0 : '
 							  + set_character
 							  + ' -> '
@@ -300,7 +300,7 @@ function add_cipher_items_to_select(sorted_to_list)
 							? '\' \''
 							: sorted_to_list.associated_array[counter];
 		
-		add_select_option("to_list_select",
+		add_select_option( 'to_list_select',
 						  to_character
 						  + ' <- '
 						  + set_character,
@@ -408,23 +408,23 @@ function associated_arrays()
 
 function frequency_tracker()
 {
-	this.characters = "";
+	this.characters = '';
 	this.values = [];
 }
 
 function select_assignment_input() {
-	var assignment_set = document.getElementById("assignment-set").value;
-	var assignment_to = document.getElementById("assignment-to").value;
+	var assignment_set = document.getElementById( 'assignment-set' ).value;
+	var assignment_to = document.getElementById( 'assignment-to' ).value;
 	if (previous_assignment_set != assignment_set) {
-		if (assignment_set == "") {
+		if (assignment_set == '' ) {
 			return;
 		}
-		document.getElementById("assignment-to").select();
+		document.getElementById( 'assignment-to' ).select();
 	} else if (previous_assignment_to != assignment_to) {
-		if (assignment_to == "") {
+		if (assignment_to == '' ) {
 			return;
 		}
-		document.getElementById("assignment-set").select();
+		document.getElementById( 'assignment-set' ).select();
 	}
 	previous_assignment_set = assignment_set;
 	previous_assignment_to = assignment_to;
@@ -432,65 +432,65 @@ function select_assignment_input() {
 
 function use_set_and_to_list()
 {
-	var selected_option_value = document.getElementById("assignments-select").getSelected()[0].value;
+	var selected_option_value = document.getElementById( 'assignments-select' ).getSelected()[0].value;
 	var new_cipher_value = selected_option_value;
 	var cipher_index = assignment_set_values.indexOf(selected_option_value);
 	if (cipher_index != -1) {
 		var new_key_value = assignment_to_values.charAt(cipher_index);
 	} else {
-		var new_key_value = "";
+		var new_key_value = '';
 	}
 	previous_assignment_set
-				= document.getElementById("assignment-set").value
+				= document.getElementById( 'assignment-set' ).value
 				= new_cipher_value;
 	previous_assignment_to
-				= document.getElementById("assignment-to").value
+				= document.getElementById( 'assignment-to' ).value
 				= new_key_value;
-	document.getElementById("assignment-to").value = new_key_value;
-	document.getElementById("assignment-to").select();
+	document.getElementById( 'assignment-to' ).value = new_key_value;
+	document.getElementById( 'assignment-to' ).select();
 }
 
 function use_to_and_set_list()
 {
-	var selected_option_value = document.getElementById("to_list_select").getSelected()[0].value;
+	var selected_option_value = document.getElementById( 'to_list_select' ).getSelected()[0].value;
 	var key_index = assignment_to_values.indexOf(selected_option_value);
 	var new_key_value = selected_option_value;
 	var new_cipher_value = assignment_set_values.charAt(key_index);
 	previous_assignment_set
-				= document.getElementById("assignment-set").value
+				= document.getElementById( 'assignment-set' ).value
 				= new_cipher_value;
 	previous_assignment_to
-				= document.getElementById("assignment-to").value
+				= document.getElementById( 'assignment-to' ).value
 				= new_key_value;
-	document.getElementById("assignment-to").select();
+	document.getElementById( 'assignment-to' ).select();
 }
 
 function use_set_and_to_conflicts()
 {
-	var selected_option_value = document.getElementById("conflicts_select").getSelected()[0].value;
+	var selected_option_value = document.getElementById( 'conflicts_select' ).getSelected()[0].value;
 	var new_cipher_value = cipher_conflicts.charAt(selected_option_value);
 	var new_key_value = key_conflicts.charAt(selected_option_value);
 	previous_assignment_set
-				= document.getElementById("assignment-set").value
+				= document.getElementById( 'assignment-set' ).value
 				= new_cipher_value;
 	previous_assignment_to
-				= document.getElementById("assignment-to").value
+				= document.getElementById( 'assignment-to' ).value
 				= new_key_value;
-	document.getElementById("assignment-to").select();
+	document.getElementById( 'assignment-to' ).select();
 }
 
 function change_unknowns()
 {
-	first_unknown = current_unknown = document.getElementById('first_unknown').value;
-	second_unknown = next_unknown = document.getElementById('second_unknown').value;
-	if (first_unknown == "") {
-		document.getElementById("first_unknown").value = first_unknown
+	first_unknown = current_unknown = document.getElementById( 'first_unknown' ).value;
+	second_unknown = next_unknown = document.getElementById( 'second_unknown' ).value;
+	if (first_unknown == '' ) {
+		document.getElementById( 'first_unknown' ).value = first_unknown
 													   = previous_first_unknown;
-		document.getElementById("first_unknown").select();
-	} else if (second_unknown == "") {
-		document.getElementById("second_unknown").value = second_unknown
+		document.getElementById( 'first_unknown' ).select();
+	} else if (second_unknown == '' ) {
+		document.getElementById( 'second_unknown' ).value = second_unknown
 														= previous_second_unknown;
-		document.getElementById("second_unknown").select();
+		document.getElementById( 'second_unknown' ).select();
 	}
 	update_cipher_text();
 }
@@ -499,17 +499,17 @@ function toggle_show_current_value()
 {
 	show_current_value = ! show_current_value;
 	if (show_current_value) {
-		document.getElementById("show_current_value_button").value = "Hide Current Value";
+		document.getElementById( 'show_current_value_button' ).value = 'Hide Current Value';
 	} else {
-		document.getElementById("show_current_value_button").value = "Show Current Value";
+		document.getElementById( 'show_current_value_button' ).value = 'Show Current Value';
 	}
 	update_cipher_text();
-	document.getElementById('assignment-set').select();
+	document.getElementById( 'assignment-set' ).select();
 }
 
 function continuous_cycle()
 {
-	if (document.getElementById("continuous_cycle").checked) {
+	if (document.getElementById( 'continuous_cycle' ).checked) {
 		start_continuous_cycle();
 	} else {
 		stop_continuous_cycle();
@@ -518,8 +518,8 @@ function continuous_cycle()
 
 function start_continuous_cycle()
 {
-	previous_first_unknown = document.getElementById('first_unknown').value;
-	previous_second_unknown = document.getElementById('second_unknown').value;
+	previous_first_unknown = document.getElementById( 'first_unknown' ).value;
+	previous_second_unknown = document.getElementById( 'second_unknown' ).value;
 	next_continuous_cycle();
 }
 function stop_continuous_cycle()
@@ -527,8 +527,8 @@ function stop_continuous_cycle()
 	clearTimeout(continuous_cycle_timeout);
 	first_unknown = current_unknown = previous_first_unknown;
 	second_unknown = next_unknown = previous_second_unknown;
-	document.getElementById("first_unknown").value = previous_first_unknown;
-	document.getElementById("second_unknown").value = previous_second_unknown;
+	document.getElementById( 'first_unknown' ).value = previous_first_unknown;
+	document.getElementById( 'second_unknown' ).value = previous_second_unknown;
 	update_cipher_text();
 }
 
@@ -539,56 +539,56 @@ function next_continuous_cycle()
 		continuous_cycle_index = 0;
 	}
 	first_unknown = current_unknown
-					= document.getElementById("first_unknown").value
+					= document.getElementById( 'first_unknown' ).value
 					= continuous_cycle_values.charAt(continuous_cycle_index);
 	second_unknown = next_unknown
-					= document.getElementById("second_unknown").value
+					= document.getElementById( 'second_unknown' ).value
 					= continuous_cycle_values.charAt(
 						(continuous_cycle_index - 2 < 0
 						 ? continuous_cycle_index + 2
 						 : continuous_cycle_index - 2)
 					  );
 	update_cipher_text();
-	continuous_cycle_timeout = setTimeout('next_continuous_cycle();', continuous_cycle_time);
+	continuous_cycle_timeout = setTimeout( 'next_continuous_cycle();', continuous_cycle_time);
 }
 
 function cycle_faster()
 {
 	continuous_cycle_time -= 50;
 	if (continuous_cycle_time == 50) {
-		document.getElementById("cycle_faster_button").style.display = "none";
+		document.getElementById( 'cycle_faster_button' ).style.display = 'none';
 	}
 }
 function cycle_slower()
 {
 	continuous_cycle_time += 50;
 	if (continuous_cycle_time > 50) {
-		document.getElementById("cycle_faster_button").style.display = "inline";
+		document.getElementById( 'cycle_faster_button' ).style.display = 'inline';
 	}
 }
 
 function show_save_cipher()
 {
-	document.getElementById("save_input").value = assignment_set_values.substring(1, assignment_set_values.length)
+	document.getElementById( 'save_input' ).value = assignment_set_values.substring(1, assignment_set_values.length)
 		+ assignment_to_values.substring(1, assignment_to_values.length);
-	document.getElementById("save_input").select();
+	document.getElementById( 'save_input' ).select();
 }
 //TODO: Save and load have been combined
 function load_cipher_value()
 {
-	var load_input = document.getElementById("load_input").value;
+	var load_input = document.getElementById( 'load_input' ).value;
 	if (load_input.length % 2 == 0) {
 		var load_input_length = load_input.length;
-		assignment_set_values = "\n" + load_input.substring(load_input, load_input_length / 2);
-		assignment_to_values = "\n" + load_input.substring(load_input_length / 2, load_input_length);
-		document.getElementById("input_comment").innerHTML = "";
+		assignment_set_values = '\n' + load_input.substring(load_input, load_input_length / 2);
+		assignment_to_values = '\n' + load_input.substring(load_input_length / 2, load_input_length);
+		document.getElementById( 'input_comment' ).innerHTML = '';
 		generate_set_lists();
 		reset_conflicts();
 		generate_conflicts_list();
 		update_cipher_text();
-		document.getElementById("assignment-set").select();
+		document.getElementById( 'assignment-set' ).select();
 	} else {
-		document.getElementById("input_comment").innerHTML = "Corrupt load input.";
+		document.getElementById( 'input_comment' ).innerHTML = 'Corrupt load input.';
 	}
 }
 function check_load_for_enter(event)
@@ -601,7 +601,7 @@ function check_load_for_enter(event)
 
 function reset_conflicts()
 {
-	cipher_conflicts = key_conflicts = "";
+	cipher_conflicts = key_conflicts = '';
 	for (var counter = 1; counter < assignment_set_values.length; counter++) {
 		var current_key = assignment_to_values.charAt(counter);
 		if (assignment_set_values.indexOf(current_key) != counter) {
@@ -662,9 +662,9 @@ function check_for_hot_key(event)
 function toggle_escape_pressed()
 {
 	if (escape_pressed) {
-		document.title = "Manual Cipher Decoder";
+		document.title = 'Manual Cipher Decoder';
 	} else {
-		document.title = "Manual Cipher Decoder (Press a Key)";
+		document.title = 'Manual Cipher Decoder (Press a Key)';
 	}
 	escape_pressed = ! escape_pressed;
 }
@@ -683,7 +683,7 @@ function toggle_instructions()
 $( window ).keydown( check_for_hot_key );
 
 $( '#cipher-input' )
-	.keydown( update_cipher_text)
+	.keydown( update_cipher_text )
 	.keyup( update_cipher_text );
 $( '#assignment-set' )
 	.focus( function() { this.select(); } )
@@ -708,12 +708,12 @@ $( '#case_sensitive' ).click( update_cipher_text );
 $( '#continuous_cycle' ).click( continuous_cycle );
 
 
-document.getElementById("first_unknown").value = first_unknown;
-document.getElementById("second_unknown").value = second_unknown;
-document.getElementById("assignment-set").value = "";
-document.getElementById("assignment-to").value = "";
-document.getElementById("continuous_cycle").checked = false;
-document.getElementById("cipher-input").focus();
+document.getElementById( 'first_unknown' ).value = first_unknown;
+document.getElementById( 'second_unknown' ).value = second_unknown;
+document.getElementById( 'assignment-set' ).value = '';
+document.getElementById( 'assignment-to' ).value = '';
+document.getElementById( 'continuous_cycle' ).checked = false;
+document.getElementById( 'cipher-input' ).focus();
 update_cipher_text();
 generate_set_lists();
 
