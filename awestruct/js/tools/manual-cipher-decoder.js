@@ -33,8 +33,8 @@ function update_cipher_text()
 	current_unknown = first_unknown;
 	next_unknown = second_unknown;
 	frequency = new frequency_tracker;
-	for (var counter = 0; counter < cipher_input.length; counter++) {
-		cipher_output += get_cipher_translation(cipher_input.charAt(counter));
+	for ( var counter = 0; counter < cipher_input.length; counter++ ) {
+		cipher_output += get_cipher_translation( cipher_input.charAt( counter ) );
 		add_to_frequency(cipher_input.charAt(counter).toLowerCase());
 		unknown_index++;
 	}

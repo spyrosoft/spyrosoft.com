@@ -1,0 +1,24 @@
+---
+title: Morse Code Translator
+layout: general
+script: /js/tools/morse-code-translator.js
+---
+%section.row
+  .columns
+    %h2 #{page.title}
+    %hr
+  .columns.large-6.medium-6
+    %label
+      Input:
+      %textarea#input{rows: '10'}
+  .columns.large-6.medium-6
+    %label
+      Output:
+      %textarea#output{rows: '10'}
+  .columns.text-center
+    %label
+      To Morse Code
+      %input#to_morse_code{checked: 'checked', name: 'to_morse_code_or_text', type: 'radio', value: 'to_morse_code'}
+    %label
+      To Text
+      %input#to_text{name: 'to_morse_code_or_text', type: 'radio', value: 'to_text'}
