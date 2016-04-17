@@ -2,6 +2,7 @@
 title: Manual Cipher Decoder
 layout: general
 script: /js/tools/manual-cipher-decoder.js
+include_utilities: true
 ---
 %section
   .row
@@ -23,16 +24,12 @@ script: /js/tools/manual-cipher-decoder.js
             %input#assignment-to{maxlength: '1', size: '2', type: 'text'}
     .columns.large-3.medium-4.small-6
       %label
-        Assignments:
+        Assignments By Frequency:
         %select#assignments-select
-          %option{value: '3'}
-            ' -&gt; '
     .columns.large-3.medium-4.small-6
       %label
-        Lookup:
+        Alphabetical Lookup:
         %select#to_list_select
-          %option{value: '3'}
-            ' &lt;- '
     .columns.large-3.medium-4.small-6
       %label
         Conflicts:
@@ -41,29 +38,32 @@ script: /js/tools/manual-cipher-decoder.js
       %label{for: 'unknown'} Unknowns:
       .row
         .columns.large-6.medium-6.small-6
-          %input#first_unknown{size: '4', type: 'text', value: '~'}
+          %input#first-unknown{size: '4', type: 'text', value: '~'}
         .columns.large-6.medium-6.small-6
-          %input#second_unknown{size: '4', type: 'text', value: '='}
+          %input#second-unknown{size: '4', type: 'text', value: '='}
     .columns.large-3.medium-4.small-6
       %label
         Save/Load Assignments:
-        %input#save_input{type: 'text'}
-      %span#input_comment
+        %input#save_load_assignments{type: 'text', value: ' ,.?!\'" ,.?!\'"'}
+      %span#save_load_error.error
   .row
     .columns
-      %input#show_current_value_button.button{type: 'button', value: 'Show Current Value'}
+      %input#show_hide_unknowns.button{type: 'button', value: 'Show/Hide Unknowns', title: 'Escape + s'}
     .columns
-      %input#instructions_button.button{type: 'button', value: 'Instructions'}
+      %input#show_hide_instructions.button{type: 'button', value: 'Show/Hide Instructions'}
       %input#cycle_slower_button.button{type: 'button', value: 'Animate Slower'}
       %input#cycle_faster_button.button{type: 'button', value: 'Animate Faster'}
     .columns.large-4.medium-6
-      %label{for: 'case_sensitive'}
+      %label
         Case Sensitive
         %input#case_sensitive{type: 'checkbox'}
       %label
         Animate Unknowns:
         %input#continuous_cycle{type: 'checkbox'}
     #instructions.columns.display-none
+      %hr
+      %h3
+        Instructions
       %p
         Welcome!
       %p

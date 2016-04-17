@@ -62,22 +62,14 @@
         </div>
         <div class="columns large-3 medium-4 small-6">
           <label>
-            Assignments:
-            <select id="assignments-select">
-              <option value="3">
-                ' -&gt; '
-              </option>
-            </select>
+            Assignments By Frequency:
+            <select id="assignments-select"></select>
           </label>
         </div>
         <div class="columns large-3 medium-4 small-6">
           <label>
-            Lookup:
-            <select id="to_list_select">
-              <option value="3">
-                ' &lt;- '
-              </option>
-            </select>
+            Alphabetical Lookup:
+            <select id="to_list_select"></select>
           </label>
         </div>
         <div class="columns large-3 medium-4 small-6">
@@ -90,32 +82,32 @@
           <label for="unknown">Unknowns:</label>
           <div class="row">
             <div class="columns large-6 medium-6 small-6">
-              <input id="first_unknown" size="4" type="text" value="~">
+              <input id="first-unknown" size="4" type="text" value="~">
             </div>
             <div class="columns large-6 medium-6 small-6">
-              <input id="second_unknown" size="4" type="text" value="=">
+              <input id="second-unknown" size="4" type="text" value="=">
             </div>
           </div>
         </div>
         <div class="columns large-3 medium-4 small-6">
           <label>
             Save/Load Assignments:
-            <input id="save_input" type="text">
+            <input id="save_load_assignments" type="text" value=" ,.?!'&#x0022; ,.?!'&#x0022;">
           </label>
-          <span id="input_comment"></span>
+          <span class="error" id="save_load_error"></span>
         </div>
       </div>
       <div class="row">
         <div class="columns">
-          <input class="button" id="show_current_value_button" type="button" value="Show Current Value">
+          <input class="button" id="show_hide_unknowns" title="Escape + s" type="button" value="Show/Hide Unknowns">
         </div>
         <div class="columns">
-          <input class="button" id="instructions_button" type="button" value="Instructions">
+          <input class="button" id="show_hide_instructions" type="button" value="Show/Hide Instructions">
           <input class="button" id="cycle_slower_button" type="button" value="Animate Slower">
           <input class="button" id="cycle_faster_button" type="button" value="Animate Faster">
         </div>
         <div class="columns large-4 medium-6">
-          <label for="case_sensitive">
+          <label>
             Case Sensitive
             <input id="case_sensitive" type="checkbox">
           </label>
@@ -125,6 +117,10 @@
           </label>
         </div>
         <div class="columns display-none" id="instructions">
+          <hr>
+          <h3>
+            Instructions
+          </h3>
           <p>
             Welcome!
           </p>
@@ -231,6 +227,7 @@
     <script src="/js/vendor/what-input.min.js"></script>
     <script src="/js/foundation.min.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/utilities.js"></script>
     <script src="/js/tools/manual-cipher-decoder.js"></script>
   </body>
 </html>

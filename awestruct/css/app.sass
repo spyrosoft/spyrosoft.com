@@ -19,14 +19,14 @@ a, a:hover, a:active, a:focus
 	color: $fg-hex
 	text-decoration: underline
 
-[type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=tel], [type=time], [type=url], [type=color], [type=number], [type=search], select, textarea, .button
+[type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=tel], [type=time], [type=url], [type=color], [type=number], [type=search], select, textarea, .button, input:disabled, input[readonly], textarea:disabled, textarea[readonly]
 	border-color: $fg-hex
 	background-color: $bg-rgba-transparent
 	color: $fg-hex
 
-[type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus, [type=number]:focus, [type=search]:focus, select:focus, textarea:focus, .button:focus, .button:hover
+[type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus, [type=number]:focus, [type=search]:focus, select:focus, textarea:focus, .button:focus, .button:hover, input:disabled:focus, input[readonly]:focus, textarea:disabled:focus, textarea[readonly]:focus, input:disabled:hover, input[readonly]:hover, textarea:disabled:hover, textarea[readonly]:hover
 	border-color: $fg-hex-accented
-	background-color: $bg-hex
+	background-color: $bg-rgba-transparent
 	color: $fg-hex-accented
 
 label

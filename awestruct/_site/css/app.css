@@ -9,15 +9,15 @@ a, a:hover, a:active, a:focus {
   text-decoration: underline; }
 
 /* line 22, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
-[type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=tel], [type=time], [type=url], [type=color], [type=number], [type=search], select, textarea, .button {
+[type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=tel], [type=time], [type=url], [type=color], [type=number], [type=search], select, textarea, .button, input:disabled, input[readonly], textarea:disabled, textarea[readonly] {
   border-color: #00ff00;
   background-color: rgba(0, 0, 0, 0.9);
   color: #00ff00; }
 
 /* line 27, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
-[type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus, [type=number]:focus, [type=search]:focus, select:focus, textarea:focus, .button:focus, .button:hover {
+[type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus, [type=number]:focus, [type=search]:focus, select:focus, textarea:focus, .button:focus, .button:hover, input:disabled:focus, input[readonly]:focus, textarea:disabled:focus, textarea[readonly]:focus, input:disabled:hover, input[readonly]:hover, textarea:disabled:hover, textarea[readonly]:hover {
   border-color: #00ff66;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.9);
   color: #00ff66; }
 
 /* line 32, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
