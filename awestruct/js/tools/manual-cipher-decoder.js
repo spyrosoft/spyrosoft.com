@@ -11,11 +11,11 @@ var unknown_next;
 
 function initialize() {
 	load_assignments();
-	//document.getElementById( 'cipher-input' ).focus();
+	document.getElementById( 'cipher-input' ).focus();
 	$( 'html' ).keydown( check_for_hot_key );
 	$( '#show_hide_instructions' ).click( show_hide_instructions );
 	$( '#save_load_assignments' ).keyup( load_assignments ).change( load_assignments );
-	$( '#cipher-input' ).keydown( cipher_changed ).change( cipher_changed );
+	$( '#cipher-input' ).keyup( cipher_changed ).change( cipher_changed );
 }
 
 function load_assignments() {
@@ -30,6 +30,8 @@ function load_assignments() {
 		new_assignments.length
 	);
 	populate_assignments( assignment_set_values, assignment_to_values );
+	//TODO: Are these functions called twice? Once here and once during generate_assignments_select
+	//TODO: Walk through the code to make sure
 	generate_assignments_select();
 	//generate_lookup_select();
 	//generate_conflicts();
@@ -54,45 +56,63 @@ function validate_load_assignments() {
 function populate_assignments( set_values, to_values ) {
 	if ( typeof set_values != 'string' || typeof to_values != 'string' || set_values.length != to_values.length ) { throw 'Invalid input for the populate_assignments function; must be two strings of equal length.'; }
 	assignments = { '\n' : '\n' };
-	for ( var i = 0; i < set_values.length; i++ ) {
+	for ( var i in set_values ) {
 		assignments[ set_values[ i ] ] = to_values[ i ];
 	}
 }
 
-//TODO: Break this up and use better naming convention
 function generate_assignments_select() {
 	var assignments_select = $( '#assignments-select' );
 	var currently_selected_value = assignments_select.val();
 	assignments_select.html( '' );
+	add_characters_from_frequency_to_assignments_select();
+	add_remaining_characters_to_assignments_select();
+	if ( select_option_value_exists( assignments_select, currently_selected_value ) ) {
+		$( '#assignments-select' ).val( currently_selected_value );
+	}
+}
+
+function add_characters_from_frequency_to_assignments_select() {
+	var assignment_frequency = build_assignment_frequency();
+	for ( var i in assignment_frequency ) {
+		add_option_to_assignments_select(
+			assignment_frequency[ i ][ 1 ],
+			assignment_frequency[ i ][ 0 ]
+		);
+	}
+}
+
+function build_assignment_frequency() {
 	var assignment_frequency = [];
 	for ( var character_frequency_value in character_frequency ) {
 		var new_frequency_value = [];
-		new_frequency_value
-			.push( character_frequency_value )
-			.push( character_frequency[ character_frequency_value ] );
+		new_frequency_value.push( character_frequency_value );
+		new_frequency_value.push( character_frequency[ character_frequency_value ] );
 		assignment_frequency.push( new_frequency_value );
 	}
 	assignment_frequency.sort( sort_by_character_frequency );
-	for ( var character in assignment_frequency ) {
-		console.log( character );
-	}
-	for ( var assignment_set in assignments ) {
-		if ( assignment_set === '\n' ) { continue; }
-		if ( character_frequency[ assignment_set ] === undefined ) {
-			var assignment_option = document.createElement( 'option' );
-			assignment_option.value = assignment_set;
-			if ( assignment_set === ' ' ) { assignment_set = "' '"; }
-			$( assignment_option ).html( '0 : ' + assignment_set );
-			assignments_select.append( assignment_option );
+	return assignment_frequency;
+}
+
+function add_remaining_characters_to_assignments_select() {
+	for ( var character in assignments ) {
+		if ( character === '\n' ) { continue; }
+		if ( typeof character_frequency[ character ] === 'undefined' ) {
+			add_option_to_assignments_select( 0, character );
 		}
-	}
-	if ( select_option_value_exists( assignments_select, currently_selected_value ) ) {
-		assignments_select( '#assignments-select' ).val( currently_selected_value );
 	}
 }
 
 function sort_by_character_frequency( first_comparison, second_comparison ) {
-	return first_comparison[ 1 ] - second_comparison[ 1 ];
+	return second_comparison[ 1 ] - first_comparison[ 1 ];
+}
+
+function add_option_to_assignments_select( frequency, character ) {
+	var assignment_option = document.createElement( 'option' );
+	assignment_option.value = character;
+	if ( character === ' ' ) { character = "' '"; }
+	$( assignment_option ).html( frequency + ' : ' + character );
+	$( '#assignments-select' ).append( assignment_option );
 }
 
 function add_to_frequency(character)
@@ -113,11 +133,20 @@ function cipher_changed() {
 	if ( previous_cipher === document.getElementById( 'cipher-input' ).value ) { return; }
 	previous_cipher = document.getElementById( 'cipher-input' ).value;
 	generate_character_frequency();
+	generate_assignments_select();
 	display_cipher_output();
 }
 
 function generate_character_frequency() {
-	
+	character_frequency = {};
+	var cipher = document.getElementById( 'cipher-input' ).value;
+	for ( var i in cipher ) {
+		if ( typeof character_frequency[ cipher[ i ] ] === 'undefined' ) {
+			character_frequency[ cipher[ i ] ] = 1;
+		} else {
+			character_frequency[ cipher[ i ] ]++;
+		}
+	}
 }
 
 function display_cipher_output() {
@@ -143,7 +172,7 @@ function show_hide_instructions()
 
 function select_option_value_exists( select_element, option_value ) {
 	var option_value_exists = false;
-	select_element.each(
+	select_element.find( 'option' ).each(
 		function() {
 			if ( this.value == option_value ) {
 				option_value_exists = true;
