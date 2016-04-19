@@ -11,16 +11,16 @@ var unknown_next;
 
 function initialize() {
 	load_assignments();
-	document.getElementById( 'cipher-input' ).focus();
+	//document.getElementById( 'cipher-input' ).focus();
 	$( 'html' ).keydown( check_for_hot_key );
-	$( '#show_hide_instructions' ).click( show_hide_instructions );
-	$( '#save_load_assignments' ).keyup( load_assignments ).change( load_assignments );
+	$( '#show-hide-instructions' ).click( show_hide_instructions );
+	$( '#save-load-assignments' ).keyup( load_assignments ).change( load_assignments );
 	$( '#cipher-input' ).keyup( cipher_changed ).change( cipher_changed );
 }
 
 function load_assignments() {
 	if ( ! validate_load_assignments() ) { return; }
-	var new_assignments = $( '#save_load_assignments' ).val();
+	var new_assignments = $( '#save-load-assignments' ).val();
 	var assignment_set_values = '\n' + new_assignments.substring(
 		0,
 		new_assignments.length/2
@@ -33,15 +33,14 @@ function load_assignments() {
 	//TODO: Are these functions called twice? Once here and once during generate_assignments_select
 	//TODO: Walk through the code to make sure
 	generate_assignments_select();
-	//generate_lookup_select();
+	generate_lookup_select();
 	//generate_conflicts();
 	//generate_conflicts_select();
 	display_cipher_output();
-	document.getElementById( 'assignment-set' ).select();
 }
 
 function validate_load_assignments() {
-	var new_assignments = $( '#save_load_assignments' ).val();
+	var new_assignments = $( '#save-load-assignments' ).val();
 	if ( new_assignments == previous_load_assignments ) {
 		return false;
 	}
@@ -61,15 +60,21 @@ function populate_assignments( set_values, to_values ) {
 	}
 }
 
-function generate_assignments_select() {
-	var assignments_select = $( '#assignments-select' );
-	var currently_selected_value = assignments_select.val();
-	assignments_select.html( '' );
-	add_characters_from_frequency_to_assignments_select();
-	add_remaining_characters_to_assignments_select();
-	if ( select_option_value_exists( assignments_select, currently_selected_value ) ) {
-		$( '#assignments-select' ).val( currently_selected_value );
+function generate_select( select_element, inner_function ) {
+	var currently_selected_value = select_element.val();
+	select_element.html( '' );
+	inner_function();
+	if ( select_option_value_exists( select_element, currently_selected_value ) ) {
+		select_element.val( currently_selected_value );
 	}
+}
+
+function generate_assignments_select() {
+	var inner_function = function() {
+		add_characters_from_frequency_to_assignments_select();
+		add_remaining_characters_to_assignments_select();
+	};
+	generate_select( $( '#assignments-select' ), inner_function );
 }
 
 function add_characters_from_frequency_to_assignments_select() {
@@ -108,11 +113,54 @@ function sort_by_character_frequency( first_comparison, second_comparison ) {
 }
 
 function add_option_to_assignments_select( frequency, character ) {
-	var assignment_option = document.createElement( 'option' );
-	assignment_option.value = character;
 	if ( character === ' ' ) { character = "' '"; }
-	$( assignment_option ).html( frequency + ' : ' + character );
-	$( '#assignments-select' ).append( assignment_option );
+	add_option_to_select(
+		$( '#assignments-select' ),
+		frequency + ' : ' + character,
+		character
+	);
+}
+
+function generate_lookup_select() {
+	if ( assignments.length === 1 ) { return; }
+	generate_select(
+		$( '#lookup-select' ),
+		add_characters_from_assignments_to_lookup_select
+	);
+}
+
+function add_characters_from_assignments_to_lookup_select() {
+	var assignment_characters = [];
+	for ( var character in assignments ) {
+		assignment_characters.push( character );
+	}
+	assignment_characters.sort();
+	for ( var i in assignment_characters ) {
+		add_option_to_lookup_select(
+			assignment_characters[ i ],
+			assignment_characters[ i ]
+		);
+	}
+}
+
+function add_option_to_lookup_select( character, character_assignment ) {
+	if ( character === '\n' ) { return; }
+	var character_text = character;
+	if ( character === ' ' ) { character_text = "' '"; }
+	var assignment_value = assignments[ character ];
+	if ( assignment_value === ' ' ) { assignment_value = "' '"; }
+	add_option_to_select(
+		$( '#lookup-select' ),
+		character_text + ' <- ' + assignment_value,
+		character
+	);
+}
+
+function add_option_to_select( select_element, option_text, option_value ) {
+	var new_option = document.createElement( 'option' );
+	new_option.value = option_value;
+	$( new_option ).html( option_text );
+	select_element.append( new_option );
 }
 
 function add_to_frequency(character)

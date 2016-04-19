@@ -29,11 +29,11 @@ include_utilities: true
     .columns.large-3.medium-4.small-6
       %label
         Alphabetical Lookup:
-        %select#to_list_select
+        %select#lookup-select
     .columns.large-3.medium-4.small-6
       %label
         Conflicts:
-        %select#conflicts_select
+        %select#conflicts-select
     .columns.large-3.medium-4.small-6
       %label{for: 'unknown'} Unknowns:
       .row
@@ -44,22 +44,22 @@ include_utilities: true
     .columns.large-3.medium-4.small-6
       %label
         Save/Load Assignments:
-        %input#save_load_assignments{type: 'text', value: ' ,.?!\'" ,.?!\'"'}
-      %span#save_load_error.error
+        %input#save-load-assignments{type: 'text', value: ' ,.?!\'" ,.?!\'"'}
+      %span#save-load-error.error
   .row
     .columns
-      %input#show_hide_unknowns.button{type: 'button', value: 'Show/Hide Unknowns', title: 'Escape + s'}
+      %input#show-hide-unknowns.button{type: 'button', value: 'Show/Hide Unknowns', title: 'Escape + s'}
     .columns
-      %input#show_hide_instructions.button{type: 'button', value: 'Show/Hide Instructions'}
-      %input#cycle_slower_button.button{type: 'button', value: 'Animate Slower'}
-      %input#cycle_faster_button.button{type: 'button', value: 'Animate Faster'}
+      %input#show-hide-instructions.button{type: 'button', value: 'Show/Hide Instructions'}
+      %input#cycle-slower-button.button{type: 'button', value: 'Animate Slower'}
+      %input#cycle-faster-button.button{type: 'button', value: 'Animate Faster'}
     .columns.large-4.medium-6
       %label
         Case Sensitive
-        %input#case_sensitive{type: 'checkbox'}
+        %input#case-sensitive{type: 'checkbox'}
       %label
         Animate Unknowns:
-        %input#continuous_cycle{type: 'checkbox'}
+        %input#continuous-cycle{type: 'checkbox'}
     #instructions.columns.display-none
       %hr
       %h3
