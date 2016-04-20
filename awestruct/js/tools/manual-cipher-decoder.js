@@ -1,13 +1,10 @@
-//TODO: Replace underscores in ids with dashes
-
 var character_frequency = {};
 var initial_document_title = document.title;
 var escape_pressed = false;
 var previous_load_assignments;
 var assignments;
 var previous_cipher;
-var unknown_last;
-var unknown_next;
+var show_unknowns = true;
 
 function initialize() {
 	load_assignments();
@@ -16,6 +13,9 @@ function initialize() {
 	$( '#show-hide-instructions' ).click( show_hide_instructions );
 	$( '#save-load-assignments' ).keyup( load_assignments ).change( load_assignments );
 	$( '#cipher-input' ).keyup( cipher_changed ).change( cipher_changed );
+	$( '#first-unknown' ).change( display_cipher_output ).focus( function() { this.select(); } );
+	$( '#second-unknown' ).change( display_cipher_output ).focus( function() { this.select(); } );
+	$( '#show-hide-unknowns' ).click( toggle_unkowns );
 }
 
 function load_assignments() {
@@ -197,18 +197,55 @@ function generate_character_frequency() {
 	}
 }
 
+//TODO: Add case sensitivity
 function display_cipher_output() {
+	if ( ! show_unknowns ) {
+		document.getElementById( 'cipher-output' ).value
+			= document.getElementById( 'cipher-input' ).value;
+		return;
+	}
+	if ( ! validate_unknowns() ) { return; }
+	var unknown_next = document.getElementById( 'first-unknown' ).value;
+	var unknown_last = document.getElementById( 'second-unknown' ).value;
 	var cipher_input = document.getElementById( 'cipher-input' ).value;
 	var cipher_output = '';
-	unknown_next = document.getElementById( 'first-unknown' );
-	unknown_last = document.getElementById( 'second-unknown' );
-	
-	
+	var previous_character;
+	for ( var i in cipher_input ) {
+		var current_character = cipher_input[ i ];
+		if ( assignments[ current_character ] ) {
+			cipher_output += assignments[ current_character ];
+		} else {
+			if ( current_character === previous_character ) {
+				cipher_output += unknown_last;
+			} else {
+				cipher_output += unknown_next;
+				var unknown_temp = unknown_next;
+				unknown_next = unknown_last;
+				unknown_last = unknown_temp;
+			}
+		}
+		previous_character = current_character;
+	}
+	document.getElementById( 'cipher-output' ).value = cipher_output;
+}
+
+function validate_unknowns() {
+	var unknown_next = document.getElementById( 'first-unknown' ).value;
+	var unknown_last = document.getElementById( 'second-unknown' ).value;
+	if ( unknown_next.length == 0 || unknown_last.length == 0 ) {
+		alert( 'Both unknowns must have a value.' );
+		return false;
+	}
+	return true;
 }
 
 
-function show_hide_instructions()
-{
+function toggle_unkowns() {
+	show_unknowns = ! show_unknowns;
+	display_cipher_output();
+}
+
+function show_hide_instructions() {
 	var instructions_block = $( '#instructions' );
 	if ( instructions_block.hasClass( 'display-none' ) ) {
 		 instructions_block.removeClass( 'display-none' );
@@ -231,8 +268,7 @@ function select_option_value_exists( select_element, option_value ) {
 	return option_value_exists;
 }
 
-function check_for_hot_key( key_event )
-{
+function check_for_hot_key( key_event ) {
 	if ( Utilities.keyCodeLookup( key_event ) == 'escape' ) {
 		toggle_escape_pressed();
 	} else if ( escape_pressed ) {
@@ -243,8 +279,7 @@ function check_for_hot_key( key_event )
 	}
 }
 
-function toggle_escape_pressed()
-{
+function toggle_escape_pressed() {
 	if ( escape_pressed ) {
 		document.title = initial_document_title;
 	} else {
