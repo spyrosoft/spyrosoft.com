@@ -16,6 +16,7 @@ function initialize() {
 	$( '#first-unknown' ).change( display_cipher_output ).focus( function() { this.select(); } );
 	$( '#second-unknown' ).change( display_cipher_output ).focus( function() { this.select(); } );
 	$( '#show-hide-unknowns' ).click( toggle_unkowns );
+	$( '#assignment-set' ).keyup( assignment_set_event );
 }
 
 function load_assignments() {
@@ -30,6 +31,10 @@ function load_assignments() {
 		new_assignments.length
 	);
 	populate_assignments( assignment_set_values, assignment_to_values );
+	assignments_changed();
+}
+
+function assignments_changed() {
 	//TODO: Are these functions called twice? Once here and once during generate_assignments_select
 	//TODO: Walk through the code to make sure
 	generate_assignments_select();
@@ -237,6 +242,18 @@ function validate_unknowns() {
 		return false;
 	}
 	return true;
+}
+
+function assignment_set_event() {
+	var assignment_set_value = document.getElementById( 'assignment-set' ).value;
+	var assignment_to_value = document.getElementById( 'assignment-to' ).value;
+	if ( assignment_set_value === '' ) { return; }
+	delete assignments[ assignment_set_value ];
+	if ( assignment_to_value !== '' ) {
+		assignments[ assignment_set_value ] = assignment_to_value;
+	}
+	assignments_changed();
+	document.getElementById( 'assignment-to' ).select();
 }
 
 
