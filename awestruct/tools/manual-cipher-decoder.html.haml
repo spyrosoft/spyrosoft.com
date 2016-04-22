@@ -8,10 +8,14 @@ include_utilities: true
   .row
     .columns
       %h2 #{page.title}
-    .columns.large-6.medium-6
-      %textarea.monospace#cipher-input{rows: '12'}
-    .columns.large-6.medium-6
-      %textarea.monospace#cipher-output{rows: '12'}
+    .columns
+      %label
+        Cipher Input:
+        %textarea.monospace#cipher-input{rows: '1'}
+    .columns
+      %label
+        Decoded Output:
+        %textarea.monospace#cipher-output{rows: '8'}
     .columns.large-3.medium-4.small-6
       .row
         .columns.large-6.medium-6.small-6
@@ -47,19 +51,13 @@ include_utilities: true
         %input#save-load-assignments{type: 'text', value: ' ,.?!\'" ,.?!\'"'}
       %span#save-load-error.error
   .row
-    .columns
+    .columns.large-8.medium-8
       %input#show-hide-unknowns.button{type: 'button', value: 'Show/Hide Unknowns', title: 'Escape + s'}
-    .columns
       %input#show-hide-instructions.button{type: 'button', value: 'Show/Hide Instructions'}
-      %input#cycle-slower-button.button{type: 'button', value: 'Animate Slower'}
-      %input#cycle-faster-button.button{type: 'button', value: 'Animate Faster'}
-    .columns.large-4.medium-6
+    .columns.large-4.medium-4
       %label
         Case Sensitive
         %input#case-sensitive{type: 'checkbox'}
-      %label
-        Animate Unknowns:
-        %input#continuous-cycle{type: 'checkbox'}
     #instructions.columns.display-none
       %hr
       %h3
@@ -71,7 +69,7 @@ include_utilities: true
       %p
         Allow me to walk you through an example.
       %p
-        To begin, paste the following encoded text into the left text area:
+        To begin, paste the following encoded text into the Cipher Input:
       %code
         'Ysfstaupaj!' tysof gdo Kaooh. 'Bdw, fph'g wpa joo, tdsuf...' doyo jdo xypzo pee bsgd i eypbh, ihf, iegoy gdshzshr epy i vshago, jaffohuw tdihrof gdo jaxlotg pe gdo tphnoyjigsph. 'Bdig fp wpa voih xw "Se wpa yoiuuw iyo i Kaooh"? Bdig ysrdg dino wpa gp tiuu wpayjoue jp? Wpa tih'g xo i Kaooh, wpa zhpb, gsuu wpa'no qijjof gdo qypqoy ocivshigsph. Ihf gdo jpphoy bo xorsh sg, gdo xoggoy.'
       %p

@@ -12,11 +12,12 @@ function initialize() {
 	$( 'html' ).keydown( check_for_hot_key );
 	$( '#show-hide-instructions' ).click( show_hide_instructions );
 	$( '#save-load-assignments' ).keyup( load_assignments ).change( load_assignments );
-	$( '#cipher-input' ).keyup( cipher_changed ).change( cipher_changed );
-	$( '#first-unknown' ).change( display_cipher_output ).focus( function() { this.select(); } );
-	$( '#second-unknown' ).change( display_cipher_output ).focus( function() { this.select(); } );
+	$( '#cipher-input' ).keyup( cipher_changed ).change( cipher_changed ).focus( input_self_select );
+	$( '#first-unknown' ).change( display_cipher_output ).focus( input_self_select );
+	$( '#second-unknown' ).change( display_cipher_output ).focus( input_self_select );
 	$( '#show-hide-unknowns' ).click( toggle_unkowns );
-	$( '#assignment-set' ).keyup( assignment_set_event );
+	$( '#assignment-set' ).keyup( assignment_set_event ).focus( input_self_select );
+	$( '#assignment-to' ).keyup( assignment_to_event ).focus( input_self_select );
 }
 
 function load_assignments() {
@@ -246,14 +247,32 @@ function validate_unknowns() {
 
 function assignment_set_event() {
 	var assignment_set_value = document.getElementById( 'assignment-set' ).value;
-	var assignment_to_value = document.getElementById( 'assignment-to' ).value;
 	if ( assignment_set_value === '' ) { return; }
+	var assignment_to_value = document.getElementById( 'assignment-to' ).value;
 	delete assignments[ assignment_set_value ];
 	if ( assignment_to_value !== '' ) {
 		assignments[ assignment_set_value ] = assignment_to_value;
 	}
 	assignments_changed();
 	document.getElementById( 'assignment-to' ).select();
+}
+
+function assignment_to_event() {
+	var assignment_set_value = document.getElementById( 'assignment-set' ).value;
+	if ( assignment_set_value === '' ) {
+		document.getElementById( 'assignment-set' ).select();
+		return;
+	}
+	var assignment_to_value = document.getElementById( 'assignment-to' ).value;
+	if ( assignment_to_value === '' ) {
+		delete assignments[ assignment_set_value ];
+	} else {
+		assignments[ assignment_set_value ] = assignment_to_value;
+	}
+	assignments_changed();
+	if ( assignment_to_value !== '' ) {
+		document.getElementById( 'assignment-set' ).select();
+	}
 }
 
 
@@ -271,6 +290,10 @@ function show_hide_instructions() {
 	}
 }
 
+
+function input_self_select() {
+	this.select();
+}
 
 function select_option_value_exists( select_element, option_value ) {
 	var option_value_exists = false;
@@ -306,3 +329,10 @@ function toggle_escape_pressed() {
 }
 
 initialize();
+
+/**
+ * Case sensitive should matter when setting and when generating drop down lists
+ * Make onclick on the select options work
+ * Make onpaste work
+ * Prevent output from scrolling when regenerating its content
+ */

@@ -38,11 +38,17 @@
         <div class="columns">
           <h2>Manual Cipher Decoder</h2>
         </div>
-        <div class="columns large-6 medium-6">
-          <textarea class="monospace" id="cipher-input" rows="12"></textarea>
+        <div class="columns">
+          <label>
+            Cipher Input:
+            <textarea class="monospace" id="cipher-input" rows="1"></textarea>
+          </label>
         </div>
-        <div class="columns large-6 medium-6">
-          <textarea class="monospace" id="cipher-output" rows="12"></textarea>
+        <div class="columns">
+          <label>
+            Decoded Output:
+            <textarea class="monospace" id="cipher-output" rows="8"></textarea>
+          </label>
         </div>
         <div class="columns large-3 medium-4 small-6">
           <div class="row">
@@ -98,22 +104,14 @@
         </div>
       </div>
       <div class="row">
-        <div class="columns">
+        <div class="columns large-8 medium-8">
           <input class="button" id="show-hide-unknowns" title="Escape + s" type="button" value="Show/Hide Unknowns">
-        </div>
-        <div class="columns">
           <input class="button" id="show-hide-instructions" type="button" value="Show/Hide Instructions">
-          <input class="button" id="cycle-slower-button" type="button" value="Animate Slower">
-          <input class="button" id="cycle-faster-button" type="button" value="Animate Faster">
         </div>
-        <div class="columns large-4 medium-6">
+        <div class="columns large-4 medium-4">
           <label>
             Case Sensitive
             <input id="case-sensitive" type="checkbox">
-          </label>
-          <label>
-            Animate Unknowns:
-            <input id="continuous-cycle" type="checkbox">
           </label>
         </div>
         <div class="columns display-none" id="instructions">
@@ -131,7 +129,7 @@
             Allow me to walk you through an example.
           </p>
           <p>
-            To begin, paste the following encoded text into the left text area:
+            To begin, paste the following encoded text into the Cipher Input:
           </p>
           <code>'Ysfstaupaj!' tysof gdo Kaooh. 'Bdw, fph'g wpa joo, tdsuf...' doyo jdo xypzo pee bsgd i eypbh, ihf, iegoy gdshzshr epy i vshago, jaffohuw tdihrof gdo jaxlotg pe gdo tphnoyjigsph. 'Bdig fp wpa voih xw "Se wpa yoiuuw iyo i Kaooh"? Bdig ysrdg dino wpa gp tiuu wpayjoue jp? Wpa tih'g xo i Kaooh, wpa zhpb, gsuu wpa'no qijjof gdo qypqoy ocivshigsph. Ihf gdo jpphoy bo xorsh sg, gdo xoggoy.'</code>
           <p>
