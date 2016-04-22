@@ -42,6 +42,7 @@ function assignments_changed() {
 	generate_lookup_select();
 	//generate_conflicts();
 	//generate_conflicts_select();
+	//generate_load_assignments();
 	display_cipher_output();
 }
 
@@ -62,7 +63,7 @@ function populate_assignments( set_values, to_values ) {
 	if ( typeof set_values != 'string' || typeof to_values != 'string' || set_values.length != to_values.length ) { throw 'Invalid input for the populate_assignments function; must be two strings of equal length.'; }
 	assignments = { '\n' : '\n' };
 	for ( var i in set_values ) {
-		assignments[ set_values[ i ] ] = to_values[ i ];
+		add_assignment( set_values[ i ], to_values[ i ] );
 	}
 }
 
@@ -86,9 +87,19 @@ function generate_assignments_select() {
 function add_characters_from_frequency_to_assignments_select() {
 	var assignment_frequency = build_assignment_frequency();
 	for ( var i in assignment_frequency ) {
+		var assignment_set_with_or_without_to;
+		var character = assignment_frequency[ i ][ 0 ];
+		if ( get_assignment( character ) ) {
+			assignment_set_with_or_without_to
+				= character
+				+ ' -> '
+				+ visible_characters( get_assignment( character ) );
+		} else {
+			assignment_set_with_or_without_to = character;
+		}
 		add_option_to_assignments_select(
 			assignment_frequency[ i ][ 1 ],
-			assignment_frequency[ i ][ 0 ]
+			assignment_set_with_or_without_to
 		);
 	}
 }
@@ -109,7 +120,16 @@ function add_remaining_characters_to_assignments_select() {
 	for ( var character in assignments ) {
 		if ( character === '\n' ) { continue; }
 		if ( typeof character_frequency[ character ] === 'undefined' ) {
-			add_option_to_assignments_select( 0, character );
+			var assignment_set_with_or_without_to;
+			if ( get_assignment( character ) ) {
+				assignment_set_with_or_without_to
+					= visible_characters( character.toUpperCase() )
+					+ ' -> '
+					+ visible_characters( get_assignment( character ) );
+			} else {
+				assignment_set_with_or_without_to = character.toUpperCase();
+			}
+			add_option_to_assignments_select( 0, assignment_set_with_or_without_to );
 		}
 	}
 }
@@ -118,12 +138,11 @@ function sort_by_character_frequency( first_comparison, second_comparison ) {
 	return second_comparison[ 1 ] - first_comparison[ 1 ];
 }
 
-function add_option_to_assignments_select( frequency, character ) {
-	if ( character === ' ' ) { character = "' '"; }
+function add_option_to_assignments_select( frequency, assignment ) {
 	add_option_to_select(
 		$( '#assignments-select' ),
-		frequency + ' : ' + character,
-		character
+		frequency + ' : ' + visible_characters( assignment ),
+		assignment
 	);
 }
 
@@ -152,12 +171,12 @@ function add_characters_from_assignments_to_lookup_select() {
 function add_option_to_lookup_select( character, character_assignment ) {
 	if ( character === '\n' ) { return; }
 	var character_text = character;
-	if ( character === ' ' ) { character_text = "' '"; }
-	var assignment_value = assignments[ character ];
-	if ( assignment_value === ' ' ) { assignment_value = "' '"; }
+	var assignment_value = get_assignment( character );
 	add_option_to_select(
 		$( '#lookup-select' ),
-		character_text + ' <- ' + assignment_value,
+		visible_characters( character_text )
+			+ ' <- '
+			+ visible_characters( assignment_value ),
 		character
 	);
 }
@@ -195,10 +214,14 @@ function generate_character_frequency() {
 	character_frequency = {};
 	var cipher = document.getElementById( 'cipher-input' ).value;
 	for ( var i in cipher ) {
-		if ( typeof character_frequency[ cipher[ i ] ] === 'undefined' ) {
-			character_frequency[ cipher[ i ] ] = 1;
+		var character = cipher[ i ];
+		if ( ! document.getElementById( 'case-sensitive' ).checked ) {
+			character = cipher[ i ].toUpperCase();
+		}
+		if ( typeof character_frequency[ character ] === 'undefined' ) {
+			character_frequency[ character ] = 1;
 		} else {
-			character_frequency[ cipher[ i ] ]++;
+			character_frequency[ character ]++;
 		}
 	}
 }
@@ -218,8 +241,8 @@ function display_cipher_output() {
 	var previous_character;
 	for ( var i in cipher_input ) {
 		var current_character = cipher_input[ i ];
-		if ( assignments[ current_character ] ) {
-			cipher_output += assignments[ current_character ];
+		if ( get_assignment( current_character ) ) {
+			cipher_output += get_assignment( current_character );
 		} else {
 			if ( current_character === previous_character ) {
 				cipher_output += unknown_last;
@@ -249,9 +272,9 @@ function assignment_set_event() {
 	var assignment_set_value = document.getElementById( 'assignment-set' ).value;
 	if ( assignment_set_value === '' ) { return; }
 	var assignment_to_value = document.getElementById( 'assignment-to' ).value;
-	delete assignments[ assignment_set_value ];
+	delete_assignment( assignment_set_value );
 	if ( assignment_to_value !== '' ) {
-		assignments[ assignment_set_value ] = assignment_to_value;
+		add_assignment( assignment_set_value, assignment_to_value );
 	}
 	assignments_changed();
 	document.getElementById( 'assignment-to' ).select();
@@ -265,13 +288,37 @@ function assignment_to_event() {
 	}
 	var assignment_to_value = document.getElementById( 'assignment-to' ).value;
 	if ( assignment_to_value === '' ) {
-		delete assignments[ assignment_set_value ];
+		delete_assignment( assignment_set_value );
 	} else {
-		assignments[ assignment_set_value ] = assignment_to_value;
+		add_assignment( assignment_set_value, assignment_to_value );
 	}
 	assignments_changed();
 	if ( assignment_to_value !== '' ) {
 		document.getElementById( 'assignment-set' ).select();
+	}
+}
+
+function add_assignment( assignment, value ) {
+	if ( document.getElementById( 'case-sensitive' ).checked ) {
+		assignments[ assignment ] = value;
+	} else {
+		assignments[ assignment.toUpperCase() ] = value.toUpperCase();
+	}
+}
+
+function delete_assignment( assignment ) {
+	if ( document.getElementById( 'case-sensitive' ).checked ) {
+		delete assignments[ assignment ];
+	} else {
+		delete assignments[ assignment.toUpperCase() ];
+	}
+}
+
+function get_assignment( assignment ) {
+	if ( document.getElementById( 'case-sensitive' ).checked ) {
+		return assignments[ assignment ];
+	} else {
+		return assignments[ assignment.toUpperCase() ];
 	}
 }
 
@@ -293,6 +340,11 @@ function show_hide_instructions() {
 
 function input_self_select() {
 	this.select();
+}
+
+function visible_characters( character ) {
+	if ( character === ' ' ) { character = "' '"; }
+	return character;
 }
 
 function select_option_value_exists( select_element, option_value ) {

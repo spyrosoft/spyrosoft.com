@@ -21,34 +21,34 @@ include_utilities: true
         .columns.large-6.medium-6.small-6
           %label
             Set:
-            %input#assignment-set{maxlength: '1', size: '2', type: 'text'}
+            %input.monospace#assignment-set{maxlength: '1', size: '2', type: 'text'}
         .columns.large-6.medium-6.small-6
           %label
             To:
-            %input#assignment-to{maxlength: '1', size: '2', type: 'text'}
+            %input.monospace#assignment-to{maxlength: '1', size: '2', type: 'text'}
     .columns.large-3.medium-4.small-6
       %label
         Assignments By Frequency:
-        %select#assignments-select
+        %select.monospace#assignments-select
     .columns.large-3.medium-4.small-6
       %label
         Alphabetical Lookup:
-        %select#lookup-select
+        %select.monospace#lookup-select
     .columns.large-3.medium-4.small-6
       %label
         Conflicts:
-        %select#conflicts-select
+        %select.monospace#conflicts-select
     .columns.large-3.medium-4.small-6
       %label{for: 'unknown'} Unknowns:
       .row
         .columns.large-6.medium-6.small-6
-          %input#first-unknown{size: '4', type: 'text', value: '~'}
+          %input.monospace#first-unknown{size: '4', type: 'text', value: '~'}
         .columns.large-6.medium-6.small-6
-          %input#second-unknown{size: '4', type: 'text', value: '='}
+          %input.monospace#second-unknown{size: '4', type: 'text', value: '='}
     .columns.large-3.medium-4.small-6
       %label
         Save/Load Assignments:
-        %input#save-load-assignments{type: 'text', value: ' ,.?!\'" ,.?!\'"'}
+        %input.monospace#save-load-assignments{type: 'text', value: ' ,.?!\'" ,.?!\'"'}
       %span#save-load-error.error
   .row
     .columns.large-8.medium-8
