@@ -18,6 +18,9 @@ function initialize() {
 	$( '#show-hide-unknowns' ).click( toggle_unkowns );
 	$( '#assignment-set' ).keyup( assignment_set_event ).focus( input_self_select );
 	$( '#assignment-to' ).keyup( assignment_to_event ).focus( input_self_select );
+	$( '#assignments-select' ).change( assignments_select_changed );
+	$( '#lookup-select' ).change( assignments_select_changed );
+	$( '#conflicts-select' ).change( assignments_select_changed );
 }
 
 function load_assignments() {
@@ -52,10 +55,10 @@ function validate_load_assignments() {
 		return false;
 	}
 	if ( new_assignments.length % 2 != 0 ) {
-		$( '#save_load_error' ).html( 'Invalid Load Data' );
+		$( '#save-load-error' ).html( 'Invalid Load Data' );
 		return false;
 	}
-	$( '#save_load_error' ).html( '' );
+	$( '#save-load-error' ).html( '' );
 	return true;
 }
 
@@ -87,19 +90,10 @@ function generate_assignments_select() {
 function add_characters_from_frequency_to_assignments_select() {
 	var assignment_frequency = build_assignment_frequency();
 	for ( var i in assignment_frequency ) {
-		var assignment_set_with_or_without_to;
 		var character = assignment_frequency[ i ][ 0 ];
-		if ( get_assignment( character ) ) {
-			assignment_set_with_or_without_to
-				= character
-				+ ' -> '
-				+ visible_characters( get_assignment( character ) );
-		} else {
-			assignment_set_with_or_without_to = character;
-		}
 		add_option_to_assignments_select(
 			assignment_frequency[ i ][ 1 ],
-			assignment_set_with_or_without_to
+			character
 		);
 	}
 }
@@ -120,16 +114,7 @@ function add_remaining_characters_to_assignments_select() {
 	for ( var character in assignments ) {
 		if ( character === '\n' ) { continue; }
 		if ( typeof character_frequency[ character ] === 'undefined' ) {
-			var assignment_set_with_or_without_to;
-			if ( get_assignment( character ) ) {
-				assignment_set_with_or_without_to
-					= visible_characters( character.toUpperCase() )
-					+ ' -> '
-					+ visible_characters( get_assignment( character ) );
-			} else {
-				assignment_set_with_or_without_to = character.toUpperCase();
-			}
-			add_option_to_assignments_select( 0, assignment_set_with_or_without_to );
+			add_option_to_assignments_select( 0, character );
 		}
 	}
 }
@@ -138,11 +123,20 @@ function sort_by_character_frequency( first_comparison, second_comparison ) {
 	return second_comparison[ 1 ] - first_comparison[ 1 ];
 }
 
-function add_option_to_assignments_select( frequency, assignment ) {
+function add_option_to_assignments_select( frequency, character ) {
+	var assignment_set_with_or_without_to;
+	if ( get_assignment( character ) ) {
+		assignment_set_with_or_without_to
+			= visible_characters( character )
+			+ ' -> '
+			+ visible_characters( get_assignment( character ) );
+	} else {
+		assignment_set_with_or_without_to = visible_characters( character );
+	}
 	add_option_to_select(
 		$( '#assignments-select' ),
-		frequency + ' : ' + visible_characters( assignment ),
-		assignment
+		frequency + ' : ' + assignment_set_with_or_without_to,
+		character
 	);
 }
 
@@ -216,7 +210,7 @@ function generate_character_frequency() {
 	for ( var i in cipher ) {
 		var character = cipher[ i ];
 		if ( ! document.getElementById( 'case-sensitive' ).checked ) {
-			character = cipher[ i ].toUpperCase();
+			character = cipher[ i ].toLowerCase();
 		}
 		if ( typeof character_frequency[ character ] === 'undefined' ) {
 			character_frequency[ character ] = 1;
@@ -302,7 +296,7 @@ function add_assignment( assignment, value ) {
 	if ( document.getElementById( 'case-sensitive' ).checked ) {
 		assignments[ assignment ] = value;
 	} else {
-		assignments[ assignment.toUpperCase() ] = value.toUpperCase();
+		assignments[ assignment.toLowerCase() ] = value.toLowerCase();
 	}
 }
 
@@ -310,7 +304,7 @@ function delete_assignment( assignment ) {
 	if ( document.getElementById( 'case-sensitive' ).checked ) {
 		delete assignments[ assignment ];
 	} else {
-		delete assignments[ assignment.toUpperCase() ];
+		delete assignments[ assignment.toLowerCase() ];
 	}
 }
 
@@ -318,8 +312,17 @@ function get_assignment( assignment ) {
 	if ( document.getElementById( 'case-sensitive' ).checked ) {
 		return assignments[ assignment ];
 	} else {
-		return assignments[ assignment.toUpperCase() ];
+		return assignments[ assignment.toLowerCase() ];
 	}
+}
+
+function assignments_select_changed() {
+	var character = $( this ).val();
+	document.getElementById( 'assignment-set' ).value = character;
+	if ( get_assignment( character ) ) {
+		document.getElementById( 'assignment-to' ).value = get_assignment( character );
+	}
+	document.getElementById( 'assignment-to' ).select();
 }
 
 
