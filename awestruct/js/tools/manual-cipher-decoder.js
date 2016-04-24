@@ -41,10 +41,8 @@ function load_assignments() {
 }
 
 function same_load_assignments_as_previous() {
-	if ( document.getElementById( 'save-load-assignments' ).value === previous_load_assignments ) {
-		return true;
-	}
-	return false;
+	return document.getElementById( 'save-load-assignments' ).value
+		=== previous_load_assignments;
 }
 
 function assignments_changed() {
@@ -169,9 +167,9 @@ function add_characters_from_assignments_to_lookup_select() {
 }
 
 function sort_by_assignment( first_comparison, second_comparison ) {
-	if ( assignments[ first_comparison ].toLowerCase().charCodeAt( 0 ) < 65 ) { return 1; }
-	return assignments[ first_comparison ].toLowerCase().charCodeAt( 0 )
-		- assignments[ second_comparison ].toLowerCase().charCodeAt( 0 );
+	if ( assignments[ first_comparison ].charCodeAt( 0 ) < 65 ) { return 1; }
+	return assignments[ first_comparison ].charCodeAt( 0 )
+		- assignments[ second_comparison ].charCodeAt( 0 );
 }
 
 function add_option_to_lookup_select( character, character_assignment ) {
@@ -218,9 +216,6 @@ function generate_character_frequency() {
 	var cipher = document.getElementById( 'cipher-input' ).value;
 	for ( var i in cipher ) {
 		var character = cipher[ i ];
-		if ( ! document.getElementById( 'case-sensitive' ).checked ) {
-			character = cipher[ i ].toLowerCase();
-		}
 		if ( typeof character_frequency[ character ] === 'undefined' ) {
 			character_frequency[ character ] = 1;
 		} else {
@@ -228,8 +223,7 @@ function generate_character_frequency() {
 		}
 	}
 }
-
-//TODO: Add case sensitivity
+//TODO: Only display unassigned changes when ! show_unknowns
 function display_cipher_output() {
 	if ( ! show_unknowns ) {
 		document.getElementById( 'cipher-output' ).value
@@ -237,15 +231,26 @@ function display_cipher_output() {
 		return;
 	}
 	if ( ! validate_unknowns() ) { return; }
-	var unknown_next = document.getElementById( 'first-unknown' ).value;
-	var unknown_last = document.getElementById( 'second-unknown' ).value;
+	var cipher_output = build_cipher_output();
+	document.getElementById( 'cipher-output' ).value = cipher_output;
+}
+
+function build_cipher_output() {
 	var cipher_input = document.getElementById( 'cipher-input' ).value;
 	var cipher_output = '';
 	var previous_character;
+	var unknown_next = document.getElementById( 'first-unknown' ).value;
+	var unknown_last = document.getElementById( 'second-unknown' ).value;
 	for ( var i in cipher_input ) {
 		var current_character = cipher_input[ i ];
+		var current_assignment;
 		if ( get_assignment( current_character ) ) {
-			cipher_output += get_assignment( current_character );
+			current_assignment = get_assignment( current_character );
+			if ( is_lower_case( current_character ) ) {
+				cipher_output += current_assignment;
+			} else {
+				cipher_output += current_assignment.toUpperCase();
+			}
 		} else {
 			if ( current_character === previous_character ) {
 				cipher_output += unknown_last;
@@ -258,7 +263,7 @@ function display_cipher_output() {
 		}
 		previous_character = current_character;
 	}
-	document.getElementById( 'cipher-output' ).value = cipher_output;
+	return cipher_output;
 }
 
 function validate_unknowns() {
@@ -308,27 +313,15 @@ function assignment_to_event() {
 }
 
 function add_assignment( assignment, value ) {
-	if ( document.getElementById( 'case-sensitive' ).checked ) {
-		assignments[ assignment ] = value;
-	} else {
-		assignments[ assignment.toLowerCase() ] = value.toLowerCase();
-	}
+	assignments[ assignment.toLowerCase() ] = value.toLowerCase();
 }
 
 function delete_assignment( assignment ) {
-	if ( document.getElementById( 'case-sensitive' ).checked ) {
-		delete assignments[ assignment ];
-	} else {
-		delete assignments[ assignment.toLowerCase() ];
-	}
+	delete assignments[ assignment.toLowerCase() ];
 }
 
 function get_assignment( assignment ) {
-	if ( document.getElementById( 'case-sensitive' ).checked ) {
-		return assignments[ assignment ];
-	} else {
-		return assignments[ assignment.toLowerCase() ];
-	}
+	return assignments[ assignment.toLowerCase() ];
 }
 
 function assignments_select_changed() {
@@ -340,7 +333,6 @@ function assignments_select_changed() {
 	document.getElementById( 'assignment-to' ).select();
 }
 
-//TODO: Group by assignment
 function generate_conflicts_select() {
 	var assignment_values = {};
 	var collision_values = {};
@@ -410,6 +402,10 @@ function input_self_select() {
 function visible_characters( character ) {
 	if ( character === ' ' ) { character = "' '"; }
 	return character;
+}
+
+function is_lower_case( string_to_test ) {
+	return string_to_test === string_to_test.toLowerCase();
 }
 
 function select_option_value_exists( select_element, option_value ) {
