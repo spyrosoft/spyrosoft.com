@@ -1,0 +1,39 @@
+---
+title: Flip Qwerty - Type With One Hand
+layout: general
+script: /js/tools/flip-qwerty.js
+---
+%section.row
+  .columns
+    %h2 #{page.title}
+    %hr
+  .columns
+    %textarea#input{rows: '16'}
+  .columns.large-4.medium-3.small-1
+    &nbsp;
+  .columns.large-4.medium-6.small-10
+    %ul
+      %li
+        Backspace : `
+      %li
+        Return: Space + `
+      %li
+        Apostrophe : Shift + `
+      %li
+        Quote : Shift + Space + `
+      %li
+        \\ : Esc
+      %li
+        \- : Shift + Esc
+      %li
+        \= : Space + Esc
+      %li
+        + : Shift + Space + Esc
+    %p
+      ` (Backtick, the key next to the 1 key)
+    %p
+      The good people at
+      %a{href: 'http://half-qwerty.com/', target: '_blank'} half-qwerty.com
+      came up with an elegant way to type with just one hand without having to learn a new keyboard layout. While the space bar is held down, the keyboard mirror images itself. Whatever finger you would use to type with the opposite hand you would use on the same hand. If no other key is pressed a space is produced.
+  .columns.large-4.medium-3.small-1
+    &nbsp;
