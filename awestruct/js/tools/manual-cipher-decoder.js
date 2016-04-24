@@ -39,12 +39,10 @@ function load_assignments() {
 }
 
 function assignments_changed() {
-	//TODO: Are these functions called twice? Once here and once during generate_assignments_select
-	//TODO: Walk through the code to make sure
+	//TODO: Are these functions called twice? Once here and once during generate_assignments_select. Walk through the code to make sure
 	generate_assignments_select();
 	generate_lookup_select();
-	//generate_conflicts();
-	//generate_conflicts_select();
+	generate_conflicts_select();
 	//generate_load_assignments();
 	display_cipher_output();
 }
@@ -200,8 +198,7 @@ function cipher_changed() {
 	if ( previous_cipher === document.getElementById( 'cipher-input' ).value ) { return; }
 	previous_cipher = document.getElementById( 'cipher-input' ).value;
 	generate_character_frequency();
-	generate_assignments_select();
-	display_cipher_output();
+	assignments_changed();
 }
 
 function generate_character_frequency() {
@@ -323,6 +320,38 @@ function assignments_select_changed() {
 		document.getElementById( 'assignment-to' ).value = get_assignment( character );
 	}
 	document.getElementById( 'assignment-to' ).select();
+}
+
+function generate_conflicts_select() {
+	var assignment_values = {};
+	var collision_values = {};
+	var collisions = [];
+	var assignment;
+	for ( assignment in assignments ) {
+		var assignment_value = assignments[ assignment ];
+		if ( assignment_values[ assignment_value ] === true ) {
+			collision_values[ assignment_value ] = true;
+		} else {
+			assignment_values[ assignment_value ] = true;
+		}
+	}
+	for ( assignment in assignments ) {
+		if ( collision_values[ assignments[ assignment ] ] === true ) {
+			collisions.push( assignment );
+		}
+	}
+	var conflicts_select = $( '#conflicts-select' );
+	conflicts_select.html( '' );
+	for ( var i in collisions ) {
+		var character = collisions[ i ];
+		add_option_to_select(
+			conflicts_select,
+			visible_characters( character )
+				+ ' : '
+				+ visible_characters( get_assignment( character ) ),
+			character
+		);
+	}
 }
 
 
