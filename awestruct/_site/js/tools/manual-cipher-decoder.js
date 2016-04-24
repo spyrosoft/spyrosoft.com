@@ -9,10 +9,9 @@ var previous_assignment_to;
 
 function initialize() {
 	load_assignments();
-	//document.getElementById( 'cipher-input' ).focus();
 	$( 'html' ).keydown( check_for_hot_key );
 	$( '#show-hide-instructions' ).click( show_hide_instructions );
-	$( '#save-load-assignments' ).keyup( load_assignments ).change( load_assignments );
+	$( '#save-load-assignments' ).keyup( load_assignments ).change( load_assignments ).focus( input_self_select );
 	$( '#cipher-input' ).keyup( cipher_changed ).change( cipher_changed ).focus( input_self_select );
 	$( '#first-unknown' ).change( display_cipher_output ).focus( input_self_select );
 	$( '#second-unknown' ).change( display_cipher_output ).focus( input_self_select );
@@ -25,6 +24,7 @@ function initialize() {
 }
 
 function load_assignments() {
+	if ( same_load_assignments_as_previous() ) { return; }
 	if ( ! validate_load_assignments() ) { return; }
 	var new_assignments = $( '#save-load-assignments' ).val();
 	var assignment_set_values = '\n' + new_assignments.substring(
@@ -37,10 +37,17 @@ function load_assignments() {
 	);
 	populate_assignments( assignment_set_values, assignment_to_values );
 	assignments_changed();
+	previous_load_assignments = document.getElementById( 'save-load-assignments' ).value;
+}
+
+function same_load_assignments_as_previous() {
+	if ( document.getElementById( 'save-load-assignments' ).value === previous_load_assignments ) {
+		return true;
+	}
+	return false;
 }
 
 function assignments_changed() {
-	//TODO: Are these functions called twice? Once here and once during generate_assignments_select. Walk through the code to make sure
 	generate_assignments_select();
 	generate_lookup_select();
 	generate_conflicts_select();
@@ -105,7 +112,7 @@ function build_assignment_frequency() {
 		new_frequency_value.push( character_frequency[ character_frequency_value ] );
 		assignment_frequency.push( new_frequency_value );
 	}
-	assignment_frequency.sort( sort_by_character_frequency );
+	assignment_frequency.sort( sort_by_assignment_value );
 	return assignment_frequency;
 }
 
@@ -118,7 +125,7 @@ function add_remaining_characters_to_assignments_select() {
 	}
 }
 
-function sort_by_character_frequency( first_comparison, second_comparison ) {
+function sort_by_assignment_value( first_comparison, second_comparison ) {
 	return second_comparison[ 1 ] - first_comparison[ 1 ];
 }
 
@@ -152,7 +159,7 @@ function add_characters_from_assignments_to_lookup_select() {
 	for ( var character in assignments ) {
 		assignment_characters.push( character );
 	}
-	assignment_characters.sort();
+	assignment_characters.sort( sort_by_assignment );
 	for ( var i in assignment_characters ) {
 		add_option_to_lookup_select(
 			assignment_characters[ i ],
@@ -161,15 +168,19 @@ function add_characters_from_assignments_to_lookup_select() {
 	}
 }
 
+function sort_by_assignment( first_comparison, second_comparison ) {
+	if ( assignments[ first_comparison ].toLowerCase().charCodeAt( 0 ) < 65 ) { return 1; }
+	return assignments[ first_comparison ].toLowerCase().charCodeAt( 0 )
+		- assignments[ second_comparison ].toLowerCase().charCodeAt( 0 );
+}
+
 function add_option_to_lookup_select( character, character_assignment ) {
 	if ( character === '\n' ) { return; }
-	var character_text = character;
-	var assignment_value = get_assignment( character );
 	add_option_to_select(
 		$( '#lookup-select' ),
-		visible_characters( character_text )
+		visible_characters( get_assignment( character ) )
 			+ ' <- '
-			+ visible_characters( assignment_value ),
+			+ visible_characters( character ),
 		character
 	);
 }
@@ -329,6 +340,7 @@ function assignments_select_changed() {
 	document.getElementById( 'assignment-to' ).select();
 }
 
+//TODO: Group by assignment
 function generate_conflicts_select() {
 	var assignment_values = {};
 	var collision_values = {};
@@ -354,7 +366,7 @@ function generate_conflicts_select() {
 		add_option_to_select(
 			conflicts_select,
 			visible_characters( character )
-				+ ' : '
+				+ ' -> '
 				+ visible_characters( get_assignment( character ) ),
 			character
 		);
@@ -368,7 +380,10 @@ function generate_load_assignments() {
 		assignments_set += character;
 		assignments_to += assignments[ character ];
 	}
-	document.getElementById( 'save-load-assignments' ).value = assignments_set + assignments_to;
+	var new_load_assignments = assignments_set + assignments_to;
+	if ( new_load_assignments === previous_load_assignments ) { return; }
+	document.getElementById( 'save-load-assignments' ).value = new_load_assignments;
+	previous_load_assignments = new_load_assignments;
 }
 
 
@@ -420,7 +435,6 @@ initialize();
 
 /**
  * Case sensitive should matter when setting and when generating drop down lists
- * Make onclick on the select options work
- * Make onpaste work
  * Prevent output from scrolling when regenerating its content
+ * Highlight conflicts in the Decoded Output
  */
