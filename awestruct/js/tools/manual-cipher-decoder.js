@@ -1,10 +1,11 @@
 var character_frequency = {};
 var initial_document_title = document.title;
-var escape_pressed = false;
 var previous_load_assignments;
 var assignments;
 var previous_cipher;
 var show_unknowns = true;
+var previous_assignment_set;
+var previous_assignment_to;
 
 function initialize() {
 	load_assignments();
@@ -43,7 +44,7 @@ function assignments_changed() {
 	generate_assignments_select();
 	generate_lookup_select();
 	generate_conflicts_select();
-	//generate_load_assignments();
+	generate_load_assignments();
 	display_cipher_output();
 }
 
@@ -263,10 +264,13 @@ function assignment_set_event() {
 	var assignment_set_value = document.getElementById( 'assignment-set' ).value;
 	if ( assignment_set_value === '' ) { return; }
 	var assignment_to_value = document.getElementById( 'assignment-to' ).value;
+	if ( assignment_set_value === previous_assignment_set && assignment_to_value === previous_assignment_to ) { return; }
 	delete_assignment( assignment_set_value );
 	if ( assignment_to_value !== '' ) {
 		add_assignment( assignment_set_value, assignment_to_value );
 	}
+	previous_assignment_set = assignment_set_value;
+	previous_assignment_to = assignment_to_value;
 	assignments_changed();
 	document.getElementById( 'assignment-to' ).select();
 }
@@ -278,6 +282,7 @@ function assignment_to_event() {
 		return;
 	}
 	var assignment_to_value = document.getElementById( 'assignment-to' ).value;
+	if ( assignment_set_value === previous_assignment_set && assignment_to_value === previous_assignment_to ) { return; }
 	if ( assignment_to_value === '' ) {
 		delete_assignment( assignment_set_value );
 	} else {
@@ -287,6 +292,8 @@ function assignment_to_event() {
 	if ( assignment_to_value !== '' ) {
 		document.getElementById( 'assignment-set' ).select();
 	}
+	previous_assignment_set = assignment_set_value;
+	previous_assignment_to = assignment_to_value;
 }
 
 function add_assignment( assignment, value ) {
@@ -354,10 +361,21 @@ function generate_conflicts_select() {
 	}
 }
 
+function generate_load_assignments() {
+	var assignments_set = '';
+	var assignments_to = '';
+	for ( var character in assignments ) {
+		assignments_set += character;
+		assignments_to += assignments[ character ];
+	}
+	document.getElementById( 'save-load-assignments' ).value = assignments_set + assignments_to;
+}
+
 
 function toggle_unkowns() {
 	show_unknowns = ! show_unknowns;
 	display_cipher_output();
+	if ( ! show_unknowns ) { document.getElementById( 'assignment-set' ).select(); }
 }
 
 function show_hide_instructions() {
@@ -394,22 +412,8 @@ function select_option_value_exists( select_element, option_value ) {
 
 function check_for_hot_key( key_event ) {
 	if ( Utilities.keyCodeLookup( key_event ) == 'escape' ) {
-		toggle_escape_pressed();
-	} else if ( escape_pressed ) {
-		if ( Utilities.keyCodeLookup( key_event ) == 's' ) {
-			toggle_show_current_value();
-		}
-		toggle_escape_pressed();
+		toggle_unkowns();
 	}
-}
-
-function toggle_escape_pressed() {
-	if ( escape_pressed ) {
-		document.title = initial_document_title;
-	} else {
-		document.title = '(Press A Hot Key)';
-	}
-	escape_pressed = ! escape_pressed;
 }
 
 initialize();
