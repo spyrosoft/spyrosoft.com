@@ -1,0 +1,24 @@
+---
+title: JavaScript Huffman Encoder
+layout: general
+script: /js/tools/huffman-encoder.js
+---
+%section.row
+  .columns
+    %h2 #{page.title}
+    %hr
+  .columns#encode-output-container
+    %textarea#encoding-input{rows: '10'}
+  .columns.text-center#encode-button-container
+    %input.button{onclick: 'encode_input()', type: 'button', value: 'Encode'}
+  .columns.large-6.medium-6
+    %textarea#encoded-table{onfocus: 'this.select();', rows: '10'}
+  .columns.large-6.medium-6
+    %textarea#encoded-output{onfocus: 'this.select();', rows: '10'}
+  .columns.text-center#decode-button-container
+    %input.button{onclick: 'decode_input()', type: 'button', value: 'Decode'}
+  .columns#decoded-output-container
+    %textarea#decoded-output{onfocus: 'this.select();', rows: '10'}
+  .columns.text-center
+    %input.button#encode-mode-button{onclick: 'encode_mode();', type: 'button', value: 'Encode Mode'}
+    %input.button#decode-mode-button{onclick: 'decode_mode();', type: 'button', value: 'Decode Mode'}

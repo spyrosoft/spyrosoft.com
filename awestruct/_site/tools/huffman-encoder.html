@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>About - SpyroSoft</title>
+    <title>JavaScript Huffman Encoder - SpyroSoft</title>
     <link href="/css/foundation.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
@@ -34,27 +34,33 @@
       </nav>
       <hr class="no-spacing">
     </header>
-    <section class="row columns about">
-      <h2>About</h2>
-      <hr>
-      <p>
-        I am a programmer in Santa Cruz, California. This site is a central place where I can share software with the world.
-      </p>
-      <p>
-        My expertise is in HTML, JavaScript, Zurb Foundation, Go, Steel Bank Common Lisp, Shell Scripting, SVG, SQL, JSON, AJAX, XML, XUL, Processing, AppleScript, C, PHP, and Java.
-      </p>
-      <p>
-        I excel at creating Ecommerce websites and interactive web applications. My calling is in designing applications with intelligent user interfaces. This means that when there is only one thing that the user could possibly want under the current conditions, it happens automatically.
-      </p>
-      <p>
-        I am a member of the
-        <a href="http://nextspace.us/">NextSpace Santa Cruz</a>
-        community and
-        <a href="http://santacruzgeeks.com/">Santa Cruz Geeks</a>.
-      </p>
-      <p>
-        I fit best in projects where quality is the ultimate goal. It's hard for me to walk away from a project that hasn't been made perfect.
-      </p>
+    <section class="row">
+      <div class="columns">
+        <h2>JavaScript Huffman Encoder</h2>
+        <hr>
+      </div>
+      <div class="columns" id="encode-output-container">
+        <textarea id="encoding-input" rows="10"></textarea>
+      </div>
+      <div class="columns text-center" id="encode-button-container">
+        <input class="button" onclick="encode_input()" type="button" value="Encode">
+      </div>
+      <div class="columns large-6 medium-6">
+        <textarea id="encoded-table" onfocus="this.select();" rows="10"></textarea>
+      </div>
+      <div class="columns large-6 medium-6">
+        <textarea id="encoded-output" onfocus="this.select();" rows="10"></textarea>
+      </div>
+      <div class="columns text-center" id="decode-button-container">
+        <input class="button" onclick="decode_input()" type="button" value="Decode">
+      </div>
+      <div class="columns" id="decoded-output-container">
+        <textarea id="decoded-output" onfocus="this.select();" rows="10"></textarea>
+      </div>
+      <div class="columns text-center">
+        <input class="button" id="encode-mode-button" onclick="encode_mode();" type="button" value="Encode Mode">
+        <input class="button" id="decode-mode-button" onclick="decode_mode();" type="button" value="Decode Mode">
+      </div>
     </section>
     <footer>
       <hr>
@@ -71,5 +77,6 @@
     <script src="/js/vendor/what-input.min.js"></script>
     <script src="/js/foundation.min.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/tools/huffman-encoder.js"></script>
   </body>
 </html>
