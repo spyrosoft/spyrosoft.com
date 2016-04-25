@@ -10,15 +10,17 @@ script: /js/tools/huffman-encoder.js
   .columns#encode-output-container
     %textarea#encoding-input{rows: '10'}
   .columns.text-center#encode-button-container
-    %input.button{onclick: 'encode_input()', type: 'button', value: 'Encode'}
+    %p
+      %input.button.no-margin{onclick: 'encode_input()', type: 'button', value: 'Encode'}
   .columns.large-6.medium-6
     %textarea#encoded-table{onfocus: 'this.select();', rows: '10'}
   .columns.large-6.medium-6
     %textarea#encoded-output{onfocus: 'this.select();', rows: '10'}
   .columns.text-center#decode-button-container
-    %input.button{onclick: 'decode_input()', type: 'button', value: 'Decode'}
+    %p
+      %input.button.no-margin{onclick: 'decode_input()', type: 'button', value: 'Decode'}
   .columns#decoded-output-container
     %textarea#decoded-output{onfocus: 'this.select();', rows: '10'}
   .columns.text-center
-    %input.button#encode-mode-button{onclick: 'encode_mode();', type: 'button', value: 'Encode Mode'}
-    %input.button#decode-mode-button{onclick: 'decode_mode();', type: 'button', value: 'Decode Mode'}
+    %input.button.no-margin#encode-mode-button{onclick: 'encode_mode();', type: 'button', value: 'Encode Mode'}
+    %input.button.no-margin#decode-mode-button{onclick: 'decode_mode();', type: 'button', value: 'Decode Mode'}

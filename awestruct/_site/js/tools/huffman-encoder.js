@@ -250,26 +250,45 @@ function Huffman_Encoding_Table()
 function decode_input()
 {
 	var encoded_table_input = document.getElementById('encoded-table').value.split('\n');
-	
-	for ( var i in encoded_table_input ) {
+	encoded_table_input = merge_literal_newline_rows( encoded_table_input );
+	var huffman_encoding_table = populate_huffman_encoding_table( encoded_table_input );
+	var decoded_output = generate_decoded_output( huffman_encoding_table );
+	document.getElementById('decoded-output').value = decoded_output;
+}
+
+function merge_literal_newline_rows( encoded_table_input )
+{
+	var new_encoded_table_input = [];
+	for ( var i = 0; i < encoded_table_input.length; i++ ) {
 		var table_row = encoded_table_input[ i ];
 		if (table_row == '' && encoded_table_input[i + 1].match(/^ /)) {
-			encoded_table_input[i + 1] = '\n' + encoded_table_input[i + 1];
-			encoded_table_input.splice(i, 1);
+			new_encoded_table_input.push( '\n' + encoded_table_input[i + 1] );
+			i++;
+		} else {
+			new_encoded_table_input.push( table_row );
 		}
 	}
+	return encoded_table_input;
+}
+
+function populate_huffman_encoding_table( encoded_table_input )
+{
 	var huffman_encoding_table = new Huffman_Encoding_Table();
-	for ( var i in encoded_table_input.table ) {
-		var table_row = encoded_table_input.table[ i ];
+	for ( var i in encoded_table_input ) {
+		var table_row = encoded_table_input[ i ];
 		if (table_row == '') {
-			return;
+			continue;
 		} else if (table_row == ' ') {
 			huffman_encoding_table.add_table_entry('\n', null, table_row.match(/\d+$/)[0]);
 		} else {
 			huffman_encoding_table.add_table_entry(table_row.charAt(0), null, table_row.match(/\d+$/)[0]);
 		}
 	};
-	
+	return huffman_encoding_table;
+}
+
+function generate_decoded_output( huffman_encoding_table )
+{
 	var decoded_output = '';
 	var encoded_output = document.getElementById('encoded-output').value;
 	var encoding_table_character_index = 0;
@@ -287,8 +306,7 @@ function decode_input()
 			}
 		}
 	}
-	
-	document.getElementById('decoded-output').value = decoded_output;
+	return decoded_output;
 }
 
 

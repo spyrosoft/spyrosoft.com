@@ -43,7 +43,9 @@
         <textarea id="encoding-input" rows="10"></textarea>
       </div>
       <div class="columns text-center" id="encode-button-container">
-        <input class="button" onclick="encode_input()" type="button" value="Encode">
+        <p>
+          <input class="button no-margin" onclick="encode_input()" type="button" value="Encode">
+        </p>
       </div>
       <div class="columns large-6 medium-6">
         <textarea id="encoded-table" onfocus="this.select();" rows="10"></textarea>
@@ -52,14 +54,16 @@
         <textarea id="encoded-output" onfocus="this.select();" rows="10"></textarea>
       </div>
       <div class="columns text-center" id="decode-button-container">
-        <input class="button" onclick="decode_input()" type="button" value="Decode">
+        <p>
+          <input class="button no-margin" onclick="decode_input()" type="button" value="Decode">
+        </p>
       </div>
       <div class="columns" id="decoded-output-container">
         <textarea id="decoded-output" onfocus="this.select();" rows="10"></textarea>
       </div>
       <div class="columns text-center">
-        <input class="button" id="encode-mode-button" onclick="encode_mode();" type="button" value="Encode Mode">
-        <input class="button" id="decode-mode-button" onclick="decode_mode();" type="button" value="Decode Mode">
+        <input class="button no-margin" id="encode-mode-button" onclick="encode_mode();" type="button" value="Encode Mode">
+        <input class="button no-margin" id="decode-mode-button" onclick="decode_mode();" type="button" value="Decode Mode">
       </div>
     </section>
     <footer>
