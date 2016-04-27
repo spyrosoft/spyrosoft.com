@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Blog - SpyroSoft</title>
+    <title>Running Windows Under Linux in VirtualBox - SpyroSoft</title>
     <link href="/css/foundation.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
@@ -34,34 +34,22 @@
       </nav>
       <hr class="no-spacing">
     </header>
-    <section class="row">
-      <div class="columns">
-        <h2>Blog</h2>
-        <hr>
-      </div>
-      <div class="columns large-6 medium-6">
-        <ul>
-          <li>
-            <a href="/blog/why-to-switch-from-bash-to-zsh.html">
-              Why To Switch From Bash To Zsh
-            </a>
-          </li>
-          <li>
-            <a href="/blog/text-editors.html">
-              The One Editor To Rule Them All
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="columns large-6 medium-6">
-        <ul>
-          <li>
-            <a href="/blog/running-windows-under-linux-in-virtualbox.html">
-              Running Windows Under Linux in VirtualBox
-            </a>
-          </li>
-        </ul>
-      </div>
+    <section class="row columns">
+      <h2 id="running-windows-under-linux-in-virtualbox">Running Windows Under Linux in VirtualBox</h2>
+      
+      <hr />
+      
+      <p><em>Note:</em> Requires a Windows License Key</p>
+      
+      <p>Dual booting is not ideal for running two different operating systems. It requires quite a bit of effort to switch back and forth and sharing files between the two is not always easy. Sometimes it makes more sense to use virtual machines.</p>
+      
+      <p>In the case of running Windows under Linux forums here and there strongly indicate both sides of whether or not this works. In particular the chatter regarding OEM licenses vs retail licenses is true. An OEM license that comes with your computer is not valid as a virtual machine license… Sadface. You'll have to buy an entirely new license for this to work.</p>
+      
+      <p>When ready download a blank bloatware-free Windows ISO file matching the type of license you own. Create a new virtual machine for your version of Windows. Run through the Windows installation. Windows will probably reboot multiple times during the installation process. Ultimately it will ask you for your license key.</p>
+      
+      <p>To make the virtual machine run full screen, install the VirtualBox Guest Additions by clicking Devices &gt; Install Guest Additions. Follow the instructions there.</p>
+      
+      <p>*Clap* And you're done.</p>
     </section>
     <footer>
       <hr>
