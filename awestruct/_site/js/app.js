@@ -4,15 +4,10 @@ $( 'nav.top a' ).each(
 	function ( index, element ) {
 		var current_element = $( element );
 		if ( current_element.attr( 'href' ) === window.location.pathname ) {
-			current_element.hide();
+			current_element.addClass( 'active' );
 		}
 	}
 );
-
-if ( document.getElementById('this-year') ) {
-	var date_today = new Date();
-	document.getElementById('this-year').innerHTML = date_today.getFullYear();
-}
 
 $('.contact form').submit( contact_form_submission );
 
