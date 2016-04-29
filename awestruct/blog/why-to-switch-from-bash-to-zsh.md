@@ -4,6 +4,7 @@ layout: blog
 date: 4-2-16
 ---
 ## Why To Switch From Bash To ZSH
+------
 
 _**Note**_: if you're interested in switching away from Bash and don't already know about [Fish](https://fishshell.com/), compare it to Zsh before taking the plunge.
 

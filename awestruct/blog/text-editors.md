@@ -4,6 +4,7 @@ layout: blog
 date: 4-3-16
 ---
 ## Text Editors For Code
+------
 
 * Notepad
 * Notepad++

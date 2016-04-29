@@ -4,7 +4,6 @@ layout: blog
 date: 4-27-16
 ---
 ## Running Windows Under Linux in VirtualBox
-
 ------
 
 _Note:_ Requires a Windows License Key

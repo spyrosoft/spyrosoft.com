@@ -4,6 +4,7 @@ layout: blog
 date: 4-28-16
 ---
 ## How to Configure Printers in Linux
+------
 
 ### CUPS
 
