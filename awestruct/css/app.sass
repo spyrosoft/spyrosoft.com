@@ -1,7 +1,7 @@
-$fg-hex: #00ff00
-$fg-hex-accented: #00ff66
-$bg-hex: #000000
-$bg-rgba-transparent: rgba(0, 0, 0, 0.7)
+$fg-color: #00ff00
+$fg-color-accented: #00ff88
+$bg-color: #000000
+$bg-color-transparent: rgba(0, 0, 0, 0.7)
 
 $tiny-spacing: 0.2rem
 $small-spacing: 1rem
@@ -13,41 +13,43 @@ $huge-spacing: 10rem
 /* Colors
 
 body, h1, h2, h3, h4, h5, h6, h3 small
-	color: $fg-hex
+	color: $fg-color
 
 a, a:hover, a:active, a:focus
-	color: $fg-hex
-	text-decoration: underline
+	color: $fg-color-accented
+
+nav.top a, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+	color: $fg-color
 
 [type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=tel], [type=time], [type=url], [type=color], [type=number], [type=search], select, textarea, .button, input:disabled, input[readonly], textarea:disabled, textarea[readonly]
-	border-color: $fg-hex
-	background-color: $bg-rgba-transparent
-	color: $fg-hex
+	border-color: $fg-color
+	background-color: $bg-color-transparent
+	color: $fg-color
 
 [type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus, [type=number]:focus, [type=search]:focus, select:focus, textarea:focus, .button:focus, .button:hover, input:disabled:focus, input[readonly]:focus, textarea:disabled:focus, textarea[readonly]:focus, input:disabled:hover, input[readonly]:hover, textarea:disabled:hover, textarea[readonly]:hover
-	border-color: $fg-hex-accented
-	background-color: $bg-rgba-transparent
-	color: $fg-hex-accented
+	border-color: $fg-color-accented
+	background-color: $bg-color-transparent
+	color: $fg-color-accented
 
 label
-	color: $fg-hex
+	color: $fg-color
 
 label:hover, input:hover, select:hover, textarea:hover, input:focus, select:focus, textarea:focus
-	color: $fg-hex-accented
+	color: $fg-color-accented
 
 hr
-	color: $fg-hex
-	border-color: $fg-hex
+	color: $fg-color
+	border-color: $fg-color
 
 header
-	background-color: $bg-hex
+	background-color: $bg-color
 
 section, footer
-	background-color: $bg-rgba-transparent
+	background-color: $bg-color-transparent
 
 code
 	background-color: transparent
-	color: $fg-hex
+	color: $fg-color
 	border: none
 
 tbody
@@ -115,8 +117,11 @@ hr
 	border-width: 2px
 	border-top: none
 
-a:hover
+a, a:focus, a:active
 	text-decoration: none
+
+a:hover
+	text-decoration: underline
 
 .bold
 	font-weight: bold
