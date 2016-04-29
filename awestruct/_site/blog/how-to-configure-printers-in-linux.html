@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Running Windows Under Linux in VirtualBox - SpyroSoft</title>
+    <title>How to Configure Printers in Linux - SpyroSoft</title>
     <link href="/css/foundation.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
@@ -36,21 +36,29 @@
     </header>
     <section class="row">
       <div class="columns blog">
-        <h2 id="running-windows-under-linux-in-virtualbox">Running Windows Under Linux in VirtualBox</h2>
+        <h2 id="how-to-configure-printers-in-linux">How to Configure Printers in Linux</h2>
         
-        <hr />
+        <h3 id="cups">CUPS</h3>
         
-        <p><em>Note:</em> Requires a Windows License Key</p>
+        <p>There is more than one utility out there which can be used to configure printers under Linux. CUPS is the one you will hear about the most these days (2014). Install CUPS and the third party system-config-printer package if you have not already done so.</p>
         
-        <p>Dual booting is not ideal for running two different operating systems. It requires quite a bit of effort to switch back and forth and sharing files between the two is not always easy. Sometimes it makes more sense to use virtual machines.</p>
+        <p>If you use Arch, you will need to systemctl start cups. If you would like, systemctl enable cups instead.</p>
         
-        <p>In the case of running Windows under Linux forums here and there strongly indicate both sides of whether or not this works. In particular the chatter regarding OEM licenses vs retail licenses is true. An OEM license that comes with your computer is not valid as a virtual machine license… Sadface. You'll have to buy an entirely new license for this to work.</p>
+        <p>Run system-config-printer. Click the Add button and enter an admin’s credentials.</p>
         
-        <p>When ready download a blank bloatware-free Windows ISO file matching the type of license you own. Create a new virtual machine for your version of Windows. Run through the Windows installation. Windows will probably reboot multiple times during the installation process. Ultimately it will ask you for your license key.</p>
+        <p>If you are using a network printer, expand the Network Printer section.</p>
         
-        <p>To make the virtual machine run full screen, install the VirtualBox Guest Additions by clicking Devices &gt; Install Guest Additions. Follow the instructions there.</p>
+        <h3 id="lpdlpr">LPD/LPR</h3>
         
-        <p>*Clap* And you're done.</p>
+        <p>The Line Print protocol is recognized by pretty much all printers. It is one of the earliest printer protocols used by UNIX and is so basic that there is no reason for printer companies not to include it.</p>
+        
+        <p>Enter your printer’s device URI as demonstrated.</p>
+        
+        <h3 id="the-printer-queue">The Printer Queue</h3>
+        
+        <p>Your printer expects traffic to a specific queue. Queue names are about as standard as cell phone chargers. To identify yours, search for yours in this list of printer queues. Common ones include “queue” and “printer”. Mine Canon MX870 uses “L1″. If you can’t find yours, search for “your printer model queue” in Google.</p>
+        
+        <p>Congratulations, you can now print from your Linux computer!</p>
       </div>
     </section>
     <footer>

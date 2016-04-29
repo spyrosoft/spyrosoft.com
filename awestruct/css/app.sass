@@ -1,7 +1,7 @@
 $fg-hex: #00ff00
 $fg-hex-accented: #00ff66
 $bg-hex: #000000
-$bg-rgba-transparent: rgba(0, 0, 0, 0.9)
+$bg-rgba-transparent: rgba(0, 0, 0, 0.7)
 
 $tiny-spacing: 0.2rem
 $small-spacing: 1rem
@@ -77,15 +77,11 @@ code
 	margin-bottom: $small-spacing
 
 header, section, footer
-	max-width: 900px
+	max-width: 37rem
 	margin: 0 auto
 
-section
-	padding-top: $small-spacing
-
-.main
-	padding-left: 2rem
-	padding-right: 2rem
+section, section.columns
+	padding: 2rem
 
 .soft-wrap
 	white-space: normal
@@ -94,18 +90,18 @@ section
 /* General
 
 body
-	background-image: url("../images/background-spyral-continuous.gif")
+	background-image: url("../images/spyral.png")
 	background-position: center top
 	background-repeat: repeat
 	background-attachment: fixed
 
 ul, ol
-	margin-left: $medium-spacing
+	margin-left: $small-spacing
 
-ul li
+ul
 	list-style-type: square
 
-ol li
+ol
 	list-style-type: decimal
 
 code
@@ -172,9 +168,9 @@ nav.top a:hover
 	nav.top ul
 		float: none
 	nav.top li
-		width: 100%
+		width: 50%
 		text-align: center
-		float: none
+		float: left
 
 
 /* Footer
@@ -182,6 +178,9 @@ nav.top a:hover
 footer
 	text-align: center
 	padding: $small-spacing 0
+
+	.copyright
+		padding: 0 $medium-spacing
 
 	.trademark
 		font-size: small
@@ -193,12 +192,24 @@ footer
 
 /* Page Specific
 
-.portfolio .columns .columns
-	text-align: center
-	min-height: 26rem
+.portfolio
+	h4
+		font-size: 1.25rem
+		text-align: center
+		padding-bottom: $small-spacing
 
-.experience .columns .columns
-	min-height: 28rem
+	.image
+		text-align: center
+		min-height: 200px
+
+	.row
+		margin-bottom: $medium-spacing
+
+.experience ul
+	margin-bottom: 0
+
+.tools ul li
+	margin-bottom: $small-spacing
 
 @media screen and (max-width:39.9375em)
 	.portfolio .columns .columns,

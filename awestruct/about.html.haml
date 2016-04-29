@@ -2,20 +2,36 @@
 title: About
 layout: general
 ---
-%section.row.columns.about
-  %h2 #{page.title}
-  %hr
-  %p
-    I am a programmer in Santa Cruz, California. This site is a central place where I can share software with the world.
-  %p
-    My expertise is in HTML, JavaScript, Zurb Foundation, Go, Steel Bank Common Lisp, Shell Scripting, SVG, SQL, JSON, AJAX, XML, XUL, Processing, AppleScript, C, PHP, and Java.
-  %p
-    I excel at creating Ecommerce websites and interactive web applications. My calling is in designing applications with intelligent user interfaces. This means that when there is only one thing that the user could possibly want under the current conditions, it happens automatically.
-  %p
-    I am a member of the
-    %a{href: 'http://nextspace.us/'} NextSpace Santa Cruz
-    community and
-    = succeed '.' do
-      %a{href: 'http://santacruzgeeks.com/'} Santa Cruz Geeks
-  %p
-    I fit best in projects where quality is the ultimate goal. It's hard for me to walk away from a project that hasn't been made perfect.
+%section.row
+  .columns.about
+    %h2 #{page.title}
+    %hr
+    %p
+      I make websites with a focus on security. In particular:
+    %ul
+      %li
+        Setting up Linux servers with no user passwords, keys only.
+      %li
+        Dropping all packets other than http and https.
+      %li
+        Using
+        %a{href: 'https://moxie.org/software/knockknock/'} KnockKnock
+        by Moxie Marlinspike to port knock open the ssh port for my ip address for 30 seconds and close again behind me.
+      %li
+        Installing the absolute minimum amount of software possible.
+      %li
+        Using HAProxy, Golang and PostgreSQL to protect against attacks on software such as Apache, PHP and MySQL.
+    %p
+      My profession began in 2008 as a designer using Photoshop and Illustrator. I have since moved from the top to the bottom of the developer stack. These days my greatest strength is in creating interactive web applications from the ground up with a focus on intelligent user interfaces. This means that when there is only one thing that the user could possibly want under the current conditions, it happens automatically. The interface itself is organized based on the most common user actions.
+    %p
+      I live in sunny Santa Cruz, California. My expertise is in Go, Zurb Foundation, SASS, Shell Scripting, Steel Bank Common Lisp, SVG, SQL, XUL, Processing, AppleScript, C, PHP, and Java.
+    %p
+      I also gravitate towards ecommerce websites. My experience varyies from Shopify to Stripe Checkout to Magento.
+    %p
+      I am a member of the
+      %a{href: 'http://nextspace.us/'} NextSpace Santa Cruz
+      community and
+      = succeed '.' do
+        %a{href: 'http://santacruzgeeks.com/'} Santa Cruz Geeks
+    %p
+      I fit best in projects where quality is the ultimate goal. I am a firm believer in the Clean Code movement.

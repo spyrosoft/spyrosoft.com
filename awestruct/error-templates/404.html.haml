@@ -1,11 +1,13 @@
 ---
-title: 404 Page Not Found
+title: 404 - Page Not Found
 layout: general
 ---
-%section.row.columns.404
-  %h2.text-center 404 - Not Found
-  %p
-    The page you're looking for can't be found.
-  %p
-    Maybe it moved. Try finding it via the
-    %a{:href => "/"} homepage
+%section.row
+  .columns.404
+    %h2 #{page.title}
+    %p
+      The page you're looking for can't be found.
+    %p
+      Maybe it moved. Try finding it via the
+      = succeed '.' do
+        %a{:href => "/"} homepage
