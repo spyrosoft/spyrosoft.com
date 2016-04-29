@@ -28,7 +28,7 @@ date: 4-3-16
 * IntelliJ
 * Leafpad
 
-This is a list of the text editors I have used to write and edit code. How could this list be so long? Every time I venture out to try a new editor the result is the same. The editor has somehow failed me. To this day I continue my search for the one editor to rule them all.
+If you are a developer this list probably looks familiar. You may have experience using some or most of these. How could there be so many code editors? If you are like me, every time you venture out to try a new editor the result is the same. The editor has somehow fallen short. To this day I continue my search for the one editor to rule them all.
 
 It is maybe due to the fact that all of the effort of editor creators is spread over so many different editors that no single editor is able to sprint ahead. The biggest issues in particular preventing editors from living up to my standards are (in no particular order):
 
