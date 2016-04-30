@@ -16,7 +16,7 @@ include_utilities: true
       %label
         Decoded Output:
         %textarea.monospace#cipher-output{rows: '8'}
-    .columns.large-3.medium-4.small-6
+    .columns.large-4.medium-4.small-6
       .row
         .columns.large-6.medium-6.small-6
           %label
@@ -26,28 +26,28 @@ include_utilities: true
           %label
             To:
             %input.monospace#assignment-to{maxlength: '1', size: '2', type: 'text'}
-    .columns.large-3.medium-4.small-6
+    .columns.large-4.medium-4.small-6
       %label
-        Assignments By Frequency:
+        Assignments:
         %select.monospace#assignments-select
-    .columns.large-3.medium-4.small-6
+    .columns.large-4.medium-4.small-6
       %label
-        Lookup Assignments:
+        Lookup:
         %select.monospace#lookup-select
-    .columns.large-3.medium-4.small-6
+    .columns.large-4.medium-4.small-6
       %label
         Conflicts:
         %select.monospace#conflicts-select
-    .columns.large-3.medium-4.small-6
+    .columns.large-4.medium-4.small-6
       %label{for: 'unknown'} Unknowns:
       .row
         .columns.large-6.medium-6.small-6
           %input.monospace#first-unknown{size: '4', type: 'text', value: '~'}
         .columns.large-6.medium-6.small-6
           %input.monospace#second-unknown{size: '4', type: 'text', value: '='}
-    .columns.large-3.medium-4.small-6
+    .columns.large-4.medium-4.small-6
       %label
-        Save/Load Assignments:
+        Save/Load:
         %input.monospace#save-load-assignments{type: 'text', value: ' ,.?!\'" ,.?!\'"'}
       %span#save-load-error.error
   .row

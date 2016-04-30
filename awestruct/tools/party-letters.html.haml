@@ -8,5 +8,9 @@ script: /js/tools/party-letters.js
     %h2 #{page.title}
     %hr
   .columns
-    %textarea#input{rows: '10'}
-    %textarea#output{rows: '10'}
+    %label
+      Input:
+      %textarea#input{rows: '10'}
+    %label
+      Output:
+      %textarea#output{rows: '10'}

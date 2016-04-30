@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Party Letters - SpyroSoft</title>
+    <title>Send Form Data To Any URL - SpyroSoft</title>
     <link href="/css/foundation.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
@@ -36,18 +36,57 @@
     </header>
     <section class="row">
       <div class="columns">
-        <h2>Party Letters</h2>
+        <h2>Send Form Data To Any URL</h2>
+        <hr>
+      </div>
+      <div class="columns">
+        <label class="inline">
+          <input checked="checked" id="post-for-post-or-get" name="post-or-get" type="radio" value="post">
+          Post
+        </label>
+        -
+        <label class="inline">
+          <input id="get-for-post-or-get" name="post-or-get" type="radio" value="get">
+          Get
+        </label>
+      </div>
+      <div class="columns">
+        <label for="where-to-send-the-data">
+          Where to send the data:
+          <input id="where-to-send-the-data" type="text">
+        </label>
+      </div>
+      <div class="columns">
+        <label>
+          Variable:
+          <input id="new-variable" type="text">
+        </label>
+      </div>
+      <div class="columns">
+        <label>
+          Value:
+          <textarea id="new-value"></textarea>
+        </label>
+      </div>
+      <div class="columns">
+        <input class="button" id="add-new-variable" type="button" value="Add">
+        <small>(Or press Enter)</small>
+      </div>
+      <form class="columns small-margin-bottom" id="arbitrary-data-form" method="post" target="_blank">
+        <div id="variables-display"></div>
+      </form>
+      <div class="columns">
+        <input class="button" id="submit-button" type="button" value="Submit">
         <hr>
       </div>
       <div class="columns">
         <label>
-          Input:
-          <textarea id="input" rows="10"></textarea>
+          Save this somewhere to load it again later:
+          <textarea id="save-or-load-data-textarea"></textarea>
         </label>
-        <label>
-          Output:
-          <textarea id="output" rows="10"></textarea>
-        </label>
+      </div>
+      <div class="columns">
+        <input class="button" id="load-data-button" type="button" value="Load Data">
       </div>
     </section>
     <footer>
@@ -65,6 +104,6 @@
     <script src="/js/vendor/what-input.min.js"></script>
     <script src="/js/foundation.min.js"></script>
     <script src="/js/app.js"></script>
-    <script src="/js/tools/party-letters.js"></script>
+    <script src="/js/tools/send-form-data-to-any-url.js"></script>
   </body>
 </html>

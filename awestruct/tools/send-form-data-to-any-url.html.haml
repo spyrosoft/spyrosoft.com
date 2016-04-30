@@ -1,0 +1,43 @@
+---
+title: Send Form Data To Any URL
+layout: general
+script: /js/tools/send-form-data-to-any-url.js
+---
+%section.row
+  .columns
+    %h2 #{page.title}
+    %hr
+  .columns
+    %label.inline
+      %input#post-for-post-or-get{checked: 'checked', name: 'post-or-get', type: 'radio', value: 'post'}
+      Post
+    \-
+    %label.inline
+      %input#get-for-post-or-get{name: 'post-or-get', type: 'radio', value: 'get'}
+      Get
+  .columns
+    %label{for: 'where-to-send-the-data'}
+      Where to send the data:
+      %input#where-to-send-the-data{type: 'text'}
+  .columns
+    %label
+      Variable:
+      %input#new-variable{type: 'text'}
+  .columns
+    %label
+      Value:
+      %textarea#new-value
+  .columns
+    %input#add-new-variable.button{type: 'button', value: 'Add'}
+    %small (Or press Enter)
+  %form#arbitrary-data-form.columns.small-margin-bottom{method: 'post', target: '_blank'}
+    #variables-display
+  .columns
+    %input#submit-button.button{type: 'button', value: 'Submit'}
+    %hr
+  .columns
+    %label
+      Save this somewhere to load it again later:
+      %textarea#save-or-load-data-textarea
+  .columns
+    %input#load-data-button.button{type: 'button', value: 'Load Data'}

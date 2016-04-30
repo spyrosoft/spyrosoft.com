@@ -7,19 +7,19 @@ script: /js/tools/unicode-lookup.js
   .row.columns
     %h2 #{page.title}
   .row
-    .columns.large-3.medium-6
+    .columns.large-6.medium-6
       %label
         Characters:
         %input#text_input{onkeyup: 'text_input_changed(event)', type: 'text'}
-    .columns.large-3.medium-6
+    .columns.large-6.medium-6
       %label
         Decimal Numbers:
         %input#number_input{onkeyup: 'number_input_changed(event)', type: 'text'}
-    .columns.large-3.medium-6
+    .columns.large-6.medium-6
       %label
         Start from:
         %input#start_range_input{onkeyup: 'start_range_text_changed(event)', type: 'text'}
-    .columns.large-3.medium-6
+    .columns.large-6.medium-6
       %label
         Limit:
         %input#limit_range_input{onkeyup: 'limit_range_text_changed(event)', type: 'text'}
