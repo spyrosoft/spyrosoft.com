@@ -1,0 +1,22 @@
+---
+title: Generate Clementine SoundCloud User Playlists
+layout: general
+script: /js/tools/generate-clementine-playlists.js
+---
+%section.row
+  .columns
+    %h2 #{page.title}
+    %hr
+  .columns
+    .row.collapse
+      .columns
+        %label{for: 'user-search'}
+          SonudCloud Username:
+      .columns.small-7.medium-7.large-7
+        %input#user-search{type: 'text'}
+      .columns.small-5.medium-5.large-5
+        %button#get-user-tracks.button.postfix Tracks
+    .row
+      .columns
+        %textarea.generated-playlist{rows: '10'}
+%script{src: 'https://connect.soundcloud.com/sdk-2.0.0.js'}
