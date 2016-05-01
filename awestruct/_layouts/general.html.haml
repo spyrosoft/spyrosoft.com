@@ -40,7 +40,8 @@
     %script{src: '/js/vendor/jquery.min.js'}
     %script{src: '/js/vendor/what-input.min.js'}
     %script{src: '/js/foundation.min.js'}
-    %script{src: '/js/app.js'}
+    :javascript
+      $(document).foundation();
     -if page.include_utilities
       %script{src: '/js/utilities.js'}
     -if page.script

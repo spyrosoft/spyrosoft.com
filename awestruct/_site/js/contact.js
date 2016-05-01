@@ -1,5 +1,3 @@
-$(document).foundation();
-
 $( 'nav.top a' ).each(
 	function ( index, element ) {
 		var current_element = $( element );
@@ -57,3 +55,5 @@ function contact_form_submission( submission_event )
 			}
 		);
 }
+
+document.getElementsByName('name')[0].focus();

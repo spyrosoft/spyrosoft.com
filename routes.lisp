@@ -5,6 +5,7 @@
 (route-directory "/generate-clementine-playlists/js/" "generate-clementine-playlists/js/" "text/javascript")
 
 (load "acceptors/contact.lisp")
+(load "acceptors/print-request.lisp")
 
 ;; Route / to index.html and serve it as text/html
 (route-file "/" "/" "index" "html" "text/html")

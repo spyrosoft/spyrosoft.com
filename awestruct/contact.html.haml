@@ -1,6 +1,7 @@
 ---
-title: Home
+title: Contact
 layout: general
+script: /js/contact.js
 ---
 %section.contact
   %form{action: '/contact-ajax/', method: 'post'}
@@ -23,5 +24,3 @@ layout: general
     .row
       .columns.text-center
         %button.button{type: 'submit'} Submit
-    :javascript
-      document.getElementsByName('name')[0].focus();
