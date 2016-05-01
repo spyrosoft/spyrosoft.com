@@ -282,3 +282,14 @@ footer hr {
   /* line 255, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
   .portfolio .columns .columns, .experience .columns .columns {
     min-height: auto; } }
+/* line 259, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+.common-lisp-repl #console > div, .common-lisp-repl #console pre {
+  position: initial !important; }
+
+/* line 263, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+.common-lisp-repl .jqconsole-cursor {
+  background-color: #00ff00; }
+
+/* line 266, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+.common-lisp-repl pre.jqconsole {
+  padding-bottom: 1rem; }
