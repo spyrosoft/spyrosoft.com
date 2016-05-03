@@ -14,7 +14,7 @@ One of the strangest things of all is that both thumbs are dedicated to the spac
 
 ### Offset Keys
 
-Initially keys were offset because keyboards were mechanical. This forces some of your fingers, such as your left hand index finger into uncomfortable positions when typing the key directly above. Why are all keyboards not layed out in straight grids?
+Initially keys were offset because keyboards were mechanical. This forces some of your fingers, such as your left hand index finger into uncomfortable positions when typing the key directly above. Why are all keyboards not laid out in straight grids?
 
 ### Qwerty
 
@@ -39,7 +39,7 @@ In response to the point regarding using other people's computers I can personal
 
 It took me about three months to master the new layout. This is apparently much longer than usual. Those who I know that switched took much less time than I did.
 
-Most people assume that the only reason to switch is to attain faster typing speed. I find that my typing speed is pretty much the same as it was before switching; it is mostly dependent on how fast I am thinking about what I'm typing. The only time typing speed really comes up for me is when I'm transcribing printed or written words to the computer which is fairly rare. The more important result of switching is the increase of comfort and accuracy. The ammount of backspace presses really does decrease quite a bit. The comfort will speak for itself when you're in flow (says a programmer, but I think this affects normal people too).
+Most people assume that the only reason to switch is to attain faster typing speed. I find that my typing speed is pretty much the same as it was before switching; it is mostly dependent on how fast I am thinking about what I'm typing. The only time typing speed really comes up for me is when I'm transcribing printed or written words to the computer which is fairly rare. The more important result of switching is the increase of comfort and accuracy. The amount of backspace presses really does decrease quite a bit. The comfort will speak for itself when you're in flow (says a programmer, but I think this affects normal people too).
 
 ### Alternative Layout
 

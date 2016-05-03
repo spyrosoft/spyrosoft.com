@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Tabs Vs Spaces - SpyroSoft</title>
+    <link href="/css/foundation.min.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
+    <link href="/images/apple-touch-icon.png" rel="apple-touch-startup-image">
+  </head>
+  <body>
+    <header>
+      <nav class="top clearfix">
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/contact.html">Contact</a>
+          </li>
+          <li>
+            <a href="/about.html">About</a>
+          </li>
+          <li>
+            <a href="/tools.html">Tools</a>
+          </li>
+          <li>
+            <a href="/blog.html">Blog</a>
+          </li>
+        </ul>
+      </nav>
+      <hr class="no-spacing">
+    </header>
+    <section class="row">
+      <div class="columns blog">
+        <h2 id="tabs-vs-spaces">Tabs Vs Spaces</h2>
+        <hr />
+        
+        <p>The most important thing is consistency. If a project is using seven spaces and a new developer on the team comes in and starts using anything else it is going to cause issues.</p>
+        
+        <p>That said, using spaces says "I use X number of spaces per tab. I am right and you are wrong so I am going to force you to use my way."</p>
+        
+        <p>Using tabs says "Even though I say tomato, you may say tomato. Go forth and display as many spaces per tab as you want and the code will still be formatted properly and make perfect sense."</p>
+        
+        <p>However, using tabs rather than spaces is a fundamentally different philosophy and needs to be treated that way. When a new line is created, the number of tabs represents the number of blocks in. That's all. There are lots of benefits to this philosophy.</p>
+        
+        <ul>
+          <li>Simplicity</li>
+          <li>Ease of rapidly identifying code blocks</li>
+          <li>Less incentive to use shorter, less descriptive variable names in order to avoid line wrapping</li>
+          <li>No reformatting necessary when renaming function names</li>
+        </ul>
+        
+        <p>Using one character per indentation reduces the amount of effort to change code block indentation dramatically. One might argue that the editor should be responsible for that. How many editors do this out of the box? If they look like tabs, why not just use tabs? It also makes it easier for less experienced programmers to write dirty code.</p>
+        
+        <p>One of the most common arguments to using spaces is to allow for variables that line up:</p>
+        
+        <pre><code>do_stuff_with_things( first_variable,&#x000A;                      second_variable&#x000A;                      third_variable )&#x000A;</code></pre>
+        
+        <p>But does that actually help? Doesn't this say the same thing?</p>
+        
+        <pre><code>do_stuff_with_things( first_variable,&#x000A;    second_variable, third_variable )&#x000A;</code></pre>
+        
+        <p>And now for the obligatory pointing out of why mixing tabs and spaces is the worst of both worlds. Mixing tabs and spaces is like saying</p>
+      </div>
+    </section>
+    <footer>
+      <hr>
+      <div class="copyright">
+        <p>
+          Copyright © by SpyroSoft
+        </p>
+        <p class="trademark">
+          SpyroSoft™ is a trademark wholly owned by Bennett Roesch
+        </p>
+      </div>
+    </footer>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/vendor/what-input.min.js"></script>
+    <script src="/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

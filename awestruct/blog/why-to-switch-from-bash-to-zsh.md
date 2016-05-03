@@ -105,7 +105,7 @@ Trying to remember a command's flag? Begin typing the command as you remember it
 
 ### Partial Command History Reverse Search
 
-Rather than searhcing for a command through your entire command history by pressing the up arrow, you can type as much of the command as you remember and then press up. Only commands beginning with what you typed are displayed.
+Rather than searching for a command through your entire command history by pressing the up arrow, you can type as much of the command as you remember and then press up. Only commands beginning with what you typed are displayed.
 
 
 ### $PROMPT
