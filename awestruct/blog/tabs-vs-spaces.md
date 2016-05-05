@@ -19,17 +19,17 @@ However, using tabs rather than spaces is a fundamentally different philosophy a
 * Less incentive to use shorter, less descriptive variable names in order to avoid line wrapping
 * No reformatting necessary when renaming function names
 
-Using one character per indentation reduces the amount of effort to change code block indentation dramatically. One might argue that the editor should be responsible for that. How many editors do this out of the box? If they look like tabs, why not just use tabs? It also makes it easier for less experienced programmers to write dirty code.
+Using one character per indentation reduces the amount of effort to change code block indentation dramatically. One might argue that the editor should be responsible for that. How many editors do this out of the box? If they look like tabs, why not just use tabs? Using spaces also makes it easier for less experienced programmers to write dirty code.
 
-One of the most common arguments to using spaces is to allow for variables that line up:
+One of the most common arguments for using spaces is to allow for variables that line up:
 
     do_stuff_with_things( first_variable,
-	                      second_variable
+	                      second_variable,
                           third_variable )
 
-But does that actually help? Doesn't this say the same thing?
+Maybe it looks nicer but does it actually help? Doesn't this say the same thing?
 
     do_stuff_with_things( first_variable,
         second_variable, third_variable )
 
-And now for the obligatory pointing out of why mixing tabs and spaces is the worst of both worlds. Mixing tabs and spaces is like saying 
+And now for the obligatory pointing out of the fact that mixing tabs and spaces is the worst of both worlds.
