@@ -1,0 +1,20 @@
+---
+title: Add Up Your Times
+layout: general
+script: /js/tools/add-up-your-times.js
+---
+%section.row
+  .columns
+    %h2 #{page.title}
+    %hr
+  .columns
+    %label
+      Input:
+      %textarea#input{rows: '10'}
+    %label
+      Rate:
+      %input#rate{:type => "text"}/
+    %h3.text-center
+      Total:
+      %span#total
+%script{src: '/js/utilities.js'}
