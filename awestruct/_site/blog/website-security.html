@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Website Security - SpyroSoft</title>
+    <link href="/css/foundation.min.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
+    <link href="/images/apple-touch-icon.png" rel="apple-touch-startup-image">
+  </head>
+  <body>
+    <header>
+      <nav class="top clearfix">
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/contact.html">Contact</a>
+          </li>
+          <li>
+            <a href="/about.html">About</a>
+          </li>
+          <li>
+            <a href="/tools.html">Tools</a>
+          </li>
+          <li>
+            <a href="/blog.html">Blog</a>
+          </li>
+        </ul>
+      </nav>
+      <hr class="no-spacing">
+    </header>
+    <section class="row">
+      <div class="columns blog">
+        <h2 id="website-security">Website Security</h2>
+        <hr />
+        
+        <p>Almost all small to medium sized websites are running PHP and usually a CMS. According to Forbes there are <a href="http://www.forbes.com/sites/jjcolao/2012/09/05/the-internets-mother-tongue/">60 Million WordPress websites</a>.</p>
+        
+        <h3 id="shared-hosting">Shared Hosting</h3>
+        
+        <p>Most shared hosting platforms (godaddy, bluehost, hostgator, etc.), really anything using cPanel, lump all of your sites under the same linux user. This is a worst case scenario. If any of your sites are compromised, all of your sites are compromised. The security of the entire system is only as strong as the weakest security of any individual site.</p>
+        
+        <p>It is often the case that for an entire shared hosting server Apache runs under one single user. It then serves all of the sites using the same Linux user permissions. This makes it easy for any single site to snoop on files from all of the other websites on the same server. In particular database passwords are visible. This provides read, write and delete access (minimum) to all of the databases on the server.</p>
+        
+        <p>An even worse consequence is that the file system permission responsibilities are left up to each individual site to set correctly. The purpose and functionality of permissions are not at all obvious to beginners. Many forums recommend solving problems by (chmod -R 777 .) adding full read, write, and execute permissions for all users on the system on all files. When this happens even to a single file (let alone all of the files) the security of your site is only as secure as the least secure site on the entire shared hosting system.</p>
+        
+        <p>There is a technique known as "jailing" which isolates each user from the others. It is shocking how rare this technique is actually put into practice.</p>
+        
+        <h3 id="what-happens-if-your-site-is-compromised">What Happens If Your Site Is Compromised</h3>
+        
+        <p>The longer a site is compromised the harder it is to restore.</p>
+        
+        <p>There are a few types of malicious techniques that tend to be used once someone has compromised a server. The two most common:</p>
+        
+        <ul>
+          <li>Spam may be sent out via backdoors scattered across the code base.</li>
+          <li>Database content may be modified with malicious links.</li>
+        </ul>
+        
+        <p>If the first happens, manually removing all of the backdoors is difficult and not always 100% successful.</p>
+        
+        <p>If the second happens, restoring the database will result in the loss of data added since the backup was created.</p>
+        
+        <h3 id="techniques-used-to-compromise-your-website">Techniques Used To Compromise Your Website</h3>
+        
+        <p>By far the most common technique is to scan websites across the internet for known vulnerabilities.</p>
+        
+        <p>In general vulnerabilities tend to be in third party software such as extensions, themes, or libraries. Once the server has been compromised backdoors are planted and left alone for six months or more. Then suddenly spam is sent out in volume. It is difficult to remove the backdoors at this point because all of the backups have long since expired.</p>
+        
+        <p>The second most common technique is to brute force the server login. To "brute force" means to try lots of different passwords until one of them succeeds. It is far too common for server passwords to be weak. Here are <a href="https://xkcd.com/936/">some</a> <a href="http://blog.codinghorror.com/your-password-is-too-damn-short/">resources</a> for making better passwords.</p>
+        
+        <h3 id="php">PHP</h3>
+        
+        <p>I think I will let PHP <a href="https://phpmanualmasterpieces.tumblr.com/">speak</a> <a href="http://hexatlas.com/entries/6">for</a> <a href="https://en.wikiquote.org/wiki/Rasmus_Lerdorf">itself</a>.</p>
+        
+        <h3 id="prevention">Prevention</h3>
+        
+        <p>The best thing to do is to take preventative measures. In my experience three in every forty WordPress sites over the course of six years are compromised. This risk increases with time and neglected maintenance or third party software as described above.</p>
+        
+        <p>Fun fact: if a theme or plugin is disabled in the admin it is still just as vulnerable as when it is enabled. All software should be removed that is not in use. Also consider using more secure technologies.</p>
+      </div>
+    </section>
+    <footer>
+      <hr>
+      <div class="copyright">
+        <p>
+          Copyright © by SpyroSoft
+        </p>
+        <p class="trademark">
+          SpyroSoft™ is a trademark wholly owned by Bennett Roesch
+        </p>
+      </div>
+    </footer>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/vendor/what-input.min.js"></script>
+    <script src="/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
