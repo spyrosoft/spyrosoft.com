@@ -8,6 +8,7 @@ if ( test_browser_compatibility() ) {
 	document.getElementById( 'submit-button' ).addEventListener( 'click', submit_form );
 	document.getElementById( 'save-or-load-data-textarea' ).addEventListener( 'keydown', load_save_data_on_enter );
 	document.getElementById( 'load-data-button' ).addEventListener( 'click', load_save_data );
+	document.getElementById( 'where-to-send-the-data' ).addEventListener( 'keyup', focus_new_variable );
 } else {
 	alert( 'I\'m afraid your browser isn\'t supported, sorry!' );
 }
@@ -153,7 +154,6 @@ function load_save_data()
 function load_save_data_on_enter( key_event )
 {
 	if ( test_for_enter( key_event ) ) {
-		console.log('yes')
 		key_event.preventDefault();
 		load_save_data();
 	}
@@ -174,6 +174,14 @@ function add_new_variable_on_enter( event )
 			 event.preventDefault();
 			 add_new_variable();
 		 }
+}
+
+function focus_new_variable( event )
+{
+	if ( test_for_enter( event ) ) {
+		event.preventDefault();
+		document.getElementById( 'new-variable' ).select();
+	}
 }
 
 function test_for_enter( event )
