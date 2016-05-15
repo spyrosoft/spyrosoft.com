@@ -42,7 +42,7 @@ function contact_form_submission( submission_event )
 				try {
 					response_json = JSON.parse( response_data );
 					if ( response_json[ 'success' ] ) {
-						alert( 'We got your message. Thank you for your contact.'  );
+						alert( 'Thank you for your message.'  );
 					} else {
 						alert( 'Something went wrong. Please contact Bennett by some other means and tell him.' );
 					}
