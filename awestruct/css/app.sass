@@ -1,8 +1,9 @@
-$fg-color: #00ff00
-$fg-color-accented: #00ff88
-$fg-color-accented-secondary: #0088ff
-$bg-color: #000000
-$bg-color-transparent: rgba(0, 0, 0, 0.7)
+$fg-color: #000000
+$fg-color-accented: #000088
+$fg-color-accented-secondary: #008800
+$bg-color: #ffffff
+$bg-color-transparent: rgba(255, 255, 255, 0.98)
+$bg-color-half-transparent: rgba(255, 255, 255, 0.5)
 
 $tiny-spacing: 0.2rem
 $small-spacing: 1rem
@@ -45,10 +46,7 @@ hr
 	color: $fg-color
 	border-color: $fg-color
 
-header
-	background-color: $bg-color
-
-section, footer
+header, section, footer
 	background-color: $bg-color-transparent
 
 code
@@ -234,7 +232,7 @@ footer
 
 /* Page Specific
 
-.portfolio
+section.portfolio
 	h4
 		font-size: 1.25rem
 		text-align: center
@@ -248,6 +246,9 @@ footer
 
 	.row
 		margin-bottom: $medium-spacing
+
+section.pick-two .image
+	background-color: $fg-color
 
 .experience ul
 	margin-bottom: 0
