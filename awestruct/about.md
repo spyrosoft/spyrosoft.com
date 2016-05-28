@@ -5,7 +5,7 @@ layout: standard
 # About
 ------
 
-I make websites with a focus on security. In technical terms:
+## Security Techniques
 
 * Setting up Linux servers with no user passwords, keys only.
 * Dropping all packets other than http and https.

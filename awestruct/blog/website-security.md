@@ -41,10 +41,10 @@ The second most common technique is to brute force the server login. To "brute f
 
 ### PHP
 
-I think I will let PHP [speak](https://phpmanualmasterpieces.tumblr.com/) [for](http://hexatlas.com/entries/6) [itself](https://en.wikiquote.org/wiki/Rasmus_Lerdorf).
+I think I will let PHP [speak](https://en.wikiquote.org/wiki/Rasmus_Lerdorf) [for](http://hexatlas.com/entries/6) [itself](https://phpmanualmasterpieces.tumblr.com/).
 
 ### Prevention
 
-The best thing to do is to take preventative measures. In my experience three in every forty WordPress sites over the course of six years are compromised. This risk increases with time and neglected maintenance or third party software as described above.
+The best thing to do is to take preventative measures. In my experience three in every forty WordPress sites over the course of five years are compromised. This risk increases with time and neglected maintenance or third party software as described above.
 
-Fun fact: if a theme or plugin is disabled in the admin it is still just as vulnerable as when it is enabled. All software should be removed that is not in use. Also consider using more secure technologies.
+Fun fact: if a theme or plugin is disabled in the admin it is still just as vulnerable as when it is enabled. All software should be removed that is not in use.
