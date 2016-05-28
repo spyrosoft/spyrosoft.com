@@ -1,26 +1,27 @@
 ---
 title: Contact
-layout: general
+layout: standard
 script: /js/contact.js
 ---
-%section.contact
-  %form{action: '/contact-ajax/', method: 'post'}
-    .row
-      .columns.medium-6.large-6
-        %label
-          Name
-          %input{name: 'name', type: 'text'}
-    .row
-      .columns.medium-6.large-6
-        %label
-          Email
-          %input{name: 'email', type: 'email'}
-    .row
-      .columns
-        %label
-          Message
-          %sup (Required)
-          %textarea{cols: '40', name: 'message', rows: '10'}
-    .row
-      .columns.text-center
-        %button.button{type: 'submit'} Submit
+%h1 #{page.title}
+%hr
+%form{action: '/contact-ajax/', method: 'post'}
+  .row
+    .columns.medium-6.large-6
+      %label
+        Name
+        %input{name: 'name', type: 'text'}
+  .row
+    .columns.medium-6.large-6
+      %label
+        Email
+        %input{name: 'email', type: 'email'}
+  .row
+    .columns
+      %label
+        Message
+        %sup (Required)
+        %textarea{cols: '40', name: 'message', rows: '10'}
+  .row
+    .columns.text-center
+      %button.button{type: 'submit'} Submit

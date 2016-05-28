@@ -37,39 +37,43 @@
       </nav>
       <hr class="no-spacing">
     </header>
-    <section class="contact">
-      <form action="/contact-ajax/" method="post">
-        <div class="row">
-          <div class="columns medium-6 large-6">
-            <label>
-              Name
-              <input name="name" type="text">
-            </label>
+    <section class="row">
+      <div class="columns">
+        <h1>Contact</h1>
+        <hr>
+        <form action="/contact-ajax/" method="post">
+          <div class="row">
+            <div class="columns medium-6 large-6">
+              <label>
+                Name
+                <input name="name" type="text">
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="columns medium-6 large-6">
-            <label>
-              Email
-              <input name="email" type="email">
-            </label>
+          <div class="row">
+            <div class="columns medium-6 large-6">
+              <label>
+                Email
+                <input name="email" type="email">
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="columns">
-            <label>
-              Message
-              <sup>(Required)</sup>
-              <textarea cols="40" name="message" rows="10"></textarea>
-            </label>
+          <div class="row">
+            <div class="columns">
+              <label>
+                Message
+                <sup>(Required)</sup>
+                <textarea cols="40" name="message" rows="10"></textarea>
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="columns text-center">
-            <button class="button" type="submit">Submit</button>
+          <div class="row">
+            <div class="columns text-center">
+              <button class="button" type="submit">Submit</button>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </section>
     <footer>
       <hr>
