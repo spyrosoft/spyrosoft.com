@@ -21,7 +21,7 @@ A compromised website damages the image of the company and the search engine ran
 
 **Why Do So Many Websites Use Insecure Technology?**
 
-That is a great question. The short answer is: In a perfect world they would not. The long answer is: [Worse Is Better](https://blog.codinghorror.com/worse-is-better/). In general it has to do with short term goals taking priority over long term goals.
+That is a great question. The short answer is: In a perfect world they would not. The long answer is: [Worse Is Better](https://blog.codinghorror.com/worse-is-better/). In general it has to do with short term goals taking priority over long term goals. The "Make it work right now" philosophy gets in the way of the "Make sure it is secure" goal.
 
 **How Do Websites Become Compromised?**
 
@@ -31,7 +31,7 @@ Head over to the Website Security blog post which lists a few [techniques used t
 
 The SpyroSoft philosophy: Less Software = More Security. Most web servers run separate software to 1) handle web requests and 2) generate web pages. The alternative is to combine the two. An entire point of failure and potential security issue is removed.
 
-Many steps have been taken to remove points of entry. If you are interested take a look at the [technical details](/about.html). If you know how to run a port scan do so now on spyrosoft.com.
+When building custom websites many steps are taken to remove points of entry. If you are interested take a look at the [technical details](/about.html). If you know how to run a port scan do so now on spyrosoft.com.
 
 **What Are Some Secure Options?**
 
@@ -46,4 +46,4 @@ If you are in the market for a system as a service solution which meets good sec
 
 The enormous community around WordPress has churned out software to handle just about anything. It may be tempting to jump on the band wagon. Be forewarned that what WordPress has in community it lacks in scalability, maintainability, security, speed, and modularity. If your website requires any of these WordPress is probably not the right fit.
 
-That said, using [wordpress.com](https://wordpress.com/) is the best solution out there for simple blogs with basic functionality (such as a contact form and a mailing list). It is fast, secure, and can withstand high load. However, beware of the trap here as well. A small percentage of the wordpress.org plugins are available to install on wordpress.com. As soon as you need additional functionality you will be forced to migrate away. This either means rebuilding the entire website or migrating WordPress to a hosting provider. Most of the advantages of wordpress.com evaporate upon moving to a different host.
+That said, using [wordpress.com](https://wordpress.com/) is one of the best solution out there for simple blogs with basic functionality (such as a contact form and a mailing list). It is fast, secure, and can withstand high load. However, beware of the trap here as well. A small percentage of the wordpress.org plugins are available to install on wordpress.com. As soon as you need additional functionality you will be forced to migrate away. This either means rebuilding the entire website or migrating WordPress to a hosting provider. Most of the advantages of wordpress.com evaporate upon moving to a different host.
