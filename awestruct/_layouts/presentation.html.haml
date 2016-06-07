@@ -1,0 +1,20 @@
+%html.no-js{lang: 'en-US'}
+  %head
+    %meta{content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}
+    %meta{charset: 'utf-8'}
+    %meta{content: 'ie=edge', 'http-equiv' => 'x-ua-compatible'}
+    %meta{content: 'width=device-width, initial-scale=1.0', name: 'viewport'}
+    %title #{page.title} - #{site.title}
+    %link{href: '/images/spyro-favicon.gif', rel: 'icon', type: 'image/gif'}
+    %link{href: '/js/vendor/reveal/css/reveal.css', rel: 'stylesheet'}
+    %link{href: '/js/vendor/reveal/css/theme/white.css', rel: 'stylesheet'}
+  %body
+    .reveal
+      .slides
+        ~ content
+    %script{src: '/js/vendor/reveal/js/reveal.js'}
+    :javascript
+      Reveal.initialize();
+    -if page.background
+      %style
+        body { background-image: url("#{page.background}") }
