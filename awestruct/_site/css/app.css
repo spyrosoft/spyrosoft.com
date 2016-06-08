@@ -18,13 +18,13 @@ nav.top a, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 /* line 29, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 [type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=tel], [type=time], [type=url], [type=color], [type=number], [type=search], select, textarea, .button, input:disabled, input[readonly], textarea:disabled, textarea[readonly] {
   border-color: #000000;
-  background-color: rgba(255, 255, 255, 0.98);
+  background-color: #ffffff;
   color: #000000; }
 
 /* line 34, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 [type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus, [type=number]:focus, [type=search]:focus, select:focus, textarea:focus, .button:focus, .button:hover, input:disabled:focus, input[readonly]:focus, textarea:disabled:focus, textarea[readonly]:focus, input:disabled:hover, input[readonly]:hover, textarea:disabled:hover, textarea[readonly]:hover {
   border-color: #000088;
-  background-color: rgba(255, 255, 255, 0.98);
+  background-color: #ffffff;
   color: #000088; }
 
 /* line 39, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
@@ -42,7 +42,7 @@ hr {
 
 /* line 49, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 header, section, footer {
-  background-color: rgba(255, 255, 255, 0.98); }
+  background-color: #ffffff; }
 
 /* line 52, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 code {
