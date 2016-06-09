@@ -35,12 +35,9 @@ When building custom websites many steps are taken to remove points of entry. If
 
 **What Are Some Secure Options?**
 
-If you are looking for something custom and need higher than average security please [contact me](/contact.html) for a free consultation.
+When you need a website or web application with higher than average security please [contact me](/contact.html) for a free consultation.
 
-If you are in the market for something out-of-the-box and don't mind limited functionality, the following are great platforms:
-
-* [Squarespace](https://www.squarespace.com/pricing) has an excellent user interface. It is designed for small to medium websites. The ecommerce functionality is minimal and works well for simple needs. Themes are fully customizable.
-* [Shopify](https://www.shopify.com/pricing) was created with a ground-up focus on ecommerce. Themes are fully customizable.
+When it comes to ecommerce it often makes more sense to use a service than a custom solution. One of the best and most secure options available is [Shopify](https://www.shopify.com/pricing). Themes are fully customizable.
 
 **Why Not Use WordPress?**
 
