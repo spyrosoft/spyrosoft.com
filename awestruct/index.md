@@ -37,7 +37,7 @@ When building custom websites many steps are taken to remove points of entry. If
 
 When you need a website or web application with higher than average security please [contact me](/contact.html) for a free consultation.
 
-When it comes to ecommerce it often makes more sense to use a service than a custom solution. One of the best and most secure options available is [Shopify](https://www.shopify.com/pricing). Themes are fully customizable.
+When it comes to ecommerce it often makes more sense to use a service than a custom solution. One of the best and most secure options available is [Shopify](https://www.shopify.com/pricing). Themes are fully customizable. If you are in need of a Shopify developer [I am available](/contact.html).
 
 **Why Not Use WordPress?**
 
