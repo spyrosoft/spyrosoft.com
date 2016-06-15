@@ -7,19 +7,19 @@ $( 'nav.top a' ).each(
 	}
 );
 
-$('.contact form').submit( contact_form_submission );
+$('form.contact').submit( contact_form_submission );
 
 function contact_form_submission( submission_event )
 {
 	submission_event.preventDefault();
-	var contact_submission_name = $( '.contact form [name=name]' ).val();
-	var contact_submission_subject = $( '.contact form [name=subject]' ).val();
-	var contact_submission_email = $( '.contact form [name=email]' ).val();
-	var contact_submission_message = $( '.contact form [name=message]' ).val();
+	var contact_submission_name = $( 'form.contact [name=name]' ).val();
+	var contact_submission_subject = $( 'form.contact [name=subject]' ).val();
+	var contact_submission_email = $( 'form.contact [name=email]' ).val();
+	var contact_submission_message = $( 'form.contact [name=message]' ).val();
 	if ( contact_submission_message === '' )
 	{
 		alert( 'The Message field is required.' );
-		$( '.contact form [name=message]' ).focus();
+		$( 'form.contact [name=message]' ).focus();
 		return;
 	}
 	var contact_sumbission_object = new Object;
@@ -30,10 +30,10 @@ function contact_form_submission( submission_event )
 	$.post( '/contact-ajax/', contact_sumbission_object )
 		.done(
 			function() {
-				$( '.contact form [name=name]' ).val( '' );
-				$( '.contact form [name=subject]' ).val( '' );
-				$( '.contact form [name=email]' ).val( '' );
-				$( '.contact form [name=message]' ).val( '' );
+				$( 'form.contact [name=name]' ).val( '' );
+				$( 'form.contact [name=subject]' ).val( '' );
+				$( 'form.contact [name=email]' ).val( '' );
+				$( 'form.contact [name=message]' ).val( '' );
 			}
 		)
 		.success(
