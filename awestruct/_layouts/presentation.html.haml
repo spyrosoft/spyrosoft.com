@@ -14,7 +14,7 @@
         ~ content
     %script{src: '/js/vendor/reveal/js/reveal.js'}
     :javascript
-      Reveal.initialize();
+      Reveal.initialize({progress:true,history:true});
     -if page.background
       %style
         body { background-image: url("#{page.background}") }
