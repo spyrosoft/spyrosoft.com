@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/spyrosoft
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://spyrosoft.com
+  * I am spyrosoft (https://keybase.io/spyrosoft) on keybase.
+  * I have a public key with fingerprint 216D 7998 9FCB 5D74 8FA9  1366 532D C25F 8557 A86E
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101f5a9ac3e92071fa886e2c144f6ed15e7a72973c1978dd58739a65ba74eeeb6f30a",
+            "fingerprint": "216d79989fcb5d748fa91366532dc25f8557a86e",
+            "host": "keybase.io",
+            "key_id": "532dc25f8557a86e",
+            "kid": "0101f5a9ac3e92071fa886e2c144f6ed15e7a72973c1978dd58739a65ba74eeeb6f30a",
+            "uid": "54864e7bdeefadbb76fc9853e8a8b419",
+            "username": "spyrosoft"
+        },
+        "service": {
+            "hostname": "spyrosoft.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1465952154,
+    "expire_in": 157680000,
+    "prev": "c2a0ef064e91974284eed16984c0f169068783dc0c4db47b468b511e541d990f",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2
+
+owGtUmtQVGUY3l1wucyaGGiuOhXHwm3C9Zw99yUsx2riMo4s5irIrOfyHfYE7FnO
+LlvITWZkJ1FHphkQTW0ZUUiIGjblkkBaBGlKTFIbimUNNYo4OA6KuY6dY/Wn6Wff
+n3e+93ue532ed766+RGaaG32qrOOGnurS3v+Oquxb2tpKoNYiS+FrGVQAXhcQCEP
+PF5HgchDVghGYETAGZrhUEBbYBIRGIoigIVDMEwgAI/ggGRIC02iHEKTFM/jFInS
+DIGzDIkBAFhCQGEGSoYE0ZUPZLcsuryKrAUheJKmKVrgWJwnMUpgaAQlCBy18JwF
+FygcJxlljkJ0Sh6VoZhjGQ8wi5LSUy6Ox/b+A/8/+y75aw5GERggWR4AgeFZliQE
+jqZwFFAMxWIIrQI9QHYxRUBBe9ylsuSRBC9UkQwpbZ/IAXWzapR/Q8ycVKSw3bLk
+lTipUHlyer1uj1WlekvdKvZtwDr+VnGwootXNqkwfED2iJILsiIKkvOKqiyCETiN
+WxAcS4bAO25RBg5RReAkQcHKUecAnyLJWRgY5AiwEopW8mMWSgnNIwRNYRwsKBUm
+KJJCeQ7mMJ7FSBYjKBZHEIBjCE/TsACpwYpdEmTFFZ9MvhpJzHcx3hIZQBWxu3TL
+IzXaaI1+nk79Y5rYmLh/Pp49O05T00NnR8zp5JkJe3n8VfZ4lE7Y5IrktxxBjxsN
+U3POoWXdnzX2LPx19MSFiPWbTzIjSIOnP3OwKHw2ZudbD050GUxd5a2vH/6m2hdO
+X3/3W/bK5N5z4/G22Zaedqvp2bHv53fdC/X2vBQOdPTtca5pcseszokrn22cN+I7
+Z1hRa5r7I3dHZcb5QE34QQBceLPZVnVg7e8Pdw0Plu+IvaY5uX+gn3BAzNWEkl/k
+2lH/Bqn8pmH2mRvOA5/nJhYsu5e4JCnaX5y29SOb+XJewsSw4dHk7oyho3tCne25
+C348dqht4xVI2zDdm5FSP3z40O2298K2U1l9vF3jf/7TgaHcvIPFhm7TdmOovjJV
+s+g54+LR9DN7CxdW5dzRrtJDCS1JtpVV+frAzKnT9ptPmqmR/ZVTSzZTH7f2bnxt
+6bHMhuW3HjUVmVETOn5/m27T7QCcnpbVvNb/VP+g8YnMujX6yS33o/hbTR3WZmvn
+h6kZOKsJVgWL2ztxHoHGxGntHcP1JHifMT2l7OelW7EXglmL+6KZwiMfZJymqRVT
+/UeD1Q9H7q6MGjPFmyPC+6wDG0IzxQmJ1XXmieC1N+rTxrcnf33xy1fbbnQ7Qu8f
+nPb5TZ8MfdUxrm/cWW/Iu4S8O/HKFxXf/dbu7J1bl3L5Ymrty+SiyDOTl35Kc6et
+G37a1+F+8YcFvtV/Ag==
+=ghZs
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/spyrosoft
+
+==================================================================
