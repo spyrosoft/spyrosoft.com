@@ -46,7 +46,7 @@
       <div class="columns blog">
         <h2>Everything You Need To Know About Your Website</h2>
         <hr>
-        <h2 id="registrars-and-hosts">Registrars And Hosts</h2>
+        <h2 id="registrars-vs-hosts">Registrars Vs Hosts</h2>
         
         <p>A <strong>registrar</strong> is where you purchase a <strong>domain name</strong>. A <strong>domain name</strong> is something like spyrosoft.com. <strong>Domain names</strong> cost approximately $10 per year.</p>
         
@@ -54,13 +54,13 @@
         
         <h2 id="who-offers-the-best-service">Who Offers The Best Service?</h2>
         
-        <p>Good registrars are very rarely good hosts and vice versa. I recommend registering your domains separately from your host.</p>
+        <p>Good <strong>registrars</strong> are very rarely good <strong>hosts</strong> and vice versa. I recommend <strong>registering</strong> your <strong>domain names</strong> separately from your <strong>host</strong>.</p>
         
-        <p>A great <strong>registrar</strong> is <a href="https://internetbs.net/">internet.bs</a>. The price is right and it has all the bells and whistles you might need including free private whois. The user experience is a bit lacking, but it's worth it.</p>
+        <p>A great <strong>registrar</strong> is <a href="https://internetbs.net/">internet.bs</a>. The price is right and it has all the bells and whistles you might need including free <strong>private whois</strong>. The user experience is a bit lacking, but it's worth it.</p>
         
-        <p>For shared php website <strong>hosting</strong> <a href="https://www.dreamhost.com/">DreamHost</a> is the best option available. A single account offers unlimited domains, email accounts, linux users (awesome), databases, bandwidth, and free SSL certificates.</p>
+        <p>For php website <strong>shared hosting</strong> <a href="https://www.dreamhost.com/">DreamHost</a> is the best option available. A single account offers unlimited domain names, email accounts, linux users (awesome), databases, bandwidth, and free SSL certificates.</p>
         
-        <p>For WordPress <strong>hosting</strong> <a href="https://thisistap.com/">This Is Tap</a> is an awesome startup providing managed WordPress hosting for a third as much as anywhere else. They also offer free SSL certificates.</p>
+        <p>For WordPress <strong>hosting</strong> <a href="https://thisistap.com/">This Is Tap</a> is an awesome startup providing managed WordPress <strong>hosting</strong> for a third as much as anywhere else. They also offer free SSL certificates.</p>
         
         <p>If you know of any better services out there, please <a href="/contact.html">let me know</a>.</p>
         
@@ -68,17 +68,17 @@
         
         <p>Often people will come to me for help after having attempted to set up their own website. While I approve of this valiant effort, it almost always saves beginners money and their rebound developer headaches if they ask for advice first.</p>
         
-        <p>Let's talk about cPanel. If you don't already know, cPanel is an open source project written in php with the goal of making it easier for the average person to manage host settings for their websites. Almost all php hosts use cPanel. (godaddy, bluehost, hostgator, etc.)</p>
+        <p>Let's talk about cPanel. If you don't already know, cPanel is an open source project written in php with the goal of making it easier for the average person to manage <strong>host</strong> settings for their websites. Almost all php <strong>hosts</strong> use cPanel. (godaddy, bluehost, hostgator, etc.)</p>
         
-        <p>A very large security issue arises when cPanel is used. All of the websites are placed together in the same directory. This makes all of the websites only as secure as the weakest website. In general it is a good idea to avoid cPanel altogether for this reason.</p>
+        <p>A serious security issue arises when cPanel is used. All of the websites are placed together in the same directory. This makes all of the websites only as secure as the weakest website. In general it is a good idea to avoid cPanel altogether for this reason.</p>
         
         <p><strong>Horror Story Time!</strong></p>
         
-        <p>For example, some friends of mine had an account at BlueHost. There were ten or so WordPress websites. One of the sites got hacked, then all of the sites got hacked. The hacker began sending out massive amounts of spam and replaced much of the website content with malicious content. After a while BlueHost shut down the account. Which is reasonable. However, BlueHost makes no distinction between web hosting accounts and email accounts. Everyone's email went down. Additionally, it turned out that the backup restoration button did absolutely nothing. Backups are a "feature" that costs an extra monthly fee. Most of the website content is gone forever.</p>
+        <p>Some friends of mine had an account at BlueHost. There were ten or so WordPress websites. One of the sites got hacked, then all of the sites got hacked. The hacker began sending out massive amounts of spam and replaced much of the website content with malicious content. After a while BlueHost shut down the account. Which is reasonable. However, BlueHost makes no distinction between web hosting accounts and email accounts. Everyone's email went down. Additionally, it turned out that the backup restoration button did absolutely nothing. Backups are a "feature" that costs an extra monthly fee. Most of the website content is gone forever.</p>
         
         <h2 id="the-basic-inner-workings-of-the-internet">The Basic Inner Workings Of The Internet</h2>
         
-        <h3 id="web-servers">Web Servers</h3>
+        <h3 id="servers">Servers</h3>
         
         <p>A <strong>server</strong> is a computer, albeit a weird looking one:</p>
         
@@ -91,20 +91,29 @@
         <p>Quite a lot happens every time you visit a webpage. Let's walk through it step by step:</p>
         
         <ol>
-          <li>The browser uses the domain name in the URL to look up the address to send messages to. For example: 107.170.216.160</li>
-          <li>The browser sends a message to the server using this IP Address (Internet Protocol Address).</li>
+          <li>The <strong>browser</strong> uses the <strong>domain name</strong> in the URL to look up the address to send messages to. For example: 107.170.216.160</li>
+          <li>The <strong>browser</strong> sends a message to the <strong>server</strong> using this IP Address (Internet Protocol Address).</li>
           <li>The http:// at the beginning of the URL indicates that we are using Hyper Text Transfer Protocol. (There will be a quiz at the end. ;)</li>
-          <li>When the message arrives at the server, the server checks to see if it is set up for that domain name.</li>
-          <li>The server sends the message along to the software set up for that domain name.</li>
-          <li>The software composes and sends a message back to the browser.</li>
-          <li>The browser receives the message, reads it, and displays it as a web page.</li>
+          <li>When the message arrives at the <strong>server</strong>, the <strong>server</strong> checks to see if it is set up for that <strong>domain name</strong>.</li>
+          <li>The <strong>server</strong> sends the message along to the software set up for that <strong>domain name</strong>.</li>
+          <li>The software composes and sends a message back to the <strong>browser</strong>.</li>
+          <li>The <strong>browser</strong> receives the message, reads it, and displays it as a web page.</li>
         </ol>
         
         <p>It's not quite this simple. If you would like further details, please <a href="/contact.html">ask me</a>.</p>
         
+        <h2 id="web-platforms">Web Platforms</h2>
+        
+        <p>In the context of the web, a platform is an online service which offers a web interface for creating and modifying your own websites.</p>
+        
+        <ul>
+          <li><a href="https://www.squarespace.com/pricing">Squarespace</a> offers sleek looking websites for mostly small or medium sized businesses at $16 per month. It supports basic ecommerce.</li>
+          <li><a href="https://www.shopify.com/pricing">Shopify</a> offers a fast, secure ecommerce platform at $29 per month.</li>
+        </ul>
+        
         <h2 id="web-programming-languages">Web Programming Languages</h2>
         
-        <p>The <strong>client side</strong> (or the <strong>front end</strong>) refers to everything that happens in the browser. In particular:</p>
+        <p>The <strong>client side</strong> (or the <strong>front end</strong>) refers to everything that happens in the <strong>browser</strong>. In particular:</p>
         
         <ul>
           <li><strong>HTML</strong> (Hyper Text Markup Language) - Take a moment to right click on this text and select View Page Source. It is used to describe the containers and content of web pages.</li>
@@ -115,42 +124,42 @@
         <p>The <strong>server side</strong> (or the <strong>back end</strong>) refers to everything that happens on the <strong>server</strong>. As opposed to the <strong>client side</strong>, the <strong>server side</strong> is able to run any type of software. Some common web programming languages are:</p>
         
         <ul>
-          <li><strong>PHP</strong> - One of the most commonly used programming languages for the web. For example Facebook and Twitter use it. Pretty much any forum you've ever seen uses it. Which is remarkable considering how poorly designed the language is. Unlike the other languages mentioned here, for every single page load the following happens:
+          <li><strong>PHP</strong> - One of the most commonly used programming languages for the web. It's greatest strength is its community. Since so many people use it, there is a lot of code available to accomplish common tasks. Facebook and Twitter use it. Pretty much any forum you've ever seen uses it. This is remarkable considering how poorly designed the language is. I can't think of another language which acts this way; for every single page load the following happens:
             <ul>
-              <li>The browser message is received</li>
+              <li>The <strong>browser</strong> message is received</li>
               <li>All of the PHP files are read from disk</li>
               <li>All of the PHP files are parsed</li>
               <li>All of the PHP files are compiled</li>
               <li>The compiled code runs</li>
-              <li>Page content is generated</li>
+              <li>Page content is generated and sent back to the browser</li>
               <li>The compiled code is freed from memory (deleted)</li>
             </ul>
           </li>
-          <li><strong>Ruby</strong> -</li>
-          <li><strong>Python</strong> -</li>
-          <li><strong>Go</strong> -</li>
-          <li><strong>Java</strong> -</li>
+          <li><strong>Ruby</strong> - A beautiful programming language. It also has an incredibly strong community, much of which is devoted to web programming.</li>
+          <li><strong>Python</strong> - A wonderful language. It is beginner friendly and expert friendly. It has a thriving web community despite it's being smaller than those of Ruby and PHP.</li>
+          <li><strong>Go</strong> - An exceptionally speedy programming language. It is relatively new. It was designed by three Google engineers for web programming and as a replacement for C++.</li>
+          <li><strong>Node.js</strong> - Another fairly young programming language. Its strengths are the ability to use the same code on the server as in the <strong>browser</strong>.</li>
         </ul>
         
-        <h2 id="web-platforms">Web Platforms</h2>
+        <h2 id="web-frameworks">Web Frameworks</h2>
         
-        <p>Rather than create a great deal of code every single time a website is created, it makes more sense to create a <strong>platform</strong> which can be reused over and over again for lots of different websites.</p>
+        <p>Rather than create a great deal of code every single time a website is created, it makes more sense to create a <strong>framework</strong> which can be reused over and over again for lots of different websites.</p>
         
-        <p>The most popular platform for the every day person's website is WordPress.</p>
+        <p>The most popular framework for the every day person's website is WordPress. Drupal is up there.</p>
         
-        <p>New languages are created when programmers find they do not have the correct tools to accomplish a certain, usually specific, type of goal. Platforms are created when the community using a language finds they do not have the correct tools to accomplish a certain, usually specific, type of goal. A platform is a collection of code which attempts to make common tasks easier. The tradeoff is an additional learning curve.</p>
+        <p>New languages are created when programmers find they do not have the correct tools to accomplish a certain, usually specific, type of goal. Frameworks are created when the community using a language finds they do not have the correct tools to accomplish a certain, usually specific, type of goal.</p>
         
         <h2 id="what-exactly-is-a-database">What Exactly Is A Database?</h2>
         
-        <p>A <strong>database</strong> is very similar to a collection of spreadsheets. In database terms each spreadsheet is known as a <strong>table</strong>. <strong>Tables</strong> have <strong>columns</strong> and <strong>rows</strong>. When a <strong>table</strong> is created each of the <strong>columns</strong> is set up to store a certain type of information in order to speed things up and save disk space.</p>
+        <p>A <strong>database</strong> is very similar to a collection of spreadsheets. In <strong>database</strong> terms each spreadsheet is known as a <strong>table</strong>. <strong>Tables</strong> have <strong>columns</strong> and <strong>rows</strong>. When a <strong>table</strong> is created each of the <strong>columns</strong> is set up to store a certain type of information in order to speed things up and save disk space.</p>
         
         <h2 id="different-types-of-hosting">Different Types Of Hosting</h2>
         
-        <p>Most websites are on <strong>shared hosting</strong>. This means that there is one <strong>server</strong> which <strong>hosts</strong> lots of different people's websites. Access to the server configuration itself is unavailable. Instead the server is set up for a specific type of web hosting which everyone uses. It can handle a low to medium sized amount of traffic.</p>
+        <p>Most websites are on <strong>shared hosting</strong>. This means that there is one <strong>server</strong> which <strong>hosts</strong> lots of different people's websites. Access to the <strong>server</strong> configuration itself is unavailable. Instead the <strong>server</strong> is set up for a specific type of <strong>hosting</strong> which everyone uses. It can handle a low to medium sized amount of traffic.</p>
         
-        <p>The second most common type of hosting is <strong>vps</strong> (<strong>virtual private server</strong>). This means that a server is running multiple virtual machines. The processing power and memory of the server are shared between them. This service is useful if your developer needs full control over the inner workings of the <strong>web server</strong>. It can handle a medium amount of traffic.</p>
+        <p>The second most common type of <strong>hosting</strong> is <strong>vps</strong> (<strong>virtual private server</strong>). This means that a <strong>server</strong> is running multiple virtual machines. The processing power and memory of the <strong>server</strong> are shared between them. This service is useful if your developer needs full control over the inner workings of the <strong>server</strong>. It can handle a medium amount of traffic.</p>
         
-        <p>The third type of hosting is called <strong>dedicated</strong>. An entire server is dedicated to you. It can handle a large amount of traffic.</p>
+        <p>The third type of <strong>hosting</strong> is called <strong>dedicated</strong>. An entire server is dedicated to you. It can handle a large amount of traffic.</p>
         
         <p>Beyond this is the use of multiple servers in a <strong>cluster</strong>. Each server is set up to display the same information and traffic is split up between them. It can handle a very large amount of traffic.</p>
         
@@ -172,15 +181,9 @@
         
         <p>This is called a Man In The Middle Attack. This is why Certificate Authorities exist. Everyone on the network has an official copy of the Certificate Authorities' Public Keys. These are uptaded every six months or so. Your computer communicates with the Certificate Authority to make sure you have recieved the proper Public Key from the receiving end with no funny business. Then everything proceeds as described above.</p>
         
-        <h2 id="the-beast-that-is-dns">The Beast That Is DNS</h2>
+        <h2 id="the-internet">The Internet</h2>
         
-        <p>Haha, just kidding.</p>
-        
-        <h2 id="technology-analysis-diagram">Technology Analysis Diagram</h2>
-        
-        <h2 id="keywords">Keywords</h2>
-        
-        <p>Registrar, Domain Name, Host, Server, Database, Table, Column, Row, Cluster</p>
+        <p><a href="https://www.youtube.com/watch?v=f99PcP0aFNE">It is Tubes</a></p>
       </div>
     </section>
     <hr class="no-spacing">
