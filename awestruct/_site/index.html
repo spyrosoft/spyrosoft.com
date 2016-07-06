@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Home - SpyroSoft</title>
+    <title>I Make Websites - SpyroSoft</title>
     <link href="/css/foundation.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
@@ -15,8 +15,10 @@
     <header>
       <nav class="top clearfix">
         <ul>
-          <li>
-            <a href="/">Home</a>
+          <li class="nav-image">
+            <a href="/">
+              <img alt="SpyroSoft Logo" src="/images/spyrosoft-logo-50x50.png">
+            </a>
           </li>
           <li>
             <a href="/portfolio.html">Portfolio</a>
@@ -28,6 +30,9 @@
             <a href="/about.html">About</a>
           </li>
           <li>
+            <a href="/faq.html">FAQs</a>
+          </li>
+          <li>
             <a href="/tools.html">Tools</a>
           </li>
           <li>
@@ -35,56 +40,76 @@
           </li>
         </ul>
       </nav>
-      <hr class="no-spacing">
     </header>
-    <section class="row">
-      <div class="columns">
-        <h1 id="building-secure-websites">Building Secure Websites</h1>
-        <hr />
-        
-        <p><strong>What Does Secure Mean?</strong></p>
-        
-        <p>In the context of a secure connection, secure means https appears in front of the domain:</p>
-        
-        <p><img src="/images/https-example.png" alt="Example image of https with the lock icon" /></p>
-        
-        <p>When https is present your browser sends information in a secret way across the internet. The information is secure in the sense that even if people on the network are able to scan the information while it is on transit they will not be able to tell what the contents are.</p>
-        
-        <p>In the context of building a secure website, security means allowing only those who are authorized to make modifications to the website. The technologies used to build the majority of the websites on the internet today are not very secure. For example, in my experience 3 in every 40 WordPress websites become compromised every 5 years. Compromised means unwanted code is remotely planted in lots of files across a website mostly for the purpose of sending out spam.</p>
-        
-        <p><strong>Why Is Security Important?</strong></p>
-        
-        <p>A compromised website damages the image of the company and the search engine ranks of the website. It is expensive and time consuming to fix. Sometimes data is lost permanently.</p>
-        
-        <p><strong>Why Do So Many Websites Use Insecure Technology?</strong></p>
-        
-        <p>That is a great question. The short answer is: In a perfect world they would not. The long answer is: <a href="https://blog.codinghorror.com/worse-is-better/">Worse Is Better</a>. In general it has to do with short term goals taking priority over long term goals. The "Make it work right now" philosophy gets in the way of the "Make sure it is secure" goal.</p>
-        
-        <p><strong>How Do Websites Become Compromised?</strong></p>
-        
-        <p>Head over to the Website Security blog post which lists a few <a href="/blog/website-security.html#techniques-used-to-compromise-your-website">techniques used to compromise websites</a>.</p>
-        
-        <p><strong>Why Is SpyroSoft Different?</strong></p>
-        
-        <p>The SpyroSoft philosophy: Less Software = More Security. Most web servers run separate software to 1) handle web requests and 2) generate web pages. The alternative is to combine the two. An entire point of failure and potential security issue is removed.</p>
-        
-        <p>When building custom websites many steps are taken to remove points of entry. If you are interested take a look at the <a href="/about.html">technical details</a>. If you know how to run a port scan do so now on spyrosoft.com.</p>
-        
-        <p><strong>What Are Some Secure Options?</strong></p>
-        
-        <p>When you need a website or web application with higher than average security please <a href="/contact.html">contact me</a> for a free consultation.</p>
-        
-        <p>When it comes to ecommerce it often makes more sense to use a service than a custom solution. One of the best and most secure options available is <a href="https://www.shopify.com/pricing">Shopify</a>. Themes are fully customizable. If you are in need of a Shopify developer <a href="/contact.html">I am available</a>.</p>
-        
-        <p><strong>Why Not Use WordPress?</strong></p>
-        
-        <p>The enormous community around WordPress has churned out software to handle just about anything. It may be tempting to jump on the bandwagon. Be forewarned that what WordPress has in community it lacks in scalability, maintainability, security, speed, and modularity. If your website requires any of these then WordPress is probably not the right fit.</p>
-        
-        <p>That said, using <a href="https://wordpress.com/">wordpress.com</a> is one of the best solution out there for simple blogs with basic functionality (such as a contact form and a mailing list). It is fast, secure, and can withstand high load. However, beware of the trap here as well. Only a small number of the wordpress.org plugins are available to install on wordpress.com. As soon as you need additional functionality you will be forced to migrate away. This either means rebuilding the entire website or migrating WordPress to a hosting provider. Most of the advantages of wordpress.com evaporate upon moving to a different host.</p>
-      </div>
-    </section>
-    <footer>
+    <hr class="no-spacing">
+    <div class="new-client-walkthrough display-none">
+      <section id="intro">
+        <h1>I Make Websites</h1>
+        <hr>
+        <p>Let me help you.</p>
+        <p class="no-spacing">Tell me a little about yourself:</p>
+        <noscript>
+          Please
+          <a href="/contact.html">contact me</a>
+          for a free consultation.
+        </noscript>
+      </section>
+      <section class="display-none" id="topic"></section>
+      <section class="row display-none" id="responses">
+        <div id="are-you-technical">
+          <div class="columns large-6 medium-6 no-spacing">
+            <button class="button" id="i-am-non-technical">
+              <h2>I Am Non-Technical</h2>
+            </button>
+          </div>
+          <div class="columns large-6 medium-6 no-spacing">
+            <button class="button" id="i-am-technical">
+              <h2>I Am Technical</h2>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="row columns">
+      <h1>I Make Websites</h1>
       <hr>
+      <p>Let me help you.</p>
+      <p>Tell me a little about yourself:</p>
+      <form action="/contact-ajax/" class="contact" method="post">
+        <div class="row">
+          <div class="columns medium-6 large-6">
+            <label>
+              Name
+              <input name="name" type="text">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns medium-6 large-6">
+            <label>
+              Email
+              <input name="email" type="email">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns">
+            <label>
+              Message
+              <sup>(Required)</sup>
+              <textarea cols="40" name="message" rows="10"></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns text-center">
+            <button class="button" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </section>
+    <hr class="no-spacing">
+    <footer>
       <div class="copyright">
         <p>
           Copyright © by SpyroSoft
@@ -100,5 +125,6 @@
     <script>
       $(document).foundation();
     </script>
+    <script src="/js/contact.js"></script>
   </body>
 </html>

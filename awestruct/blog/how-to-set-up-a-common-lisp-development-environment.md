@@ -3,9 +3,6 @@ title: How To Set Up A Common Lisp Development Environment
 layout: blog
 date: 4-29-16
 ---
-## How To Set Up A Common Lisp Development Environment
-------
-
 ### SBCL
 
 Steel Bank Common Lisp (sbcl) is a good implementation to use. It is cross platform and a mountain of effort has gone into its development. Do not use clisp - benchmarks compared with sbcl are very poor and many implementation decisions are not optimal (no optimized tail recursion to name one).

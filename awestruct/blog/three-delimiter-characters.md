@@ -3,9 +3,6 @@ title: Three Delimiter Characters
 layout: blog
 date: 5-2-16
 ---
-## Three Delimiter Characters
-------
-
 Let's standardize three characters whose sole purpose is exactly that: to delimit.
 
 Why three? One open delimiter, one close delimiter, and one separator delimiter.

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Everything You Need To Know About Your Website - SpyroSoft</title>
+    <link href="/css/foundation.min.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
+    <link href="/images/apple-touch-icon.png" rel="apple-touch-startup-image">
+  </head>
+  <body>
+    <header>
+      <nav class="top clearfix">
+        <ul>
+          <li class="nav-image">
+            <a href="/">
+              <img alt="SpyroSoft Logo" src="/images/spyrosoft-logo-50x50.png">
+            </a>
+          </li>
+          <li>
+            <a href="/portfolio.html">Portfolio</a>
+          </li>
+          <li>
+            <a href="/contact.html">Contact</a>
+          </li>
+          <li>
+            <a href="/about.html">About</a>
+          </li>
+          <li>
+            <a href="/faq.html">FAQs</a>
+          </li>
+          <li>
+            <a href="/tools.html">Tools</a>
+          </li>
+          <li>
+            <a href="/blog.html">Blog</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <hr class="no-spacing">
+    <section class="row">
+      <div class="columns blog">
+        <h2>Everything You Need To Know About Your Website</h2>
+        <hr>
+        <h2 id="registrars-and-hosts">Registrars And Hosts</h2>
+        
+        <p>A <strong>registrar</strong> is where you purchase a <strong>domain name</strong>. A <strong>domain name</strong> is something like spyrosoft.com. <strong>Domain names</strong> cost approximately $10 per year.</p>
+        
+        <p>A <strong>host</strong> is where you put your website files. Most <strong>hosts</strong> cost approximately $120 per year, though this cost can vary quite a bit.</p>
+        
+        <h2 id="who-offers-the-best-service">Who Offers The Best Service?</h2>
+        
+        <p>Good registrars are very rarely good hosts and vice versa. I recommend registering your domains separately from your host.</p>
+        
+        <p>A great <strong>registrar</strong> is <a href="https://internetbs.net/">internet.bs</a>. The price is right and it has all the bells and whistles you might need including free private whois. The user experience is a bit lacking, but it's worth it.</p>
+        
+        <p>For shared php website <strong>hosting</strong> <a href="https://www.dreamhost.com/">DreamHost</a> is the best option available. A single account offers unlimited domains, email accounts, linux users (awesome), databases, bandwidth, and free SSL certificates.</p>
+        
+        <p>For WordPress <strong>hosting</strong> <a href="https://thisistap.com/">This Is Tap</a> is an awesome startup providing managed WordPress hosting for a third as much as anywhere else. They also offer free SSL certificates.</p>
+        
+        <p>If you know of any better services out there, please <a href="/contact.html">let me know</a>.</p>
+        
+        <h2 id="which-services-should-i-avoid">Which Services Should I Avoid?</h2>
+        
+        <p>Often people will come to me for help after having attempted to set up their own website. While I approve of this valiant effort, it almost always saves beginners money and their rebound developer headaches if they ask for advice first.</p>
+        
+        <p>Let's talk about cPanel. If you don't already know, cPanel is an open source project written in php with the goal of making it easier for the average person to manage host settings for their websites. Almost all php hosts use cPanel. (godaddy, bluehost, hostgator, etc.)</p>
+        
+        <p>A very large security issue arises when cPanel is used. All of the websites are placed together in the same directory. This makes all of the websites only as secure as the weakest website. In general it is a good idea to avoid cPanel altogether for this reason.</p>
+        
+        <p><strong>Horror Story Time!</strong></p>
+        
+        <p>For example, some friends of mine had an account at BlueHost. There were ten or so WordPress websites. One of the sites got hacked, then all of the sites got hacked. The hacker began sending out massive amounts of spam and replaced much of the website content with malicious content. After a while BlueHost shut down the account. Which is reasonable. However, BlueHost makes no distinction between web hosting accounts and email accounts. Everyone's email went down. Additionally, it turned out that the backup restoration button did absolutely nothing. Backups are a "feature" that costs an extra monthly fee. Most of the website content is gone forever.</p>
+        
+        <h2 id="the-basic-inner-workings-of-the-internet">The Basic Inner Workings Of The Internet</h2>
+        
+        <h3 id="web-servers">Web Servers</h3>
+        
+        <p>A <strong>server</strong> is a computer, albeit a weird looking one:</p>
+        
+        <p><a href="https://en.wikipedia.org/wiki/File:Inside_and_Rear_of_Webserver.jpg"><img src="/images/blog/server.jpg" alt="Photograph of a server." /></a></p>
+        
+        <p>It can be anywhere in the world, connected to the Internet. Most <strong>servers</strong> use the Linux operating system.</p>
+        
+        <h3 id="what-happens-when-you-visit-a-webpage">What Happens When You Visit A Webpage</h3>
+        
+        <p>Quite a lot happens every time you visit a webpage. Let's walk through it step by step:</p>
+        
+        <ol>
+          <li>The browser uses the domain name in the URL to look up the address to send messages to. For example: 107.170.216.160</li>
+          <li>The browser sends a message to the server using this IP Address (Internet Protocol Address).</li>
+          <li>The http:// at the beginning of the URL indicates that we are using Hyper Text Transfer Protocol. (There will be a quiz at the end. ;)</li>
+          <li>When the message arrives at the server, the server checks to see if it is set up for that domain name.</li>
+          <li>The server sends the message along to the software set up for that domain name.</li>
+          <li>The software composes and sends a message back to the browser.</li>
+          <li>The browser receives the message, reads it, and displays it as a web page.</li>
+        </ol>
+        
+        <p>It's not quite this simple. If you would like further details, please <a href="/contact.html">ask me</a>.</p>
+        
+        <h2 id="web-programming-languages">Web Programming Languages</h2>
+        
+        <p>The <strong>client side</strong> (or the <strong>front end</strong>) refers to everything that happens in the browser. In particular:</p>
+        
+        <ul>
+          <li><strong>HTML</strong> (Hyper Text Markup Language) - Take a moment to right click on this text and select View Page Source. It is used to describe the containers and content of web pages.</li>
+          <li><strong>CSS</strong> (Cascading Style Sheets) - As an example, take a look at <a href="/css/app.css">the CSS used on spyrosoft.com</a>. CSS is used to specify the positions, colors, fonts, etc. of the HTML content. If you are intersted also take a look at the fascinating technical <a href="https://eager.io/blog/the-languages-which-almost-were-css/">history of CSS</a>.</li>
+          <li><strong>JavaScript</strong> - As an example, take a look at the JavaScript used on the <a href="/js/contact.js">spyrosoft.com contact page</a>.</li>
+        </ul>
+        
+        <p>The <strong>server side</strong> (or the <strong>back end</strong>) refers to everything that happens on the <strong>server</strong>. As opposed to the <strong>client side</strong>, the <strong>server side</strong> is able to run any type of software. Some common web programming languages are:</p>
+        
+        <ul>
+          <li><strong>PHP</strong> - One of the most commonly used programming languages for the web. For example Facebook and Twitter use it. Pretty much any forum you've ever seen uses it. Which is remarkable considering how poorly designed the language is. Unlike the other languages mentioned here, for every single page load the following happens:
+            <ul>
+              <li>The browser message is received</li>
+              <li>All of the PHP files are read from disk</li>
+              <li>All of the PHP files are parsed</li>
+              <li>All of the PHP files are compiled</li>
+              <li>The compiled code runs</li>
+              <li>Page content is generated</li>
+              <li>The compiled code is freed from memory (deleted)</li>
+            </ul>
+          </li>
+          <li><strong>Ruby</strong> -</li>
+          <li><strong>Python</strong> -</li>
+          <li><strong>Go</strong> -</li>
+          <li><strong>Java</strong> -</li>
+        </ul>
+        
+        <h2 id="web-platforms">Web Platforms</h2>
+        
+        <p>Rather than create a great deal of code every single time a website is created, it makes more sense to create a <strong>platform</strong> which can be reused over and over again for lots of different websites.</p>
+        
+        <p>The most popular platform for the every day person's website is WordPress.</p>
+        
+        <p>New languages are created when programmers find they do not have the correct tools to accomplish a certain, usually specific, type of goal. Platforms are created when the community using a language finds they do not have the correct tools to accomplish a certain, usually specific, type of goal. A platform is a collection of code which attempts to make common tasks easier. The tradeoff is an additional learning curve.</p>
+        
+        <h2 id="what-exactly-is-a-database">What Exactly Is A Database?</h2>
+        
+        <p>A <strong>database</strong> is very similar to a collection of spreadsheets. In database terms each spreadsheet is known as a <strong>table</strong>. <strong>Tables</strong> have <strong>columns</strong> and <strong>rows</strong>. When a <strong>table</strong> is created each of the <strong>columns</strong> is set up to store a certain type of information in order to speed things up and save disk space.</p>
+        
+        <h2 id="different-types-of-hosting">Different Types Of Hosting</h2>
+        
+        <p>Most websites are on <strong>shared hosting</strong>. This means that there is one <strong>server</strong> which <strong>hosts</strong> lots of different people's websites. Access to the server configuration itself is unavailable. Instead the server is set up for a specific type of web hosting which everyone uses. It can handle a low to medium sized amount of traffic.</p>
+        
+        <p>The second most common type of hosting is <strong>vps</strong> (<strong>virtual private server</strong>). This means that a server is running multiple virtual machines. The processing power and memory of the server are shared between them. This service is useful if your developer needs full control over the inner workings of the <strong>web server</strong>. It can handle a medium amount of traffic.</p>
+        
+        <p>The third type of hosting is called <strong>dedicated</strong>. An entire server is dedicated to you. It can handle a large amount of traffic.</p>
+        
+        <p>Beyond this is the use of multiple servers in a <strong>cluster</strong>. Each server is set up to display the same information and traffic is split up between them. It can handle a very large amount of traffic.</p>
+        
+        <h2 id="the-advanced-inner-workings-of-the-internet">The Advanced Inner Workings Of The Internet</h2>
+        
+        <h3 id="certificate-authorities">Certificate Authorities</h3>
+        
+        <p>Why does the https in the URL matter so much?</p>
+        
+        <p>When you send sensitive information such as your credit card number over the internet it has to be concealed from anyone who can see the data while it is on transit.</p>
+        
+        <p>Without going into too much technical detail, the technique to accomplish this is called public key cryptography. The receiving end creates a Public Key which the rest of the world has access to. At the same time it creates a Private Key which no one else has access to.</p>
+        
+        <p>Whenever person A (we'll call her Alice), wants to send secret information to person B (Bob), Alice uses Bob's Public Key to jumble the sensitive data into seemingly random 1s and 0s. (Wizardry, I know.) The random looking data can then safely be sent across the network. Even if someone were to intercept the data along the way, there is nothing that can be done with the random looking data. (As of 2016, but that's a conversation for another time.)</p>
+        
+        <p>When the random looking 1s and 0s reach their destination, Bob uses his Private Key to convert the data back into meaningful content.</p>
+        
+        <p>This is all fine and dandy, right? Well, what would happen if this is the first time you receive a copy of a Public Key? Couldn't a theif on the network intercept it, swap it out with their own Public Key, and pretend to be the person you are corresponding with?</p>
+        
+        <p>This is called a Man In The Middle Attack. This is why Certificate Authorities exist. Everyone on the network has an official copy of the Certificate Authorities' Public Keys. These are uptaded every six months or so. Your computer communicates with the Certificate Authority to make sure you have recieved the proper Public Key from the receiving end with no funny business. Then everything proceeds as described above.</p>
+        
+        <h2 id="the-beast-that-is-dns">The Beast That Is DNS</h2>
+        
+        <p>Haha, just kidding.</p>
+        
+        <h2 id="technology-analysis-diagram">Technology Analysis Diagram</h2>
+        
+        <h2 id="keywords">Keywords</h2>
+        
+        <p>Registrar, Domain Name, Host, Server, Database, Table, Column, Row, Cluster</p>
+      </div>
+    </section>
+    <hr class="no-spacing">
+    <footer>
+      <div class="copyright">
+        <p>
+          Copyright © by SpyroSoft
+        </p>
+        <p class="trademark">
+          SpyroSoft™ is a trademark wholly owned by Bennett Roesch
+        </p>
+      </div>
+    </footer>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/vendor/what-input.min.js"></script>
+    <script src="/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

@@ -3,9 +3,6 @@ title: Tabs Vs Spaces
 layout: blog
 date: 5-3-16
 ---
-## Tabs Vs Spaces
-------
-
 The most important thing is consistency. If a project is using seven spaces and a new developer on the team comes in and starts using anything else it is going to cause issues.
 
 That said, using spaces says "I use X number of spaces per tab. I am right and you are wrong so I am going to force you to use my way."

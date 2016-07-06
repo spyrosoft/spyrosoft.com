@@ -3,9 +3,6 @@ title: Running Windows Under Linux in VirtualBox
 layout: blog
 date: 4-27-16
 ---
-## Running Windows Under Linux in VirtualBox
-------
-
 _Note:_ Requires a Windows License Key
 
 Dual booting is not ideal for running two different operating systems. It requires quite a bit of effort to switch back and forth and sharing files between the two is not always easy. Sometimes it makes more sense to use virtual machines.

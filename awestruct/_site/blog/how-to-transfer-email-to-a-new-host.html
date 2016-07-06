@@ -15,8 +15,10 @@
     <header>
       <nav class="top clearfix">
         <ul>
-          <li>
-            <a href="/">Home</a>
+          <li class="nav-image">
+            <a href="/">
+              <img alt="SpyroSoft Logo" src="/images/spyrosoft-logo-50x50.png">
+            </a>
           </li>
           <li>
             <a href="/portfolio.html">Portfolio</a>
@@ -28,6 +30,9 @@
             <a href="/about.html">About</a>
           </li>
           <li>
+            <a href="/faq.html">FAQs</a>
+          </li>
+          <li>
             <a href="/tools.html">Tools</a>
           </li>
           <li>
@@ -35,13 +40,12 @@
           </li>
         </ul>
       </nav>
-      <hr class="no-spacing">
     </header>
+    <hr class="no-spacing">
     <section class="row">
       <div class="columns blog">
-        <h2 id="how-to-transfer-email-to-a-new-host">How To Transfer Email To A New Host</h2>
-        <hr />
-        
+        <h2>How To Transfer Email To A New Host</h2>
+        <hr>
         <p><em>Note</em>: A Linux command line utility exists called imapsync. The <a href="http://imapsync.lamiral.info/">official website</a> will have you believe that it is for sale for €50. Although I was unable to find it in the Debian repository when I checked last (did I spell something wrong?) it is definitely in EPEL for Red Hat and its variants. I did not have success with imapsync because I was transferring away from Google Mail. Google Mail has not marked it is a "secure application" so I eventually abandoned this approach. In your case you may have better luck. See the <a href="#imapsync-example">bottom of the page</a> for an example command.</p>
         
         <h3 id="forward">Forward</h3>
@@ -84,8 +88,8 @@
         <pre><code>imapsync \&#x000A;--user1 "username@example.com" \&#x000A;--host1 imap.gmail.com \&#x000A;--passfile1 password-username \&#x000A;--port1 993 \&#x000A;--ssl1 \&#x000A;--authmech1 LOGIN \&#x000A;--user2 "username@example.com" \&#x000A;--host2 sub4.mail.dreamhost.com \&#x000A;--passfile2 password-username-dreamhost \&#x000A;--authmech2 LOGIN \&#x000A;</code></pre>
       </div>
     </section>
+    <hr class="no-spacing">
     <footer>
-      <hr>
       <div class="copyright">
         <p>
           Copyright © by SpyroSoft

@@ -3,9 +3,6 @@ title: Learning Code
 layout: blog
 date: 5-4-16
 ---
-## Learning Code
-------
-
 Having spent time in both:
 
 1. Academia on a course through computer science

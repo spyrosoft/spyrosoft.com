@@ -3,9 +3,6 @@ title: Website Security
 layout: blog
 date: 5-6-16
 ---
-## Website Security
-------
-
 Almost all small to medium sized websites are running PHP and usually a CMS. According to Forbes there are [60 Million WordPress websites](http://www.forbes.com/sites/jjcolao/2012/09/05/the-internets-mother-tongue/).
 
 ### Shared Hosting
@@ -38,6 +35,10 @@ By far the most common technique is to scan websites across the internet for kno
 In general vulnerabilities tend to be in third party software such as extensions, themes, or libraries. Once the server has been compromised backdoors are planted and left alone for six months or more. Then suddenly spam is sent out in volume. It is difficult to remove the backdoors at this point because all of the backups have long since expired.
 
 The second most common technique is to brute force the server login. To "brute force" means to try lots of different passwords until one of them succeeds. It is far too common for server passwords to be weak. Here are [some](https://xkcd.com/936/) [resources](http://blog.codinghorror.com/your-password-is-too-damn-short/) for making better passwords.
+
+These two are the most common because anyone connected to the internet can use them.
+
+Another happens when someone logs into their website admin panel while using a wifi hotspot. Anyone else also using the same hotspot can see all of the data transferred back and forth from everyone else using the hotspot - the user and password fly by in plain text. This is not true if https in the URL.
 
 ### PHP
 

@@ -3,9 +3,6 @@ title: Common Lisp
 layout: blog
 date: 5-5-16
 ---
-## Common Lisp
-------
-
 ### Learning Resources
 
 #### Books

@@ -1,6 +1,9 @@
 ---
-layout: general
+layout: full-width
 ---
 %section.row
   .columns.blog
+    -if page.title
+      %h2 #{page.title}
+      %hr
     ~ content

@@ -15,8 +15,10 @@
     <header>
       <nav class="top clearfix">
         <ul>
-          <li>
-            <a href="/">Home</a>
+          <li class="nav-image">
+            <a href="/">
+              <img alt="SpyroSoft Logo" src="/images/spyrosoft-logo-50x50.png">
+            </a>
           </li>
           <li>
             <a href="/portfolio.html">Portfolio</a>
@@ -28,6 +30,9 @@
             <a href="/about.html">About</a>
           </li>
           <li>
+            <a href="/faq.html">FAQs</a>
+          </li>
+          <li>
             <a href="/tools.html">Tools</a>
           </li>
           <li>
@@ -35,13 +40,12 @@
           </li>
         </ul>
       </nav>
-      <hr class="no-spacing">
     </header>
+    <hr class="no-spacing">
     <section class="row">
       <div class="columns blog">
-        <h2 id="how-to-set-up-a-common-lisp-development-environment">How To Set Up A Common Lisp Development Environment</h2>
-        <hr />
-        
+        <h2>How To Set Up A Common Lisp Development Environment</h2>
+        <hr>
         <h3 id="sbcl">SBCL</h3>
         
         <p>Steel Bank Common Lisp (sbcl) is a good implementation to use. It is cross platform and a mountain of effort has gone into its development. Do not use clisp - benchmarks compared with sbcl are very poor and many implementation decisions are not optimal (no optimized tail recursion to name one).</p>
@@ -103,8 +107,8 @@
         <p>Now parentheses, brackets, and braces alternate color in your code. I chose a <a href="https://github.com/spyrosoft/.files/blob/master/.emacs.d/individual-packages/lisp.el">more rainbow styled color theme</a>.</p>
       </div>
     </section>
+    <hr class="no-spacing">
     <footer>
-      <hr>
       <div class="copyright">
         <p>
           Copyright © by SpyroSoft

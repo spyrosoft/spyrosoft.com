@@ -1,8 +1,8 @@
 ---
-title: Home
+title: FAQs
 layout: standard
 ---
-# Building Secure Websites
+# FAQs
 ------
 
 **What Does Secure Mean?**

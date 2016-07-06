@@ -3,9 +3,6 @@ title: How to Configure Printers in Linux
 layout: blog
 date: 4-28-16
 ---
-## How to Configure Printers in Linux
-------
-
 ### CUPS
 
 There is more than one utility out there which can be used to configure printers under Linux. CUPS is the one you will hear about the most these days (2014). Install CUPS and the third party system-config-printer package if you have not already done so.

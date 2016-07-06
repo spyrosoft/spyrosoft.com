@@ -3,9 +3,6 @@ title: Computer Keyboards
 layout: blog
 date: 4-28-16
 ---
-## Computer Keyboards
-------
-
 Keyboards are astonishing. Technology has come such an unfathomably long way. Yet computers still ship with the same keyboard shape and layout that was invented for the typewriter in the 1800's.
 
 ### 20% Of Your Fingers Are Dedicated To The Space Bar

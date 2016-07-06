@@ -18,8 +18,9 @@
     %header
       %nav.top.clearfix
         %ul
-          %li
-            %a{href: '/'} Home
+          %li.nav-image
+            %a{href: '/'}
+              %img{src: '/images/spyrosoft-logo-50x50.png', alt: 'SpyroSoft Logo'}
           %li
             %a{href: '/portfolio.html'} Portfolio
           %li
@@ -27,13 +28,15 @@
           %li
             %a{href: '/about.html'} About
           %li
+            %a{href: '/faq.html'} FAQs
+          %li
             %a{href: '/tools.html'} Tools
           %li
             %a{href: '/blog.html'} Blog
-      %hr.no-spacing
+    %hr.no-spacing
     ~ content
+    %hr.no-spacing
     %footer
-      %hr/
       .copyright
         %p
           Copyright © by SpyroSoft

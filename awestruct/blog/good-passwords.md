@@ -3,9 +3,6 @@ title: Good Passwords
 layout: blog
 date: 5-5-16
 ---
-## Good Passwords
-------
-
 ### Forward Note
 
 The worst consequence of someone's password being compromised that I have ever personally witnessed (that I know of anyway) was someone's domain being stolen. They were ultimately able to recover it with the help of their registrar. The second worst was lots of spam being sent directly from their email.

@@ -3,9 +3,6 @@ title: How To Transfer Email To A New Host
 layout: blog
 date: 5-5-16
 ---
-## How To Transfer Email To A New Host
-------
-
 _Note_: A Linux command line utility exists called imapsync. The [official website](http://imapsync.lamiral.info/) will have you believe that it is for sale for €50. Although I was unable to find it in the Debian repository when I checked last (did I spell something wrong?) it is definitely in EPEL for Red Hat and its variants. I did not have success with imapsync because I was transferring away from Google Mail. Google Mail has not marked it is a "secure application" so I eventually abandoned this approach. In your case you may have better luck. See the [bottom of the page](#imapsync-example) for an example command.
 
 ### Forward
