@@ -10,8 +10,8 @@
 		r="130"
 		cx="200"
 		cy="255"
-		stroke="#ff0000"
-		fill="#ff0000"
+		stroke="#000000"
+		fill="#000000"
 		fill-opacity="0.3"
 		/>
 	
@@ -19,7 +19,7 @@
 		x="165"
 		y="310"
 		font-size="24"
-		fill="#ff0000">
+		fill="#000000">
 			Cheap
 	</text>
 	
@@ -28,8 +28,8 @@
 		r="130"
 		cx="255"
 		cy="145"
-		stroke="#0000ff"
-		fill="#0000ff"
+		stroke="#000000"
+		fill="#000000"
 		fill-opacity="0.3"
 		/>
 	
@@ -37,7 +37,7 @@
 		x="300"
 		y="130"
 		font-size="24"
-		fill="#0000ff">
+		fill="#000000">
 			Fast
 	</text>
 	
@@ -46,8 +46,8 @@
 		r="130"
 		cx="145"
 		cy="145"
-		stroke="#00ff00"
-		fill="#00ff00"
+		stroke="#000000"
+		fill="#000000"
 		fill-opacity="0.3"
 		/>
 	
@@ -55,7 +55,7 @@
 		x="45"
 		y="130"
 		font-size="24"
-		fill="#00ff00">
+		fill="#000000">
 			Good
 	</text>
 	
@@ -63,7 +63,7 @@
 		x="150"
 		y="200"
 		font-size="24"
-		fill="#ffffff">
+		fill="#000000">
 			Pick Two
 	</text>
 	
