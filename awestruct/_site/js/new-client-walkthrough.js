@@ -8,7 +8,7 @@ function show_step(section) {
 	$('#intro').hide();
 }
 
-//$('#responses').removeClass('display-none');
+$('#responses').removeClass('display-none');
 /*
 setTimeout(function() {$('#i-am-technical').focus();}, 200);
 setTimeout(function() {$('#i-am-non-technical').focus();}, 500);
