@@ -1,49 +1,231 @@
 ---
 title: I Make Websites
-layout: full-width
-script: /js/contact.js
+layout: standard
+script: /js/new-client-walkthrough.js
+script2: /js/contact.js
 ---
-.new-client-walkthrough.display-none
-  %section#intro
+.new-client-walkthrough
+  #intro
     %h1 #{page.title}
     %hr
     %p Let me help you.
-    %p.no-spacing Tell me a little about yourself:
+    %p Tell me a little about yourself:
     %noscript
-      Please
-      %a{href: '/contact.html'} contact me
-      for a free consultation.
-  %section#topic.display-none
-  %section#responses.row.display-none
-    #are-you-technical
-      .columns.large-6.medium-6.no-spacing
+      %p
+        Please
+        %a{href: '/contact.html'} contact me
+        for a free consultation.
+  %section#responses.row.responses.display-none.no-padding
+    .are-you-technical.response
+      .columns
+        %h2 Are you technical?
+      .columns.large-6.medium-6
         %button.button#i-am-non-technical
-          %h2 I Am Non-Technical
-      .columns.large-6.medium-6.no-spacing
+          I Am Non-Technical
+        %p Nope. Please break it down for me.
+      .columns.large-6.medium-6
         %button.button#i-am-technical
-          %h2 I Am Technical
-%section.row.columns
-  %h1 #{page.title}
-  %hr
-  %p Let me help you.
-  %p Tell me a little about yourself:
-  %form.contact{action: '/contact-ajax/', method: 'post'}
-    .row
-      .columns.medium-6.large-6
+          I Am Technical
+        %p Yes. I know what terms like cms, wysiwyg, and shared hosting mean.
+    .do-you-have-an-existing-website.response
+      .columns
+        %h2 Do you have an existing website?
+      .columns.large-6.medium-6
+        %button.button#yes-existing-website
+          Yes
+        %p I want to change my website.
+      .columns.large-6.medium-6
+        %button.button#no-existing-website
+          No
+        %p I want to create a new website.
+    .which-platform.response
+      .columns
+        %h2 Which platform?
+      .columns.large-6.medium-6
         %label
-          Name
-          %input{name: 'name', type: 'text'}
-    .row
-      .columns.medium-6.large-6
+          %input{type: 'radio', name: 'which-platform', value: 'WordPress'}
+          WordPress
         %label
-          Email
-          %input{name: 'email', type: 'email'}
-    .row
+          %input{type: 'radio', name: 'which-platform', value: 'Shopify'}
+          Shopify
+        %label
+          %input{type: 'radio', name: 'which-platform', value: 'Magento'}
+          Magento
+        %label.other-platform
+          %input{type: 'radio', name: 'which-platform', value: 'Other'}
+          Other
+        %label.other-please-specify.display-none
+          Please Specify
+          %input.which-platform-other{type: 'text', name: 'which-platform-other'}
+      .columns.large-6.medium-6
+        %label
+          %input{type: 'radio', name: 'which-platform', value: 'Squarespace'}
+          Squarespace
+        %label
+          %input{type: 'radio', name: 'which-platform', value: 'Drupal'}
+          Drupal
+        %label
+          %input{type: 'radio', name: 'which-platform', value: 'Not Sure'}
+          Not Sure
+      .columns
+        .row
+          .columns.large-3.medium-3
+            %p
+          .columns.large-6.medium-6
+            %button.button#which-platform-next
+              Next
+          .columns.large-3.medium-3
+            %p
+    .what-do-you-have-in-mind.response
+      .columns
+        %h2 What do you have in mind?
       .columns
         %label
-          Message
-          %sup (Required)
-          %textarea{cols: '40', name: 'message', rows: '10'}
-    .row
-      .columns.text-center
-        %button.button{type: 'submit'} Submit
+          %input.a-redesign{type: 'checkbox', value: 'A Redesign'}
+          A Redesign
+        %label
+          %input.maintenance{type: 'checkbox', value: 'Maintenance'}
+          Maintenance (Software Updates, etc.)
+      .columns.large-6.medium-6
+        %label
+          New Features
+          %textarea.new-features
+        %label
+          Other
+          %textarea.other-website-needs
+      .columns
+        .row
+          .columns.large-3.medium-3
+            %p
+          .columns.large-6.medium-6
+            %button.button#what-do-you-have-in-mind-next
+              Next
+          .columns.large-3.medium-3
+            %p
+    .which-type-of-design-do-you-want.response
+      .columns
+        %h2 Which type of design do you want?
+      .columns.large-6.medium-6
+        %button.button#pre-existing-design
+          Pre-Existing
+        %p I want a pre-made theme. I don't want anything out of the ordinary.
+      .columns.large-6.medium-6
+        %button.button#custom-design
+          Custom
+        %p I want a custom theme. My website will be branded the same as the rest of our marketing.
+    .which-type-of-theme-do-you-want.response
+      .columns
+        %h2 Which type of theme do you want?
+      .columns.large-6.medium-6
+        %button.button#purchase-a-theme
+          Purchase
+        %p I want a better than average theme.
+      .columns.large-6.medium-6
+        %button.button#free-theme
+          Free
+        %p Did you say free?
+    .will-you-be-selling-products.response
+      .columns
+        %h2 Will you be selling products?
+      .columns.large-6.medium-6
+        %button.button#yes-selling-products
+          Yes
+        %p I will be selling products through the website.
+      .columns.large-6.medium-6
+        %button.button#no-selling-products
+          No
+        %p Nope. No selling products for me.
+    .how-many-products.response
+      .columns
+        %h2 How many products?
+      .columns.large-6.medium-6
+        %button.button#fewer-than-ten-products
+          Ten Or Fewer
+      .columns.large-6.medium-6
+        %button.button#more-than-ten-products
+          More Than Ten
+    .what-type-of-products.response
+      .columns
+        %h2 What type of products?
+      .columns.large-4.medium-4
+        %button.button#object-products
+          Objects
+        %p We handle the (drop) shipping.
+      .columns.large-4.medium-4
+        %button.button#object-and-electronic-products
+          Both
+      .columns.large-4.medium-4
+        %button.button#electronic-products
+          Electronic
+        %p Digital downloads
+    .want-a-blog.response
+      .columns
+        %h2 Will you want a blog?
+      .columns.large-6.medium-6
+        %button.button#yes-blog
+          Yes
+      .columns.large-6.medium-6
+        %button.button#no-blog
+          No
+    .do-you-want-higher-than-average-security.response
+      .columns
+        %h2 Do you want higher than average security?
+      .columns.large-6.medium-6
+        %button.button#security-not-concerned
+          Not Concerned
+        %p I'm not looking for anything out of the ordinary.
+      .columns.large-6.medium-6
+        %button.button#security-high-priority
+          High Priority
+        %p There will be sensitive data or my company would like to make a good technical impression with the website.
+    .what-other-functionality-do-you-want.response
+      .columns
+        %h2 What other functionality do you want?
+      .columns
+        %label
+          %input{type: 'checkbox', value: 'Contact Form'}
+          Contact Form
+        %label
+          %input{type: 'checkbox', value: 'Mailing List'}
+          Mailing List
+      .columns.large-6.medium-6
+        %label
+          Other
+          %input{type: 'text', name: 'other-functionality'}
+      .columns
+        .row
+          .columns.large-3.medium-3
+            %p
+          .columns.large-6.medium-6
+            %button.button#what-other-functionality-next
+              Next
+          .columns.large-3.medium-3
+            %p
+    .send-message.response.text-left
+      .columns
+        %h2 Thank You!
+        %hr
+      .columns
+        %p Taking the time to answers these questions helps me immensely.
+        %p Please fill out your name and contact info then review your answers below.
+        %p If you would like to, please add any other questions or comments you have.
+      .columns
+        %form.contact{action: '/contact-ajax/', method: 'post'}
+          .row
+            .columns.medium-6.large-6
+              %label
+                Name
+                %input.name{name: 'name', type: 'text'}
+          .row
+            .columns.medium-6.large-6
+              %label
+                Email, Phone Number, or Both
+                %input{name: 'email', type: 'text'}
+          .row
+            .columns
+              %label
+                Message
+                %textarea.message{name: 'message', rows: '10'}
+          .row
+            .columns.text-center
+              %input.button{type: 'submit', value: 'Send'}

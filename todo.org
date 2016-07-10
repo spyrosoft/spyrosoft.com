@@ -2,29 +2,3 @@
 ** Photo of me
 ** Hire Bennett button
 ** Brief bio synopsis
-* Create a Hire Bennett page
-** I am non-technical
-*** I am looking for a website for my small/medium business.
-**** I will not be selling anything through my website.
-***** I won't need anything fancy beyond a Contact Us page or mailing list signup.
-***** I will need fancy functionality such as user signup or .
-**** I will sell items via my website.
-***** I will sell less than 10 items.
-***** I will sell less than 100 items.
-***** I will sell more than 100 items.
-*** 
-*** My website keeps getting hacked. I would like to migrate to a more secure platform.
-** I am technical
-*** I need a WordPress website.
-**** (same) I won't need anything fancy beyond a Contact Us page or mailing list signup.
-*** 
-* Solutions
-** Custom
-** Shopify
-** Squarespace
-** WordPress
-* Blog Posts to Carry Over
-http://blog.spyrosoft.com/how-to-configure-printers-in-linux/
-http://blog.spyrosoft.com/running-windows-7-under-linux-in-virtualbox/
-http://blog.spyrosoft.com/industry-disconnect/
-http://blog.spyrosoft.com/the-entire-game-has-changed/

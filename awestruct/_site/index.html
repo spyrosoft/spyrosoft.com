@@ -23,11 +23,9 @@
           <li>
             <a href="/portfolio.html">Portfolio</a>
           </li>
-          <!--
-            <li>
-              <a href="/contact.html">Contact</a>
-            </li>
-          -->
+          <li>
+            <a href="/contact.html">Contact</a>
+          </li>
           <li>
             <a href="/about.html">About</a>
           </li>
@@ -44,71 +42,356 @@
       </nav>
     </header>
     <hr class="no-spacing">
-    <div class="new-client-walkthrough display-none">
-      <section id="intro">
-        <h1>I Make Websites</h1>
-        <hr>
-        <p>Let me help you.</p>
-        <p class="no-spacing">Tell me a little about yourself:</p>
-        <noscript>
-          Please
-          <a href="/contact.html">contact me</a>
-          for a free consultation.
-        </noscript>
-      </section>
-      <section class="display-none" id="topic"></section>
-      <section class="row display-none" id="responses">
-        <div id="are-you-technical">
-          <div class="columns large-6 medium-6 no-spacing">
-            <button class="button" id="i-am-non-technical">
-              <h2>I Am Non-Technical</h2>
-            </button>
+    <section class="row">
+      <div class="columns">
+        <div class="new-client-walkthrough">
+          <div id="intro">
+            <h1>I Make Websites</h1>
+            <hr>
+            <p>Let me help you.</p>
+            <p>Tell me a little about yourself:</p>
+            <noscript>
+              <p>
+                Please
+                <a href="/contact.html">contact me</a>
+                for a free consultation.
+              </p>
+            </noscript>
           </div>
-          <div class="columns large-6 medium-6 no-spacing">
-            <button class="button" id="i-am-technical">
-              <h2>I Am Technical</h2>
-            </button>
-          </div>
+          <section class="row responses display-none no-padding" id="responses">
+            <div class="are-you-technical response">
+              <div class="columns">
+                <h2>Are you technical?</h2>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="i-am-non-technical">
+                  I Am Non-Technical
+                </button>
+                <p>Nope. Please break it down for me.</p>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="i-am-technical">
+                  I Am Technical
+                </button>
+                <p>Yes. I know what terms like cms, wysiwyg, and shared hosting mean.</p>
+              </div>
+            </div>
+            <div class="do-you-have-an-existing-website response">
+              <div class="columns">
+                <h2>Do you have an existing website?</h2>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="yes-existing-website">
+                  Yes
+                </button>
+                <p>I want to change my website.</p>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="no-existing-website">
+                  No
+                </button>
+                <p>I want to create a new website.</p>
+              </div>
+            </div>
+            <div class="which-platform response">
+              <div class="columns">
+                <h2>Which platform?</h2>
+              </div>
+              <div class="columns large-6 medium-6">
+                <label>
+                  <input name="which-platform" type="radio" value="WordPress">
+                  WordPress
+                </label>
+                <label>
+                  <input name="which-platform" type="radio" value="Shopify">
+                  Shopify
+                </label>
+                <label>
+                  <input name="which-platform" type="radio" value="Magento">
+                  Magento
+                </label>
+                <label class="other-platform">
+                  <input name="which-platform" type="radio" value="Other">
+                  Other
+                </label>
+                <label class="other-please-specify display-none">
+                  Please Specify
+                  <input class="which-platform-other" name="which-platform-other" type="text">
+                </label>
+              </div>
+              <div class="columns large-6 medium-6">
+                <label>
+                  <input name="which-platform" type="radio" value="Squarespace">
+                  Squarespace
+                </label>
+                <label>
+                  <input name="which-platform" type="radio" value="Drupal">
+                  Drupal
+                </label>
+                <label>
+                  <input name="which-platform" type="radio" value="Not Sure">
+                  Not Sure
+                </label>
+              </div>
+              <div class="columns">
+                <div class="row">
+                  <div class="columns large-3 medium-3">
+                    <p></p>
+                  </div>
+                  <div class="columns large-6 medium-6">
+                    <button class="button" id="which-platform-next">
+                      Next
+                    </button>
+                  </div>
+                  <div class="columns large-3 medium-3">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="what-do-you-have-in-mind response">
+              <div class="columns">
+                <h2>What do you have in mind?</h2>
+              </div>
+              <div class="columns">
+                <label>
+                  <input class="a-redesign" type="checkbox" value="A Redesign">
+                  A Redesign
+                </label>
+                <label>
+                  <input class="maintenance" type="checkbox" value="Maintenance">
+                  Maintenance (Software Updates, etc.)
+                </label>
+              </div>
+              <div class="columns large-6 medium-6">
+                <label>
+                  New Features
+                  <textarea class="new-features"></textarea>
+                </label>
+                <label>
+                  Other
+                  <textarea class="other-website-needs"></textarea>
+                </label>
+              </div>
+              <div class="columns">
+                <div class="row">
+                  <div class="columns large-3 medium-3">
+                    <p></p>
+                  </div>
+                  <div class="columns large-6 medium-6">
+                    <button class="button" id="what-do-you-have-in-mind-next">
+                      Next
+                    </button>
+                  </div>
+                  <div class="columns large-3 medium-3">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="which-type-of-design-do-you-want response">
+              <div class="columns">
+                <h2>Which type of design do you want?</h2>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="pre-existing-design">
+                  Pre-Existing
+                </button>
+                <p>I want a pre-made theme. I don't want anything out of the ordinary.</p>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="custom-design">
+                  Custom
+                </button>
+                <p>I want a custom theme. My website will be branded the same as the rest of our marketing.</p>
+              </div>
+            </div>
+            <div class="which-type-of-theme-do-you-want response">
+              <div class="columns">
+                <h2>Which type of theme do you want?</h2>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="purchase-a-theme">
+                  Purchase
+                </button>
+                <p>I want a better than average theme.</p>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="free-theme">
+                  Free
+                </button>
+                <p>Did you say free?</p>
+              </div>
+            </div>
+            <div class="will-you-be-selling-products response">
+              <div class="columns">
+                <h2>Will you be selling products?</h2>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="yes-selling-products">
+                  Yes
+                </button>
+                <p>I will be selling products through the website.</p>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="no-selling-products">
+                  No
+                </button>
+                <p>Nope. No selling products for me.</p>
+              </div>
+            </div>
+            <div class="how-many-products response">
+              <div class="columns">
+                <h2>How many products?</h2>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="fewer-than-ten-products">
+                  Ten Or Fewer
+                </button>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="more-than-ten-products">
+                  More Than Ten
+                </button>
+              </div>
+            </div>
+            <div class="what-type-of-products response">
+              <div class="columns">
+                <h2>What type of products?</h2>
+              </div>
+              <div class="columns large-4 medium-4">
+                <button class="button" id="object-products">
+                  Objects
+                </button>
+                <p>We handle the (drop) shipping.</p>
+              </div>
+              <div class="columns large-4 medium-4">
+                <button class="button" id="object-and-electronic-products">
+                  Both
+                </button>
+              </div>
+              <div class="columns large-4 medium-4">
+                <button class="button" id="electronic-products">
+                  Electronic
+                </button>
+                <p>Digital downloads</p>
+              </div>
+            </div>
+            <div class="want-a-blog response">
+              <div class="columns">
+                <h2>Will you want a blog?</h2>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="yes-blog">
+                  Yes
+                </button>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="no-blog">
+                  No
+                </button>
+              </div>
+            </div>
+            <div class="do-you-want-higher-than-average-security response">
+              <div class="columns">
+                <h2>Do you want higher than average security?</h2>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="security-not-concerned">
+                  Not Concerned
+                </button>
+                <p>I'm not looking for anything out of the ordinary.</p>
+              </div>
+              <div class="columns large-6 medium-6">
+                <button class="button" id="security-high-priority">
+                  High Priority
+                </button>
+                <p>There will be sensitive data or my company would like to make a good technical impression with the website.</p>
+              </div>
+            </div>
+            <div class="what-other-functionality-do-you-want response">
+              <div class="columns">
+                <h2>What other functionality do you want?</h2>
+              </div>
+              <div class="columns">
+                <label>
+                  <input type="checkbox" value="Contact Form">
+                  Contact Form
+                </label>
+                <label>
+                  <input type="checkbox" value="Mailing List">
+                  Mailing List
+                </label>
+              </div>
+              <div class="columns large-6 medium-6">
+                <label>
+                  Other
+                  <input name="other-functionality" type="text">
+                </label>
+              </div>
+              <div class="columns">
+                <div class="row">
+                  <div class="columns large-3 medium-3">
+                    <p></p>
+                  </div>
+                  <div class="columns large-6 medium-6">
+                    <button class="button" id="what-other-functionality-next">
+                      Next
+                    </button>
+                  </div>
+                  <div class="columns large-3 medium-3">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="send-message response text-left">
+              <div class="columns">
+                <h2>Thank You!</h2>
+                <hr>
+              </div>
+              <div class="columns">
+                <p>Taking the time to answers these questions helps me immensely.</p>
+                <p>Please fill out your name and contact info then review your answers below.</p>
+                <p>If you would like to, please add any other questions or comments you have.</p>
+              </div>
+              <div class="columns">
+                <form action="/contact-ajax/" class="contact" method="post">
+                  <div class="row">
+                    <div class="columns medium-6 large-6">
+                      <label>
+                        Name
+                        <input class="name" name="name" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="columns medium-6 large-6">
+                      <label>
+                        Email, Phone Number, or Both
+                        <input name="email" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="columns">
+                      <label>
+                        Message
+                        <textarea class="message" name="message" rows="10"></textarea>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="columns text-center">
+                      <input class="button" type="submit" value="Send">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
-    </div>
-    <section class="row columns">
-      <h1>I Make Websites</h1>
-      <hr>
-      <p>Let me help you.</p>
-      <p>Tell me a little about yourself:</p>
-      <form action="/contact-ajax/" class="contact" method="post">
-        <div class="row">
-          <div class="columns medium-6 large-6">
-            <label>
-              Name
-              <input name="name" type="text">
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="columns medium-6 large-6">
-            <label>
-              Email
-              <input name="email" type="email">
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="columns">
-            <label>
-              Message
-              <sup>(Required)</sup>
-              <textarea cols="40" name="message" rows="10"></textarea>
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="columns text-center">
-            <button class="button" type="submit">Submit</button>
-          </div>
-        </div>
-      </form>
+      </div>
     </section>
     <hr class="no-spacing">
     <footer>
@@ -127,6 +410,7 @@
     <script>
       $(document).foundation();
     </script>
+    <script src="/js/new-client-walkthrough.js"></script>
     <script src="/js/contact.js"></script>
   </body>
 </html>

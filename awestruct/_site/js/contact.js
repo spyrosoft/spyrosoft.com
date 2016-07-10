@@ -1,12 +1,3 @@
-$( 'nav.top a' ).each(
-	function ( index, element ) {
-		var current_element = $( element );
-		if ( current_element.attr( 'href' ) === window.location.pathname ) {
-			current_element.addClass( 'active' );
-		}
-	}
-);
-
 $('form.contact').submit( contact_form_submission );
 
 function contact_form_submission( submission_event )
