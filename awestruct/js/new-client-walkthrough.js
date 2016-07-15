@@ -2,7 +2,7 @@ var responses = [];
 
 var next_step = {
 	'i-am-non-technical' : function() {
-		responses.push('First off, I consider myself non-technical. Please break it down the technical details for me.');
+		responses.push('First off, I consider myself non-technical. Please break down the technical details for me.');
 		show_step('do-you-have-an-existing-website');
 	},
 	'i-am-technical' : function() {
