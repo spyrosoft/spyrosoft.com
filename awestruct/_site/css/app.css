@@ -241,7 +241,7 @@ footer hr {
 
 /* Page Specific */
 /* line 262, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
-.new-client-walkthrough button {
+.new-client-walkthrough button, .new-client-walkthrough input[type="button"], .new-client-walkthrough input[type="submit"] {
   font-size: 1rem;
   line-height: 120%;
   padding: 2rem;

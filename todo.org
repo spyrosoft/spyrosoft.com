@@ -1,3 +1,7 @@
+* Homepage
+** Split the Thank You step into two, first with the name and contact info, then with the message
+** Add a price estimate to the Thank You step
+** If they are not technical, hide the technical content
 * Add in a sticky right navigation
 ** Photo of me
 ** Hire Bennett button

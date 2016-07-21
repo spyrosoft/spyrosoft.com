@@ -153,6 +153,22 @@ $('button').click(button_clicked);
 
 $('.other-platform').click(function() {$('.other-please-specify').removeClass('display-none');});
 
+$('#thank-you-next')
+	.click(
+		function() {
+			if ($('form.contact [name=email]').val() === '') {
+				alert('Please fill out your contact information. Otherwise I will not be able to respond to you. :D');
+				$('form.contact [name=email]').first().focus();
+				return;
+			}
+			$('#thank-you-message-submission').show();
+			$('#thank-you-message-contact-info').hide();
+		}
+	)
+	.removeClass('display-none');
+$('#thank-you-message-submission').hide();
+
+
 setTimeout(function() {$('#i-am-non-technical').focus();}, 200);
 setTimeout(function() {$('#i-am-technical').focus();}, 500);
 setTimeout(function() {$('nav a').first().focus();}, 800);

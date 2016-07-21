@@ -351,39 +351,51 @@
                 <hr>
               </div>
               <div class="columns">
-                <p>Taking the time to answers these questions helps me immensely.</p>
-                <p>Please fill out your name and contact info then review your answers below.</p>
-                <p>If you would like to, please add any other questions or comments you have.</p>
-              </div>
-              <div class="columns">
                 <form action="/contact-ajax/" class="contact" method="post">
-                  <div class="row">
-                    <div class="columns medium-6 large-6">
-                      <label>
-                        Name
-                        <input class="name" name="name" type="text">
-                      </label>
+                  <div id="thank-you-message-contact-info">
+                    <div class="row">
+                      <div class="columns medium-6 large-6">
+                        <label>
+                          Your Name
+                          <input class="name" name="name" type="text">
+                        </label>
+                      </div>
+                      <div class="columns medium-6 large-6">
+                        <label>
+                          Your Email, Phone Number, or Both
+                          <input name="email" type="text">
+                        </label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="columns medium-3 large-3 show-for-medium">
+                        &nbsp;
+                      </div>
+                      <div class="columns medium-6 large-6">
+                        <input class="button display-none" id="thank-you-next" type="button" value="Next">
+                      </div>
+                      <div class="columns medium-3 large-3 show-for-medium">
+                        &nbsp;
+                      </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="columns medium-6 large-6">
-                      <label>
-                        Email, Phone Number, or Both
-                        <input name="email" type="text">
-                      </label>
-                    </div>
-                  </div>
-                  <div class="row">
+                  <div class="row" id="thank-you-message-submission">
                     <div class="columns">
+                      <p>The answers you provided have been combined together into the following message.</p>
+                      <p>Feel free to modify it and please add any other questions or comments you have.</p>
                       <label>
                         Message
                         <textarea class="message" name="message" rows="10"></textarea>
                       </label>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="columns text-center">
+                    <div class="columns medium-3 large-3 show-for-medium">
+                      &nbsp;
+                    </div>
+                    <div class="columns medium-6 large-6">
                       <input class="button" type="submit" value="Send">
+                    </div>
+                    <div class="columns medium-3 large-3 show-for-medium">
+                      &nbsp;
                     </div>
                   </div>
                 </form>
