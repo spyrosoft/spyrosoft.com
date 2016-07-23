@@ -10,18 +10,9 @@ script2: /js/send-payment.js
 .row.send-payment
   .columns.step.payment-amount
     %label
+      .payment-amount-error.error
       %input.large#payment-amount{type: "text", placeholder: "$1,000,000.00"}
-    %button.button.large.next-step.check-correct-amount
+    %button.button.large.next-step.send-payment
       Send Payment
-    .how-much-error.error
-  .columns.step.check-correct-amount.text-center
-    %h1#check-correct-amount
-    %p Is this the correct amount?
-    %p
-      %button.no-margin.button.large.next-step.submit-payment
-        Yes
-    %p
-      %button.no-margin.button.next-step.paymen-amount
-        Wait, go back
   :javascript
     document.getElementById('payment-amount').focus();

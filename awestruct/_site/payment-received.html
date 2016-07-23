@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Send Payment - SpyroSoft</title>
+    <title>Payment Received - SpyroSoft</title>
     <link href="/css/foundation.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
@@ -44,21 +44,16 @@
     <hr class="no-spacing">
     <section class="row">
       <div class="columns">
-        <h1>Send Payment</h1>
+        <h1>Payment Received</h1>
         <hr>
-        <div class="row send-payment">
-          <div class="columns step payment-amount">
-            <label>
-              <div class="payment-amount-error error"></div>
-              <input class="large" id="payment-amount" placeholder="$1,000,000.00" type="text">
-            </label>
-            <button class="button large next-step send-payment">
-              Send Payment
-            </button>
-          </div>
-          <script>
-            document.getElementById('payment-amount').focus();
-          </script>
+        <div class="row columns">
+          <h4>Thank You!</h4>
+          <p>Have a lovely day.</p>
+          <p>
+            If you would like to, please take a look at the
+            <a href="/blog.html">Blog</a>
+            for some fun information.
+          </p>
         </div>
       </div>
     </section>
@@ -79,8 +74,5 @@
     <script>
       $(document).foundation();
     </script>
-    <script src="/js/utilities.js"></script>
-    <script src="https://checkout.stripe.com/checkout.js"></script>
-    <script src="/js/send-payment.js"></script>
   </body>
 </html>

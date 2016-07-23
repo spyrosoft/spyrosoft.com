@@ -6,6 +6,7 @@
 
 (load "acceptors/contact.lisp")
 (load "acceptors/print-request.lisp")
+(load "acceptors/send-payment.lisp")
 
 ;; Route / to index.html and serve it as text/html
 (route-file "/" "/" "index" "html" "text/html")

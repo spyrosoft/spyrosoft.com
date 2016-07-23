@@ -1,5 +1,7 @@
 (ql:quickload :hunchentoot)
 (ql:quickload :cl-smtp)
+(ql:quickload :jsown)
+(ql:quickload :drakma)
 
 (defpackage :spyrosoft
 	(:use :common-lisp :hunchentoot))
