@@ -1,21 +1,21 @@
-$('#how-much').keyup(check_correct_amount_step_on_enter);
+$('#payment-amount').keyup(check_correct_amount_step_on_enter);
 $('.next-step.check-correct-amount').click(check_correct_amount_step);
 $('.next-step.submit-payment').click(submit_payment_step);
-$('.next-step.how-much').click(how_much_step);
+$('.next-step.payment-amount').click(payment_amount_step);
 
 
 function check_correct_amount_step() {
-	var how_much = $('#how-much').val().replace(/[^0-9.]/g, '');
-	if (how_much === '' || !isFinite(how_much)) {
+	var payment_amount = $('#payment-amount').val().replace(/[^0-9.]/g, '');
+	if (payment_amount === '' || !isFinite(payment_amount)) {
 		display_error('Please enter a number.');
-		how_much_step();
-		$('#how-much').focus();
+		payment_amount_step();
+		$('#payment-amount').focus();
 		return;
 	}
 	clear_error();
-	how_much = parseFloat(how_much);
-	$('#check-correct-amount').html(Utilities.formatHumanReadableDollars(how_much));
-	generate_payment_button(how_much);
+	payment_amount = parseFloat(payment_amount);
+	$('#check-correct-amount').html(Utilities.formatHumanReadableDollars(payment_amount));
+	generate_payment_button(payment_amount);
 	show_step('check-correct-amount');
 }
 
@@ -29,9 +29,9 @@ function submit_payment_step() {
 	show_step('submit-payment');
 }
 
-function how_much_step() {
+function payment_amount_step() {
 	$('#check-correct-amount').html('');
-	show_step('how-much');
+	show_step('payment-amount');
 }
 
 function generate_payment_button(payment_amount) {
@@ -47,7 +47,7 @@ function show_step(which_step) {
 }
 
 function display_error(message) {
-	$('.how-much-error').html(message);
+	$('.payment-amount-error').html(message);
 }
 
 function clear_error() {
@@ -64,8 +64,12 @@ function reset_stripe_button_styles() {
 
 function get_stripe_html(payment_amount) {
 	var data_amount = payment_amount*100;
+	var stripe_key = 'pk_live_xLzX0i3m83Yh1b6UeU0uYXas';
+	if (window.location.hostname === 'localhost') {
+		stripe_key = 'pk_test_H42wl8XKuFa4lIP1JKrUDwFV';
+	}
 	//THE HORROR
 	//Why is it so hard to accomplish this?
 	//If I'm missing something obvious, please tell me
-	return '<script class="stripe-button" data-bitcoin="true" data-image="/images/spyrosoft-logo.png" data-key="pk_live_xLzX0i3m83Yh1b6UeU0uYXas" data-locale="auto" data-name="Send Payment" data-amount="' + data_amount + '" src="https://checkout.stripe.com/checkout.js"></script>';
+	return '<script class="stripe-button" data-bitcoin="true" data-image="/images/spyrosoft-logo.png" data-key="' + stripe_key + '" data-locale="auto" data-name="Send Payment" data-amount="' + data_amount + '" src="https://checkout.stripe.com/checkout.js"></script>';
 }
