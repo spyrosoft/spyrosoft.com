@@ -1,0 +1,31 @@
+---
+title: Send Payment
+layout: standard
+include_utilities: true
+script: /js/send-payment.js
+---
+%h1 #{page.title}
+%hr
+.row
+  .columns.text-center
+    %h1#check-correct-amount
+  .columns.medium-4.large-3.step.how-much
+    %label
+      How much?
+      %input#how-much{type: "text", placeholder: "$1,000,000.00"}
+    %button.button.next-step.check-correct-amount
+      Send Payment
+    .how-much-error.error
+  .columns.step.check-correct-amount.text-center.display-none
+    %p Is this the correct amount?
+    %p
+      %button.no-margin.button.large.next-step.submit-payment
+        Yes
+    %p
+      %button.no-margin.button.next-step.how-much
+        Wait, go back
+  .columns.step.submit-payment.text-center.display-none
+    %form{:action => "", :method => "post"}
+      %p#stripe-payment
+  :javascript
+    document.getElementById('how-much').focus();
