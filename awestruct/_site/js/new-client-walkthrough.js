@@ -1,11 +1,14 @@
+var new_client_is_technical = false;
 var responses = [];
 
 var next_step = {
 	'i-am-non-technical' : function() {
+		new_client_is_technical = false;
 		responses.push('First off, I consider myself non-technical. Please break down the technical details for me.');
 		show_step('do-you-have-an-existing-website');
 	},
 	'i-am-technical' : function() {
+		new_client_is_technical = true;
 		responses.push('First off, I consider myself technical. You can give it to me straight.');
 		show_step('do-you-have-an-existing-website');
 	},
@@ -15,7 +18,11 @@ var next_step = {
 	},
 	'no-existing-website' : function() {
 		responses.push('I am looking to create a new website.');
-		show_step('which-type-of-design-do-you-want');
+		if (new_client_is_technical) {
+			show_step('which-type-of-design-do-you-want');
+		} else {
+			show_step('will-you-be-selling-products');
+		}
 	},
 	'which-platform-next' : function() {
 		var platform = $('input[name="which-platform"]:checked').val();
