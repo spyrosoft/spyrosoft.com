@@ -188,6 +188,9 @@ script2: /js/contact.js
         %label
           %input{type: 'checkbox', value: 'Mailing List'}
           Mailing List
+        %label
+          %input{type: 'checkbox', value: 'Simple and clean questionaires like the one on your homepage'}
+          Questionaires Like This One
       .columns.large-6.medium-6
         %label
           Other
@@ -228,9 +231,7 @@ script2: /js/contact.js
             .columns
               %p The answers you provided have been combined together into the following message.
               %p Feel free to modify it and please add any other questions or comments you have.
-              %label
-                Message
-                %textarea.message{name: 'message', rows: '10'}
+              %textarea.message{name: 'message', rows: '10'}
             .columns.medium-3.large-3.show-for-medium
               &nbsp;
             .columns.medium-6.large-6

@@ -13,7 +13,7 @@ var next_step = {
 		show_step('do-you-have-an-existing-website');
 	},
 	'yes-existing-website' : function() {
-		responses.push('I am looking to change my existing website.');
+		responses.push('I am looking to change an existing website.');
 		show_step('which-platform');
 	},
 	'no-existing-website' : function() {
@@ -46,8 +46,7 @@ var next_step = {
 		show_step('what-do-you-have-in-mind');
 	},
 	'what-do-you-have-in-mind-next' : function() {
-		var response_items = add_response_items('.what-do-you-have-in-mind input[type="checkbox"]');
-		response_items = response_items.concat(add_response_items('.what-do-you-have-in-mind textarea'));
+		var response_items = add_response_items('.what-do-you-have-in-mind input[type="checkbox"], .what-do-you-have-in-mind textarea');
 		if (response_items.length > 0) {
 			responses.push('I want the following:\n* ' + response_items.join('\n* '));
 		}
