@@ -4,7 +4,7 @@
                                 (format nil "~%~%Name: ~A" name))))
   (when email (setq message
                     (concatenate 'string message
-                                 (format nil "~%~%Email: ~A" email))))
+                                 (format nil "~%~%Contact Info: ~A" email))))
   (setq message
         (concatenate 'string message
                      (format nil "~%~%IP Address: ~A" (real-remote-addr))))
