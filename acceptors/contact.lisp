@@ -1,10 +1,12 @@
 (defun send-contact-message (name email message)
-  (when name (setq message
-                   (concatenate 'string message
-                                (format nil "~%~%Name: ~A" name))))
-  (when email (setq message
-                    (concatenate 'string message
-                                 (format nil "~%~%Contact Info: ~A" email))))
+  (when (not (equal "" name))
+    (setq message
+          (concatenate 'string message
+                       (format nil "~%~%Name: ~A" name))))
+  (when (not (equal "" email))
+    (setq message
+          (concatenate 'string message
+                       (format nil "~%~%Contact Info: ~A" email))))
   (setq message
         (concatenate 'string message
                      (format nil "~%~%IP Address: ~A" (real-remote-addr))))
