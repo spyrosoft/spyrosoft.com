@@ -326,7 +326,7 @@
                   Mailing List
                 </label>
                 <label>
-                  <input type="checkbox" value="Simple and clean questionaires like the one on your homepage">
+                  <input type="checkbox" value="Simple and clean questionaires similar to this one">
                   Questionaires Like This One
                 </label>
               </div>
@@ -352,58 +352,69 @@
                 </div>
               </div>
             </div>
-            <div class="send-message response text-left">
-              <div class="columns">
-                <h2>Thank You!</h2>
-                <hr>
+            <form action="/contact-ajax/" class="contact text-left" method="post">
+              <div class="thank-you-message-contact-info response">
+                <div class="columns">
+                  <h2>Thank You!</h2>
+                  <hr>
+                </div>
+                <div class="columns medium-6 large-6">
+                  <label>
+                    Your Name
+                    <input class="name" name="name" type="text">
+                  </label>
+                </div>
+                <div class="columns medium-6 large-6">
+                  <label>
+                    Your Email, Phone Number, or Both
+                    <input name="email" type="text">
+                  </label>
+                </div>
+                <div class="columns medium-3 large-3 show-for-medium">
+                  &nbsp;
+                </div>
+                <div class="columns medium-6 large-6">
+                  <button class="button" id="thank-you-next">
+                    Next
+                  </button>
+                </div>
+                <div class="columns medium-3 large-3 show-for-medium">
+                  &nbsp;
+                </div>
               </div>
-              <div class="columns">
-                <form action="/contact-ajax/" class="contact" method="post">
-                  <div id="thank-you-message-contact-info">
-                    <div class="row">
-                      <div class="columns medium-6 large-6">
-                        <label>
-                          Your Name
-                          <input class="name" name="name" type="text">
-                        </label>
-                      </div>
-                      <div class="columns medium-6 large-6">
-                        <label>
-                          Your Email, Phone Number, or Both
-                          <input name="email" type="text">
-                        </label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="columns medium-3 large-3 show-for-medium">
-                        &nbsp;
-                      </div>
-                      <div class="columns medium-6 large-6">
-                        <input class="button display-none" id="thank-you-next" type="button" value="Next">
-                      </div>
-                      <div class="columns medium-3 large-3 show-for-medium">
-                        &nbsp;
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row" id="thank-you-message-submission">
-                    <div class="columns">
-                      <p>The answers you provided have been combined together into the following message.</p>
-                      <p>Feel free to modify it and please add any other questions or comments you have.</p>
-                      <textarea class="message" name="message" rows="10"></textarea>
-                    </div>
-                    <div class="columns medium-3 large-3 show-for-medium">
-                      &nbsp;
-                    </div>
-                    <div class="columns medium-6 large-6">
-                      <input class="button" type="submit" value="Send">
-                    </div>
-                    <div class="columns medium-3 large-3 show-for-medium">
-                      &nbsp;
-                    </div>
-                  </div>
-                </form>
+              <div class="thank-you-message-submission response">
+                <div class="columns">
+                  <h2>Thank You!</h2>
+                  <hr>
+                </div>
+                <div class="columns">
+                  <p>The answers you provided have been combined together into the following message.</p>
+                  <p>Feel free to modify it and please add any other questions or comments you have.</p>
+                  <textarea class="message" name="message" rows="10"></textarea>
+                </div>
+                <div class="columns medium-3 large-3 show-for-medium">
+                  &nbsp;
+                </div>
+                <div class="columns medium-6 large-6">
+                  <input class="button" type="submit" value="Send">
+                </div>
+                <div class="columns medium-3 large-3 show-for-medium">
+                  &nbsp;
+                </div>
               </div>
+            </form>
+          </section>
+          <section class="row previous-step-button display-none">
+            <div class="columns medium-3 large-3 show-for-medium">
+              &nbsp;
+            </div>
+            <div class="columns medium-6 large-6 text-center">
+              <button class="button previous-step" id="previous-step">
+                Previous Step
+              </button>
+            </div>
+            <div class="columns medium-3 large-3 show-for-medium">
+              &nbsp;
             </div>
           </section>
         </div>

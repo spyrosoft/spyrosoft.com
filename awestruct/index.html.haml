@@ -189,7 +189,7 @@ script2: /js/contact.js
           %input{type: 'checkbox', value: 'Mailing List'}
           Mailing List
         %label
-          %input{type: 'checkbox', value: 'Simple and clean questionaires like the one on your homepage'}
+          %input{type: 'checkbox', value: 'Simple and clean questionaires similar to this one'}
           Questionaires Like This One
       .columns.large-6.medium-6
         %label
@@ -204,37 +204,45 @@ script2: /js/contact.js
               Next
           .columns.large-3.medium-3
             %p
-    .send-message.response.text-left
-      .columns
-        %h2 Thank You!
-        %hr
-      .columns
-        %form.contact{action: '/contact-ajax/', method: 'post'}
-          #thank-you-message-contact-info
-            .row
-              .columns.medium-6.large-6
-                %label
-                  Your Name
-                  %input.name{name: 'name', type: 'text'}
-              .columns.medium-6.large-6
-                %label
-                  Your Email, Phone Number, or Both
-                  %input{name: 'email', type: 'text'}
-            .row
-              .columns.medium-3.large-3.show-for-medium
-                &nbsp;
-              .columns.medium-6.large-6
-                %input.button.display-none#thank-you-next{type: 'button', value: 'Next'}
-              .columns.medium-3.large-3.show-for-medium
-                &nbsp;
-          .row#thank-you-message-submission
-            .columns
-              %p The answers you provided have been combined together into the following message.
-              %p Feel free to modify it and please add any other questions or comments you have.
-              %textarea.message{name: 'message', rows: '10'}
-            .columns.medium-3.large-3.show-for-medium
-              &nbsp;
-            .columns.medium-6.large-6
-              %input.button{type: 'submit', value: 'Send'}
-            .columns.medium-3.large-3.show-for-medium
-              &nbsp;
+    %form.contact.text-left{action: '/contact-ajax/', method: 'post'}
+      .thank-you-message-contact-info.response
+        .columns
+          %h2 Thank You!
+          %hr
+        .columns.medium-6.large-6
+          %label
+            Your Name
+            %input.name{name: 'name', type: 'text'}
+        .columns.medium-6.large-6
+          %label
+            Your Email, Phone Number, or Both
+            %input{name: 'email', type: 'text'}
+        .columns.medium-3.large-3.show-for-medium
+          &nbsp;
+        .columns.medium-6.large-6
+          %button.button#thank-you-next
+            Next
+        .columns.medium-3.large-3.show-for-medium
+          &nbsp;
+      .thank-you-message-submission.response
+        .columns
+          %h2 Thank You!
+          %hr
+        .columns
+          %p The answers you provided have been combined together into the following message.
+          %p Feel free to modify it and please add any other questions or comments you have.
+          %textarea.message{name: 'message', rows: '10'}
+        .columns.medium-3.large-3.show-for-medium
+          &nbsp;
+        .columns.medium-6.large-6
+          %input.button{type: 'submit', value: 'Send'}
+        .columns.medium-3.large-3.show-for-medium
+          &nbsp;
+  %section.row.previous-step-button.display-none
+    .columns.medium-3.large-3.show-for-medium
+      &nbsp;
+    .columns.medium-6.large-6.text-center
+      %button.button.previous-step#previous-step
+        Previous Step
+    .columns.medium-3.large-3.show-for-medium
+      &nbsp;

@@ -1,7 +1,19 @@
 var new_client_is_technical = false;
 var responses = [];
+var steps = [];
 
 var next_step = {
+	'previous-step' : function() {
+ 		responses.pop();
+		steps.pop();
+		var previous_step = steps.pop();
+		if (steps.length === 0) {
+			$('.previous-step-button').addClass('display-none');
+			show_step('are-you-technical');
+			return;
+		}
+		show_step(previous_step);
+	},
 	'i-am-non-technical' : function() {
 		new_client_is_technical = false;
 		responses.push('First off, I consider myself non-technical. Please break down the technical details for me.');
@@ -50,7 +62,9 @@ var next_step = {
 		if (response_items.length > 0) {
 			responses.push('I want the following:\n* ' + response_items.join('\n* '));
 		}
-		send_message_step();
+		$('#intro').hide();
+		show_step('thank-you-message-contact-info');
+		$('.thank-you-message-contact-info .name').focus();
 	},
 	'pre-existing-design' : function() {
 		responses.push('I am interested in a pre-existing design.');
@@ -109,12 +123,24 @@ var next_step = {
 		show_step('what-other-functionality-do-you-want');
 	},
 	'what-other-functionality-next' : function() {
-		var response_items = add_response_items('.what-other-functionality-do-you-want input[type="checkbox"]');
-		response_items = response_items.concat(add_response_items('.what-other-functionality-do-you-want input[type="text"]'));
+		var response_items = add_response_items('.what-other-functionality-do-you-want input[type="checkbox"], .what-other-functionality-do-you-want input[type="text"]');
 		if (response_items.length > 0) {
 			responses.push('Additionally, I want the following functionality:\n* ' + response_items.join('\n* '));
 		}
-		send_message_step();
+		$('#intro').hide();
+		show_step('thank-you-message-contact-info');
+		$('.thank-you-message-contact-info .name').focus();
+	},
+	'thank-you-next' : function() {
+		if ($('form.contact [name=email]').val() === '') {
+			alert('Please fill out your contact information. Otherwise I will not be able to respond to you. :D');
+			$('form.contact [name=email]').first().focus();
+			return;
+		}
+		var message = 'Hi Bennett,\n\n';
+		message += responses.join('\n');
+		$('.thank-you-message-submission .message').val(message);
+		show_step('thank-you-message-submission');
 	}
 };
 
@@ -131,24 +157,18 @@ function add_response_items(selector) {
 	return response_items;
 }
 
-function send_message_step() {
-	$('#intro').hide();
-	show_step('send-message');
-	var message = 'Hi Bennett,\n\n';
-	message += responses.join('\n');
-	$('.send-message .message').val(message);
-	$('.send-message .name').focus();
-}
-
 function button_clicked(click_event) {
+	click_event.preventDefault();
 	if (!next_step[this.id] || typeof next_step[this.id] !== 'function') {
 		alert('Oh, no! Something is broken in this form. Please contact Bennett to let him know.');
 		return;
 	}
+	$('.previous-step-button').removeClass('display-none');
 	next_step[this.id]();
 }
 
 function show_step(step) {
+	steps.push(step);
 	$('.response').hide();
 	$('.response.' + step).show();
 }
@@ -157,23 +177,11 @@ $('.response').hide().first().show();
 $('#responses').removeClass('display-none');
 $('button').click(button_clicked);
 
-$('.other-platform').click(function() {$('.other-please-specify').removeClass('display-none');});
-
-$('#thank-you-next')
-	.click(
-		function() {
-			if ($('form.contact [name=email]').val() === '') {
-				alert('Please fill out your contact information. Otherwise I will not be able to respond to you. :D');
-				$('form.contact [name=email]').first().focus();
-				return;
-			}
-			$('#thank-you-message-submission').show();
-			$('#thank-you-message-contact-info').hide();
-		}
-	)
-	.removeClass('display-none');
-$('#thank-you-message-submission').hide();
-
+$('.other-platform').click(
+	function() {
+		$('.other-please-specify').removeClass('display-none');
+	}
+);
 
 setTimeout(function() {$('#i-am-non-technical').focus();}, 200);
 setTimeout(function() {$('#i-am-technical').focus();}, 500);
