@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>One Time Pad Encryption - SpyroSoft</title>
+    <link href="/css/foundation.min.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/images/spyrosoft-logo-16x16.png" rel="icon" type="image/png">
+    <link href="/images/apple-touch-icon.png" rel="apple-touch-startup-image">
+  </head>
+  <body>
+    <header>
+      <nav class="top clearfix">
+        <ul>
+          <li class="nav-image">
+            <a href="/">
+              <img alt="SpyroSoft Logo" src="/images/spyrosoft-logo-50x50.png">
+            </a>
+          </li>
+          <li>
+            <a href="/portfolio.html">Portfolio</a>
+          </li>
+          <li>
+            <a href="/contact.html">Contact</a>
+          </li>
+          <li>
+            <a href="/about.html">About</a>
+          </li>
+          <li>
+            <a href="/faq.html">FAQs</a>
+          </li>
+          <li>
+            <a href="/send-payment.html">$</a>
+          </li>
+          <li>
+            <a href="/tools.html">Tools</a>
+          </li>
+          <li>
+            <a href="/blog.html">Blog</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <hr class="no-spacing">
+    <section class="row">
+      <div class="columns">
+        <h2>One Time Pad Encryption</h2>
+        <p>Note: This is for demonstration purposes. I recommend avoiding encrypting your messages via a website on the internet.</p>
+        <div class="row">
+          <div class="columns" id="plain-text-input-container">
+            <label>
+              Your Message:
+              <textarea id="plain-text-input" rows="10"></textarea>
+            </label>
+            <p class="text-center">
+              <button class="button large no-margin" id="encrypt-button">
+                Encrypt
+              </button>
+            </p>
+          </div>
+          <div class="columns large-6 medium-6">
+            <label>
+              Encrypted Message:
+              <textarea id="cipher-text" rows="10"></textarea>
+            </label>
+          </div>
+          <div class="columns large-6 medium-6 key">
+            <label>
+              Key:
+              <textarea id="key" rows="10"></textarea>
+            </label>
+          </div>
+          <div class="columns" id="plain-text-output-container">
+            <p class="text-center">
+              <button class="button large no-margin" id="decrypt-button">
+                Decrypt
+              </button>
+            </p>
+            <label>
+              Decrypted Message:
+              <textarea id="plain-text-output" rows="10"></textarea>
+            </label>
+          </div>
+          <div class="columns text-center">
+            <button class="button large no-margin" id="encrypt-mode-button">
+              Encrypt A Message
+            </button>
+            <button class="button large no-margin" id="decrypt-mode-button">
+              Decrypt A Message
+            </button>
+          </div>
+        </div>
+        <script>
+          document.getElementById('plain-text-input').focus();
+        </script>
+      </div>
+    </section>
+    <hr class="no-spacing">
+    <footer>
+      <div class="copyright">
+        <p>
+          Copyright © by SpyroSoft
+        </p>
+        <p class="trademark">
+          SpyroSoft™ is a trademark wholly owned by Bennett Roesch
+        </p>
+      </div>
+    </footer>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/vendor/what-input.min.js"></script>
+    <script src="/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <script src="/js/vendor/sjcl.js"></script>
+    <script src="/js/tools/one-time-pad.js"></script>
+  </body>
+</html>

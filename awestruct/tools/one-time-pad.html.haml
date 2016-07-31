@@ -1,0 +1,38 @@
+---
+title: One Time Pad Encryption
+layout: standard
+script: /js/vendor/sjcl.js
+script2: /js/tools/one-time-pad.js
+---
+%h2 #{page.title}
+%p Note: This is for demonstration purposes. I recommend avoiding encrypting your messages via a website on the internet.
+.row
+  .columns#plain-text-input-container
+    %label
+      Your Message:
+      %textarea#plain-text-input{rows: 10}
+    %p.text-center
+      %button.button.large.no-margin#encrypt-button
+        Encrypt
+  .columns.large-6.medium-6
+    %label
+      Encrypted Message:
+      %textarea#cipher-text{rows: 10}
+  .columns.large-6.medium-6.key
+    %label
+      Key:
+      %textarea#key{rows: 10}
+  .columns#plain-text-output-container
+    %p.text-center
+      %button.button.large.no-margin#decrypt-button
+        Decrypt
+    %label
+      Decrypted Message:
+      %textarea#plain-text-output{rows: 10}
+  .columns.text-center
+    %button.button.large.no-margin#encrypt-mode-button
+      Encrypt A Message
+    %button.button.large.no-margin#decrypt-mode-button
+      Decrypt A Message
+:javascript
+  document.getElementById('plain-text-input').focus();
