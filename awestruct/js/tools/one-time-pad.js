@@ -14,10 +14,9 @@ function encrypt() {
 	var key = '';
 	for (var i in plain_text) {
 		var current_character_index = BASE64_CHARACTERS.indexOf(plain_text[i]);
-		//TODO: Replace this with SJCL
-		var random_character_index = Math.floor(
-			Math.random() * BASE64_CHARACTERS.length
-		);
+		var random_character_index
+			= Math.abs(sjcl.random.randomWords(1, 10))
+				% BASE64_CHARACTERS.length;
 		var random_character = BASE64_CHARACTERS[random_character_index];
 		var cipher_index = current_character_index + random_character_index;
 		if (cipher_index >= BASE64_CHARACTERS.length) {
