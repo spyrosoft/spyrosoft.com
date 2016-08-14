@@ -45,225 +45,205 @@
       </nav>
     </header>
     <hr class="no-spacing">
-    <section class="row portfolio">
+    <section class="row">
       <div class="columns">
         <h1>Portfolio</h1>
         <hr>
-        <div class="row">
-          <div class="columns medium-6 large-6">
-            <h4>
-              <a href="https://firefractal.com/gallery.html">Fire Fractal</a>
-            </h4>
-            <div class="image">
-              <a href="https://firefractal.com/gallery.html">
-                <img alt="HTML5 JavaScript Fractal Exploration Tool" src="/images/fractal-exploration-tool.png">
-              </a>
-            </div>
-            <hr>
-            <p>
-              A fractal exploration tool and generated poster ecommerce website.
-            </p>
-          </div>
-          <div class="columns medium-6 large-6">
-            <h4>
-              <a href="http://hexcuff.com/">Hex Cuff</a>
-            </h4>
-            <div class="image">
-              <a href="http://hexcuff.com/">
-                <img alt="Hex Cuff Logo" src="/images/hex-cuff-logo.svg">
-              </a>
-            </div>
-            <hr>
-            <p>
-              Ear cuff jewelry created from real hex nuts ecommerce site using Stripe Checkout.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="columns medium-6 large-6">
-            <h4>
+        <div class="portfolio">
+          <div class="clearfix">
+            <h2>
               <a href="https://www.subverseindustries.com/">Subverse Industries</a>
-            </h4>
-            <div class="image">
+            </h2>
+            <p class="float-right-for-medium-up">
               <a href="https://www.subverseindustries.com/">
                 <img alt="Subverse Industries Logo" src="/images/subverse-industries.svg">
               </a>
+            </p>
+            <p>Working with a team including a designer and social media marketing/copywriter, we built a Shopify ecommerce website. The fine folks at Subverse Industries make an array of leather accessories. In particular some of the finest hats in the world.</p>
+            <hr>
+          </div>
+          <div class="clearfix">
+            <h2>
+              <a href="https://firefractal.com/gallery.html">Fire Fractal</a>
+            </h2>
+            <p class="float-right-for-medium-up">
+              <a href="https://firefractal.com/gallery.html">
+                <img alt="HTML5 JavaScript Fractal Exploration Tool" src="/images/fractal-exploration-tool.png">
+              </a>
+            </p>
+            <p>Fire Fractal allows anyone to create beautiful fractal computer artwork in addition to the option of purchasing physical copies in the form of high quality posters.</p>
+            <p>It is a fully functional ecommerce website employing Stripe Checkout.</p>
+            <p>This project posed many interesting technical challenges.</p>
+            <button class="button" onclick='$("#fire-fractal-technical-details").show();$(this).hide()'>Show Technical Details</button>
+            <div id="fire-fractal-technical-details" style="display: none;">
+              <p>Finding a way for browsers to render images quickly was very complicated. The first version printed each pixel as it was generated. This ultimately took more time than just printing the entire thing at once. An attempt was made to use C on the server side, however it ended up being even slower because of network latency. Additionally shifting the computation load to the server makes it very difficult to scale. The use of Web Workers cut the rendering time down massively.</p>
+              <p>There is no good way to precompute the data. Techniques for caching just don't work. The database would end up consuming too much disk space, for one thing.</p>
             </div>
             <hr>
-            <p>
-              Front End Development - a Foundation 5 template using Shopify and Liquid.
-            </p>
           </div>
-          <div class="columns medium-6 large-6">
-            <h4>
+          <div class="clearfix">
+            <h2>
+              <a href="http://hexcuff.com/">Hex Cuff</a>
+            </h2>
+            <p class="float-right-for-medium-up">
+              <a href="http://hexcuff.com/">
+                <img alt="Hex Cuff Logo" src="/images/hex-cuff-logo.svg">
+              </a>
+            </p>
+            <p>An ecommerce store which sells ear cuff jewelry created from real hex nuts.</p>
+            <p>My role in particular is to make sure credit cards are accepted securely via Stripe Checkout.</p>
+            <hr>
+          </div>
+          <div class="clearfix">
+            <h2>
               <a href="http://chaosofoperations.com/">Chaos Of Operations</a>
-            </h4>
-            <div class="image">
+            </h2>
+            <p class="float-right-for-medium-up">
               <a href="http://chaosofoperations.com/">
                 <img alt="Chaos of Operations Logo" src="/images/chaos-of-operations-logo.jpg">
               </a>
-            </div>
-            <hr>
-            <p>
-              A board game created by my friend Cody ported to the web.
             </p>
+            <p>My friend Cody created a board game for his Games and Playable Media master's degree. We worked together to port it to the web. The goal of the game is to ultimately have a higher number than your opponent at the end of the game.</p>
+            <hr>
           </div>
-        </div>
-        <div class="row">
-          <div class="columns medium-6 large-6">
-            <h4>
+          <div class="clearfix">
+            <h2>
               <a href="http://groundupmath.com/">Ground Up Math</a>
-            </h4>
-            <div class="image">
+            </h2>
+            <p class="float-right-for-medium-up">
               <a href="http://groundupmath.com/">
                 <img alt="Ground Up Math Logo" src="/images/ground-up-math-logo.svg">
               </a>
-            </div>
-            <hr>
-            <p>
-              A place to hone your arithmetic skills using a flashcard technique.
             </p>
+            <p>A place to hone your arithmetic skills using a flashcard technique. I created this for my neice over three days or so.</p>
+            <hr>
           </div>
-          <div class="columns medium-6 large-6">
-            <h4>
+          <div class="clearfix">
+            <h2>
               <a href="http://brailletutorial.com/">Braille Tutorial</a>
-            </h4>
-            <div class="image">
+            </h2>
+            <p class="float-right-for-medium-up">
               <a href="http://brailletutorial.com/">
                 <img alt="Braille Tutorial Logo" src="/images/braille-tutorial.svg">
               </a>
-            </div>
-            <hr>
-            <p>
-              An online interactive Braille tutorial available for free forever.
             </p>
+            <p>An online interactive Braille tutorial available for free forever.</p>
+            <hr>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="row experience">
-      <div class="columns">
-        <h3>Experience</h3>
+        <h2>Occupations</h2>
+        <ul>
+          <li>
+            <em class="bold">
+              Freelancer : 2016 - Present
+            </em>
+            <br>
+            Freelance full stack website and web application development and maintenance
+          </li>
+          <li>
+            <em class="bold">
+              Team Kaya : 2015 - 2016
+            </em>
+            <br>
+            Shopify Developer
+          </li>
+          <li>
+            <em class="bold">
+              Launch Brigade : 2010 - 2014
+            </em>
+            <br>
+            Web programmer specialist in WordPress, Magento and Kohana
+          </li>
+          <li>
+            <em class="bold">
+              ROP Class Instructor : 2013 - 2014
+            </em>
+            <br>
+            Basic HTML, CSS, and PHP instructor for students in Santa Cruz county
+          </li>
+          <li>
+            <em class="bold">
+              Santa Cruz App Dev : 2010
+            </em>
+            <br>
+            Advanced PHP instructor for two internship sessions
+          </li>
+          <li>
+            <em class="bold">
+              iKorb : 2008 - 2011
+            </em>
+            <br>
+            Web Production Specialist
+          </li>
+        </ul>
         <hr>
-        <div class="row columns">
-          <h4>Occupations</h4>
-          <ul>
-            <li>
-              <em class="bold">
-                Freelancer : 2016 - Present
-              </em>
-              <br>
-              Freelance full stack website and web application development and maintenance
-            </li>
-            <li>
-              <em class="bold">
-                Team Kaya : 2015 - 2016
-              </em>
-              <br>
-              Shopify Developer
-            </li>
-            <li>
-              <em class="bold">
-                Launch Brigade : 2010 - 2014
-              </em>
-              <br>
-              Web programmer specialist in WordPress, Magento and Kohana
-            </li>
-            <li>
-              <em class="bold">
-                ROP Class Instructor : 2013 - 2014
-              </em>
-              <br>
-              Basic HTML, CSS, and PHP instructor for students in Santa Cruz county
-            </li>
-            <li>
-              <em class="bold">
-                Santa Cruz App Dev : 2010
-              </em>
-              <br>
-              Advanced PHP instructor for two internship sessions
-            </li>
-            <li>
-              <em class="bold">
-                iKorb : 2008 - 2011
-              </em>
-              <br>
-              Web Production Specialist
-            </li>
-          </ul>
-          <hr>
-          <h4>GitHub</h4>
-          <ul>
-            <li>
-              <a href="https://github.com/spyrosoft/dotfiles">Linux Dotfiles</a>
-              <br>
-              Especially .zshrc and .emacs
-            </li>
-            <li>
-              <a href="https://github.com/spyrosoft/go-testing-grounds">Go Testing Grounds</a>
-              <br>
-              Useful Go snippets and applications
-            </li>
-            <li>
-              <a href="https://github.com/spyrosoft/common-lisp-testing-grounds">Common Lisp Testing Grounds</a>
-              <br>
-              Useful Common Lisp snippets
-            </li>
-            <li>
-              <a href="https://github.com/spyrosoft/weighted-random-numbers">Weighted Random Numbers</a>
-              <br>
-              Weighted random number curves
-            </li>
-            <li>
-              <a href="https://github.com/spyrosoft/PHP-Terminal-Emulator" target="_blank">PHP Shell Emulator</a>
-              <br>
-              For when you have FTP access but not shell access
-            </li>
-          </ul>
-          <hr>
-          <h4>Browser Addons/Extensions</h4>
-          <div class="row">
-            <div class="columns large-6 medium-6">
-              <ul>
-                <li>
-                  <a href="https://chrome.google.com/webstore/detail/auto-cursor/gjaabiillfmidpcknchjeiadoppocmaf">Auto Cursor</a>
-                  <br>
-                  Chrome
-                </li>
-                <li>
-                  <a href="https://chrome.google.com/webstore/detail/focus-follows-mouse/lnengjbcmhhfcjpejphodipincbcffom">Focus Follows Mouse</a>
-                  <br>
-                  Chrome
-                </li>
-                <li>
-                  <a href="https://addons.mozilla.org/en-US/firefox/addon/auto-cursor/">Auto Cursor</a>
-                  <br>
-                  Firefox
-                </li>
-              </ul>
-            </div>
-            <div class="columns large-6 medium-6">
-              <ul>
-                <li>
-                  <a href="https://addons.mozilla.org/en-US/firefox/addon/focus-follows-mouse/">Focus Follows Mouse</a>
-                  <br>
-                  Firefox
-                </li>
-                <li>
-                  <a href="https://addons.mozilla.org/en-US/firefox/addon/copy-on-select/">Copy On Select</a>
-                  <br>
-                  Firefox
-                </li>
-              </ul>
-            </div>
+        <h2>GitHub</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/spyrosoft/dotfiles">Linux Dotfiles</a>
+            <br>
+            Especially .zshrc and .emacs
+          </li>
+          <li>
+            <a href="https://github.com/spyrosoft/go-testing-grounds">Go Testing Grounds</a>
+            <br>
+            Useful Go snippets and applications
+          </li>
+          <li>
+            <a href="https://github.com/spyrosoft/common-lisp-testing-grounds">Common Lisp Testing Grounds</a>
+            <br>
+            Useful Common Lisp snippets
+          </li>
+          <li>
+            <a href="https://github.com/spyrosoft/weighted-random-numbers">Weighted Random Numbers</a>
+            <br>
+            Weighted random number curves
+          </li>
+          <li>
+            <a href="https://github.com/spyrosoft/PHP-Terminal-Emulator" target="_blank">PHP Shell Emulator</a>
+            <br>
+            For when you have FTP access but not shell access
+          </li>
+        </ul>
+        <hr>
+        <h2>Browser Addons/Extensions</h2>
+        <div class="row">
+          <div class="columns large-6 medium-6">
+            <ul>
+              <li>
+                <a href="https://chrome.google.com/webstore/detail/auto-cursor/gjaabiillfmidpcknchjeiadoppocmaf">Auto Cursor</a>
+                <br>
+                Chrome
+              </li>
+              <li>
+                <a href="https://chrome.google.com/webstore/detail/focus-follows-mouse/lnengjbcmhhfcjpejphodipincbcffom">Focus Follows Mouse</a>
+                <br>
+                Chrome
+              </li>
+              <li>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/auto-cursor/">Auto Cursor</a>
+                <br>
+                Firefox
+              </li>
+            </ul>
           </div>
-          <hr>
+          <div class="columns large-6 medium-6">
+            <ul>
+              <li>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/focus-follows-mouse/">Focus Follows Mouse</a>
+                <br>
+                Firefox
+              </li>
+              <li>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/copy-on-select/">Copy On Select</a>
+                <br>
+                Firefox
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="row pick-two">
-      <div class="columns">
-        <h3>The Classic Law of Having Cake and Eating It Too</h3>
+        <hr>
+        <h2>The Classic Law of Having Cake and Eating It Too</h2>
         <hr>
         <p>
           A humorous way of looking at how projects tend to work in reality.

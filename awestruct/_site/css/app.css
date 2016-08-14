@@ -277,41 +277,31 @@ footer hr {
 .new-client-walkthrough .prompt {
   margin-bottom: 1rem; }
 
-/* line 293, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
-section.portfolio h4 {
-  font-size: 1.25rem;
-  text-align: center;
-  padding-bottom: 0;
-  margin-bottom: 0; }
-/* line 299, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
-section.portfolio .image {
-  text-align: center;
-  min-height: 210px;
-  margin-top: 1rem; }
-/* line 304, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
-section.portfolio .row {
-  margin-bottom: 2rem; }
-
-/* line 307, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 292, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .experience ul {
   margin-bottom: 0; }
 
-/* line 310, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 295, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .tools ul li {
   margin-bottom: 1rem; }
 
+/* line 298, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+.portfolio .float-right-for-medium-up {
+  float: right; }
+
 @media screen and (max-width: 39.9375em) {
-  /* line 314, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
-  .portfolio .columns .columns, .experience .columns .columns {
-    min-height: auto; } }
-/* line 318, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+  /* line 302, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+  .portfolio .float-right-for-medium-up {
+    float: none;
+    text-align: center; } }
+/* line 306, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .common-lisp-repl #console > div, .common-lisp-repl #console pre {
   position: initial !important; }
 
-/* line 322, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 310, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .common-lisp-repl .jqconsole-cursor {
   background-color: #000000; }
 
-/* line 325, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 313, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .common-lisp-repl pre.jqconsole {
   padding-bottom: 1rem; }

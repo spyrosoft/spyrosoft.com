@@ -1,162 +1,151 @@
 ---
 title: Portfolio
-layout: full-width
-body_class: portfolio
+layout: standard
 ---
-%section.row.portfolio
-  .columns
-    %h1 #{page.title}
+%h1 #{page.title}
+%hr
+.portfolio
+  .clearfix
+    %h2
+      %a{href: 'https://www.subverseindustries.com/'} Subverse Industries
+    %p.float-right-for-medium-up
+      %a{href: 'https://www.subverseindustries.com/'}
+        %img{alt: 'Subverse Industries Logo', src: '/images/subverse-industries.svg'}
+    %p Working with a team including a designer and social media marketing/copywriter, we built a Shopify ecommerce website. The fine folks at Subverse Industries make an array of leather accessories. In particular some of the finest hats in the world.
     %hr
-    .row
-      .columns.medium-6.large-6
-        %h4
-          %a{href: 'https://firefractal.com/gallery.html'} Fire Fractal
-        %div.image
-          %a{href: 'https://firefractal.com/gallery.html'}
-            %img{alt: 'HTML5 JavaScript Fractal Exploration Tool', src: '/images/fractal-exploration-tool.png'}
-        %hr
-        %p
-          A fractal exploration tool and generated poster ecommerce website.
-      .columns.medium-6.large-6
-        %h4
-          %a{href: 'http://hexcuff.com/'} Hex Cuff
-        %div.image
-          %a{href: 'http://hexcuff.com/'}
-            %img{alt: 'Hex Cuff Logo', src: '/images/hex-cuff-logo.svg'}
-        %hr
-        %p
-          Ear cuff jewelry created from real hex nuts ecommerce site using Stripe Checkout.
-    .row
-      .columns.medium-6.large-6
-        %h4
-          %a{href: 'https://www.subverseindustries.com/'} Subverse Industries
-        %div.image
-          %a{href: 'https://www.subverseindustries.com/'}
-            %img{alt: 'Subverse Industries Logo', src: '/images/subverse-industries.svg'}
-        %hr
-        %p
-          Front End Development - a Foundation 5 template using Shopify and Liquid.
-      .columns.medium-6.large-6
-        %h4
-          %a{href: 'http://chaosofoperations.com/'} Chaos Of Operations
-        %div.image
-          %a{href: 'http://chaosofoperations.com/'}
-            %img{alt: 'Chaos of Operations Logo', src: '/images/chaos-of-operations-logo.jpg'}
-        %hr
-        %p
-          A board game created by my friend Cody ported to the web.
-    .row
-      .columns.medium-6.large-6
-        %h4
-          %a{href: 'http://groundupmath.com/'} Ground Up Math
-        %div.image
-          %a{href: 'http://groundupmath.com/'}
-            %img{alt: 'Ground Up Math Logo', src: '/images/ground-up-math-logo.svg'}
-        %hr
-        %p
-          A place to hone your arithmetic skills using a flashcard technique.
-      .columns.medium-6.large-6
-        %h4
-          %a{href: 'http://brailletutorial.com/'} Braille Tutorial
-        %div.image
-          %a{href: 'http://brailletutorial.com/'}
-            %img{alt: 'Braille Tutorial Logo', src: '/images/braille-tutorial.svg'}
-        %hr
-        %p
-          An online interactive Braille tutorial available for free forever.
-%section.row.experience
-  .columns
-    %h3 Experience
+  .clearfix
+    %h2
+      %a{href: 'https://firefractal.com/gallery.html'} Fire Fractal
+    %p.float-right-for-medium-up
+      %a{href: 'https://firefractal.com/gallery.html'}
+        %img{alt: 'HTML5 JavaScript Fractal Exploration Tool', src: '/images/fractal-exploration-tool.png'}
+    %p Fire Fractal allows anyone to create beautiful fractal computer artwork in addition to the option of purchasing physical copies in the form of high quality posters.
+    %p It is a fully functional ecommerce website employing Stripe Checkout.
+    %p This project posed many interesting technical challenges.
+    %button.button{onclick: '$("#fire-fractal-technical-details").show();$(this).hide()'} Show Technical Details
+    #fire-fractal-technical-details{style: 'display: none;'}
+      %p Finding a way for browsers to render images quickly was very complicated. The first version printed each pixel as it was generated. This ultimately took more time than just printing the entire thing at once. An attempt was made to use C on the server side, however it ended up being even slower because of network latency. Additionally shifting the computation load to the server makes it very difficult to scale. The use of Web Workers cut the rendering time down massively.
+      %p There is no good way to precompute the data. Techniques for caching just don't work. The database would end up consuming too much disk space, for one thing.
     %hr
-    .row.columns
-      %h4 Occupations
-      %ul
-        %li
-          %em.bold
-            Freelancer : 2016 - Present
-          %br
-          Freelance full stack website and web application development and maintenance
-        %li
-          %em.bold
-            Team Kaya : 2015 - 2016
-          %br
-          Shopify Developer
-        %li
-          %em.bold
-            Launch Brigade : 2010 - 2014
-          %br
-          Web programmer specialist in WordPress, Magento and Kohana
-        %li
-          %em.bold
-            ROP Class Instructor : 2013 - 2014
-          %br
-          Basic HTML, CSS, and PHP instructor for students in Santa Cruz county
-        %li
-          %em.bold
-            Santa Cruz App Dev : 2010
-          %br
-          Advanced PHP instructor for two internship sessions
-        %li
-          %em.bold
-            iKorb : 2008 - 2011
-          %br
-          Web Production Specialist
-      %hr
-      %h4 GitHub
-      %ul
-        %li
-          %a{href: 'https://github.com/spyrosoft/dotfiles'} Linux Dotfiles
-          %br
-          Especially .zshrc and .emacs
-        %li
-          %a{href: 'https://github.com/spyrosoft/go-testing-grounds'} Go Testing Grounds
-          %br
-          Useful Go snippets and applications
-        %li
-          %a{href: 'https://github.com/spyrosoft/common-lisp-testing-grounds'} Common Lisp Testing Grounds
-          %br
-          Useful Common Lisp snippets
-        %li
-          %a{href: 'https://github.com/spyrosoft/weighted-random-numbers'} Weighted Random Numbers
-          %br
-          Weighted random number curves
-        %li
-          %a{href: 'https://github.com/spyrosoft/PHP-Terminal-Emulator', target: '_blank'} PHP Shell Emulator
-          %br
-          For when you have FTP access but not shell access
-      %hr
-      %h4 Browser Addons/Extensions
-      .row
-        .columns.large-6.medium-6
-          %ul
-            %li
-              %a{href: 'https://chrome.google.com/webstore/detail/auto-cursor/gjaabiillfmidpcknchjeiadoppocmaf'} Auto Cursor
-              %br
-              Chrome
-            %li
-              %a{href: 'https://chrome.google.com/webstore/detail/focus-follows-mouse/lnengjbcmhhfcjpejphodipincbcffom'} Focus Follows Mouse
-              %br
-              Chrome
-            %li
-              %a{href: 'https://addons.mozilla.org/en-US/firefox/addon/auto-cursor/'} Auto Cursor
-              %br
-              Firefox
-        .columns.large-6.medium-6
-          %ul
-            %li
-              %a{href: 'https://addons.mozilla.org/en-US/firefox/addon/focus-follows-mouse/'} Focus Follows Mouse
-              %br
-              Firefox
-            %li
-              %a{href: 'https://addons.mozilla.org/en-US/firefox/addon/copy-on-select/'} Copy On Select
-              %br
-              Firefox
-      %hr
-%section.row.pick-two
-  .columns
-    %h3 The Classic Law of Having Cake and Eating It Too
+  .clearfix
+    %h2
+      %a{href: 'http://hexcuff.com/'} Hex Cuff
+    %p.float-right-for-medium-up
+      %a{href: 'http://hexcuff.com/'}
+        %img{alt: 'Hex Cuff Logo', src: '/images/hex-cuff-logo.svg'}
+    %p An ecommerce store which sells ear cuff jewelry created from real hex nuts.
+    %p My role in particular is to make sure credit cards are accepted securely via Stripe Checkout.
     %hr
-    %p
-      A humorous way of looking at how projects tend to work in reality.
-    .text-center.image
-      %img{src: '/images/good-fast-cheap.svg'}
+  .clearfix
+    %h2
+      %a{href: 'http://chaosofoperations.com/'} Chaos Of Operations
+    %p.float-right-for-medium-up
+      %a{href: 'http://chaosofoperations.com/'}
+        %img{alt: 'Chaos of Operations Logo', src: '/images/chaos-of-operations-logo.jpg'}
+    %p My friend Cody created a board game for his Games and Playable Media master's degree. We worked together to port it to the web. The goal of the game is to ultimately have a higher number than your opponent at the end of the game.
+    %hr
+  .clearfix
+    %h2
+      %a{href: 'http://groundupmath.com/'} Ground Up Math
+    %p.float-right-for-medium-up
+      %a{href: 'http://groundupmath.com/'}
+        %img{alt: 'Ground Up Math Logo', src: '/images/ground-up-math-logo.svg'}
+    %p A place to hone your arithmetic skills using a flashcard technique. I created this for my neice over three days or so.
+    %hr
+  .clearfix
+    %h2
+      %a{href: 'http://brailletutorial.com/'} Braille Tutorial
+    %p.float-right-for-medium-up
+      %a{href: 'http://brailletutorial.com/'}
+        %img{alt: 'Braille Tutorial Logo', src: '/images/braille-tutorial.svg'}
+    %p An online interactive Braille tutorial available for free forever.
+    %hr
+%h2 Occupations
+%ul
+  %li
+    %em.bold
+      Freelancer : 2016 - Present
+    %br
+    Freelance full stack website and web application development and maintenance
+  %li
+    %em.bold
+      Team Kaya : 2015 - 2016
+    %br
+    Shopify Developer
+  %li
+    %em.bold
+      Launch Brigade : 2010 - 2014
+    %br
+    Web programmer specialist in WordPress, Magento and Kohana
+  %li
+    %em.bold
+      ROP Class Instructor : 2013 - 2014
+    %br
+    Basic HTML, CSS, and PHP instructor for students in Santa Cruz county
+  %li
+    %em.bold
+      Santa Cruz App Dev : 2010
+    %br
+    Advanced PHP instructor for two internship sessions
+  %li
+    %em.bold
+      iKorb : 2008 - 2011
+    %br
+    Web Production Specialist
+%hr
+%h2 GitHub
+%ul
+  %li
+    %a{href: 'https://github.com/spyrosoft/dotfiles'} Linux Dotfiles
+    %br
+    Especially .zshrc and .emacs
+  %li
+    %a{href: 'https://github.com/spyrosoft/go-testing-grounds'} Go Testing Grounds
+    %br
+    Useful Go snippets and applications
+  %li
+    %a{href: 'https://github.com/spyrosoft/common-lisp-testing-grounds'} Common Lisp Testing Grounds
+    %br
+    Useful Common Lisp snippets
+  %li
+    %a{href: 'https://github.com/spyrosoft/weighted-random-numbers'} Weighted Random Numbers
+    %br
+    Weighted random number curves
+  %li
+    %a{href: 'https://github.com/spyrosoft/PHP-Terminal-Emulator', target: '_blank'} PHP Shell Emulator
+    %br
+    For when you have FTP access but not shell access
+%hr
+%h2 Browser Addons/Extensions
+.row
+  .columns.large-6.medium-6
+    %ul
+      %li
+        %a{href: 'https://chrome.google.com/webstore/detail/auto-cursor/gjaabiillfmidpcknchjeiadoppocmaf'} Auto Cursor
+        %br
+        Chrome
+      %li
+        %a{href: 'https://chrome.google.com/webstore/detail/focus-follows-mouse/lnengjbcmhhfcjpejphodipincbcffom'} Focus Follows Mouse
+        %br
+        Chrome
+      %li
+        %a{href: 'https://addons.mozilla.org/en-US/firefox/addon/auto-cursor/'} Auto Cursor
+        %br
+        Firefox
+  .columns.large-6.medium-6
+    %ul
+      %li
+        %a{href: 'https://addons.mozilla.org/en-US/firefox/addon/focus-follows-mouse/'} Focus Follows Mouse
+        %br
+        Firefox
+      %li
+        %a{href: 'https://addons.mozilla.org/en-US/firefox/addon/copy-on-select/'} Copy On Select
+        %br
+        Firefox
+%hr
+%h2 The Classic Law of Having Cake and Eating It Too
+%hr
+%p
+  A humorous way of looking at how projects tend to work in reality.
+.text-center.image
+  %img{src: '/images/good-fast-cheap.svg'}

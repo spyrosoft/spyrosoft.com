@@ -289,31 +289,19 @@ footer
 	.prompt
 		margin-bottom: $small-spacing
 
-section.portfolio
-	h4
-		font-size: 1.25rem
-		text-align: center
-		padding-bottom: 0
-		margin-bottom: 0
-
-	.image
-		text-align: center
-		min-height: 210px
-		margin-top: $small-spacing
-
-	.row
-		margin-bottom: $medium-spacing
-
 .experience ul
 	margin-bottom: 0
 
 .tools ul li
 	margin-bottom: $small-spacing
 
+.portfolio .float-right-for-medium-up
+	float: right
+
 @media screen and (max-width:39.9375em)
-	.portfolio .columns .columns,
-	.experience .columns .columns
-		min-height: auto
+	.portfolio .float-right-for-medium-up
+		float: none
+		text-align: center
 
 .common-lisp-repl #console>div,
 .common-lisp-repl #console pre
