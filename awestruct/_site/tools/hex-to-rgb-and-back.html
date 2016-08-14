@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Hex To RGB And Back - SpyroSoft</title>
+    <link href="/css/foundation.min.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/images/spyrosoft-logo-16x16.png" rel="icon" type="image/png">
+    <link href="/images/apple-touch-icon.png" rel="apple-touch-startup-image">
+  </head>
+  <body>
+    <header>
+      <nav class="top clearfix">
+        <ul>
+          <li class="nav-image">
+            <a href="/">
+              <img alt="SpyroSoft Logo" src="/images/spyrosoft-logo-50x50.png">
+            </a>
+          </li>
+          <li>
+            <a href="/portfolio.html">Portfolio</a>
+          </li>
+          <li>
+            <a href="/contact.html">Contact</a>
+          </li>
+          <li>
+            <a href="/about.html">About</a>
+          </li>
+          <li>
+            <a href="/faq.html">FAQs</a>
+          </li>
+          <li>
+            <a href="/send-payment.html">$</a>
+          </li>
+          <li>
+            <a href="/tools.html">Tools</a>
+          </li>
+          <li>
+            <a href="/blog.html">Blog</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <hr class="no-spacing">
+    <section class="row">
+      <div class="columns">
+        <div class="row">
+          <div class="columns">
+            <h1>Hex To RGB And Back</h1>
+          </div>
+          <div class="columns">
+            <p class="error" id="error"></p>
+          </div>
+          <div class="columns large-6 medium-6">
+            <label>
+              Hex:
+              <input id="hex" type="text">
+            </label>
+          </div>
+          <div class="columns large-6 medium-6">
+            <label>
+              RGB:
+              <input id="rgb" type="text">
+            </label>
+          </div>
+          <div class="columns large-6 medium-6">
+            <button class="button" id="to-rgb">To RGB</button>
+          </div>
+          <div class="columns large-6 medium-6">
+            <button class="button" id="to-hex">To Hex</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="no-spacing">
+    <footer>
+      <div class="copyright">
+        <p>
+          Copyright © by SpyroSoft
+        </p>
+        <p class="trademark">
+          SpyroSoft™ is a trademark wholly owned by Bennett Roesch
+        </p>
+      </div>
+    </footer>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/vendor/what-input.min.js"></script>
+    <script src="/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <script src="/js/tools/hex-to-rgb-and-back.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+---
+title: Hex To RGB And Back
+layout: standard
+script: /js/tools/hex-to-rgb-and-back.js
+---
+.row
+  .columns
+    %h1 Hex To RGB And Back
+  .columns
+    %p#error.error
+  .columns.large-6.medium-6
+    %label
+      Hex:
+      %input#hex{:type => "text"}/
+  .columns.large-6.medium-6
+    %label
+      RGB:
+      %input#rgb{:type => "text"}/
+  .columns.large-6.medium-6
+    %button#to-rgb.button To RGB
+  .columns.large-6.medium-6
+    %button#to-hex.button To Hex
