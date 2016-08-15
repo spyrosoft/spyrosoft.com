@@ -5,6 +5,17 @@ script: /js/contact.js
 ---
 %h1 #{page.title}
 %hr
+%h4
+  %a{href: 'https://github.com/spyrosoft'} GitHub
+  \-
+  %a{href: 'https://www.linkedin.com/in/bennett-roesch-26b7a135'} LinkedIn
+  \-
+  %a{href: 'https://twitter.com/spyrosoft'} Twitter
+  \-
+  %a{href: 'https://angel.co/bennett-roesch'} AngelList
+  \-
+  %a{href: 'http://devpost.com/spyrosoft'} Devpost
+%hr
 %form.contact{action: '/contact-ajax/', method: 'post'}
   .row
     .columns.medium-6.large-6
