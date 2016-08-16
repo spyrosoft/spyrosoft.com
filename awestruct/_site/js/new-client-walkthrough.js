@@ -110,10 +110,18 @@ var next_step = {
 	},
 	'yes-blog' : function() {
 		responses.push('It is important to have a blog on the website.');
-		show_step('do-you-want-higher-than-average-security');
+		if (new_client_is_technical) {
+			show_step('do-you-want-higher-than-average-security');
+		} else {
+			show_step('what-other-functionality-do-you-want');
+		}
 	},
 	'no-blog' : function() {
-		show_step('do-you-want-higher-than-average-security');		
+		if (new_client_is_technical) {
+			show_step('do-you-want-higher-than-average-security');
+		} else {
+			show_step('what-other-functionality-do-you-want');
+		}
 	},
 	'security-not-concerned' : function() {
 		show_step('what-other-functionality-do-you-want');
