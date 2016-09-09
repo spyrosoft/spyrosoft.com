@@ -1,6 +1,7 @@
 var new_client_is_technical = false;
 var responses = [];
 var steps = [];
+var current_hash;
 
 var next_step = {
 	'previous-step' : function() {
@@ -8,7 +9,6 @@ var next_step = {
 		steps.pop();
 		var previous_step = steps.pop();
 		if (steps.length === 0) {
-			$('.previous-step-button').addClass('display-none');
 			show_step('are-you-technical');
 			return;
 		}
@@ -171,8 +171,19 @@ function button_clicked(click_event) {
 		alert('Oh, no! Something is broken in this form. Please contact Bennett to let him know.');
 		return;
 	}
-	$('.previous-step-button').removeClass('display-none');
 	next_step[this.id]();
+	change_hash(this.id);
+}
+
+function change_hash(id) {
+	current_hash = id;
+	window.location = '#' + id;
+}
+
+function hash_changed() {
+	var url_hash = window.location.hash.substring(1, window.location.hash.length);
+	if (url_hash === current_hash) { return; }
+	next_step['previous-step']();
 }
 
 function show_step(step) {
@@ -194,3 +205,5 @@ $('.other-platform').click(
 setTimeout(function() {$('#i-am-non-technical').focus();}, 200);
 setTimeout(function() {$('#i-am-technical').focus();}, 500);
 setTimeout(function() {$('nav a').first().focus();}, 800);
+
+$(window).on('hashchange', hash_changed);

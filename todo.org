@@ -1,9 +1,11 @@
+* Homepage
+** Add a Which Platform Is Best For You utility
+** Add a price estimate to the Thank You step
 * Portfolio
 ** Take a screenshot of each site and use that as the image
+** Add a comment describing the types of jobs previous employers have had me work on
 ** Come up with something fancy to do with each item
 * Add in a sticky right navigation
 ** Photo of me
 ** Hire Bennett button
 ** Brief bio synopsis
-* Homepage
-** Add a price estimate to the Thank You step
