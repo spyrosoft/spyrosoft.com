@@ -47,86 +47,86 @@
         <h1>Portfolio</h1>
         <hr>
         <div class="portfolio">
-          <div class="clearfix">
-            <h2>
-              <a href="https://www.subverseindustries.com/">Subverse Industries</a>
-            </h2>
-            <p class="float-right-for-medium-up">
-              <a href="https://www.subverseindustries.com/">
-                <img alt="Subverse Industries Logo" src="/images/subverse-industries.svg">
-              </a>
-            </p>
-            <p>Working with a team including a designer and social media marketing/copywriter, we built a Shopify ecommerce website. The fine folks at Subverse Industries make an array of leather accessories. In particular some of the finest hats in the world.</p>
-            <hr>
+          <p class="large-margin-top-bottom">As I have been in the web development industry since 2008, you may be wondering why my portfolio is so sparse. Out of courtesy I have not included my work from my previous occupations here.</p>
+          <hr class="large-margin-top-bottom">
+          <h2>
+            <a href="https://www.subverseindustries.com/">Liza Monroy</a>
+          </h2>
+          <p>Working with my close friend and designer business partner, I customized a WordPress theme in the essence of her designs.</p>
+          <p class="text-center large-margin-top-bottom">
+            <a href="https://www.subverseindustries.com/">
+              <img alt="Liza Monroy Screenshot" src="/images/screenshots/liza-monroy.png">
+            </a>
+          </p>
+          <hr class="large-margin-top-bottom">
+          <h2>
+            <a href="https://www.subverseindustries.com/">Subverse Industries</a>
+          </h2>
+          <p>Working with a team including a designer and social media marketing/copywriter, we built a Shopify ecommerce website. The fine folks at Subverse Industries make an array of leather accessories. In particular some of the finest hats in the world.</p>
+          <p class="text-center large-margin-top-bottom">
+            <a href="https://www.subverseindustries.com/">
+              <img alt="Subverse Industries Screenshot" src="/images/screenshots/subverse-industries.png">
+            </a>
+          </p>
+          <hr class="large-margin-top-bottom">
+          <h2>
+            <a href="https://firefractal.com/gallery.html">Fire Fractal</a>
+          </h2>
+          <p>Fire Fractal allows anyone to create beautiful fractal computer artwork in addition to the option of purchasing physical copies in the form of high quality posters.</p>
+          <p>It is a fully functional ecommerce website employing Stripe Checkout.</p>
+          <p>This project posed many interesting technical challenges.</p>
+          <button class="button" onclick='$("#fire-fractal-technical-details").show();$(this).hide()'>Show Technical Details</button>
+          <div id="fire-fractal-technical-details" style="display: none;">
+            <p>Finding a way for browsers to render images quickly was very complicated. The first version printed each pixel as it was generated. This ultimately took more time than just printing the entire thing at once. An attempt was made to use C on the server side, however it ended up being even slower because of network latency. Additionally shifting the computation load to the server makes it very difficult to scale. The use of Web Workers cut the rendering time down massively.</p>
+            <p>There is no good way to precompute the data. Techniques for caching just don't work. The database would end up consuming too much disk space, for one thing.</p>
           </div>
-          <div class="clearfix">
-            <h2>
-              <a href="https://firefractal.com/gallery.html">Fire Fractal</a>
-            </h2>
-            <p class="float-right-for-medium-up">
-              <a href="https://firefractal.com/gallery.html">
-                <img alt="HTML5 JavaScript Fractal Exploration Tool" src="/images/fractal-exploration-tool.png">
-              </a>
-            </p>
-            <p>Fire Fractal allows anyone to create beautiful fractal computer artwork in addition to the option of purchasing physical copies in the form of high quality posters.</p>
-            <p>It is a fully functional ecommerce website employing Stripe Checkout.</p>
-            <p>This project posed many interesting technical challenges.</p>
-            <button class="button" onclick='$("#fire-fractal-technical-details").show();$(this).hide()'>Show Technical Details</button>
-            <div id="fire-fractal-technical-details" style="display: none;">
-              <p>Finding a way for browsers to render images quickly was very complicated. The first version printed each pixel as it was generated. This ultimately took more time than just printing the entire thing at once. An attempt was made to use C on the server side, however it ended up being even slower because of network latency. Additionally shifting the computation load to the server makes it very difficult to scale. The use of Web Workers cut the rendering time down massively.</p>
-              <p>There is no good way to precompute the data. Techniques for caching just don't work. The database would end up consuming too much disk space, for one thing.</p>
-            </div>
-            <hr>
-          </div>
-          <div class="clearfix">
-            <h2>
-              <a href="http://hexcuff.com/">Hex Cuff</a>
-            </h2>
-            <p class="float-right-for-medium-up">
-              <a href="http://hexcuff.com/">
-                <img alt="Hex Cuff Logo" src="/images/hex-cuff-logo.svg">
-              </a>
-            </p>
-            <p>An ecommerce store which sells ear cuff jewelry created from real hex nuts.</p>
-            <p>My role in particular is to make sure credit cards are accepted securely via Stripe Checkout.</p>
-            <hr>
-          </div>
-          <div class="clearfix">
-            <h2>
-              <a href="http://chaosofoperations.com/">Chaos Of Operations</a>
-            </h2>
-            <p class="float-right-for-medium-up">
-              <a href="http://chaosofoperations.com/">
-                <img alt="Chaos of Operations Logo" src="/images/chaos-of-operations-logo.jpg">
-              </a>
-            </p>
-            <p>My friend Cody created a board game for his Games and Playable Media master's degree. We worked together to port it to the web. The goal of the game is to ultimately have a higher number than your opponent at the end of the game.</p>
-            <hr>
-          </div>
-          <div class="clearfix">
-            <h2>
-              <a href="http://groundupmath.com/">Ground Up Math</a>
-            </h2>
-            <p class="float-right-for-medium-up">
-              <a href="http://groundupmath.com/">
-                <img alt="Ground Up Math Logo" src="/images/ground-up-math-logo.svg">
-              </a>
-            </p>
-            <p>A place to hone your arithmetic skills using a flashcard technique. I created this for my neice over three days or so.</p>
-            <hr>
-          </div>
-          <div class="clearfix">
-            <h2>
-              <a href="http://brailletutorial.com/">Braille Tutorial</a>
-            </h2>
-            <p class="float-right-for-medium-up">
-              <a href="http://brailletutorial.com/">
-                <img alt="Braille Tutorial Logo" src="/images/braille-tutorial.svg">
-              </a>
-            </p>
-            <p>An online interactive Braille tutorial available for free forever.</p>
-            <hr>
-          </div>
+          <p class="text-center large-margin-top-bottom">
+            <a href="https://firefractal.com/gallery.html">
+              <img alt="HTML5 JavaScript Fractal Exploration Tool" src="/images/screenshots/fire-fractal.png">
+            </a>
+          </p>
+          <hr>
+          <h2>
+            <a href="http://hexcuff.com/">Hex Cuff</a>
+          </h2>
+          <p>An ecommerce store which sells ear cuff jewelry created from real hex nuts.</p>
+          <p>My role in particular is to make sure credit cards are accepted securely via Stripe Checkout.</p>
+          <p class="text-center large-margin-top-bottom">
+            <a href="http://hexcuff.com/">
+              <img alt="Hex Cuff Logo" src="/images/screenshots/hex-cuff.png">
+            </a>
+          </p>
+          <hr>
+          <h2>
+            <a href="http://chaosofoperations.com/">Chaos Of Operations</a>
+          </h2>
+          <p>My friend Cody created a board game for his Games and Playable Media master's degree. We worked together to port it to the web. The goal of the game is to ultimately have a higher number than your opponent at the end of the game.</p>
+          <p class="text-center large-margin-top-bottom">
+            <a href="http://chaosofoperations.com/">
+              <img alt="Chaos of Operations Logo" src="/images/screenshots/chaos-of-operations.png">
+            </a>
+          </p>
+          <hr>
+          <h2>
+            <a href="http://groundupmath.com/">Ground Up Math</a>
+          </h2>
+          <p>A place to hone your arithmetic skills using a flashcard technique. I created this for my neice over three days or so.</p>
+          <p class="text-center large-margin-top-bottom">
+            <a href="http://groundupmath.com/">
+              <img alt="Ground Up Math Logo" src="/images/screenshots/ground-up-math.png">
+            </a>
+          </p>
+          <hr>
+          <h2>
+            <a href="http://brailletutorial.com/">Braille Tutorial</a>
+          </h2>
+          <p>An online interactive Braille tutorial.</p>
+          <p class="text-center large-margin-top-bottom">
+            <a href="http://brailletutorial.com/">
+              <img alt="Braille Tutorial Logo" src="/images/screenshots/braille-tutorial.png">
+            </a>
+          </p>
+          <hr>
         </div>
         <h2>GitHub</h2>
         <ul>
@@ -192,14 +192,6 @@
               </li>
             </ul>
           </div>
-        </div>
-        <hr>
-        <h2>The Classic Law of Having Cake and Eating It Too</h2>
-        <p>
-          A humorous way of looking at how projects tend to work in reality.
-        </p>
-        <div class="text-center image">
-          <img src="/images/good-fast-cheap.svg">
         </div>
       </div>
     </section>

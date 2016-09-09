@@ -82,183 +82,188 @@ code {
   margin-right: 0; }
 
 /* line 124, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+.large-margin-top-bottom {
+  margin-top: 4rem;
+  margin-bottom: 4rem; }
+
+/* line 128, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 section, section.columns {
   padding: 2rem; }
 
-/* line 127, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 131, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 h1 {
   font-size: 2rem; }
 
-/* line 130, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 134, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 h2 {
   font-size: 1.8rem; }
 
-/* line 133, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 137, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 h3 {
   font-size: 1.6rem; }
 
-/* line 136, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 140, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 h4 {
   font-size: 1.4rem; }
 
-/* line 139, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 143, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 h5 {
   font-size: 1.2rem; }
 
-/* line 142, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 146, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 h6 {
   font-size: 1rem; }
 
-/* line 145, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 149, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .soft-wrap {
   white-space: normal; }
 
-/* line 148, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 152, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .bordered {
   border-width: thin;
   border-style: solid;
   padding: 1rem; }
 
-/* line 153, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 157, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .scroll {
   overflow: auto; }
 
-/* line 156, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 160, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 pre {
   margin-bottom: 1rem; }
 
 @media screen and (min-width: 39.9375em) {
-  /* line 160, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+  /* line 164, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
   input.large {
     font-size: 4rem;
     line-height: 4rem;
     height: 5rem; } }
 /* General */
-/* line 168, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 172, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 ul, ol {
   margin-left: 2rem; }
 
-/* line 171, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 175, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 ul {
   list-style-type: square; }
 
-/* line 174, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 178, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 ol {
   list-style-type: decimal; }
 
-/* line 177, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 181, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 code {
   font-family: monospace; }
 
-/* line 180, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 184, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 hr {
   border-style: solid;
   border-width: 1px;
   border-top: none; }
 
-/* line 185, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 189, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 a, a:focus, a:active, a:hover {
   text-decoration: underline; }
 
-/* line 188, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 192, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .bold {
   font-weight: bold; }
 
-/* line 191, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 195, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .bold-links a {
   font-weight: bold; }
 
-/* line 194, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 198, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .italics {
   font-style: italic; }
 
-/* line 197, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 201, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .monospace {
   font-family: monospace;
   font-size: 1.25rem; }
 
-/* line 201, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 205, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .nowrap {
   white-space: nowrap; }
 
-/* line 204, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 208, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .inline {
   display: inline; }
 
-/* line 207, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 211, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
   float: left; }
 
-/* line 210, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 214, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .no-border, .no-border tbody {
   border: none; }
 
-/* line 213, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 217, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .centered {
   margin-left: auto;
   margin-right: auto; }
 
-/* line 217, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 221, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .display-none {
   display: none; }
 
 /* Header */
-/* line 223, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 227, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 nav.top ul {
   float: right;
   margin: 0 auto; }
 
-/* line 227, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 231, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 nav.top li {
   float: left;
   list-style-type: none; }
 
-/* line 231, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 235, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 nav.top li.nav-image a {
   padding: 0; }
 
-/* line 234, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 238, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 nav.top li.nav-image a img {
   vertical-align: text-top; }
 
-/* line 238, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 242, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 nav.top a {
   font-weight: bold;
   display: block;
   padding: 1rem 1rem;
   text-decoration: none; }
 
-/* line 244, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 248, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 nav.top a:hover, nav.top a.active {
   text-decoration: underline; }
 
 @media screen and (max-width: 39.9375em) {
-  /* line 249, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+  /* line 253, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
   nav.top ul {
     float: none; }
 
-  /* line 251, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+  /* line 255, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
   nav.top li {
     width: 50%;
     text-align: center;
     float: left; } }
 /* Footer */
-/* line 259, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 263, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 footer {
   text-align: center;
   padding: 1rem 0; }
-/* line 263, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 267, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 footer .copyright {
   padding: 0 2rem; }
-/* line 266, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 270, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 footer .trademark {
   font-size: small; }
-/* line 269, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 273, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 footer hr {
   margin-top: 0; }
 
 /* Page Specific */
-/* line 277, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 281, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .new-client-walkthrough button, .new-client-walkthrough input[type="button"], .new-client-walkthrough input[type="submit"] {
   font-size: 1rem;
   line-height: 120%;
@@ -267,49 +272,53 @@ footer hr {
   margin-bottom: 1rem;
   width: 100%;
   font-weight: bold; }
-/* line 285, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 289, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .new-client-walkthrough button.previous-step {
   padding: 1rem;
   width: auto;
   font-weight: normal; }
-/* line 289, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 293, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .new-client-walkthrough label {
   text-align: left; }
-/* line 291, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 295, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .new-client-walkthrough h2 {
   margin-bottom: 1rem; }
-/* line 293, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 297, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .new-client-walkthrough .responses {
   text-align: center; }
-/* line 295, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 299, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .new-client-walkthrough .prompt {
   margin-bottom: 1rem; }
 
-/* line 298, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 302, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .experience ul {
   margin-bottom: 0; }
 
-/* line 301, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 305, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .tools ul li {
   margin-bottom: 1rem; }
 
-/* line 304, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 308, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .portfolio .float-right-for-medium-up {
   float: right; }
 
+/* line 311, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+.portfolio img {
+  border: 1px solid #000000; }
+
 @media screen and (max-width: 39.9375em) {
-  /* line 308, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+  /* line 315, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
   .portfolio .float-right-for-medium-up {
     float: none;
     text-align: center; } }
-/* line 312, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 319, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .common-lisp-repl #console > div, .common-lisp-repl #console pre {
   position: initial !important; }
 
-/* line 316, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 323, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .common-lisp-repl .jqconsole-cursor {
   background-color: #000000; }
 
-/* line 319, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
+/* line 326, /home/path/sites/spyrosoft.com/awestruct/css/app.sass */
 .common-lisp-repl pre.jqconsole {
   padding-bottom: 1rem; }
