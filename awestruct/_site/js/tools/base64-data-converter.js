@@ -1,9 +1,9 @@
 $('#base64-or-data').focus();
 
-$('#to-data').click(to_data);
-$('#to-base64').click(to_base64);
+$('#encode').click(encode);
+$('#decode').click(decode);
 
-function to_data() {
+function encode() {
 	if (typeof btoa === 'undefined') {
 		alert('Your browser does not support base64 conversion.');
 		return;
@@ -11,7 +11,7 @@ function to_data() {
 	$('#base64-or-data').val(btoa($('#base64-or-data').val()));
 }
 
-function to_base64() {
+function decode() {
 	if (typeof atob === 'undefined') {
 		alert('Your browser does not support base64 conversion.');
 		return;
