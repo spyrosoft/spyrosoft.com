@@ -121,6 +121,15 @@ There are all kinds of fancy things you can do with your prompt including changi
 * magenta
 
 
+### Global Alias
+
+Using the -g flag with the alias command allows them to expand even after the command position. For example:
+
+    $ alias -g short="long"
+    $ echo short
+    long
+
+
 ### OH-MY-ZSH
 
 A project to encourage people to switch to Zsh by easing the transition considerably exists called [Oh My Zsh!](https://github.com/robbyrussell/oh-my-zsh). The [creation story](https://medium.com/@robbyrussell/d-oh-my-zsh-af99ca54212c) is fascinating and worth the read.
