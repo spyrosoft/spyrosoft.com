@@ -12,18 +12,19 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-type Credentials struct {
-	LiveOrDev string `json:"live-or-dev"`
+type SiteData struct {
+	LiveOrDev             string            `json:"live-or-dev"`
+	URLPermanentRedirects map[string]string `json:"url-permanent-redirects"`
 }
 
 var (
-	webRoot              = "awestruct/_site"
-	credentials          = Credentials{}
-	credentialsAreLoaded = false
+	webRoot        = "awestruct/_site"
+	siteData       = SiteData{}
+	siteDataLoaded = false
 )
 
 func main() {
-	loadCredentials()
+	loadSiteData()
 	router := httprouter.New()
 	router.POST("/example-ajax-uri", exampleAJAXFunction)
 	router.NotFound = http.HandlerFunc(requestCatchAll)
@@ -38,15 +39,31 @@ type StaticHandler struct {
 	http.Dir
 }
 
-func loadCredentials() {
-	rawCredentials, error := ioutil.ReadFile("private/credentials.json")
+func loadSiteData() {
+	rawSiteData, error := ioutil.ReadFile("private/site-data.json")
 	panicOnError(error)
-	error = json.Unmarshal(rawCredentials, &credentials)
+	error = json.Unmarshal(rawSiteData, &siteData)
 	panicOnError(error)
-	credentialsAreLoaded = true
+	siteDataLoaded = true
 }
 
 func requestCatchAll(responseWriter http.ResponseWriter, request *http.Request) {
+	if permanentRedirectOldURLs(request.URL.Path, responseWriter, request) {
+		return
+	}
+	serveStaticFilesOr404(responseWriter, request)
+}
+
+func permanentRedirectOldURLs(currentURL string, responseWriter http.ResponseWriter, request *http.Request) bool {
+	for oldURL, newURL := range siteData.URLPermanentRedirects {
+		if currentURL == oldURL {
+			http.Redirect(responseWriter, request, newURL, http.StatusMovedPermanently)
+		}
+	}
+	return false
+}
+
+func serveStaticFilesOr404(responseWriter http.ResponseWriter, request *http.Request) {
 	staticHandler := StaticHandler{http.Dir(webRoot)}
 	staticHandler.ServeHttp(responseWriter, request)
 }
