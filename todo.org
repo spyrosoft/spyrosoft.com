@@ -1,4 +1,10 @@
+* General
+** Add an image to each page
+*** One of typing on a keyboard
 * Homepage
+** Modify the new-client-walkthrough wording to engage the average person better
+*** Make it into an elevator pitch
+*** "If you need a website that has functionality like users signing up or anything where there is no way there is software that can be purchased out of-the-box."
 ** Add a Which Platform Is Best For You utility
 ** Add a price estimate to the Thank You step
 * Portfolio

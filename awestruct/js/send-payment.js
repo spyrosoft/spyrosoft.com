@@ -66,7 +66,7 @@ $(window).on('popstate', function() {stripe_handle.close();});
 
 function stripe_submit_order(stripe_token) {
 	var stripe_data = {
-		'shopify-token' : stripe_token.id,
+		'stripe-token' : stripe_token.id,
 		'payment-amount-in-cents' : payment_amount_in_cents
 	};
 	$.post('/send-payment-ajax/', stripe_data)

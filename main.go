@@ -13,8 +13,18 @@ import (
 )
 
 type SiteData struct {
-	LiveOrDev             string            `json:"live-or-dev"`
-	URLPermanentRedirects map[string]string `json:"url-permanent-redirects"`
+	LiveOrDev                string            `json:"live-or-dev"`
+	URLPermanentRedirects    map[string]string `json:"url-permanent-redirects"`
+	NoReplyAddressName       string            `json:"no-reply-address-name"`
+	NoReplyAddress           string            `json:"no-reply-address"`
+	NoReplyPassword          string            `json:"no-reply-password"`
+	Host                     string            `json:"no-reply-host"`
+	Port                     string            `json:"no-reply-port"`
+	ReplyAddress             string            `json:"reply-address"`
+	StripeTestSecretKey      string            `json:"stripe-test-secret-key"`
+	StripeTestPublishableKey string            `json:"stripe-test-publishable-key"`
+	StripeLiveSecretKey      string            `json:"stripe-live-secret-key"`
+	StripeLivePublishableKey string            `json:"stripe-live-publishable-key"`
 }
 
 var (
@@ -26,13 +36,16 @@ var (
 func main() {
 	loadSiteData()
 	router := httprouter.New()
-	router.POST("/example-ajax-uri", exampleAJAXFunction)
+	router.POST("/contact-ajax/", contactSubmission)
+	router.POST("/send-payment-ajax/", paymentSubmission)
+	router.POST("/what-is-my-ip-address/", whatIsMyIPAddress)
 	router.NotFound = http.HandlerFunc(requestCatchAll)
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
 
-//TODO: Rename this function
-func exampleAJAXFunction(responseWriter http.ResponseWriter, request *http.Request, requestParameters httprouter.Params) {
+func whatIsMyIPAddress(responseWriter http.ResponseWriter, request *http.Request, requestParameters httprouter.Params) {
+	ipAddresses := strings.Split(request.Header.Get("x-forwarded-for"), ", ")
+	fmt.Fprint(responseWriter, ipAddresses[0])
 }
 
 type StaticHandler struct {
