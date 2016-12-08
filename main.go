@@ -13,18 +13,16 @@ import (
 )
 
 type SiteData struct {
-	LiveOrDev                string            `json:"live-or-dev"`
-	URLPermanentRedirects    map[string]string `json:"url-permanent-redirects"`
-	NoReplyAddressName       string            `json:"no-reply-address-name"`
-	NoReplyAddress           string            `json:"no-reply-address"`
-	NoReplyPassword          string            `json:"no-reply-password"`
-	Host                     string            `json:"no-reply-host"`
-	Port                     string            `json:"no-reply-port"`
-	ReplyAddress             string            `json:"reply-address"`
-	StripeTestSecretKey      string            `json:"stripe-test-secret-key"`
-	StripeTestPublishableKey string            `json:"stripe-test-publishable-key"`
-	StripeLiveSecretKey      string            `json:"stripe-live-secret-key"`
-	StripeLivePublishableKey string            `json:"stripe-live-publishable-key"`
+	LiveOrDev             string            `json:"live-or-dev"`
+	URLPermanentRedirects map[string]string `json:"url-permanent-redirects"`
+	NoReplyAddressName    string            `json:"no-reply-address-name"`
+	NoReplyAddress        string            `json:"no-reply-address"`
+	NoReplyPassword       string            `json:"no-reply-password"`
+	Host                  string            `json:"no-reply-host"`
+	Port                  string            `json:"no-reply-port"`
+	ReplyAddress          string            `json:"reply-address"`
+	StripeTestSecretKey   string            `json:"stripe-test-secret-key"`
+	StripeLiveSecretKey   string            `json:"stripe-live-secret-key"`
 }
 
 var (
