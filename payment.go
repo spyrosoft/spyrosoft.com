@@ -33,9 +33,9 @@ func paymentSubmission(responseWriter http.ResponseWriter, request *http.Request
 	chargeParams := &stripe.ChargeParams{
 		Amount:   uint64(paymentAmountInCents),
 		Currency: "usd",
-		Source:   stripeToken,
 		Desc:     "$ - spyrosoft.com",
 	}
+	chargeParams.SetSource(stripeToken)
 	_, err := charge.New(chargeParams)
 	fmt.Println(err.Error())
 	if err != nil {
