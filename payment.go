@@ -37,11 +37,9 @@ func paymentSubmission(responseWriter http.ResponseWriter, request *http.Request
 	}
 	chargeParams.SetSource(stripeToken)
 	_, err := charge.New(chargeParams)
-	fmt.Println(err.Error())
 	if err != nil {
+		fmt.Println(err.Error())
 		successMessage.SetMessage(false, err.Error())
-		json.NewEncoder(responseWriter).Encode(successMessage)
-		return
 	}
 	json.NewEncoder(responseWriter).Encode(successMessage)
 }
