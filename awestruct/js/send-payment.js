@@ -81,9 +81,9 @@ function stripe_transaction_success(server_response) {
 		stripe_communication_failure();
 		return;
 	}
-	if ( typeof server_response['success'] === 'undefined' ) {
+	if ( typeof server_response['Success'] === 'undefined' ) {
 		stripe_communication_failure();
-	} else if (server_response['success'] === true) {
+	} else if (server_response['Success'] === true) {
 		window.location = '/payment-received.html';
 	} else if (typeof server_response['message'] !== 'undefined') {
 		display_error('The transaction was rejected. The payment gateway\'s server responded with the following message: ' + server_response['message']);
