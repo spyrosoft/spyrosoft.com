@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"strconv"
 
@@ -38,7 +37,6 @@ func paymentSubmission(responseWriter http.ResponseWriter, request *http.Request
 	chargeParams.SetSource(stripeToken)
 	_, err := charge.New(chargeParams)
 	if err != nil {
-		fmt.Println(err.Error())
 		successMessage.SetMessage(false, err.Error())
 	}
 	json.NewEncoder(responseWriter).Encode(successMessage)
