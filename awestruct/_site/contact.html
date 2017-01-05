@@ -58,7 +58,7 @@
           <a href="http://devpost.com/spyrosoft">Devpost</a>
         </h4>
         <hr>
-        <form action="/contact-ajax/" class="contact" method="post">
+        <form action="/contact-ajax/" class="ajax" method="post">
           <div class="row">
             <div class="columns medium-6 large-6">
               <label>
@@ -80,7 +80,7 @@
               <label>
                 Message
                 <sup>(Required)</sup>
-                <textarea cols="40" name="message" rows="10"></textarea>
+                <textarea cols="40" name="message" required rows="10"></textarea>
               </label>
             </div>
           </div>
@@ -91,6 +91,8 @@
           </div>
           <script>
             document.getElementsByName('name')[0].focus();
+            var ajax_form_success_message = 'Thank you! I\'ll respond to you soon. If you are interested, please check out some blog articles.';
+            var ajax_form_redirect_url = '/blog.html';
           </script>
         </form>
       </div>
@@ -112,6 +114,6 @@
     <script>
       $(document).foundation();
     </script>
-    <script src="/js/contact.js"></script>
+    <script src="/js/form-ajax.js"></script>
   </body>
 </html>

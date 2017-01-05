@@ -2,7 +2,7 @@
 title: I Make Websites
 layout: standard
 script: /js/new-client-walkthrough.js
-script2: /js/contact.js
+script2: /js/form-ajax.js
 ---
 .new-client-walkthrough
   #intro
@@ -207,7 +207,7 @@ script2: /js/contact.js
               Next
           .columns.large-3.medium-3
             %p
-    %form.contact.text-left{action: '/contact-ajax/', method: 'post'}
+    %form.ajax.text-left{action: '/new-client-ajax/', method: 'post'}
       .thank-you-message-contact-info.response
         .columns
           %h2 Thank You!

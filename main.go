@@ -32,6 +32,7 @@ func main() {
 	loadSiteData()
 	router := httprouter.New()
 	router.POST("/contact-ajax/", contactSubmission)
+	router.POST("/new-client-ajax/", newClientSubmission)
 	router.POST("/send-payment-ajax/", paymentSubmission)
 	router.POST("/what-is-my-ip-address/", whatIsMyIPAddress)
 	router.NotFound = http.HandlerFunc(requestCatchAll)

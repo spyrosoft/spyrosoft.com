@@ -1,3 +1,6 @@
+var ajax_form_success_message = 'Thank you! I\'ll respond to you soon. If you are interested, please take a look at some blog articles.';
+var ajax_form_redirect_url = '/blog.html';
+
 var new_client_is_technical = false;
 var responses = [];
 var steps = [];
@@ -167,7 +170,7 @@ function add_response_items(selector) {
 
 function button_clicked(click_event) {
 	click_event.preventDefault();
-	if (!next_step[this.id] || typeof next_step[this.id] !== 'function') {
+	if (typeof next_step[this.id] !== 'function') {
 		alert('Oh, no! Something is broken in this form. Please contact Bennett to let him know.');
 		return;
 	}
