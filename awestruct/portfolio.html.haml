@@ -37,7 +37,7 @@ layout: standard
   %button.button{onclick: '$("#fire-fractal-technical-details").show();$(this).hide()'} Show Technical Details
   #fire-fractal-technical-details{style: 'display: none;'}
     %p Finding a way for browsers to render images quickly was very complicated. The first version printed each pixel as it was generated. This ultimately took more time than just printing the entire thing at once. An attempt was made to use C on the server side, however it ended up being even slower because of network latency. Additionally shifting the computation load to the server makes it very difficult to scale. The use of Web Workers cut the rendering time down massively.
-    %p There is no good way to precompute the data. Techniques for caching just don't work. The database would end up consuming too much disk space, for one thing.
+    %p There is no good way to precompute the data. Each frame is rendered in real time.
   %p.text-center.large-margin-top-bottom
     %a{href: 'https://firefractal.com/gallery.html'}
       %img{alt: 'HTML5 JavaScript Fractal Exploration Tool', src: '/images/screenshots/fire-fractal.png'}
@@ -52,7 +52,7 @@ layout: standard
   %hr
   %h2
     %a{href: 'http://chaosofoperations.com/'} Chaos Of Operations
-  %p My friend Cody created a board game for his Games and Playable Media master's degree. We worked together to port it to the web. The goal of the game is to ultimately have a higher number than your opponent at the end of the game.
+  %p My friend Cody created a board game for his Games and Playable Media master's degree. We worked together to port it to the web. The goal of the game is to have a higher number than your opponent at the end of the game.
   %p.text-center.large-margin-top-bottom
     %a{href: 'http://chaosofoperations.com/'}
       %img{alt: 'Chaos of Operations Logo', src: '/images/screenshots/chaos-of-operations.png'}
