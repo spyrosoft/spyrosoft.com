@@ -47,108 +47,61 @@
         <h1>Why To Switch From Bash To ZSH</h1>
         <hr>
         <p><em><strong>Note</strong></em>: if you're interested in switching away from Bash and don't already know about <a href="https://fishshell.com/">Fish</a>, compare it to Zsh before taking the plunge.</p>
-        
         <p>Whether you use Bash or Zsh <a href="https://github.com/spyrosoft/.files/blob/master/.zshrc">check out my config file</a>. There are lots of goodies in there.</p>
-        
         <h3 id="built-in-config-setup-utility">Built-In Config Setup Utility</h3>
-        
         <p>When zsh starts it checks for configuration files. If none exist it prompts the following:</p>
-        
-        <pre><code>This is the Z Shell configuration function for new users,&#x000A;zsh-newuser-install.&#x000A;You are seeing this message because you have no zsh startup files&#x000A;(the files .zshenv, .zprofile, .zshrc, .zlogin in the directory&#x000A;~).  This function can help you with a few settings that should&#x000A;make your use of the shell easier.&#x000A;&#x000A;You can:&#x000A;&#x000A;(q)  Quit and do nothing.  The function will be run again next time.&#x000A;&#x000A;(0)  Exit, creating the file ~/.zshrc containing just a comment.&#x000A;That will prevent this function being run again.&#x000A;&#x000A;(1)  Continue to the main menu.&#x000A;&#x000A;--- Type one of the keys in parentheses ---&#x000A;</code></pre>
-        
+        <pre><code>This is the Z Shell configuration function for new users,&#x000A;zsh-newuser-install.&#x000A;You are seeing this message because you have no zsh startup files&#x000A;(the files .zshenv, .zprofile, .zshrc, .zlogin in the directory&#x000A;~).  This function can help you with a few settings that should&#x000A;make your use of the shell easier.&#x000A;&#x000A;You can:&#x000A;&#x000A;(q)  Quit and do nothing.  The function will be run again next time.&#x000A;&#x000A;(0)  Exit, creating the file ~/.zshrc containing just a comment.&#x000A;That will prevent this function being run again.&#x000A;&#x000A;(1)  Continue to the main menu.&#x000A;&#x000A;--- Type one of the keys in parentheses ---</code></pre>
         <p>The setup utility is well organized, and straight forward. It is worth taking the time to set everything up for your own preferences. It is certainly the first thing a new zsh user should do. Otherwise the default settings are quite bad. I think this is intentional to motivate users to actually use the setup utility.</p>
-        
         <p>Each of the features mentioned below can be customized via the utility.</p>
-        
         <h3 id="no-more-need-for-the-cd-command">No More Need For The Cd Command</h3>
-        
         <p>In Bash, when a user types a directory path and presses enter the following error displays:</p>
-        
-        <pre><code>bash: /path/to/directory: Is a directory&#x000A;</code></pre>
-        
+        <pre><code>bash: /path/to/directory: Is a directory</code></pre>
         <p>Yes Bash. No shit it's a directory. What is the only possible thing a user would want to do with said directory?</p>
-        
         <p>Enter Zsh! Zsh is smart enough to know that the user wants to cd there and does so without complaint.</p>
-        
         <h3 id="completion-cycling">Completion Cycling</h3>
-        
         <p>Bash completion works like so. A user partially types something then presses &lt;tab&gt; twice. A list of available completions are printed out to the shell. The user then has to continue typing the correct completion until none of the other completion suggestions match at which time the completion is finally performed.</p>
-        
         <p>Zsh displays a completion list immediately upon pressing &lt;tab&gt; the first time. If there is only one possibility it is completed right then and there in the same manner as Bash. Otherwise unlike Bash the user has the option to continue to press &lt;tab&gt; to cycle through the rest of the available completions.</p>
-        
         <p>Zsh completions are only written out to the shell one time. If the user refines the completion search, the old completions are removed and the new ones take their place. Bash leaves the old completions up consuming quite a bit of vertical lines in the shell.</p>
-        
         <h3 id="partial-directory-expansion">Partial Directory Expansion</h3>
-        
         <p>Zsh ships with an innovative method of moving around the file system. By typing the first part of a directory name and adding a slash afterwards, Zsh attempts to locate the corresponding directory expansion. For example:</p>
-        
-        <pre><code>~/p/g/s/t &lt;tab&gt;&#x000A;</code></pre>
-        
+        <pre><code>~/p/g/s/t &lt;tab&gt;</code></pre>
         <p>Will expand to:</p>
-        
-        <pre><code>~/programming/go/src/testing-grounds/&#x000A;</code></pre>
-        
+        <pre><code>~/programming/go/src/testing-grounds/</code></pre>
         <p>Sometimes more than one directory expansion is possible. When that happens Zsh expands as many directories as it can and displays the the collisions at that directory level as completion options. Once the user has &lt;tab&gt; cycled through to the desired completion, the user can choose that completion by typing a character and immediately deleting it again. The rest of the directory expansion is then continued by pressing &lt;tab&gt; again.</p>
-        
         <h3 id="intelligent-file-completion">Intelligent File Completion</h3>
-        
         <p>The only file completions displayed are completions that would make sense for the given command. As an example using unzip only files with the .zip file extension or directories are shown.</p>
-        
-        <pre><code>$ ls&#x000A;file.txt executable-file file.zip another-file.zip directory/ another-directory/&#x000A;$ unzip &lt;TAB&gt;&#x000A;file.zip another-file.zip directory/ another-directory/&#x000A;</code></pre>
-        
+        <pre><code>$ ls&#x000A;file.txt executable-file file.zip another-file.zip directory/ another-directory/&#x000A;$ unzip &lt;TAB&gt;&#x000A;file.zip another-file.zip directory/ another-directory/</code></pre>
         <h3 id="fuzzy-file-completion">Fuzzy File Completion</h3>
-        
         <p>Spell a filename wrong at the shell? That's OK. Zsh will do its best to figure out which file the user wanted and include its guesses as available completions.</p>
-        
         <h3 id="fuzzy-directory-completion">Fuzzy Directory Completion</h3>
-        
         <p>Imagine that there is a directory:</p>
-        
-        <pre><code>/home/user/example/actual/directory&#x000A;</code></pre>
-        
+        <pre><code>/home/user/example/actual/directory</code></pre>
         <p>However it has been a while and the directory heirachy isn't very fresh in the user's memory. The user tries following instead:</p>
-        
-        <pre><code>/home/user/example/directory&#x000A;</code></pre>
-        
+        <pre><code>/home/user/example/directory</code></pre>
         <p>Zsh knows that the user may have missed a directory and helps out by searching for the missing directory in each of the subdirectories starting at the missing directory's level. Zsh then suggests any matching directories as a completion.</p>
-        
         <h3 id="command-syntax-completion">Command Syntax Completion</h3>
-        
         <p>Trying to remember a command's flag? Begin typing the command as you remember it and press &lt;tab&gt;. Completions for the available flags are printed as completions. This eliminates most of the need to refer to the docs like the man page.</p>
-        
         <h3 id="partial-command-history-reverse-search">Partial Command History Reverse Search</h3>
-        
         <p>Rather than searching for a command through your entire command history by pressing the up arrow, you can type as much of the command as you remember and then press up. Only commands beginning with what you typed are displayed.</p>
-        
         <h3 id="prompt">$PROMPT</h3>
-        
         <p>In Bash the variable PS1 is not very descriptive. The Zsh equivalent is appropriately named PROMPT.</p>
-        
         <p>There are all kinds of fancy things you can do with your prompt including changing the colors. Available colors are as follows:</p>
-        
         <ul>
-          <li>green</li>
-          <li>cyan</li>
-          <li>white</li>
-          <li>red</li>
-          <li>blue</li>
-          <li>yellow</li>
-          <li>black</li>
-          <li>magenta</li>
+        <li>green</li>
+        <li>cyan</li>
+        <li>white</li>
+        <li>red</li>
+        <li>blue</li>
+        <li>yellow</li>
+        <li>black</li>
+        <li>magenta</li>
         </ul>
-        
         <h3 id="global-alias">Global Alias</h3>
-        
         <p>Using the -g flag with the alias command allows them to expand even after the command position. For example:</p>
-        
-        <pre><code>$ alias -g short="long"&#x000A;$ echo short&#x000A;long&#x000A;</code></pre>
-        
+        <pre><code>$ alias -g short=&quot;long&quot;&#x000A;$ echo short&#x000A;long</code></pre>
         <h3 id="oh-my-zsh">OH-MY-ZSH</h3>
-        
         <p>A project to encourage people to switch to Zsh by easing the transition considerably exists called <a href="https://github.com/robbyrussell/oh-my-zsh">Oh My Zsh!</a>. The <a href="https://medium.com/@robbyrussell/d-oh-my-zsh-af99ca54212c">creation story</a> is fascinating and worth the read.</p>
-        
         <p>Personally the thought of running unknown code downloaded from the internet each time the shell starts terrifies me. Especially as root or on a personal user's account. Think about it: the security of this is only as strong as Robby Russel's email password. However, realistically this risk is very low. And if you're not lazy like I am, you can read through the code line by line to see what it's doing and know for sure everything is fine.</p>
-        
         <p>Assuming you either don't mind the security issue I mentioned and just want to get Zsh up and off the ground as soon as possible or have gone to the effort of reading through the code, Oh My Zsh! is really great.</p>
       </div>
     </section>

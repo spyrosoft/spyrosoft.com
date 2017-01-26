@@ -47,63 +47,34 @@
         <h1>How To Set Up A Common Lisp Development Environment</h1>
         <hr>
         <h3 id="sbcl">SBCL</h3>
-        
         <p>Steel Bank Common Lisp (sbcl) is a good implementation to use. It is cross platform and a mountain of effort has gone into its development. Do not use clisp - benchmarks compared with sbcl are very poor and many implementation decisions are not optimal (no optimized tail recursion to name one).</p>
-        
         <h3 id="choose-your-editor">Choose Your Editor</h3>
-        
         <p>The first thing you will need is a text editor that integrates a development environment for Common Lisp. This pretty much comes down to three available choices:</p>
-        
         <h4 id="emacs">Emacs</h4>
-        
         <p>If you plan to use Common Lisp for a long time Emacs is likely the best choice. It was created by Richard Stallman largely for the purpose of writing Lisp code. It is currently written in a dialect called Elisp which is a close relative of Common Lisp.</p>
-        
         <h5 id="linux">Linux</h5>
-        
         <p>All Linux package managers that I know of will install Emacs with the minimum amount of effort. When run from within a desktop environment a graphical user interface is displayed (which I recommend disabling immediately - see my <a href="https://github.com/spyrosoft/.files/tree/master/.emacs.d">dotfiles</a>). Otherwise the shell version is more minimal.</p>
-        
         <h5 id="mac">Mac</h5>
-        
         <p><a href="http://aquamacs.org/">Aquamacs</a> is the way to go.</p>
-        
         <h5 id="windows">Windows</h5>
-        
         <p><a href="http://emacsbinw64.sourceforge.net/">Emacs64</a> is the way to go. (Or 32 if you're still in the stone age :)</p>
-        
         <h4 id="vim">Vim</h4>
-        
         <p><a href="https://github.com/kovisoft/slimv">Slimv</a> according to my good friend and <a href="http://github-awards.com/users/search?login=orthecreedence">Common Lisp expert</a> works very well.</p>
-        
         <h4 id="lispworks">LispWorks</h4>
-        
         <p>To be straight with you, I went to a fair amount of trouble to install <a href="http://www.lispworks.com/downloads/">LispWorks</a> on Linux and was unable to do so. I gave up and ultimately chose Emacs. Additionally if it is ever used for commercial use, they want you to upgrade from the Personal Edition to the Commercial Edition which is prohibitively expensive.</p>
-        
         <h3 id="slime">SLIME</h3>
-        
         <p>If you chose Emacs something you won't be able to live without is SLIME. It is an open source integrated development environment. <a href="https://github.com/slime/slime">Clone it</a> somewhere convenient. I put mine here: ~/.emacs.d/packages/slime/.</p>
-        
         <p>Add the following lines to your .emacs.d/init.el or .emacs file:</p>
-        
-        <pre><code>(add-to-list 'load-path "~/.emacs.d/packages/slime")&#x000A;(setq inferior-lisp-program "/usr/bin/sbcl")&#x000A;(setq slime-contribs '(slime-fancy))&#x000A;(require 'slime-autoloads)&#x000A;</code></pre>
-        
+        <pre><code>(add-to-list &#39;load-path &quot;~/.emacs.d/packages/slime&quot;)&#x000A;(setq inferior-lisp-program &quot;/usr/bin/sbcl&quot;)&#x000A;(setq slime-contribs &#39;(slime-fancy))&#x000A;(require &#39;slime-autoloads)</code></pre>
         <p>If your instance of /usr/bin/sbcl is somewhere else, please change the inferior-lisp-program path in the above code appropriately.</p>
-        
         <p>Open Emacs, type M-x slime, and you're up and running!</p>
-        
         <p>It is worth taking the time to <a href="https://common-lisp.net/project/slime/doc/html/">read the Slime manual</a>.</p>
-        
         <h3 id="rainbow-delimiters">Rainbow Delimiters</h3>
-        
         <p>It is cumbersome trying to determine which parentheses match which. Fortunately an Emacs package exists called rainbow-delimiters to fix this problem.</p>
-        
         <p>Visit http://www.emacswiki.org/emacs/RainbowDelimiters and click the link under Download: entitled rainbow-delimiters.el.</p>
-        
         <p>Save this file somewhere convenient. I put mine in ~/.emacs.d/packages/.</p>
-        
         <p>Open Emacs and add the following lines:</p>
-        
-        <pre><code>(add-to-list 'load-path "~/.emacs.d/packages/")&#x000A;(require 'rainbow-delimiters)&#x000A;(global-rainbow-delimiters-mode)&#x000A;</code></pre>
-        
+        <pre><code>(add-to-list &#39;load-path &quot;~/.emacs.d/packages/&quot;)&#x000A;(require &#39;rainbow-delimiters)&#x000A;(global-rainbow-delimiters-mode)</code></pre>
         <p>Now parentheses, brackets, and braces alternate color in your code. I chose a <a href="https://github.com/spyrosoft/.files/blob/master/.emacs.d/individual-packages/lisp.el">more rainbow styled color theme</a>.</p>
       </div>
     </section>

@@ -46,46 +46,34 @@
       <div class="columns blog">
         <h1>How To Transfer Email To A New Host</h1>
         <hr>
-        <p><em>Note</em>: A Linux command line utility exists called imapsync. The <a href="http://imapsync.lamiral.info/">official website</a> will have you believe that it is for sale for €50. Although I was unable to find it in the Debian repository when I checked last (did I spell something wrong?) it is definitely in EPEL for Red Hat and its variants. I did not have success with imapsync because I was transferring away from Google Mail. Google Mail has not marked it is a "secure application" so I eventually abandoned this approach. In your case you may have better luck. See the <a href="#imapsync-example">bottom of the page</a> for an example command.</p>
-        
+        <p><em>Note</em>: A Linux command line utility exists called imapsync. The <a href="http://imapsync.lamiral.info/">official website</a> will have you believe that it is for sale for €50. Although I was unable to find it in the Debian repository when I checked last (did I spell something wrong?) it is definitely in EPEL for Red Hat and its variants. I did not have success with imapsync because I was transferring away from Google Mail. Google Mail has not marked it is a &quot;secure application&quot; so I eventually abandoned this approach. In your case you may have better luck. See the <a href="#imapsync-example">bottom of the page</a> for an example command.</p>
         <h3 id="forward">Forward</h3>
-        
         <p>There is more than one way to transfer email. For this tutorial Thunderbird will be used as the email client.</p>
-        
         <h3 id="checklist">Checklist</h3>
-        
-        <ol>
-          <li>If it doesn't already exist create the email account on the new server</li>
-          <li>Connect your email client to the new account</li>
-          <li>Send a test email to verify outgoing mail is working</li>
-          <li>Instruct the person whose account is being transferred (the user) to add the new account to their email client</li>
-          <li>Instruct the user to send a test email to you from the new account to verify that they are able to send outgoing mail</li>
-          <li>Instruct the user to select all of the emails in their inbox and in their sent messages and drag them to the corresponding folders in the new account</li>
-          <li>Instruct the user to click and drag each of their additional email folders into the new account's inbox</li>
-          <li>Change the MX records in DNS to point to the new mail server</li>
-          <li>Wait a week - in the mean time instruct the user to continue clicking and dragging all email that comes in on the old account to the new account</li>
-          <li>Instruct the user that when email has stopped trickling in to remove their old account from their email client</li>
+        <ol style="list-style-type: decimal">
+        <li>If it doesn't already exist create the email account on the new server</li>
+        <li>Connect your email client to the new account</li>
+        <li>Send a test email to verify outgoing mail is working</li>
+        <li>Instruct the person whose account is being transferred (the user) to add the new account to their email client</li>
+        <li>Instruct the user to send a test email to you from the new account to verify that they are able to send outgoing mail</li>
+        <li>Instruct the user to select all of the emails in their inbox and in their sent messages and drag them to the corresponding folders in the new account</li>
+        <li>Instruct the user to click and drag each of their additional email folders into the new account's inbox</li>
+        <li>Change the MX records in DNS to point to the new mail server</li>
+        <li>Wait a week - in the mean time instruct the user to continue clicking and dragging all email that comes in on the old account to the new account</li>
+        <li>Instruct the user that when email has stopped trickling in to remove their old account from their email client</li>
         </ol>
-        
         <h3 id="conclusion">Conclusion</h3>
-        
         <p>This technique avoids the pitfalls of:</p>
-        
         <ul>
-          <li>Having the user change their existing account settings and losing access to their email until they are able to connect to the new server successfully</li>
-          <li>Leaving some emails dangling in the old account</li>
-          <li>Trying to coordinate the DNS switch with the user updating their account settings in their email client</li>
+        <li>Having the user change their existing account settings and losing access to their email until they are able to connect to the new server successfully</li>
+        <li>Leaving some emails dangling in the old account</li>
+        <li>Trying to coordinate the DNS switch with the user updating their account settings in their email client</li>
         </ul>
-        
         <p>Good luck. Email is a hairy beast.</p>
-        
         <h3 id="imapsync-example">Imapsync Example</h3>
-        
         <p>The files password-username and password-username-dreamhost are plaintext files containing only the account passwords.</p>
-        
         <p>In this example, the first host is Google Mail and the second DreamHost.</p>
-        
-        <pre><code>imapsync \&#x000A;--user1 "username@example.com" \&#x000A;--host1 imap.gmail.com \&#x000A;--passfile1 password-username \&#x000A;--port1 993 \&#x000A;--ssl1 \&#x000A;--authmech1 LOGIN \&#x000A;--user2 "username@example.com" \&#x000A;--host2 sub4.mail.dreamhost.com \&#x000A;--passfile2 password-username-dreamhost \&#x000A;--authmech2 LOGIN \&#x000A;</code></pre>
+        <pre><code>imapsync \&#x000A;--user1 &quot;username@example.com&quot; \&#x000A;--host1 imap.gmail.com \&#x000A;--passfile1 password-username \&#x000A;--port1 993 \&#x000A;--ssl1 \&#x000A;--authmech1 LOGIN \&#x000A;--user2 &quot;username@example.com&quot; \&#x000A;--host2 sub4.mail.dreamhost.com \&#x000A;--passfile2 password-username-dreamhost \&#x000A;--authmech2 LOGIN \</code></pre>
       </div>
     </section>
     <hr class="no-spacing">
