@@ -9,6 +9,10 @@ import (
 )
 
 func contactSubmission(responseWriter http.ResponseWriter, request *http.Request, requestParameters httprouter.Params) {
+	if request.PostFormValue("token") != "FXa8T!jZpA" {
+		fmt.Fprint(responseWriter, "{\"success\":true}")
+		return
+	}
 	message := ""
 	nameValue := request.PostFormValue("name")
 	emailValue := request.PostFormValue("email")
@@ -29,6 +33,10 @@ func contactSubmission(responseWriter http.ResponseWriter, request *http.Request
 }
 
 func newClientSubmission(responseWriter http.ResponseWriter, request *http.Request, requestParameters httprouter.Params) {
+	if request.PostFormValue("token") != "FXa8T!jZpA" {
+		fmt.Fprint(responseWriter, "{\"success\":true}")
+		return
+	}
 	message := ""
 	nameValue := request.PostFormValue("name")
 	emailValue := request.PostFormValue("email")

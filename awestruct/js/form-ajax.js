@@ -5,7 +5,11 @@ var form_to_reset;
 function form_ajax_submission( submit_event ) {
 	submit_event.preventDefault();
 	form_to_reset = this;
-	$.post( $( this ).attr( 'action' ), $( this ).serialize() )
+	var post_data = $( this ).serialize();
+	if ( typeof ajax_form_token ) {
+		post_data += '&token=' + ajax_form_token;
+	}
+	$.post( $( this ).attr( 'action' ), post_data )
 		.success( ajax_form_success )
 		.fail( ajax_form_failure );
 }
