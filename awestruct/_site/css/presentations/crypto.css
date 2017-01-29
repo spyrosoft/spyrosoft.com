@@ -1,0 +1,35 @@
+/* Colors */
+/* line 6, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+.reveal {
+  color: #00ff00; }
+/* line 9, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6, .reveal a:hover {
+  color: #00ff00; }
+/* line 12, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+.reveal a, .reveal a:visited, .reveal a:active {
+  color: #ffffff; }
+
+/* line 16, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #00ff00; }
+/* line 18, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #00ff00; }
+/* line 20, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #00ff00; }
+/* line 22, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #00ff00; }
+/* line 25, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+.reveal .controls .navigate-left.enabled:hover {
+  border-right-color: #ffffff; }
+/* line 27, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+.reveal .controls .navigate-right.enabled:hover {
+  border-left-color: #ffffff; }
+/* line 29, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+.reveal .controls .navigate-up.enabled:hover {
+  border-bottom-color: #ffffff; }
+/* line 31, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+.reveal .controls .navigate-down.enabled:hover {
+  border-top-color: #ffffff; }

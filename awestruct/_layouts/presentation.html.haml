@@ -8,6 +8,8 @@
     %link{href: '/images/spyro-favicon.gif', rel: 'icon', type: 'image/gif'}
     %link{href: '/js/vendor/reveal/css/reveal.css', rel: 'stylesheet'}
     %link{href: '/js/vendor/reveal/css/theme/white.css', rel: 'stylesheet'}
+    -if page.style
+      %link{href: page.style, rel: 'stylesheet'}
   %body
     .reveal
       .slides
