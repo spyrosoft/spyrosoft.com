@@ -144,9 +144,9 @@ var next_step = {
 		$('.thank-you-message-contact-info .name').focus();
 	},
 	'thank-you-next' : function() {
-		if ($('form.contact [name=email]').val() === '') {
+		if ($('[name=email]').val() === '') {
 			alert('Please fill out your contact information. Otherwise I will not be able to respond to you. :D');
-			$('form.contact [name=email]').first().focus();
+			$('[name=email]').first().focus();
 			return;
 		}
 		var message = 'Hi Bennett,\n\n';
