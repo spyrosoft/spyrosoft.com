@@ -93,8 +93,8 @@ function clear_error() {
 	display_error( '' );
 }
 
-$( '#to-hex' ).click( translate_hex );
-$( '#to-rgb' ).click( translate_rgb );
+$( '#to-hex' ).click( translate_rgb );
+$( '#to-rgb' ).click( translate_hex );
 $( '#hex' ).keydown( translate_hex_on_enter );
 $( '#rgb' ).keydown( translate_rgb_on_enter );
 
