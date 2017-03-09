@@ -7,32 +7,6 @@ _**Note**_: if you're interested in switching away from Bash and don't already k
 
 Whether you use Bash or Zsh [check out my config file](https://github.com/spyrosoft/.files/blob/master/.zshrc). There are lots of goodies in there.
 
-### Built-In Config Setup Utility
-
-When zsh starts it checks for configuration files. If none exist it prompts the following:
-
-    This is the Z Shell configuration function for new users,
-    zsh-newuser-install.
-    You are seeing this message because you have no zsh startup files
-    (the files .zshenv, .zprofile, .zshrc, .zlogin in the directory
-    ~).  This function can help you with a few settings that should
-    make your use of the shell easier.
-    
-    You can:
-    
-    (q)  Quit and do nothing.  The function will be run again next time.
-    
-    (0)  Exit, creating the file ~/.zshrc containing just a comment.
-    That will prevent this function being run again.
-    
-    (1)  Continue to the main menu.
-    
-    --- Type one of the keys in parentheses ---
-
-The setup utility is well organized, and straight forward. It is worth taking the time to set everything up for your own preferences. It is certainly the first thing a new zsh user should do. Otherwise the default settings are quite bad. I think this is intentional to motivate users to actually use the setup utility.
-
-Each of the features mentioned below can be customized via the utility.
-
 
 ### No More Need For The Cd Command
 
@@ -49,9 +23,9 @@ Enter Zsh! Zsh is smart enough to know that the user wants to cd there and does 
 
 Bash completion works like so. A user partially types something then presses \<tab> twice. A list of available completions are printed out to the shell. The user then has to continue typing the correct completion until none of the other completion suggestions match at which time the completion is finally performed.
 
-Zsh displays a completion list immediately upon pressing \<tab> the first time. If there is only one possibility it is completed right then and there in the same manner as Bash. Otherwise unlike Bash the user has the option to continue to press \<tab> to cycle through the rest of the available completions.
+Zsh displays a completion list immediately upon pressing \<tab> the first time. If there is only one possibility it is completed right then and there in the same manner as Bash. Otherwise, unlike Bash, the user has the option to continue to press \<tab> to cycle through the rest of the available completions.
 
-Zsh completions are only written out to the shell one time. If the user refines the completion search, the old completions are removed and the new ones take their place. Bash leaves the old completions up consuming quite a bit of vertical lines in the shell.
+Zsh completions are only written out to the shell one time. If the user refines the completion search, the old completions are removed and the new ones take their place. Bash leaves the old completions up adding noise and consuming vertical space in the shell.
 
 
 ### Partial Directory Expansion
@@ -128,6 +102,33 @@ Using the -g flag with the alias command allows them to expand even after the co
     $ alias -g short="long"
     $ echo short
     long
+
+
+### Built-In Config Setup Utility
+
+When zsh starts it checks for configuration files. If none exist it prompts the following:
+
+    This is the Z Shell configuration function for new users,
+    zsh-newuser-install.
+    You are seeing this message because you have no zsh startup files
+    (the files .zshenv, .zprofile, .zshrc, .zlogin in the directory
+    ~).  This function can help you with a few settings that should
+    make your use of the shell easier.
+    
+    You can:
+    
+    (q)  Quit and do nothing.  The function will be run again next time.
+    
+    (0)  Exit, creating the file ~/.zshrc containing just a comment.
+    That will prevent this function being run again.
+    
+    (1)  Continue to the main menu.
+    
+    --- Type one of the keys in parentheses ---
+
+The setup utility is well organized, and straight forward. It is worth taking the time to set everything up for your own preferences. It is certainly the first thing a new zsh user should do. Otherwise the default settings are quite bad. I think this is intentional to motivate users to actually use the setup utility.
+
+Each of the features mentioned above can be customized via the utility.
 
 
 ### OH-MY-ZSH
