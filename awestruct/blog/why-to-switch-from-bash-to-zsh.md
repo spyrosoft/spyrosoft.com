@@ -1,36 +1,36 @@
 ---
-title: Why To Switch From Bash To ZSH
+title: Why To Switch From Bash To Zsh
 layout: blog
 date: 4-2-16
 ---
-_**Note**_: if you're interested in switching away from Bash and don't already know about [Fish](https://fishshell.com/), compare it to Zsh before taking the plunge.
+_**Note**_: if you're interested in switching away from bash and don't already know about [Fish](https://fishshell.com/), compare it to zsh before taking the plunge.
 
-Whether you use Bash or Zsh [check out my config file](https://github.com/spyrosoft/.files/blob/master/.zshrc). There are lots of goodies in there.
+Whether you use bash or zsh [check out my config file](https://github.com/spyrosoft/.files/blob/master/.zshrc). There are lots of goodies in there.
 
 
 ### No More Need For The Cd Command
 
-In Bash, when a user types a directory path and presses enter the following error displays:
+In bash, when a user types a directory path and presses enter the following error displays:
 
     bash: /path/to/directory: Is a directory
 
-Yes Bash. No shit it's a directory. What is the only possible thing a user would want to do with said directory?
+Yes bash. No shit it's a directory. What is the only possible thing a user would want to do with said directory?
 
-Enter Zsh! Zsh is smart enough to know that the user wants to cd there and does so without complaint.
+Enter zsh! Zsh is smart enough to know that the user wants to cd there and does so without complaint.
 
 
 ### Completion Cycling
 
 Bash completion works like so. A user partially types something then presses \<tab> twice. A list of available completions are printed out to the shell. The user then has to continue typing the correct completion until none of the other completion suggestions match at which time the completion is finally performed.
 
-Zsh displays a completion list immediately upon pressing \<tab> the first time. If there is only one possibility it is completed right then and there in the same manner as Bash. Otherwise, unlike Bash, the user has the option to continue to press \<tab> to cycle through the rest of the available completions.
+Zsh displays a completion list immediately upon pressing \<tab> the first time. If there is only one possibility it is completed right then and there in the same manner as bash. Otherwise, unlike bash, the user has the option to continue to press \<tab> to cycle through the rest of the available completions.
 
 Zsh completions are only written out to the shell one time. If the user refines the completion search, the old completions are removed and the new ones take their place. Bash leaves the old completions up adding noise and consuming vertical space in the shell.
 
 
 ### Partial Directory Expansion
 
-Zsh ships with an innovative method of moving around the file system. By typing the first part of a directory name and adding a slash afterwards, Zsh attempts to locate the corresponding directory expansion. For example:
+Zsh ships with an innovative method of moving around the file system. By typing the first part of a directory name and adding a slash afterwards, zsh attempts to locate the corresponding directory expansion. For example:
 
     ~/p/g/s/t <tab>
 
@@ -38,7 +38,7 @@ Will expand to:
 
     ~/programming/go/src/testing-grounds/
 
-Sometimes more than one directory expansion is possible. When that happens Zsh expands as many directories as it can and displays the the collisions at that directory level as completion options. Once the user has \<tab> cycled through to the desired completion, the user can choose that completion by typing a character and immediately deleting it again. The rest of the directory expansion is then continued by pressing \<tab> again.
+Sometimes more than one directory expansion is possible. When that happens zsh expands as many directories as it can and displays the the collisions at that directory level as completion options. Once the user has \<tab> cycled through to the desired completion, the user can choose that completion by typing a character and immediately deleting it again. The rest of the directory expansion is then continued by pressing \<tab> again.
 
 
 ### Intelligent File Completion
@@ -81,7 +81,7 @@ Rather than searching for a command through your entire command history by press
 
 ### $PROMPT
 
-In Bash the variable PS1 is not very descriptive. The Zsh equivalent is appropriately named PROMPT.
+In bash the variable PS1 is not very descriptive. The zsh equivalent is appropriately named PROMPT.
 
 There are all kinds of fancy things you can do with your prompt including changing the colors. Available colors are as follows:
 
@@ -133,8 +133,8 @@ Each of the features mentioned above can be customized via the utility.
 
 ### OH-MY-ZSH
 
-A project to encourage people to switch to Zsh by easing the transition considerably exists called [Oh My Zsh!](https://github.com/robbyrussell/oh-my-zsh). The [creation story](https://medium.com/@robbyrussell/d-oh-my-zsh-af99ca54212c) is fascinating and worth the read.
+A project to encourage people to switch to zsh by easing the transition considerably exists called [Oh My Zsh!](https://github.com/robbyrussell/oh-my-zsh). The [creation story](https://medium.com/@robbyrussell/d-oh-my-zsh-af99ca54212c) is fascinating and worth the read.
 
 Personally the thought of running unknown code downloaded from the internet each time the shell starts terrifies me. Especially as root or on a personal user's account. Think about it: the security of this is only as strong as Robby Russel's email password. However, realistically this risk is very low. And if you're not lazy like I am, you can read through the code line by line to see what it's doing and know for sure everything is fine.
 
-Assuming you either don't mind the security issue I mentioned and just want to get Zsh up and off the ground as soon as possible or have gone to the effort of reading through the code, Oh My Zsh! is really great.
+Assuming you either don't mind the security issue I mentioned and just want to get zsh up and off the ground as soon as possible or have gone to the effort of reading through the code, Oh My Zsh! is really great.

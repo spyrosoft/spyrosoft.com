@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Why To Switch From Bash To ZSH - SpyroSoft</title>
+    <title>Why To Switch From Bash To Zsh - SpyroSoft</title>
     <link href="/css/foundation.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/images/spyrosoft-logo-16x16.png" rel="icon" type="image/png">
@@ -44,25 +44,25 @@
     <hr class="no-spacing">
     <section class="row">
       <div class="columns blog">
-        <h1>Why To Switch From Bash To ZSH</h1>
+        <h1>Why To Switch From Bash To Zsh</h1>
         <hr>
-        <p><em><strong>Note</strong></em>: if you're interested in switching away from Bash and don't already know about <a href="https://fishshell.com/">Fish</a>, compare it to Zsh before taking the plunge.</p>
-        <p>Whether you use Bash or Zsh <a href="https://github.com/spyrosoft/.files/blob/master/.zshrc">check out my config file</a>. There are lots of goodies in there.</p>
+        <p><em><strong>Note</strong></em>: if you're interested in switching away from bash and don't already know about <a href="https://fishshell.com/">Fish</a>, compare it to zsh before taking the plunge.</p>
+        <p>Whether you use bash or zsh <a href="https://github.com/spyrosoft/.files/blob/master/.zshrc">check out my config file</a>. There are lots of goodies in there.</p>
         <h3 id="no-more-need-for-the-cd-command">No More Need For The Cd Command</h3>
-        <p>In Bash, when a user types a directory path and presses enter the following error displays:</p>
+        <p>In bash, when a user types a directory path and presses enter the following error displays:</p>
         <pre><code>bash: /path/to/directory: Is a directory</code></pre>
-        <p>Yes Bash. No shit it's a directory. What is the only possible thing a user would want to do with said directory?</p>
-        <p>Enter Zsh! Zsh is smart enough to know that the user wants to cd there and does so without complaint.</p>
+        <p>Yes bash. No shit it's a directory. What is the only possible thing a user would want to do with said directory?</p>
+        <p>Enter zsh! Zsh is smart enough to know that the user wants to cd there and does so without complaint.</p>
         <h3 id="completion-cycling">Completion Cycling</h3>
         <p>Bash completion works like so. A user partially types something then presses &lt;tab&gt; twice. A list of available completions are printed out to the shell. The user then has to continue typing the correct completion until none of the other completion suggestions match at which time the completion is finally performed.</p>
-        <p>Zsh displays a completion list immediately upon pressing &lt;tab&gt; the first time. If there is only one possibility it is completed right then and there in the same manner as Bash. Otherwise, unlike Bash, the user has the option to continue to press &lt;tab&gt; to cycle through the rest of the available completions.</p>
+        <p>Zsh displays a completion list immediately upon pressing &lt;tab&gt; the first time. If there is only one possibility it is completed right then and there in the same manner as bash. Otherwise, unlike bash, the user has the option to continue to press &lt;tab&gt; to cycle through the rest of the available completions.</p>
         <p>Zsh completions are only written out to the shell one time. If the user refines the completion search, the old completions are removed and the new ones take their place. Bash leaves the old completions up adding noise and consuming vertical space in the shell.</p>
         <h3 id="partial-directory-expansion">Partial Directory Expansion</h3>
-        <p>Zsh ships with an innovative method of moving around the file system. By typing the first part of a directory name and adding a slash afterwards, Zsh attempts to locate the corresponding directory expansion. For example:</p>
+        <p>Zsh ships with an innovative method of moving around the file system. By typing the first part of a directory name and adding a slash afterwards, zsh attempts to locate the corresponding directory expansion. For example:</p>
         <pre><code>~/p/g/s/t &lt;tab&gt;</code></pre>
         <p>Will expand to:</p>
         <pre><code>~/programming/go/src/testing-grounds/</code></pre>
-        <p>Sometimes more than one directory expansion is possible. When that happens Zsh expands as many directories as it can and displays the the collisions at that directory level as completion options. Once the user has &lt;tab&gt; cycled through to the desired completion, the user can choose that completion by typing a character and immediately deleting it again. The rest of the directory expansion is then continued by pressing &lt;tab&gt; again.</p>
+        <p>Sometimes more than one directory expansion is possible. When that happens zsh expands as many directories as it can and displays the the collisions at that directory level as completion options. Once the user has &lt;tab&gt; cycled through to the desired completion, the user can choose that completion by typing a character and immediately deleting it again. The rest of the directory expansion is then continued by pressing &lt;tab&gt; again.</p>
         <h3 id="intelligent-file-completion">Intelligent File Completion</h3>
         <p>The only file completions displayed are completions that would make sense for the given command. As an example using unzip only files with the .zip file extension or directories are shown.</p>
         <pre><code>$ ls&#x000A;file.txt executable-file file.zip another-file.zip directory/ another-directory/&#x000A;$ unzip &lt;TAB&gt;&#x000A;file.zip another-file.zip directory/ another-directory/</code></pre>
@@ -79,7 +79,7 @@
         <h3 id="partial-command-history-reverse-search">Partial Command History Reverse Search</h3>
         <p>Rather than searching for a command through your entire command history by pressing the up arrow, you can type as much of the command as you remember and then press up. Only commands beginning with what you typed are displayed.</p>
         <h3 id="prompt">$PROMPT</h3>
-        <p>In Bash the variable PS1 is not very descriptive. The Zsh equivalent is appropriately named PROMPT.</p>
+        <p>In bash the variable PS1 is not very descriptive. The zsh equivalent is appropriately named PROMPT.</p>
         <p>There are all kinds of fancy things you can do with your prompt including changing the colors. Available colors are as follows:</p>
         <ul>
         <li>green</li>
@@ -100,9 +100,9 @@
         <p>The setup utility is well organized, and straight forward. It is worth taking the time to set everything up for your own preferences. It is certainly the first thing a new zsh user should do. Otherwise the default settings are quite bad. I think this is intentional to motivate users to actually use the setup utility.</p>
         <p>Each of the features mentioned above can be customized via the utility.</p>
         <h3 id="oh-my-zsh">OH-MY-ZSH</h3>
-        <p>A project to encourage people to switch to Zsh by easing the transition considerably exists called <a href="https://github.com/robbyrussell/oh-my-zsh">Oh My Zsh!</a>. The <a href="https://medium.com/@robbyrussell/d-oh-my-zsh-af99ca54212c">creation story</a> is fascinating and worth the read.</p>
+        <p>A project to encourage people to switch to zsh by easing the transition considerably exists called <a href="https://github.com/robbyrussell/oh-my-zsh">Oh My Zsh!</a>. The <a href="https://medium.com/@robbyrussell/d-oh-my-zsh-af99ca54212c">creation story</a> is fascinating and worth the read.</p>
         <p>Personally the thought of running unknown code downloaded from the internet each time the shell starts terrifies me. Especially as root or on a personal user's account. Think about it: the security of this is only as strong as Robby Russel's email password. However, realistically this risk is very low. And if you're not lazy like I am, you can read through the code line by line to see what it's doing and know for sure everything is fine.</p>
-        <p>Assuming you either don't mind the security issue I mentioned and just want to get Zsh up and off the ground as soon as possible or have gone to the effort of reading through the code, Oh My Zsh! is really great.</p>
+        <p>Assuming you either don't mind the security issue I mentioned and just want to get zsh up and off the ground as soon as possible or have gone to the effort of reading through the code, Oh My Zsh! is really great.</p>
       </div>
     </section>
     <hr class="no-spacing">
