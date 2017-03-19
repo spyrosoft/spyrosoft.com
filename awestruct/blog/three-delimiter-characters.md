@@ -7,7 +7,7 @@ Let's standardize three characters whose sole purpose is exactly that: to delimi
 
 Why three? One open delimiter, one close delimiter, and one separator delimiter.
 
-As it stands today regular characters such as quotes, tabs, brackets, etc. are used as delimiters. That's fine. However these characters are common in text data that needs to be packed into data transfer formats (e.g. json) and end up needing to be cancelled properly. Maybe there is another way.
+As it stands today, regular characters such as quotes, tabs, brackets, etc. are used as delimiters. That's fine. However these characters are common in text data that needs to be packed into data transfer formats (e.g. json) and end up needing to be cancelled properly. Maybe there is another way.
 
 ### Nesting
 

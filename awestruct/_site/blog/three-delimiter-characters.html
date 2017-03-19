@@ -48,7 +48,7 @@
         <hr>
         <p>Let's standardize three characters whose sole purpose is exactly that: to delimit.</p>
         <p>Why three? One open delimiter, one close delimiter, and one separator delimiter.</p>
-        <p>As it stands today regular characters such as quotes, tabs, brackets, etc. are used as delimiters. That's fine. However these characters are common in text data that needs to be packed into data transfer formats (e.g. json) and end up needing to be cancelled properly. Maybe there is another way.</p>
+        <p>As it stands today, regular characters such as quotes, tabs, brackets, etc. are used as delimiters. That's fine. However these characters are common in text data that needs to be packed into data transfer formats (e.g. json) and end up needing to be cancelled properly. Maybe there is another way.</p>
         <h3 id="nesting">Nesting</h3>
         <p>If we know for certain that the data has matching open and close delimiters a door opens to leave characters as they are rather than cancel them. On a small scale, this is a non-issue. It is more important for large scale, minimum latency dependent systems. It trades a data size benefit for a computation hit (assuming validation happens).</p>
         <p>An example of an existing technique which accomplishes nesting perfectly is the s-expression. S-expressions use parens as end delimiters and spaces as the separator delimiter.</p>
