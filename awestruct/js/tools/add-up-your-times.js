@@ -132,7 +132,7 @@ function convert_minutes_to_time( minutes_to_convert )
 		if ( minutes != 0 ) {
 			total += Math.ceil( minutes / 60 * 100 ) * rate / 100;
 		}
-		time = time + '<br>$' + total;
+		time = time + '<br>' + Belt.formatHumanReadableDollars(total);
 	}
 	return time;
 }

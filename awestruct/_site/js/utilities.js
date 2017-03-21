@@ -1,3 +1,5 @@
+// Source: https://github.com/spyrosoft/javascript-utilities
+
 var Utilities = {
 	keyCodeLookupTable : {
 		13 : 'enter',
@@ -99,11 +101,6 @@ var Utilities = {
 		return this.keyCodeLookupTable[ keyCode ] === 'enter';
 	},
 	
-	//Not memory efficient
-	compareArrays : function( array1, array2 ) {
-		return array1.join( '~~' ) === array2.join( '~~' );
-	},
-	
 	//TODO: Is this useful for debugging, or does it obfuscate where the error originated?
 	customError : function( errorName, errorMessage ) {
 		throw {
@@ -167,6 +164,11 @@ var Utilities = {
 		return objectsAreEqual;
 	},
 	
+	//Not memory efficient
+	arrayEqual : function( array1, array2 ) {
+		return array1.join( '~~' ) === array2.join( '~~' );
+	},
+	
 	requestBrowserFullScreen : function() {
 		var body = document.body;
 		if( body.requestFullScreen ) { body.requestFullScreen(); }	
@@ -175,46 +177,39 @@ var Utilities = {
 	},
 	
 	formatHumanReadableDollars : function( number ) {
-		if ( parseFloat( number ) != number ) { throw "The argument provided was not a number: " + number; }
-		var numberString = number.toString();
-		if ( ! numberString.match( /\./ ) ) { numberString += '.00'; }
-		var dollarsAndCents = numberString.split( '.' );
-		if ( dollarsAndCents[ 1 ].length > 2 ) {
-			// It's not very obvious what's happening here.
-			// We know that we have more digits than we need, so we want to round up:
-			// We take the first three digits
-			// Convert them to an integer, divide by 10, and take the ceiling
-			dollarsAndCents[ 1 ]
-				= Math.ceil(
-					parseInt(
-						dollarsAndCents[ 1 ]
-							.substring( 0, 3 )
-					) / 10
-				).toString();
-		}
-		
-		while ( dollarsAndCents[ 1 ].length < 2 ) { dollarsAndCents[ 1 ] += '0'; }
-		
-		if ( dollarsAndCents[ 0 ].length > 3 ) {
-			var dollars = dollarsAndCents[ 0 ];
-			var newDollarsAndCents = '';
-			for ( var i = 0; i < dollars.length; i++ ) {
-				if ( i != 0 && i % 3 === 0 ) {
-					newDollarsAndCents = ',' + newDollarsAndCents;
-				}
-				newDollarsAndCents
-					= dollars[ dollars.length - 1 - i ]
-					+ newDollarsAndCents;
-			}
-			dollarsAndCents[ 0 ] = newDollarsAndCents;
-		}
-		return '$' + dollarsAndCents[ 0 ] + '.' + dollarsAndCents[ 1 ];
+		if ( parseFloat( number ) != number ) { throw 'The argument provided was not a number: ' + number; }
+		return '$' + number.toFixed( 2 );
 	},
 	
 	convertDollarsToCents : function( dollars ) {
-		if ( parseFloat( dollars ) != dollars ) { throw "The argument provided was not a dollar amount: " + dollars; }
+		if ( parseFloat( dollars ) != dollars ) { throw 'The argument provided was not a dollar amount: ' + dollars; }
 		return Math.ceil( parseFloat( dollars ) * 100 );
+	},
+	
+	parseGetParameters : function() {
+		var get_parameters = {};
+		var full_url = window.location.href;
+		if ( full_url.indexOf( '?' ) === -1 ) { return get_parameters; }
+		var get_parameter_string = full_url.substring( full_url.indexOf( '?' ) + 1, full_url.length );
+		var get_parameters_and_values = get_parameter_string.split( '&' );
+		for ( var i in get_parameters_and_values ) {
+			var get_parameter_and_value = get_parameters_and_values[ i ].split( '=' );
+			var get_parameter = decodeURIComponent( get_parameter_and_value[ 0 ] );
+			var get_value = decodeURIComponent( get_parameter_and_value[ 1 ] );
+			get_parameters[ get_parameter ] = get_value;
+		}
+		return get_parameters;
+	},
+
+	escapeHTML : function(unescaped) {
+		return String(unescaped)
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;');
 	}
 };
 
 if ( typeof console === 'undefined' ) { var console = { log : function() {} }; }
+
+if ( typeof Belt === 'undefined' ) { var Belt = Utilities; }
