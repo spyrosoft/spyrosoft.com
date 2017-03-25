@@ -33,3 +33,11 @@
 /* line 31, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
 .reveal .controls .navigate-down.enabled:hover {
   border-top-color: #ffffff; }
+
+/* line 34, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+table {
+  color: #00ff00; }
+
+/* line 37, /home/path/sites/spyrosoft.com/awestruct/css/presentations/crypto.sass */
+.italics {
+  font-style: italic; }

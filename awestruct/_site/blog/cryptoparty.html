@@ -1,0 +1,669 @@
+<html class="no-js" lang="en-US">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Santa Cruz CryptoParty - SpyroSoft</title>
+    <link href="/images/spyro-favicon.gif" rel="icon" type="image/gif">
+    <link href="/js/vendor/reveal/css/reveal.css" rel="stylesheet">
+    <link href="/js/vendor/reveal/css/theme/white.css" rel="stylesheet">
+    <link href="/css/presentations/crypto.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Santa Cruz CryptoParty</h2>
+          <p>
+            3/25/17
+          </p>
+        </section>
+        <section>
+          <ul>
+            <li>
+              <a href="#/REPLACE-ME">Why Cryptography Matters</a>
+              - Bennett Roesch
+            </li>
+            <li>
+              <a href="#/REPLACE-ME">Basics of Cryptography</a>
+              - Peter Czupil
+            </li>
+            <li>
+              <a href="#/REPLACE-ME">Signal</a>
+              - Raymond Colebaugh
+            </li>
+            <li>
+              <a href="#/REPLACE-ME">Bitcoin &amp; Blockchains</a>
+              - Sean Gilligan
+            </li>
+            <li>
+              <a href="#/REPLACE-ME">Tor &amp; I2P</a>
+              - Raymond Colebaugh
+            </li>
+            <li>
+              <a href="#/REPLACE-ME">PGP (Pretty Good Privacy)</a>
+              - Bennett Roesch
+            </li>
+            <li>
+              <a href="#/REPLACE-ME">HTTPS Everywhere, TLS, &amp; Let's Encrypt</a>
+              - Peter Czupil
+            </li>
+            <li>
+              <a href="#/REPLACE-ME">KeePassX, LastPass, and YubiKey</a>
+              - Bennett Roesch
+            </li>
+            <li>
+              <a href="#/REPLACE-ME">OTR &amp; OMEMO</a>
+              - Raymond Colebaugh
+            </li>
+            <li>
+              <a href="#/REPLACE-ME">Quantum Cryptography</a>
+              - Ian Gudger
+            </li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h2>Why Cryptography Matters</h2>
+          </section>
+          <section>
+            <h2>Privacy</h2>
+            <h2>Security</h2>
+            <h2>Identity</h2>
+          </section>
+          <section>
+            <h3>"If you have nothing to hide, why be afraid?"</h3>
+            <p>Literally invented by nazis</p>
+          </section>
+          <section>
+            <h2>Crypto is everywhere</h2>
+            <ul>
+              <li>Banking</li>
+              <li>Secure browsing</li>
+              <li>The credit card chip</li>
+              <li>Cell phone transmissions</li>
+              <li>Password protected wifi</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Basics of Cryptography</h2>
+          </section>
+          <section>
+            <h3>Throughout history, these two things have been needed by humans:</h3>
+            <ol>
+              <li>The need to share information</li>
+              <li>The need to protect the information they are sharing</li>
+            </ol>
+          </section>
+          <section>
+            <ol>
+              <li>
+                Comes from the combination of (Greek) words
+                <strong>Krypto</strong>
+                (hidden) and
+                <strong>graphene</strong>
+                (writing)
+              </li>
+              <img src="http://www.knomebook.com/wp-content/uploads/2016/10/Spartan_Cryptography2.jpg">
+              <small>The Spartans wrote on a narrow strip of parchment wrapped around a cylindrical log (called a Scytale) to encrypt messages</small>
+            </ol>
+          </section>
+          <section>
+            <ol>
+              <li>
+                Can be defined as:
+                <span class="italics">The art and science of concealing messages to introduce secrecy in information security</span>
+              </li>
+              <li>
+                From the Oxford dictionary:
+                <span class="italics">The art of writing or solving codes</span>
+              </li>
+            </ol>
+          </section>
+          <section>
+            <h3>Caesar's Cipher</h3>
+            <ol>
+              <li>Used by the ancient Romans</li>
+              <li>To encode "shift" forward the alphabet by a constant offset</li>
+              <li>To decode "shift" back</li>
+              <img src="https://1.bp.blogspot.com/-1L0BHN4Qr0s/UieG2he-AOI/AAAAAAAAAGg/Hop2r1Lg0yo/s1600/caesar.png">
+            </ol>
+          </section>
+          <section>
+            <h3>Modern Cryptography</h3>
+            <strong>Two types:</strong>
+            <ol>
+              <li>
+                Classic
+                <ul>
+                  <li>Manipulates letters and digits directly</li>
+                  <li>Based on 'Security through obscurity'</li>
+                </ul>
+              </li>
+              <li>
+                Modern
+                <ul>
+                  <li>Operates on binary seqences</li>
+                  <li>Relies on publicly known mathematical algorithms and computational difficulty</li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+          <section>
+            <h3>Security of Cryptography</h3>
+            <p>Cryptography provides four services:</p>
+            <ol>
+              <li>Confidentiality - protects your information from an unauthorized person</li>
+              <li>Data Integrity - determines if your message/communication has been tampered with</li>
+              <li>Authentication - confirms that a message was sent by a known and verified sender</li>
+              <li>Non-repudiation - ensures an entity cannot refuse ownership of a previous action</li>
+            </ol>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Secure Mobile Messaging with Signal</h2>
+          </section>
+          <section>
+            <h3>What is Signal?</h3>
+            <p>
+              <img src="/images/presentations/signal.png">
+            </p>
+            <ul>
+              <li>Signal is a secure communication platform from Open Whisper Systems</li>
+              <li>Provides a secure, easy to use alternative to calling, texting, and video chat</li>
+              <li>Successor to RedPhone and TextSecure</li>
+              <li>Uses data connection instead of phone network</li>
+              <li>Signal seamlessly integrates with phone/SMS for the rest of your contacts</li>
+            </ul>
+          </section>
+          <section>
+            <p>
+              <img src="/images/presentations/signal-conversation-list.png">
+            </p>
+          </section>
+          <section>
+            <h3>
+              How do I use Signal to communicate?
+            </h3>
+            <ul>
+              <li>Instead of calling your contact, try a Signal voice call</li>
+              <li>Instead of sending a text message, send it with Signal. Group chat is supported as well</li>
+              <li>You can also video chat (no FaceTime, Allo)</li>
+              <li>You can still share pictures and other media</li>
+              <li>For contacts without Signal, fallback to the phone network</li>
+              <li>Invite your friends to use Signal too!</li>
+            </ul>
+          </section>
+          <section>
+            <h3>How does Signal protect my communications?</h3>
+            <ul>
+              <li>Provides end-to-end encryption and authentication for text, audio, and video chat</li>
+              <li>Uses the Double Ratchet algorithm, developed by Trevor Perrin and Moxie Marlinspike based on trusted crypto primitives like Curve25519, AES-256, and HMAC-SHA256</li>
+              <li>Bunch of other cool privacy features like disappearing messages, key change alerts and verification, and local message db encryption</li>
+              <li>Leaves less metadata than using the phone network or other communication apps</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Where can I get Signal?</h3>
+            <ul>
+              <li>Signal is available for mobile in the Google Play store and the Apple App Store</li>
+              <li>After installing, set Signal as your default SMS application for ease of use</li>
+              <li>Signal is also available for desktop as a Chrome app</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Bitcoin &amp; Blockchains</h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Internet Anonymity with Tor and i2p</h2>
+          </section>
+          <section>
+            <h3>What are Tor and i2p?</h3>
+            <p>
+              <img src="/images/presentations/tor.png" style="vertical-align: middle;">
+              <img src="/images/presentations/itoopie.png" style="vertical-align: middle;">
+            </p>
+          </section>
+          <section>
+            <h3>What are Tor and i2p?</h3>
+            <ul>
+              <li>Tor is an anonymous internet proxy that allows users to use the Internet</li>
+              <li>Invented at the Naval Research Lab, used by technologists, law enforcement, intelligence services, political activists, and more</li>
+              <li>Tor also allows access to onion services, accessible only over Tor</li>
+              <li>i2p, the Invisible Internet Project allows access to an alternative anonymous "Internet"</li>
+              <li>Initially released in 2003, maintained mostly by pseudonymous developers</li>
+            </ul>
+          </section>
+          <section>
+            <h3>How do Tor and i2p help?</h3>
+            <ul>
+              <li>Prevents a website or server from knowing your real IP address</li>
+              <li>Prevents your ISP from watching what you do online</li>
+              <li>But they do know that you're using Tor (without the use of bridges and the obfuscated pluggable transports) or i2p</li>
+              <li>Internet anonymity promotes democracy, free speech and free thought by allowing users to research and express themselves without fear</li>
+            </ul>
+          </section>
+          <section>
+            <h3>How do Tor and i2p work?</h3>
+            <ul>
+              <li>Tor uses "onion routing," multiple layers of encryption in a series of relays through a mix network</li>
+              <li>By default, a client tunnels through 3 encrypted hops. Each node only knows the next and previous address</li>
+              <li>A Tor node can be a middle relay, exit node, or onion service</li>
+              <li>i2p uses "Garlic routing," as multiple packets can be encapsulated into a single i2p packet</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Differences between Tor and i2p</h3>
+            <table>
+              <thead>
+                <tr class="header">
+                  <th>Tor</th>
+                  <th>i2p</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td>Onion routing</td>
+                  <td>garlic routing</td>
+                </tr>
+                <tr class="even">
+                  <td>Proxy service</td>
+                  <td>private Internet</td>
+                </tr>
+                <tr class="odd">
+                  <td>Circuit switched</td>
+                  <td>packet switched</td>
+                </tr>
+                <tr class="even">
+                  <td>TCP only</td>
+                  <td>supports UDP</td>
+                </tr>
+                <tr class="odd">
+                  <td>Centralized services</td>
+                  <td>fully decentralized</td>
+                </tr>
+                <tr class="even">
+                  <td>USG funding</td>
+                  <td>anonymous volunteer developers</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h3>Using Tor and i2p as a client</h3>
+            <ul>
+              <li>Tor Browser Bundle</li>
+              <li>Avoid fingerprinting by blending in to the crowd</li>
+              <li>Tor daemon and proxy configuration</li>
+              <li>Useful for CLI tools and other software. See: torsocks(1), proxychains(1)</li>
+              <li>Tails Live CD or USB that includes Tor and i2p (for now, v2.11)</li>
+              <li>In-memory operating system, wiped on shutdown</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Running an Onion Service</h3>
+            <ul>
+              <li>An onion service allows a server to be accessible over a special .onion address</li>
+              <li>Configure the HiddenServiceDir and HiddenServicePort directives in the torrc</li>
+              <li>Security considerations</li>
+              <li>Misconfigurations: disable server-status page</li>
+              <li>Vulnerabilities: command injection, server exploits</li>
+              <li>Timing attacks: don't run another service, don't run a relay</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Running a relay, exit node / router</h3>
+            <ul>
+              <li>If you'd like to support the Tor network, you can run a relay or exit node</li>
+              <li>
+                To run a Tor relay, configure your ORPort and ExitPolicy. For middle relay only,
+                <code>reject *:*</code>
+              </li>
+              <li>If you run an exit node, you may get some strange traffic originating from your address</li>
+              <li>You can filter most traffic that would attract attention by allowing only HTTPS (443)</li>
+              <li>Alternatively, be prepared to explain what Tor is, or have a lawyer to do so</li>
+              <li>Note: with i2p, you're a relay by default</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Where to get Tor</h3>
+            <ul>
+              <li>
+                Tor is available at
+                <a _target="blank" href="https://www.torproject.org/">https://www.torproject.org/</a>
+              </li>
+              <li>
+                Tor Browser Bundle signing key:
+                <code>EF6E 286D DA85 EA2A 4BA7  DE68 4E2C 6E87 9329 8290</code>
+              </li>
+              <li>
+                Tails is available at
+                <a _target="blank" href="https://tails.boum.org/">https://tails.boum.org/</a>
+              </li>
+              <li>
+                Tails developers signing key:
+                <code>A490 D0F4 D311 A415 3E2B  B7CA DBB8 02B2 58AC D84F</code>
+              </li>
+              <li>The Orbot Android app is available in the Google Play store</li>
+              <li>
+                Install on Debian and Ubuntu Linux with
+                <br>
+                <code>sudo apt-get install tor</code>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Where to get i2p</h3>
+            <p>
+              <img src="/images/presentations/i2p-android-console.png">
+            </p>
+          </section>
+          <section>
+            <h3>Where to get i2p</h3>
+            <ul>
+              <li>i2p is written in Java (cross-platform)</li>
+              <li>
+                i2p is available at
+                <a _target="blank" href="https://geti2p.net/">https://geti2p.net/</a>
+              </li>
+              <li>i2p developers signing key: 2D3D 2D03 910C 6504 C121 0C65 EE60 C0C8 EE72 56A8</li>
+              <li>The i2p Android app is available in the Google Play store</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>PGP</h2>
+            <p>(Pretty Good Privacy)</p>
+          </section>
+          <section>
+            <h2>Text messages</h2>
+            <h2>Emails</h2>
+            <h2>Files</h2>
+          </section>
+          <section>
+            <h2>Enigmail</h2>
+            <div>
+              <img src="/images/presentations/enigmail-encrypted-message.png">
+            </div>
+          </section>
+          <section>
+            <h2>Android OpenKeychain</h2>
+            <div>
+              <img src="/images/presentations/openkeychain.png">
+            </div>
+          </section>
+          <section>
+            <h2>Web of Trust</h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>TLS</h2>
+          </section>
+          <section>
+            <h3>HTTPS Everywhere</h3>
+            <ul>
+              <li>Plugin for web browsers</li>
+              <li>Tries to force your browser to request web resources over HTTPS</li>
+              <li>Available for Chrome, Firefox and Opera</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Let's Encrypt</h3>
+            <ol>
+              <li>Project to grant free Domain Verified (DV) SSL certificates</li>
+              <li>Free, automated and open source Certificate Authority (CA)</li>
+              <li>Operated by the non-profit Internet Security Research Group (ISRG)</li>
+            </ol>
+          </section>
+          <section>
+            <h3>Let's Encrypt Cont.</h3>
+            <ul>
+              <li>Free: Anyone who owns a domain name can use Let’s Encrypt to obtain a trusted certificate at no cost</li>
+              <li>Automatic: Certbot handles creating, installing and renewing the certificate</li>
+              <li>Transparent: All certificates issued or revoked are available to the public</li>
+              <li>Secure: Promotes TLS security best practices</li>
+              <li>
+                <a _target="blank" href="https://letsencrypt.org/">https://letsencrypt.org/</a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Transport Layer Security</h3>
+            <p>(AKA Secure Sockets Layer)</p>
+          </section>
+          <section>
+            <h3>What is it?</h3>
+            <ul>
+              <li>Protocol used for secure electronic communications</li>
+              <li>Designed to prevent eavesdropping and tampering</li>
+              <li>Used in many applications such as web browsing, email and text-messaging</li>
+              <li>Practical form of public key cryptography</li>
+              <li>Also referred to as "Secure Sockets Layer" or "SSL"</li>
+            </ul>
+          </section>
+          <section>
+            <h3>How Does it Work?</h3>
+            <ul>
+              <li>The communication between two devices is encrypted using a shared secret</li>
+              <li>The shared secret is only known to the devices communicating</li>
+              <li>Each message received is decrypted using a code known only to the receiver</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Best Practices</h3>
+            <ul>
+              <li>Do not browse websites which don't have valid SSL certificates</li>
+              <li>Use more technology which was developed with security in mind</li>
+              <li>Do not use any versions of the SSL protocol, use TLS instead (preferably TLSv1.2)</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Useful Technologies</h3>
+            <ul>
+              <li>Let's Encrypt/Certbot</li>
+              <li>HTTPS Everywhere</li>
+              <li>
+                <a _target="blank" href="https://badssl.com/">https://badssl.com/</a>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>KeePassX, LastPass, and YubiKey</h2>
+          </section>
+          <section>
+            <h2>Password Managers</h2>
+            <ul>
+              <li>Long Random Passwords</li>
+              <li>Password Diversity</li>
+              <li>Fights Key Loggers</li>
+              <li>How Passwords Are Compromised</li>
+              <li>Sending Passwords Via Email</li>
+              <li>Good Keychain Password = Passphrase</li>
+            </ul>
+          </section>
+          <section>
+            <h2>YubiKey</h2>
+            <div>
+              <img src="/images/presentations/yubikey.png">
+            </div>
+          </section>
+          <section>
+            <ul>
+              <li>Onetime Passwords</li>
+              <li>Public Key Encryption</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Secure Instant Messaging with OTR and OMEMO</h2>
+          </section>
+          <section>
+            <h3>What is OTR?</h3>
+            <ul>
+              <li>"Off The Record" messaging over instant messaging protocols like XMPP and AIM</li>
+              <li>Extends IM with encryption, authentication, forward secrecy, and deniable authentication</li>
+              <li>OTR supports file transfers (since version 3)</li>
+            </ul>
+          </section>
+          <section>
+            <h3>How do I use OTR?</h3>
+            <ul>
+              <li>OTR can be installed as an extension to many popular instant messaging clients, such as Pidgin</li>
+              <li>The Android app Xabber also supports OTR for secure instant messaging on the go</li>
+              <li>Many clients can be configured to automatically initiate an OTR session</li>
+            </ul>
+          </section>
+          <section>
+            <h3>How does OTR protect my communications?</h3>
+            <ul>
+              <li>Encrypts your communication from prying eyes</li>
+              <li>Based on AES-128, Diffie-Hellman, and SHA-1</li>
+              <li>Authenticates your communicating party</li>
+              <li>Provides deniable encryption</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Where do I get OTR?</h3>
+            <ul>
+              <li>Available as a plugin for Pidgin (cross platform)</li>
+              <li>Natively supported by</li>
+              <li>Adium on OS X</li>
+              <li>Kopete on UNIX-like systems</li>
+              <li>Xabber and Conversations for Android</li>
+              <li>ChatSecure for iOS</li>
+            </ul>
+          </section>
+          <section>
+            <h3>What is OMEMO?</h3>
+            <ul>
+              <li>Next generation OTR with encrypted group chat support</li>
+              <li>Introduced in Google Summer of Code 2015 to Conversations for Android</li>
+              <li>Also offers forward secrecy and deniable encryption</li>
+            </ul>
+          </section>
+          <section>
+            <h3>How is OMEMO different than OTR?</h3>
+            <ul>
+              <li>Supports group chat (multi-client end-to-end encryption)</li>
+              <li>OMEMO uses the Double Ratchet algorithm (Signal)</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Where can I get OMEMO?</h3>
+            <ul>
+              <li>Originally written for Conversations for Android</li>
+              <li>ChatSecure for iOS supports OMEMO</li>
+              <li>Cross-platform client Gajim supports OMEMO through a plugin</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Bonus: Anonymous, encrypted messaging with Ricochet</h3>
+            <ul>
+              <li>Dedicated, Tor-based instant messenger</li>
+              <li>Use Tor onion addresses instead of usernames or nick names</li>
+              <li>End-to-end message encryption</li>
+              <li>No central servers or middle man</li>
+              <li>Eliminates conversation metadata</li>
+              <li>Soon to support file transfers (or use OnionShare)</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Quantum Cryptography</h2>
+          </section>
+          <section>
+            <h3>Quantum changes everything</h3>
+            <ul>
+              <li>Quantum breaks common cryptography</li>
+              <li>Quantum enables new better cryptography</li>
+            </ul>
+          </section>
+          <section>
+            <p>There are two types of traditional cryptography</p>
+            <ul>
+              <li>Symmetric</li>
+              <li>Asymmetric</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Symmetric</h3>
+            <ul>
+              <li>Encrypt and decrypt keys are the same</li>
+              <li>Key exchange is hard</li>
+              <li>Typically very fast</li>
+              <li>Used for encrypting data</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Asymmetric</h3>
+            <ul>
+              <li>Encrypt and decrypt keys are different</li>
+              <li>Typically very slow</li>
+              <li>Mostly used for encrypting symmetric encryption keys</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Common Asymmetric Encryption</h3>
+            <ul>
+              <li>
+                <em>RSA</em>
+              </li>
+              <li>Depends on the assumption that factoring a product of two very large prime numbers is hard</li>
+              <li>
+                <em>Diffie–Hellman/ElGamal</em>
+              </li>
+              <li>Depends on the assumption that the discrete log problem is hard</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Quantum computing breaks common cryptography</h3>
+            <ul>
+              <li>
+                <em>Shor's algorithm</em>
+              </li>
+              <li>Uses a quantum computer to efficiently factor very large numbers</li>
+              <li>Also works for discrete logs</li>
+              <li>Symmetric is thought to be mostly safe</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Quantum enables new better cryptography</h3>
+            <ul>
+              <li>
+                Quantum mechanics provide useful guarantees
+              </li>
+              <li>It is impossible to copy data encoded in a quantum state</li>
+              <li>The very act of reading data encoded in a quantum state changes the state</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>FIN</h2>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="/js/vendor/reveal/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({progress:true,history:true});
+    </script>
+    <style>
+      body { background-image: url("/images/presentations/zeros-and-ones.png") }
+    </style>
+  </body>
+</html>

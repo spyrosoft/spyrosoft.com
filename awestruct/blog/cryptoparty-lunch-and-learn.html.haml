@@ -1,0 +1,270 @@
+---
+title: Santa Cruz CryptoParty
+layout: presentation
+style: /css/presentations/crypto.css
+background: /images/presentations/zeros-and-ones.png
+date: 3-22-17
+---
+%section
+  %h2 #{page.title}
+  %p
+    3/22/17
+%section
+  %ul
+    %li
+      %a{href: '#/REPLACE-ME'} Why Cryptography Matters
+      \- Bennett Roesch
+    %li
+      %a{href: '#/REPLACE-ME'} Basics of Crypto
+      \- Peter Czupil
+    %li
+      %a{href: '#/REPLACE-ME'} Real World Problems
+      \- Sean Gilligan
+    %li
+      %a{href: '#/REPLACE-ME'} Signal
+      \- Raymond Colebaugh
+    %li
+      %a{href: '#/REPLACE-ME'} Bitcoin &amp; Namecoin
+      \- Sean Gilligan
+    %li
+      %a{href: '#/REPLACE-ME'} TLS
+      \- Peter Czupil
+    %li
+      %a{href: '#/REPLACE-ME'} Other Tools
+      \- Bennett Roesch
+%section
+  %section
+    %h2 Why Cryptography Matters
+  %section
+    %h2 Privacy
+    %h2 Security
+    %h2 Identity
+  %section
+    %h3 "If you have nothing to hide, why be afraid?"
+    %p Literally invented by nazis
+  %section
+    %h2 Crypto is everywhere
+    %ul
+      %li Banking
+      %li Secure browsing
+      %li The credit card chip
+      %li Cell phone transmissions
+      %li Password protected wifi
+%section
+  %section
+    %h2 Basics of Cryptography
+  %section
+    %h3 Throughout history, these two things have been needed by humans:
+    %ol
+      %li The need to share information
+      %li The need to protect the information they are sharing
+  %section
+    %ol
+      %li
+        Comes from the combination of (Greek) words
+        %strong Krypto
+        (hidden) and
+        %strong graphene
+        (writing)
+      %img{src: 'http://www.knomebook.com/wp-content/uploads/2016/10/Spartan_Cryptography2.jpg'}
+      %small The Spartans wrote on a narrow strip of parchment wrapped around a cylindrical log (called a Scytale) to encrypt messages
+  %section
+    %ol
+      %li
+        Can be defined as:
+        %span.italics The art and science of concealing messages to introduce secrecy in information security
+      %li
+        From the Oxford dictionary:
+        %span.italics The art of writing or solving codes
+  %section
+    %h3 Caesar's Cipher
+    %ol
+      %li Used by the ancient Romans
+      %li To encode "shift" forward the alphabet by a constant offset
+      %li To decode "shift" back
+      %img{src: 'https://1.bp.blogspot.com/-1L0BHN4Qr0s/UieG2he-AOI/AAAAAAAAAGg/Hop2r1Lg0yo/s1600/caesar.png'}
+  %section
+    %h3 Modern Cryptography
+    %strong Two types:
+    %ol
+      %li
+        Classic
+        %ul
+          %li Manipulates letters and digits directly
+          %li Based on 'Security through obscurity'
+      %li
+        Modern
+        %ul
+          %li Operates on binary seqences
+          %li Relies on publicly known mathematical algorithms and computational difficulty
+  %section
+    %h3 Security of Cryptography
+    %p Cryptography provides four services:
+    %ol
+      %li Confidentiality - protects your information from an unauthorized person
+      %li Data Integrity - determines if your message/communication has been tampered with
+      %li Authentication - confirms that a message was sent by a known and verified sender
+      %li Non-repudiation - ensures an entity cannot refuse ownership of a previous action
+  %section
+    %h3 Cryptography Primitives:
+    %ol
+      %li Encryption
+      %li Hash Functions
+      %li Message Authentication Codes
+      %li Digital Signatures
+      %img{src: 'https://www.tutorialspoint.com/cryptography/images/primitive_service.jpg'}
+%section
+  %section
+    %h2 Real World Problems
+  %section
+    %h2 Private Messaging
+    %ul
+      %li Signal
+      %li Enigmail
+      %li OTR
+      %li OMEMO
+  %section
+    %h2 Web Security and Privacy
+    %ul
+      %li Tor
+      %li I2P
+      %li HTTPS Everywhere
+      %li Password Managers
+      %li U2F
+  %section
+    %h2 Threat Assessment
+%section
+  %section
+    %h2
+      Secure Mobile Messaging with Signal
+  %section
+    %h3
+      What is Signal?
+    %p
+      %a{:href => "Signal_Blue_Icon.png", :target => "_blank"}
+        %img{:src => "/images/presentations/signal.png"}
+    %ul
+      %li Signal is a secure communication platform from Open Whisper Systems
+      %li Provides a secure, easy to use alternative to calling, texting, and video chat
+      %li Successor to RedPhone and TextSecure
+      %li Uses data connection instead of phone network
+      %li Signal seamlessly integrates with phone/SMS for the rest of your contacts
+  %section
+    %h3
+      How do I use Signal to communicate?
+    %img{:src => "/images/presentations/signal-conversation-list.png"}
+  %section
+    %h3
+      How do I use Signal to communicate?
+    %ul
+      %li Instead of calling your contact, try a Signal voice call
+      %li Instead of sending a text message, send it with Signal. Group chat is supported as well
+      %li You can also video chat (no FaceTime, Allo)
+      %li You can still share pictures and other media
+      %li For contacts without Signal, fallback to the phone network
+      %li Invite your friends to use Signal too!
+  %section
+    %h3
+      How does Signal protect my communications?
+    %ul
+      %li Provides end-to-end encryption and authentication for text, audio, and video chat
+      %li Based on trusted crypto primitives like Curve25519, AES-256, and HMAC-SHA256
+      %li Bunch of other cool privacy features like disappearing messages, key change alerts and verification, and local message db encryption
+      %li Leaves less metadata than using the phone network or other communication apps
+  %section
+    %h3
+      Where can I get Signal?
+    %ul
+      %li Signal is available for mobile in the Google Play store and the Apple App Store
+      %li After installing, set Signal as your default SMS application for ease of use
+      %li Signal is also available for desktop as a Chrome app
+%section
+  %section
+    %h2 TLS
+  %section
+    %h3 HTTPS Everywhere
+    %ul
+      %li Plugin for web browsers
+      %li Tries to force your browser to request web resources over HTTPS
+      %li Available for Chrome, Firefox and Opera
+  %section
+    %h3 Let's Encrypt
+    %ol
+      %li Project to grant free Domain Verified (DV) SSL certificates
+      %li Free, automated and open source Certificate Authority (CA)
+      %li Operated by the non-profit Internet Security Research Group (ISRG)
+  %section
+    %h3 Let's Encrypt Cont.
+    %ul
+      %li Free: Anyone who owns a domain name can use Let’s Encrypt to obtain a trusted certificate at no cost
+      %li Automatic: Certbot handles creating, installing and renewing the certificate
+      %li Transparent: All certificates issued or revoked are available to the public
+      %li Secure: Promotes TLS security best practices
+      %li https://letsencrypt.org/
+  %section
+    %h3 Certbot
+    %ul
+      %li Automatic client which fetches and deploys SSL certificates for your web server
+      %li Configures the web server to SSL using best practices
+      %li "Aims to build a network that is more structurally private, safe, and protected against censorship."
+      %li Free
+      %li https://certbot.eff.org/
+  %section
+    %h3 Transport Layer Security
+    %p (AKA Secure Sockets Layer)
+  %section
+    %h3 What is it?
+    %ul
+      %li Protocol used for secure electronic communications
+      %li Designed to prevent eavesdropping and tampering
+      %li Used in many applications such as web browsing, email and text-messaging
+      %li Practical form of public key cryptography
+      %li Also referred to as "Secure Sockets Layer" or "SSL"
+  %section
+    %h3 Why Do We Need it?
+    %ul
+      %li Very important information is stored electronically
+      %li Much of this information is accessible from the web
+      %li Without the proper protections, this information can be gathered by bad people to use for nefarious acts
+  %section
+    %h3 How Does it Work?
+    %ul
+      %li The communication between two devices is encrypted using a shared secret
+      %li The shared secret is only known to the devices communicating
+      %li Each message received is decrypted using a code known only to the receiver
+  %section
+    %h3 Best Practices
+    %ul
+      %li Do not browse websites which don't have valid SSL certificates
+      %li Use more technology which was developed with security in mind
+      %li Do not use any versions of the SSL protocol, use TLS instead (preferably TLSv1.2)
+  %section
+    %h3 Useful Technologies
+    %ul
+      %li Let's Encrypt/Certbot
+      %li HTTPS Everywhere
+      %li badssl.com
+%section
+  %section
+    %h2 Other Tools
+  %section
+    %h2 PGP
+    %p (Pretty Good Privacy)
+  %section
+    %h2 Text messages
+    %h2 Emails
+    %h2 Files
+  %section
+    %h2 Enigmail
+    %div
+      %img{src: '/images/presentations/enigmail-encrypted-message.png'}
+  %section
+    %h2 Android OpenKeychain
+    %div
+      %img{src: '/images/presentations/openkeychain.png'}
+  %section
+    %h2 KeePassX, LastPass, and YubiKey
+  %section
+    %h2 YubiKey
+    %div
+      %img{src: '/images/presentations/yubikey.png'}
