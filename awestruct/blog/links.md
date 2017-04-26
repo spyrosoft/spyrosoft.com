@@ -20,6 +20,7 @@ A list of links I may want to reference later, in no particular order.
 * [Web Workers - The Basics](https://www.html5rocks.com/en/tutorials/workers/basics/)
 * [Locate An IP Address](http://www.infosniper.net/)
 * [General - Can I Use ...](http://caniuse.com/)
+* [Search - Duck Duck Go](https://duckduckgo.com/?kae=d&kak=-1&kc=1&kac=-1&kn=1&kam=osm&k5=2)
 
 ## Code
 
