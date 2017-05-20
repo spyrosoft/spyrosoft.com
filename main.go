@@ -12,12 +12,14 @@ import (
 type SiteData struct {
 	LiveOrDev             string            `json:"live-or-dev"`
 	URLPermanentRedirects map[string]string `json:"url-permanent-redirects"`
-	NoReplyAddressName    string            `json:"no-reply-address-name"`
-	NoReplyAddress        string            `json:"no-reply-address"`
+	NoReplyName           string            `json:"no-reply-name"`
+	NoReplyEmail          string            `json:"no-reply-email"`
 	NoReplyPassword       string            `json:"no-reply-password"`
+	NoReplyKey            string            `json:"no-reply-private-pgp-key"`
 	Host                  string            `json:"no-reply-host"`
 	Port                  string            `json:"no-reply-port"`
-	ReplyAddress          string            `json:"reply-address"`
+	ContactEmail          string            `json:"contact-email"`
+	ContactEmailKey       string            `json:"contact-email-public-pgp-key"`
 	StripeTestSecretKey   string            `json:"stripe-test-secret-key"`
 	StripeLiveSecretKey   string            `json:"stripe-live-secret-key"`
 }
@@ -42,4 +44,14 @@ func main() {
 func whatIsMyIPAddress(responseWriter http.ResponseWriter, request *http.Request, requestParameters httprouter.Params) {
 	ipAddresses := strings.Split(request.Header.Get("x-forwarded-for"), ", ")
 	fmt.Fprint(responseWriter, ipAddresses[0])
+}
+
+func dump(things ...interface{}) {
+	if siteData.LiveOrDev == "dev" {
+		fmt.Println("====================")
+		for _, thing := range things {
+			fmt.Printf("%+v\n", thing)
+		}
+		fmt.Println("^^^^^^^^^^^^^^^^^^^^")
+	}
 }

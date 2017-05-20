@@ -13,7 +13,7 @@ func sendEmail(recipientAddress string, subject string, messageBody string) {
 		log.Panic("Outgoing email credentials have not been set. Cannot send message.")
 	}
 
-	from := mail.Address{Name: siteData.NoReplyAddressName, Address: siteData.NoReplyAddress}
+	from := mail.Address{Name: siteData.NoReplyName, Address: siteData.NoReplyEmail}
 
 	headers := make(map[string]string)
 	headers["From"] = from.String()
@@ -26,7 +26,7 @@ func sendEmail(recipientAddress string, subject string, messageBody string) {
 	}
 	message += "\r\n" + messageBody
 
-	mailAuth := smtp.PlainAuth("", siteData.NoReplyAddress, siteData.NoReplyPassword, siteData.Host)
+	mailAuth := smtp.PlainAuth("", siteData.NoReplyEmail, siteData.NoReplyPassword, siteData.Host)
 
 	tlsConfig := &tls.Config{
 		InsecureSkipVerify: true,
@@ -42,7 +42,7 @@ func sendEmail(recipientAddress string, subject string, messageBody string) {
 	error = smtpClient.Auth(mailAuth)
 	panicOnError(error)
 
-	error = smtpClient.Mail(siteData.NoReplyAddress)
+	error = smtpClient.Mail(siteData.NoReplyEmail)
 	panicOnError(error)
 
 	error = smtpClient.Rcpt(recipientAddress)
