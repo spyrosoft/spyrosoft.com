@@ -64,6 +64,12 @@ func newClientSubmission(responseWriter http.ResponseWriter, request *http.Reque
 	}
 	ipAddresses := strings.Split(request.Header.Get("x-forwarded-for"), ", ")
 	message += "IP Address: " + ipAddresses[0]
+	encrypted, err := encryptMessage(message)
+	if err != nil {
+		message = "Encryption Failed: " + err.Error() + "\n\n" + message
+	} else {
+		message = encrypted
+	}
 	sendEmail(siteData.ContactEmail, "New Client - spyrosoft.com", message)
 	fmt.Fprint(responseWriter, "{\"success\":true}")
 }
