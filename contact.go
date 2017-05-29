@@ -20,12 +20,8 @@ func contactSubmission(responseWriter http.ResponseWriter, request *http.Request
 		return
 	}
 	message := ""
-	nameValue := request.PostFormValue("name")
 	emailValue := request.PostFormValue("email")
 	messageValue := request.PostFormValue("message")
-	if nameValue != "" {
-		message += "Name: " + nameValue + "\r\n\r\n"
-	}
 	if emailValue != "" {
 		message += "From: " + emailValue + "\r\n\r\n"
 	}
