@@ -1,7 +1,8 @@
 ---
 title: Contact
 layout: standard
-script: /js/form-ajax.js
+script: /js/contact.js
+script2: /js/form-ajax.js
 ---
 %h1 #{page.title}
 %hr
@@ -34,8 +35,3 @@ script: /js/form-ajax.js
   .row
     .columns.text-center
       %button.button{type: 'submit'} Submit
-  :javascript
-    document.getElementsByName('name')[0].focus();
-    var ajax_form_success_message = 'Thank you! I\'ll respond to you soon. If you are interested, please check out some blog articles.';
-    var ajax_form_redirect_url = '/blog.html';
-    var ajax_form_token = 'FXa8T!jZpA';

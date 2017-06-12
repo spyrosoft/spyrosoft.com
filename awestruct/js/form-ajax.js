@@ -18,7 +18,7 @@ function ajax_form_success( response_data ) {
 	try {
 		var response_json = JSON.parse( response_data );
 		if ( response_json[ 'success' ] === true ) {
-			if ( typeof ajax_form_success_message ) {
+			if ( typeof ajax_form_success_message != 'undefined' ) {
 				alert( ajax_form_success_message );
 			} else {
 				alert( 'Thank you, your form has been submitted successfully' );
