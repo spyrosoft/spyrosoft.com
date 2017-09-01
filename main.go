@@ -22,6 +22,7 @@ type SiteData struct {
 	ContactEmailKey       string            `json:"contact-email-public-pgp-key"`
 	StripeTestSecretKey   string            `json:"stripe-test-secret-key"`
 	StripeLiveSecretKey   string            `json:"stripe-live-secret-key"`
+	WebPort               string            `json:"web-port"`
 }
 
 var (
@@ -38,7 +39,7 @@ func main() {
 	router.POST("/send-payment-ajax/", paymentSubmission)
 	router.POST("/what-is-my-ip-address/", whatIsMyIPAddress)
 	router.NotFound = http.HandlerFunc(requestCatchAll)
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":"+siteData.WebPort, router))
 }
 
 func whatIsMyIPAddress(responseWriter http.ResponseWriter, request *http.Request, requestParameters httprouter.Params) {
