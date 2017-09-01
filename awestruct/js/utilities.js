@@ -209,6 +209,12 @@ var Utilities = {
 		return this.parseGetParameters( get_parameter_string );
 	},
 	
+	parseHashParametersFromURL : function() {
+		var url_hash = window.location.hash.substring( 1, window.location.hash.length );
+		if ( url_hash.length === 0 ) { return {}; }
+		return this.parseGetParameters( url_hash );
+	},
+	
 	parseGetParameters : function( get_parameter_string ) {
 		var get_parameters = {};
 		var get_parameters_and_values = get_parameter_string.split( '&' );
@@ -221,12 +227,28 @@ var Utilities = {
 		return get_parameters;
 	},
 	
+	jsonToGetParameters : function( json ) {
+		var get_parameters = [];
+		for ( var key in json ) {
+			get_parameters.push( key.toString() + '=' + json[ key ].toString() );
+		}
+		return get_parameters.join( '&' );
+	},
+	
 	parseJSON : function( json_to_parse ) {
 		try {
 			var parsed = JSON.parse( json_to_parse );
 			return parsed;
 		} catch(e) {}
 		return undefined;
+	},
+	
+	limitDecimalPlaces : function( number, places ) {
+		if ( typeof number !== 'number' ) { return undefined; }
+		if (String(number).length > places + 3) {
+			return parseFloat(number.toFixed(2));
+		}
+		return number;
 	}
 };
 
