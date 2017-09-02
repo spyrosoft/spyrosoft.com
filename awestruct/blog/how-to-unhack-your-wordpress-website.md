@@ -18,6 +18,8 @@ date: 9-1-17
 1. Unzip a fresh installation of WordPress there:
 1. https://wordpress.org/latest
 1. Copy wp-config-sample.php to wp-config.php and populate the four values as was done above: DB_NAME, DB_USER, DB_PASSWORD, and DB_HOST
-1. Now reinstall each plugin and theme from /wp-admin/
+1. Reinstall each plugin and theme from /wp-admin/
+1. Look through yoursite.com.old/wp-content/uploads for any php files or other unwanted/weird files and delete them
+1. Copy/move the entire directory to yoursite.com/wp-content/uploads
 
 This way you know for sure all of the files are clean again. It's worth it to go to the trouble.
